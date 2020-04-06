@@ -8,7 +8,7 @@ import { ParentcreteComponent } from './parentcrete/parentcrete.component';
 import { ParentHomeComponent } from './parent-home/parent-home.component';
 import { StdntHomeComponent } from './stdnt-home/stdnt-home.component';
 import { TeacherHomeComponent } from './teacher-home/teacher-home.component';
-import { AdminHomeComponent } from './admin-home/admin-home.component'
+import { AdminHomeComponent } from './admin-home/admin-home.component';
 
 //path for the url
 const routes: Routes = [
@@ -32,11 +32,12 @@ const routes: Routes = [
 
 export class AppRoutingModule{} 
 //export components to the appcomponent
-export const RoutingComponents= [ StdntcreteComponent,
-                                  TeachercreteComponent,
-                                  CreteComponent,
+export const RoutingComponents= [ 
                                   LoginComponent,
+                                  StdntcreteComponent,
+                                  TeachercreteComponent,
                                   ParentcreteComponent,
+                                  CreteComponent,
                                   ParentHomeComponent,
                                   StdntHomeComponent,
                                   TeacherHomeComponent,

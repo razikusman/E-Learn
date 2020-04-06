@@ -13,6 +13,11 @@ export class LoginComponent implements OnInit {
   ngOnInit() {
   }
 
+  //direct to the home page of user type 
+  home(stdntcrete){
+    this.router.navigate(['/stdnt-home'], stdntcrete);
+  }
+
 //direct to the signup user type 
   create(crete){
     this.router.navigate(['/crete'], crete);
