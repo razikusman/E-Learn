@@ -12,4 +12,8 @@ export class TeachercreteComponent implements OnInit {
   ngOnInit() {
   }
 
+  subjects:Array<String>=[
+    "english","second language tamil","tamil(first language)","maths","science","second language sinhala",
+  ];
+
 }

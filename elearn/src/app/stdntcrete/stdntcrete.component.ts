@@ -12,6 +12,9 @@ export class StdntcreteComponent implements OnInit {
   ngOnInit() {
   }
 
-  grade = ['6','7','8','9','10','11']
+  grades = ['6','7','8','9','10','11'];
+  subjects:Array<String>=[
+    "english","second language tamil","tamil(first language)","maths","science","second language sinhala",
+  ];
 
 }

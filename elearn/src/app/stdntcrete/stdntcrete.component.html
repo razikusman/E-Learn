@@ -1,22 +1,83 @@
+<h1>Student Registration Form</h1>
 <form>
     <div>
-        <label> User id</label><br>
-        <input type="text" id="uid">
+        <label id="uidlbl"> User id : </label>
+        <input required type="text" placeholder="eg:-AZ/20XX/XXX" id="unameinput">
     </div>
     
     <div>
-        <label> Name</label><br>
-        <input type="text" id="uname">
+        <label id="unamelbl"> Name : </label>
+        <input required type="text" placeholder="Enter Full Name" id="uidinput">
     </div>
 
-    <div>
-        <label> Grade</label><br>
+    <div class="form-group" > 
+        <label id="ugrdlbl"> Grade : </label>
         <select  id="ugrade">
             <option selected>Grade</option>
-            <option>{{grade}}</option>
+            <option *ngFor="let grade of grades"> {{grade}} </option>
         </select>
     </div>
-    
-    
 
+    <div>
+        <label id="udoblbl"> Date of Birth : </label>
+        <input required type="date" id="udobinput">
+    </div>
+
+    <div>
+        <label id="ucontactlbl"> Contact Number : </label>
+        <input required type="tel" id="ucontactinput">
+    </div>
+
+    <div>
+        <label id="utypelbl"> USER TYPE </label>
+        <div id="utypeselect">
+            <label >Student : </label>
+            <input name="user" type="radio" ><br>
+
+            <label >Teacher : </label>
+            <input name="user" type="radio" ><br>
+
+            <label >Parent   : </label>
+            <input name="user" type="radio" >
+        </div>
+
+        <div>
+            <label>Subjects </label><br>
+            <div *ngFor="let subject of subjects">
+                <input ng-repeat="subject in subjects" type="checkbox" id="">
+                {{subject}}
+            </div>
+        </div>
+        
+    </div>
+
+    <hr>
+
+    <div>
+        <div>
+            <label id="ugurdianlbl"> Parent/Gurdience Name : </label>
+            <input required type="text" placeholder="Enter Full Name" id="gurdiannameinput">
+        </div>
+        <div>
+            <label id="ugurdianlbl"> Parent/Gurdience NIC : </label>
+            <input required type="text" id="gurdiannameinput">
+        </div>
+    </div>
+
+    <hr>
+    <div>
+        <label id="usenamelbl"> User Name : </label>
+        <input required type="text" placeholder="User name for login" id="useranmeinput">
+    </div>
+
+    <div>
+        <label id="passwordlbl"> Password : </label>
+        <input required type="password" placeholder="5-8 Characters" id="passwordinput">
+    </div>
+    <div>
+        <label id="cpasswordlbl"> Confirm Password : </label>
+        <input required type="password" Re-Enter the password id="cpasswordinput">
+    </div>
+
+    <button type="submit"> Submit Form </button>
 </form>
