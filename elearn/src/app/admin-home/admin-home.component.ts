@@ -14,7 +14,7 @@ export class AdminHomeComponent implements OnInit {
   }
 
   public name="Usman";
-  public  detailname="cc";
+  public  detailname="";
 
   studetails(){
     return this.name="student details";
@@ -26,6 +26,10 @@ export class AdminHomeComponent implements OnInit {
 
   subdetails(){
     return this.detailname="Subject details";
+  }
+
+  signout(login){
+    this.router.navigate(['/login'], login)
   }
 
 }
