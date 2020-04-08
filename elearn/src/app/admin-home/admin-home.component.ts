@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-admin-home',
@@ -7,11 +8,24 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AdminHomeComponent implements OnInit {
 
-  constructor() { }
+  constructor( private router: Router) { }
 
   ngOnInit() {
   }
 
-  name:'Usman';
+  public name="Usman";
+  public  detailname="cc";
+
+  studetails(){
+    return this.name="student details";
+  }
+
+  tchrdetails(){
+    return this.detailname="Teacher details";
+  }
+
+  subdetails(){
+    return this.detailname="Subject details";
+  }
 
 }

@@ -1,27 +1,27 @@
-<h1>welcome {{name}}</h1>
+<h1>welcome {{ name }} </h1>
 <hr>
 <div class="form-group">
     <label>anouncements</label>
 </div>
-<div class="form-group">
+<nav>
     <div>
-        <a href="">student details</a>
+        <a href="/admin-home" (click)="studetails()" >Student details</a>
         <img>
     </div>
 
     <div>
-        <a>teacher details</a>
+        <a href="/teacher-details" (click)="tchrdetails()" >teacher-details</a>
         <img>
     </div>
 
     <div>
-        <a>subject details</a>
+        <a href="/subject-details" (click)="subdetails()" >subject-details</a>
         <img>
     </div>
-</div>
+</nav>
 
 <div>
-    <label>Subjects</label>
+    <label>{{name}}</label>
     <output></output>
 </div>
 <button>Add anouncements</button>

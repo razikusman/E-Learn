@@ -1,1 +1,29 @@
-<p>parent-home works!</p>
+<h1>welcome {{ name }} </h1>
+<hr>
+<div class="form-group">
+    <label>anouncements</label>
+</div>
+<nav>
+
+    <div>
+        <a href="/teacher-details" (click)="tchrdetails()" >teacher-details</a>
+        <img>
+    </div>
+
+    <div>
+        <a href="/studen-details" (click)="studen-details()" >student-details</a>
+        <img>
+    </div>
+</nav>
+
+<div>
+    <label>{{details}}</label>
+    <output></output>
+</div>
+<img><br>
+{{name.toUpperCase()}}
+<button>update profile</button>
+<button>Sign out</button>
+<img src="">
+<label>Childrens progress report</label>
+<output></output>

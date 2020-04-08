@@ -9,6 +9,10 @@ import { ParentHomeComponent } from './parent-home/parent-home.component';
 import { StdntHomeComponent } from './stdnt-home/stdnt-home.component';
 import { TeacherHomeComponent } from './teacher-home/teacher-home.component';
 import { AdminHomeComponent } from './admin-home/admin-home.component';
+import { StudenDetailsComponent } from './studen-details/studen-details.component';
+import { TeacherDetailsComponent } from './teacher-details/teacher-details.component';
+import { SubjectsDetailsComponent } from './subjects-details/subjects-details.component';
+import { AboutComponent } from './about/about.component';
 
 //path for the url
 const routes: Routes = [
@@ -22,6 +26,10 @@ const routes: Routes = [
   {path:'stdnt-home', component:StdntHomeComponent},
   {path:'teacher-home', component:TeacherHomeComponent},
   {path:'admin-home', component:AdminHomeComponent},
+  {path: 'studen-details', component:StudenDetailsComponent},
+  {path: 'teacher-details', component:TeacherDetailsComponent},
+  {path: 'subjects-details', component:SubjectsDetailsComponent},
+  {path: 'about', component:AboutComponent}
   
 ];
 
@@ -42,5 +50,9 @@ export const RoutingComponents= [
                                   StdntHomeComponent,
                                   TeacherHomeComponent,
                                   AdminHomeComponent,
+                                  StudenDetailsComponent,
+                                  TeacherDetailsComponent,
+                                  SubjectsDetailsComponent,
+                                  AboutComponent,
                                 ]
  

@@ -12,4 +12,6 @@ export class ParentHomeComponent implements OnInit {
   ngOnInit() {
   }
 
+  name="parent";
+
 }
