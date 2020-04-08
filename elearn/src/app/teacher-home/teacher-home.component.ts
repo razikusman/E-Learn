@@ -17,4 +17,8 @@ export class TeacherHomeComponent implements OnInit {
   signout(login){
     this.router.navigate(['/login'], login)
   }
+
+  add(quize){
+    this.router.navigate(['/quize'], quize)
+  }
 }

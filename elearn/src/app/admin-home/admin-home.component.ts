@@ -32,4 +32,14 @@ export class AdminHomeComponent implements OnInit {
     this.router.navigate(['/login'], login)
   }
 
+  salarypayment(salary){
+    this.router.navigate(['/salary-payment'], salary)
+  }
+  feespayment(fees){
+    this.router.navigate(['/fees-payment'], fees)
+  }
+  overallreport(overall){
+    this.router.navigate(['/overall-report'], overall)
+  }
+
 }
