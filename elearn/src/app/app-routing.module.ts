@@ -13,6 +13,11 @@ import { StudenDetailsComponent } from './studen-details/studen-details.componen
 import { TeacherDetailsComponent } from './teacher-details/teacher-details.component';
 import { SubjectsDetailsComponent } from './subjects-details/subjects-details.component';
 import { AboutComponent } from './about/about.component';
+import { QuizeComponent } from './quize/quize.component';
+import { OverallReportComponent } from './overall-report/overall-report.component';
+import { StudentProgressComponent } from './student-progress/student-progress.component';
+import { SalaryPaymentComponent } from './salary-payment/salary-payment.component';
+import { FeesPaymentComponent } from './fees-payment/fees-payment.component';
 
 //path for the url
 const routes: Routes = [
@@ -29,7 +34,12 @@ const routes: Routes = [
   {path: 'studen-details', component:StudenDetailsComponent},
   {path: 'teacher-details', component:TeacherDetailsComponent},
   {path: 'subjects-details', component:SubjectsDetailsComponent},
-  {path: 'about', component:AboutComponent}
+  {path: 'about', component:AboutComponent},
+  {path:'quize', component:QuizeComponent},
+  {path: 'overall-report', component:OverallReportComponent},
+  {path: 'student-progress', component:StudentProgressComponent},
+  {path: 'salary-payment', component:SalaryPaymentComponent},
+  {path: 'fees-payment', component:FeesPaymentComponent}
   
 ];
 
@@ -54,5 +64,10 @@ export const RoutingComponents= [
                                   TeacherDetailsComponent,
                                   SubjectsDetailsComponent,
                                   AboutComponent,
+                                  QuizeComponent,
+                                  OverallReportComponent,
+                                  StudentProgressComponent,
+                                  SalaryPaymentComponent,
+                                  FeesPaymentComponent,
                                 ]
  
