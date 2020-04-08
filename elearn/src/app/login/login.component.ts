@@ -23,6 +23,7 @@ export class LoginComponent implements OnInit {
     this.router.navigate(['/crete'], crete);
   }
   
+  //direct to the about interface
   about(about){
     this.router.navigate(['/about'], about)
   }

@@ -1,8 +1,10 @@
 <h1>welcome {{ name }} </h1>
 <hr>
+<!--any new anouncements are updated-->
 <div class="form-group">
     <label>anouncements</label>
 </div>
+<!--navigation bar to move -->
 <nav>
     <div>
         <a href="/studen-details" (click)="studetails()" >Student details</a>
@@ -19,14 +21,20 @@
         <img>
     </div>
 </nav>
-
+<!--the subjects teched by admin-->
 <div>
     <label>subjects teaching</label>
     <output></output>
 </div>
+
+<!--create nes anouncement-->
 <button>Add anouncements</button>
+
+<!--signout and reach login interface-->
 <button (click)="signout(login)">Sign out</button>
 <img>
+
+<!--view reports-->
 <button>salary payment report</button>
 <button>monthly fees payment report</button>
 <button>ovrall report</button>

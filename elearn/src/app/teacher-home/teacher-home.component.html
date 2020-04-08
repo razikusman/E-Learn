@@ -1,8 +1,10 @@
 <h1>welcome {{ name }} </h1>
 <hr>
+<!--any new anouncemrs are posted-->
 <div class="form-group">
     <label>anouncements</label>
 </div>
+<!--intended navigation bar-->
 <nav>
     <div>
         <a href="/studen-details" (click)="studen-details()" >student-details</a>
@@ -16,17 +18,27 @@
 
 </nav>
 
+<!--subjects taugght by teacher-->
 <div>
     <label>subjects</label>
     <output></output>
 </div>
+
+<!--profile-->
 <img><br>
 {{name.toUpperCase()}}
 <button>update profile</button>
+
+<!--signout and reach logininteraafce-->
 <button (click)="signout(login)">Sign out</button>
 <img src="">
+
+<!--subject detail of subject taught by teacher-->
 <label>subject name</label>
 <output></output>
+
+<!--add qize-->
 <button>add quize</button>
 
+<!--do some change on quize already uploaded-->
 <button>update quize</button>

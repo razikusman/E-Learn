@@ -13,6 +13,7 @@ export class TeacherHomeComponent implements OnInit {
   ngOnInit() {
   }
 
+  //sign out and reach login
   signout(login){
     this.router.navigate(['/login'], login)
   }

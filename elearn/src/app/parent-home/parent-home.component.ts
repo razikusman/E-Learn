@@ -15,6 +15,7 @@ export class ParentHomeComponent implements OnInit {
 
   name="parent";
 
+  //sign out and reach login
   signout(login){
     this.router.navigate(['/login'], login)
   }

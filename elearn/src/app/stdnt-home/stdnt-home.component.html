@@ -1,8 +1,12 @@
 <h1>welcome {{ name }} </h1>
 <hr>
+
+<!--any new anouncemrs are posted-->
 <div class="form-group">
     <label>anouncements</label>
 </div>
+
+<!--intended navigation bar-->
 <nav>
 
     <div>
@@ -16,14 +20,21 @@
     </div>
 </nav>
 
+<!--subjects folloing by student-->
 <div>
     <label>subjects following</label>
     <output></output>
 </div>
+
+<!--profile-->
 <img><br>
 {{name.toUpperCase()}}
 <button>update profile</button>
+
+<!--signout and reach login interface-->
 <button (click)="signout(login)">Sign out</button>
 <img src="">
+
+<!--subject detail of studdent following is displayed-->
 <label>Subject Details</label>
 <output></output>

@@ -13,6 +13,7 @@ export class StdntHomeComponent implements OnInit {
   ngOnInit() {
   }
 
+  //sign out and reach login
   signout(login){
     this.router.navigate(['/login'], login)
   }
