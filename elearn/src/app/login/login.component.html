@@ -1,20 +1,29 @@
-<form class="login">
+<html >
+    
+    <body class="back">
+        <h1>A-Z English Academy</h1>
 
-    <button (click)="about(about)"></button>
+        <img src="" alt="">
+        <button (click)="about(about)" class="about">about</button>
 
-    <!--inputs-->
-    <div class="input">
-        <label id="usernsme">User Name</label><br>
-        <input type="text" placeholder="User name"><br>
-        <label id="password">Password</label><br>
-        <input type="password" placeholder="Password"><br>
-    </div>
-    <!--directves-->
-    <div class="buttons">
-        <a href="" id="fgt">forgot password...?</a><br>
-        <button   (click) = "home(stdntcrete)" id="login">login</button><br>
-        <button (click)= "create(crete)" id="signup">Sign up</button>
-        <label id="no account">don't have an account</label>
-    </div>
-   
-</form>
+        <form class="login">
+        
+            <!--inputs-->
+            <div class="input">
+                <label id="usernsme">User Name</label><br>
+                <input type="text" placeholder="User name"><br>
+                <label id="password">Password</label><br>
+                <input type="password" placeholder="Password"><br>
+            </div>
+
+            <!--directves-->
+            <div class="buttons">
+                <a href="" id="fgt">forgot password...?</a><br>
+                <button   (click) = "home(stdntcrete)"  class="login">login</button><br>
+                <button (click)= "create(crete)" class="signup">Sign up</button>
+                <label class="noaccount">don't have an account</label>
+            </div>
+           
+        </form>
+    </body>
+</html>

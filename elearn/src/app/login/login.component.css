@@ -1,4 +1,77 @@
+body{
+    background:url('../../assets/background.jpg') no-repeat center center;
+    background-size: cover ;
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    top: 0;
+}
+
 form{
-    max-width: 500px;
-    margin: auto;
+    padding: 50px;
+    background-color: black;
+    opacity: 75%;
+    background-position: unset;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-bottom-left-radius: 20px;
+    border-top-right-radius: 20px;
+}
+
+.noaccount{
+    font-style: italic;
+    font-family: monospace;
+}
+
+label{
+    font-family: sans-serif;
+    font-size: 20px;
+    font: bolder;
+    margin: 5px;
+    color: white;
+    letter-spacing: 3px;
+}
+
+button{
+    font-size: 20px;
+    margin: 5px;
+    padding: 3px 10px 4px 10px;
+    border-radius: 10%;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    letter-spacing: 2px;
+    
+}
+input{
+    margin: 5px;
+    padding: 5px;
+    background: transparent;
+    color: white;
+
+}
+
+.about{
+    position: fixed;
+    top: 0;
+    right: 0;
+    
+}
+
+a{
+    font-size: 20px;
+    font-style: italic;
+    font-family: 'Courier New', Courier, monospace;
+    color: rgb(117, 117, 235);
+
+}
+
+h1{
+    text-align: center;
+    font-size: 60px;
+    opacity: 90%;
+    letter-spacing: 10px;
+    font-style: italic;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }

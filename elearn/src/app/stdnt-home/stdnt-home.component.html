@@ -6,16 +6,22 @@
     <label>anouncements</label>
 </div>
 
+<!--signout and reach login interface-->
+<button (click)="signout(login)">Sign out</button>
+<img src="">
+
 <!--intended navigation bar-->
 <nav>
 
+    <!--all the teachers-->
     <div>
         <a href="/teacher-details" (click)="tchrdetails()" >teacher-details</a>
         <img>
     </div>
 
+    <!--all the subjects-->
     <div>
-        <a href="/studen-details" (click)="studen-details()" >student-details</a>
+        <a href="/subjects-details" (click)="studen-details()" >subjects-details</a>
         <img>
     </div>
 </nav>
@@ -26,15 +32,16 @@
     <output></output>
 </div>
 
-<!--profile-->
-<img><br>
-{{name.toUpperCase()}}
-<button>update profile</button>
+<!--content-->
+<div class="content">
 
-<!--signout and reach login interface-->
-<button (click)="signout(login)">Sign out</button>
-<img src="">
+    <!--profile-->
+    <img><br>
+    {{name.toUpperCase()}}
+    <button>update profile</button>
 
-<!--subject detail of studdent following is displayed-->
-<label>Subject Details</label>
-<output></output>
+    <!--subject detail of studdent following is displayed-->
+    <label>Subject Details</label>
+    <output></output>
+
+</div>
