@@ -5,27 +5,47 @@
         <h2>the place to achive dreams.........</h2>
 
         
-        <button (click)="about(about)" class="about">about</button><!--info-->
+        <div class="about">
+            <img src="assets/about.png" (click)="about(about)" class="i">
+            <label>about</label><!--info-->
+        </div>
 
         <div class="block">
 
                 
             <img src="assets/login.png"><!--login image-->
             
-            <form class="login">
-
+            <form #loginForm="ngForm" class="login">
+<!--{{loginForm.form.valid}}-->
                 <div class="input">
                     <label id="usernsme">User Name</label><br>
-                    <input type="text" placeholder="User name"><br>
+
+                    <input 
+                        type="text" required #name="ngModel" name="uname" placeholder="User Name"  ngModel
+                    ><br>
+
                     <label id="password">Password</label><br>
-                    <input type="password" placeholder="Password"><br>
+
+                    <input 
+                        required #name="ngModel" type="password" placeholder="5-8 Characters" name="password" ngModel
+                    ><br>
                 </div><!--inputs-->
 
+                <div *ngIf="loginForm.form.invalid">
+                    <small class="warning">Sign-Up if You have not registered....</small>
+                     
+                </div>
+
                 <div class="buttons">
+
                     <a href="" id="fgt">forgot password...?</a><br>
-                    <button   (click) = "home(stdntcrete)"  class="login">login</button><br>
+
+                    <button  [disabled]="loginForm.form.invalid"  (click) = "home(stdntcrete)"  class="login">login</button><br>
+
                     <button (click)= "create(crete)" class="signup">Sign up</button>
+
                     <label class="noaccount">don't have an account</label>
+
                 </div><!--directves-->
             
             </form><!--login form-->
