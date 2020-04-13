@@ -108,6 +108,7 @@ a{
 img, form{
     display: inline-block;
 }
+
 img.i{
     width: 40px;
     height: 70px;

@@ -1,8 +1,24 @@
-<h1>Welcome to A-Z English Acdemy</h1>
+<body>
+    <h1>Welcome to A-Z English Acdemy</h1>
 
-<h3>select your user type......</h3>
-
-<!--selecting a user type-->
-<button   (click) = "student(stdntcrete)">Student</button><hr>
-<button   (click) = "teacher(teachercrete)">Teacher</button><hr>
-<button   (click) = "parent(prntcrete)">Parent</button><hr>
+    <h3>select your user type......</h3>
+    <form class="block">
+        <div class="user">
+        
+            <div class="student">
+                <img src="assets/student.png" (click) = "student(stdntcrete)"><br>
+                <button (click) = "student(stdntcrete)" >Student</button>
+            </div><!--student-->
+        
+            <div class="teacher">
+                <img src="assets/teacher.png" (click) = "teacher(teachercrete)"><br>
+                <button (click) = "teacher(teachercrete)" >Teacher</button>
+            </div><!--teacher-->
+        
+            <div class="parent">  
+                <img src="assets/parent.png" (click) = "parent(prntcrete)"><br>
+                <button (click) = "parent(prntcrete)" >Parent</button>
+            </div><!--parent-->
+        </div>
+    </form>
+</body>
