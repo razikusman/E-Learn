@@ -1,29 +1,34 @@
 <html >
     
     <body class="back">
-        <h1>A-Z English Academy</h1>
+        <h1>A-Z English Academy</h1><!--title-->
+        <h2>the place to achive dreams.........</h2>
 
-        <img src="" alt="">
-        <button (click)="about(about)" class="about">about</button>
-
-        <form class="login">
         
-            <!--inputs-->
-            <div class="input">
-                <label id="usernsme">User Name</label><br>
-                <input type="text" placeholder="User name"><br>
-                <label id="password">Password</label><br>
-                <input type="password" placeholder="Password"><br>
-            </div>
+        <button (click)="about(about)" class="about">about</button><!--info-->
 
-            <!--directves-->
-            <div class="buttons">
-                <a href="" id="fgt">forgot password...?</a><br>
-                <button   (click) = "home(stdntcrete)"  class="login">login</button><br>
-                <button (click)= "create(crete)" class="signup">Sign up</button>
-                <label class="noaccount">don't have an account</label>
-            </div>
-           
-        </form>
+        <div class="block">
+
+                
+            <img src="assets/login.png"><!--login image-->
+            
+            <form class="login">
+
+                <div class="input">
+                    <label id="usernsme">User Name</label><br>
+                    <input type="text" placeholder="User name"><br>
+                    <label id="password">Password</label><br>
+                    <input type="password" placeholder="Password"><br>
+                </div><!--inputs-->
+
+                <div class="buttons">
+                    <a href="" id="fgt">forgot password...?</a><br>
+                    <button   (click) = "home(stdntcrete)"  class="login">login</button><br>
+                    <button (click)= "create(crete)" class="signup">Sign up</button>
+                    <label class="noaccount">don't have an account</label>
+                </div><!--directves-->
+            
+            </form><!--login form-->
+        </div>
     </body>
 </html>
