@@ -18,7 +18,7 @@ h2{
 }
 
 .name, .id, .tel, .date{
-    width: 100%;
+    width: 90%;
     padding: 5px;
     padding-right: -5px;
     margin: 0px 0 20px 10px;
@@ -27,6 +27,13 @@ h2{
 }
 
 .password, .id, .tel, .date{
+    width: 20%;
+    padding: 5px;
+    margin: 0px 0 20px 10px;
+}
+
+input[name="username"], .password{
+    border-style: ridge;
     width: 20%;
     padding: 5px;
     margin: 0px 0 20px 10px;

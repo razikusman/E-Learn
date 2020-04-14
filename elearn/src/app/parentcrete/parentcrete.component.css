@@ -18,12 +18,19 @@ h2{
 }
 
 .name, .id, .tel, .date{
-    width: 100%;
+    width: 90%;
     padding: 5px;
     padding-right: -5px;
     margin: 0px 0 20px 10px;
     border-style: hidden ;
     border-bottom-style: dotted;
+}
+
+input[name="username"], .password{
+    border-style: ridge;
+    width: 20%;
+    padding: 5px;
+    margin: 0px 0 20px 10px;
 }
 
 .password, .id, .tel, .date{

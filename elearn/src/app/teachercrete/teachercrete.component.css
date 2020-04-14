@@ -26,6 +26,13 @@ h2{
     border-bottom-style: dotted;
 }
 
+input[name="username"], .password{
+    border-style: ridge;
+    width: 20%;
+    padding: 5px;
+    margin: 0px 0 20px 10px;
+}
+
 .password, .id, .tel, .date{
     width: 20%;
     padding: 5px;
