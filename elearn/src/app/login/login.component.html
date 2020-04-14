@@ -31,10 +31,7 @@
                     ><br>
                 </div><!--inputs-->
 
-                <div *ngIf="loginForm.form.invalid">
-                    <small class="warning">Sign-Up if You have not registered....</small>
-                     
-                </div>
+                <small *ngIf="loginForm.form.invalid" class="warning">Sign-Up if You have not registered....</small>
 
                 <div class="buttons">
 
