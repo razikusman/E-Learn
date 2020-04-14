@@ -1,0 +1,53 @@
+label{
+    font-size: 20px;
+    margin: 10px;
+    background-color: rgba(136, 136, 136, 0.842);
+}
+
+h1{
+    text-transform: uppercase;
+    text-align: center;
+    letter-spacing: 3px;
+    text-decoration-line: underline;
+    
+}
+
+h2{
+    text-transform: uppercase;
+    margin-bottom: 0px;
+}
+
+.name, .id, .tel, .date{
+    width: 100%;
+    padding: 5px;
+    padding-right: -5px;
+    margin: 0px 0 20px 10px;
+    border-style: hidden ;
+    border-bottom-style: dotted;
+}
+
+.password, .id, .tel, .date{
+    width: 20%;
+    padding: 5px;
+    margin: 0px 0 20px 10px;
+}
+
+hr{
+    height: 3px;
+    background-color: rgba(136, 136, 136, 0.842);
+}
+
+
+
+button{
+    background-position: unset;
+    position: absolute;
+    margin: -15px 20% 15px 0;
+    padding: 5px 10px 5px 10px;
+    bottom: 100;
+    right: 0;
+    background-color: rgb(55, 255, 20);
+    font-family: cursive;
+    font-weight: bolder;
+    text-transform: uppercase;
+}
