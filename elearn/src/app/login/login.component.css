@@ -1,30 +1,41 @@
-body{
-    background:url('../../assets/background.jpg') no-repeat center center;
+
+.back{
+    background:url('../../assets/background.jpg') no-repeat center;
     background-size: cover ;
-    position: fixed;
-    bottom: 0;
-    right: 0;
-    left: 0;
-    top: 0;
+    position: absolute;
+    bottom: 0%;
+    right: 0%;
+    left: 0%;
+    top: 0%;
     height: 100%;
-    margin: 0;
+    width: 100%;
+    margin: 0%;
 }
 
 h1{
-    text-align: center;
-    font-size: 60px;
-    opacity: 90%;
-    letter-spacing: 10px;
+    position: relative;
+    top: 0%;
+    right: 25%;
+    bottom: 100%;
+    left: 25%;
+    width: 50%;
+    text-align: left;
+    font-size: 3.5em;
+    letter-spacing: 4px;
     font-style: italic;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    margin-bottom: 0;
-    margin-top: 0;
+    margin: 0%;
 }
 
 h2{
-    text-align: center;
-    margin-top: 0;
-    margin-left: 50%;
+    position: relative;
+    top: 0%;
+    right: 10%;
+    left: 50%;
+    width: 50%;
+    letter-spacing: 5px;
+    text-align: left;
+    margin: 0%;
     text-transform: uppercase;
 }
 
@@ -32,68 +43,95 @@ h2{
     background-color: rgb(250, 0, 0);
     background-position: unset;
     position: absolute;
-    top: 0;
-    right: 0;
-    margin: 10px 10px 0 0;
-    padding: 0px;
+    top: 0%;
+    right: 0%;
+    transform: translate(-0.5%, -0.5%);
+    margin: 0.5% 0.5% 0% 0%;
+    padding: 0.2%;
+    width: 5%;
+    height: 10%;
     
     
+}
+
+img.i{
+    position: relative;
+    width: 100%;
+    height: 65%;
 }
 
 .block{
     background-position: unset;
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
+    position: relative;
+    right: 25%;
+    left: 15%;
+    top: 10%;
+    bottom: 10%;
     width: 80%;
     align-content: center;
+    margin: 0%;
 }
 
 img{
+    position: relative;
     height: 50%;
     width: 40%;
 }
 
 form{
+    position: relative;
     height: 40%;
     width: 40%;
-    padding: 50px;
+    padding: 3%;
     background-color: rgba(0, 0, 0, 0.801);
-    border-bottom-left-radius: 100px;
-    border-top-right-radius: 100px;
+    border-bottom-left-radius: 25%;
+    border-top-right-radius: 25%;
+    margin: 0%;
     
     
 }
 
 label{
+    position: relative;
     font-family: sans-serif;
-    font-size: 20px;
+    font-size: 1.2rem;
     font: bolder;
-    margin: 5px;
-    color: white;
-    letter-spacing: 3px;
+    margin: 2%;
+    color: rgb(255, 255, 255);
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    width: auto;
+    top: 0%;
+    right: 0%;
+    left: 1%;
+    bottom: 0%;
+}
+
+label.i{
+    letter-spacing: 0px;
 }
 
 button{
-    font-size: 20px;
-    margin: 5px;
-    padding: 3px 10px 4px 10px;
+    position: relative;
+    font-size: 120%;
+    margin: 1%;
+    padding: .7% 1% .7% 1%;
     border-radius: 10%;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     letter-spacing: 2px;
     
 }
 input{
-    margin: 5px;
-    padding: 5px;
+    margin: 1.5%;
+    padding: 1.5%;
+    width: 60%;
     background: transparent;
     color: white;
 
 }
 
 a{
-    font-size: 20px;
+    font-size: 120%;
     font-style: italic;
     font-family: 'Courier New', Courier, monospace;
     color: rgb(117, 117, 235);
@@ -109,16 +147,11 @@ img, form{
     display: inline-block;
 }
 
-img.i{
-    width: 40px;
-    height: 70px;
-}
-
 .warning{
     color: red;
     opacity: 300%;
     font-style: italic;
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    font-size:14px ;
+    font-size:100% ;
     letter-spacing: 2px;
 }
