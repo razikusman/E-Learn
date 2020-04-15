@@ -110,8 +110,13 @@
             required ngModel name="password" #password="ngModel"
             type="password" placeholder="5-8 Characters" class="password"
         >
-        <small class="warning" *ngIf="password.invalid || password.untouched">*feild required</small>
+        <small class="warning" *ngIf="password.invalid || password.untouched">
+            
+            *feild required
+
+        </small>
     </div>
+    
     <div>
         <label id="cpasswordlbl"> Confirm Password : </label><br>
         <input 

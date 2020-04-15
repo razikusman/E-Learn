@@ -1,49 +1,96 @@
 <h1>Parent Registration Form</h1>
-<form>
+<form #parentregisterForm="ngForm">
+    {{parentregisterForm.form.valid}}
     <div>
         <label id="unamelbl"> Name : </label><br>
-        <input required type="text" placeholder="Enter Full Name" class="name">
+        <input 
+            required ngModel name="name" #name="ngModel"
+            type="text" placeholder="Enter Full Name" class="name"
+        >
+        <small class="warning" *ngIf="name.invalid && name.touched">
+            *feild required
+        </small>
     </div>
 
     <div>
         <label id="ucontactlbl"> Contact Number : </label><br>
-        <input required type="tel" class="tel">
+        <input
+            ngModel name="Contact" 
+            type="tel" class="tel">
     </div>
 
     <div>
         <h2 id="utypelbl"> USER TYPE </h2>
         <div id="utypeselect">
             <label >Student : </label>
-            <input name="user" type="radio" ><br>
+            <input ngModel name="user" type="radio" ><br>
 
             <label >Teacher : </label>
-            <input name="user" type="radio" ><br>
+            <input ngModel name="user" type="radio" ><br>
 
             <label >Parent   : </label>
-            <input name="user" type="radio" >
+            <input ngModel name="user" type="radio" >
         </div>
    
     </div><br>
     
     <div>
         <label id="ugurdianlbl">  NIC : </label><br>
-        <input required type="text" class="id">
+        <input 
+            required ngModel name="NIC" #NIC="ngModel"
+            type="text" class="id"
+        >
+        <small class="warning" *ngIf="NIC.invalid && NIC.touched">
+            *feild required 
+        </small>
     </div>
 
     <hr>
     <div>
         <label id="usenamelbl"> User Name : </label><br>
-        <input required type="text" placeholder="User name for login" class="name" name="username">
+        <input 
+            required ngModel name="username" #username="ngModel"
+            type="text" placeholder="User name for login" class="name" >
     </div>
+    <small class="warning" *ngIf="username.invalid && username.touchedd">
+
+        *feild required
+
+    </small>
 
     <div>
         <label id="passwordlbl"> Password : </label><br>
-        <input required type="password" placeholder="5-8 Characters" class="password">
+        <input
+            required ngModel name="password" #password="ngModel"
+            type="password" placeholder="5-8 Characters" class="password"
+        >
+        <small class="warning" *ngIf="password.invalid || password.untouched">
+
+            *feild required
+
+        </small>
+
     </div>
     <div>
         <label id="cpasswordlbl"> Confirm Password : </label><br>
-        <input required type="password" placeholder="Re-Enter the password" class="password">
+        <input 
+            required ngModel name="cpassword" #cpassword="ngModel"
+            type="password" placeholder="Re-Enter the password" class="password"
+        >
+        
+        <small class="warning" *ngIf="(cpassword.value != password.value) && cpassword.touched">
+
+            *password not matched and required
+
+        </small>
     </div>
 
-    <button type="submit"> Submit Form </button>
+    <small class="error" *ngIf="parentregisterForm.form.invalid && parentregisterForm.form.touched">
+
+        ***fill the required feilds and submit the form ( --form incomplete --)
+    </small>
+
+    <button
+    [disabled]="parentregisterForm.form.invalid" type="submit"
+    > Submit Form </button>
 </form>
