@@ -44,8 +44,6 @@ hr{
     background-color: rgba(136, 136, 136, 0.842);
 }
 
-
-
 button{
     background-position: unset;
     position: absolute;
@@ -57,4 +55,18 @@ button{
     font-family: cursive;
     font-weight: bolder;
     text-transform: uppercase;
+}
+
+.warning{
+    color: red;
+    text-transform: uppercase;
+    font-style: italic;
+    font-weight: bold;
+}
+
+.error{
+    color: rgb(38, 0, 255);
+    text-transform: uppercase;
+    font-style: italic;
+    font-weight: bold;
 }

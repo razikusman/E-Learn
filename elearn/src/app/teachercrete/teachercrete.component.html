@@ -1,18 +1,27 @@
 <h1>Taecher Registration Form</h1>
-<form>
+<form #teacherregistrationForm="ngForm">
+    {{teacherregistrationForm.form.valid}}
     <div>
         <label id="uidlbl"> User id : </label><br>
-        <input required type="text" placeholder="eg:-AZ/T/XXX" class="id">
+        <input 
+            required ngModel name="userid" #userid="ngModel" type="text" placeholder="eg:-AZ/T/XXX" class="id"
+        >
+        <small class="warning" *ngIf="userid.invalid && userid.touched">feild required</small>
     </div>
     
     <div>
         <label id="unamelbl"> Name : </label><br>
-        <input required type="text" placeholder="Enter Full Name" class="name">
+        <input 
+            required ngModel name="name" #name="ngModel" type="text" placeholder="Enter Full Name" class="name"
+        >
+        <small class="warning" *ngIf="name.invalid && name.touched">feild required</small>
     </div>
 
     <div>
         <label id="ucontactlbl"> Contact Number : </label><br>
-        <input required type="tel" class="tel">
+        <input 
+            required type="tel" class="tel"
+        >
     </div>
 
     <div>
@@ -32,7 +41,9 @@
     <div>
         <h2>Subjects Teaching</h2><br>
         <div *ngFor="let subject of subjects">
-            <input ng-repeat="subject in subjects" type="checkbox" id="">
+            <input
+                ng-repeat="subject in subjects" type="checkbox"
+            >
             {{subject}}
         </div>
     </div>
@@ -40,18 +51,27 @@
     <hr>
     <div>
         <label id="usenamelbl"> User Name : </label><br>
-        <input required type="text" placeholder="User name for login" class="name" name="username">
+        <input 
+            required ngModel #username="ngModel" type="text" placeholder="User name for login" class="name" name="username"
+        >
+        <small class="warning" *ngIf="username.invalid && username.touched">feild required</small>
     </div>
 
     <div>
         <label id="passwordlbl"> Password : </label><br>
-        <input required type="password" placeholder="5-8 Characters" class="password">
+        <input
+            required ngModel name="password" #password="ngModel" type="password" placeholder="5-8 Characters" class="password"
+        >
+        <small class="warning" *ngIf="password.invalid && password.touched">feild required</small>
     </div>
     <div>
         <label id="cpasswordlbl"> Confirm Password : </label><br>
-        <input required type="password" placeholder="Re-Enter the password" class="password">
+        <input 
+            required ngModel name="cpassword" #cpassword="ngModel" type="password" placeholder="Re-Enter the password" class="password"
+        >
+        <small class="warning" *ngIf="(cpassword.value != password.value) && cpassword.invalid && cpassword.touched">feild required</small>
     </div>
 
 
-    <button type="submit"> Submit Form </button>
+    <button [disabled]="teacherregistrationForm.form.invalid" type="submit"> Submit Form </button>
 </form>

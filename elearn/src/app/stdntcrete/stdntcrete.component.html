@@ -1,45 +1,55 @@
 <h1>Student Registration Form</h1>
-<form #studentregisterform="ngForm">
+<form #studentregisterForm="ngForm">
+    {{studentregisterForm.form.valid}}
     <div>
         <label id="uidlbl"> User id : </label><br>
         <input
-            required #userid="ngModel" ngModel name="userid" type="text" placeholder="eg:-AZ/20XX/XXX" class="id"
+            required ngModel name="userid" #userid="ngModel" 
+            type="text" placeholder="eg:-AZ/20XX/XXX" class="id"
         >
-        <small class="warning" *ngIf="userid.invalid && userid.touched">feild required</small>
+        <small class="warning" *ngIf="userid.invalid && userid.touched" >feild required</small>
     </div>
     
     <div>
         <label id="unamelbl"> Name : </label><br>
         <input
-            required #username="ngModel" ngModel name="username" type="text" placeholder="Enter Full Name" class="name"
+            required ngModel name="name" #name="ngModel" 
+            type="text" placeholder="Enter Full Name" class="name"
         >
-        <small class="warning" *ngIf="username.invalid && username.touched">feild required</small>
+        <small class="warning" *ngIf="name.invalid && name.touched">feild required</small>
     </div>
 
     <div class="form-group" > 
         <label id="ugrdlbl"> Grade : </label>
-        <select required #grade="ngModel" ngModel name="grade" id="ugrade">
+        <select required ngModel name="grade" #grade="ngModel"  id="ugrade">
             <option selected>Grade</option>
-            <option #grade="ngModel" ngModel  *ngFor="let grade of grades"> {{grade}} </option>
+            <option *ngFor="let grade of grades"> {{grade}} </option>
         </select>
-        <small class="warning" *ngIf="grade.pristine || grade.untouched">select a grade from dropdown</small>
+        <small class="warning" *ngIf="grade.invalid && grade.touched">select a grade from dropdown</small>
     </div>
 
     <div>
         <label id="udoblbl"> Date of Birth : </label><br>
-        <input required ngModel name="DOB" type="date" class="date">
+        <input 
+            required ngModel name="DOB" #DOB="ngModel"
+            type="date" class="date"
+        >
     </div>
 
     <div>
         <label id="ucontactlbl"> Contact Number : </label><br>
-        <input required ngModel name="contact" type="tel" class="tel">
+        <input
+            required ngModel name="contact" #contact="ngModel" ng-pattern=""
+            type="tel" class="tel"
+        >
+        <small class="warning" *ngIf="">phone number must be ten digit</small>
     </div>
 
     <div>
         <h2 id="utypelbl"> USER TYPE </h2>
         <div id="utypeselect">
             <label >Student : </label>
-            <input ngModedl name="user" type="radio" ><br>
+            <input ngModel name="user" type="radio" ><br>
 
             <label >Teacher : </label>
             <input ngModel name="user" type="radio" ><br>
@@ -52,11 +62,12 @@
             <h2>Subjects </h2>
             <div *ngFor="let subject of subjects">
                 <input
-                    required #subject="ngModel" ngModel name="subject" ng-repeat="subject in subjects" type="checkbox"
+                    
+                    ng-repeat="subject in subjects" type="checkbox"
                 >
                 {{subject}}
-                <small class="warning" *ngIf="subject.invalid || grade.untouched">select subject</small>
             </div>
+            <small class="warning">minimum one subject must me selected</small>
         </div>
         
     </div>
@@ -67,16 +78,18 @@
         <div>
             <label id="ugurdianlbl"> Parent/Gurdience Name : </label><br>
             <input
-                required #name="ngModel" ngModel name="gurdnname" type="text" placeholder="Enter Full Name" class="name"
+                required ngModel name="gurdname" #gurdname="ngModel"
+                type="text" placeholder="Enter Full Name" class="name"
             >
-            <small class="warning" *ngIf="gurdnname.invalid || gurdnname.untouched">feild required</small>
+            <small class="warning" *ngIf="gurdname.invalid && gurdname.touched" >feild required</small>
         </div>
         <div>
             <label id="ugurdianlbl"> Parent/Gurdience NIC : </label><br>
             <input
-                required ngModel #gurdNIC="ngModel" name="gurdNIC" type="text" class="id"
+                required ngModel name="gurdNIC" #gurdNIC="ngModel"
+                type="text" class="id"
             >
-            <small class="warning" *ngIf="gurdNIC.invalid || gurdNIC.untouched">feild required</small>
+            <small class="warning" *ngIf="gurdNIC.invalid && gurdNIC.touched">feild required</small>
         </div>
     </div>
 
@@ -84,7 +97,8 @@
     <div>
         <label id="usenamelbl"> User Name : </label><br>
         <input
-            required #username="ngModel" ngModel name="username" type="text" placeholder="User name for login" name="username" class="name"
+            required ngModel name="username" #username="ngModel"
+            type="text" placeholder="User name for login" class="name"
         >
         <small class="warning" *ngIf="username.invalid || username.untouched">feild required</small>
     </div>
@@ -92,17 +106,32 @@
     <div>
         <label id="passwordlbl"> Password : </label><br>
         <input
-            required #password="ngModel" ngModel name="password" type="password" placeholder="5-8 Characters" class="password"
+            required ngModel name="password" #password="ngModel"
+            type="password" placeholder="5-8 Characters" class="password"
         >
         <small class="warning" *ngIf="password.invalid || password.untouched">feild required</small>
     </div>
     <div>
         <label id="cpasswordlbl"> Confirm Password : </label><br>
-        <input required ngModel #cpassword="ngModel" name="cpassword" type="password" placeholder="Re-Enter the password" class="password">
-        <small class="warning" *ngIf="(cpassword.value != password.value) && cpassword.invalid && cpassword.untouched">password not equal and required</small>
+        <input 
+            required ngModel name="cpassword" #cpassword="ngModel"
+            type="password" placeholder="Re-Enter the password" class="password"
+        >
+
+        <small class="warning" *ngIf="(cpassword.value != password.value) && cpassword.touched">
+
+            password not matched and required
+
+        </small>
     </div>
 
+    <small class="error" *ngIf="studentregisterForm.form.invalid && studentregisterForm.form.untouched">
+
+        fill the required feilds and submit the form ( --form incomplete --)
+    </small>
+
     <button
-    [disabled]="studentregisterform.form.invalid" type="submit"
-    > Submit Form </button>
+    [disabled]="studentregisterForm.form.invalid" type="submit"
+    > Submit Form </button><br>
+    
 </form>
