@@ -1,13 +1,13 @@
 <h1>Student Registration Form</h1>
 <form #studentregisterForm="ngForm">
-    {{studentregisterForm.form.valid}}
+    <!--{{studentregisterForm.form.valid}}-->
     <div>
         <label id="uidlbl"> User id : </label><br>
         <input
             required ngModel name="userid" #userid="ngModel" 
             type="text" placeholder="eg:-AZ/20XX/XXX" class="id"
         >
-        <small class="warning" *ngIf="userid.invalid && userid.touched" >feild required</small>
+        <small class="warning" *ngIf="userid.invalid && userid.touched" >*feild required</small>
     </div>
     
     <div>
@@ -16,7 +16,7 @@
             required ngModel name="name" #name="ngModel" 
             type="text" placeholder="Enter Full Name" class="name"
         >
-        <small class="warning" *ngIf="name.invalid && name.touched">feild required</small>
+        <small class="warning" *ngIf="name.invalid && name.touched">*feild required</small>
     </div>
 
     <div class="form-group" > 
@@ -25,8 +25,9 @@
             <option selected>Grade</option>
             <option *ngFor="let grade of grades"> {{grade}} </option>
         </select>
-        <small class="warning" *ngIf="grade.invalid && grade.touched">select a grade from dropdown</small>
+        <small class="warning" *ngIf="grade.invalid && grade.touched">*select a grade from dropdown</small>
     </div>
+    <br>
 
     <div>
         <label id="udoblbl"> Date of Birth : </label><br>
@@ -42,7 +43,7 @@
             required ngModel name="contact" #contact="ngModel" ng-pattern=""
             type="tel" class="tel"
         >
-        <small class="warning" *ngIf="">phone number must be ten digit</small>
+        <small class="warning" *ngIf="">*phone number must be ten digit</small>
     </div>
 
     <div>
@@ -67,7 +68,7 @@
                 >
                 {{subject}}
             </div>
-            <small class="warning">minimum one subject must me selected</small>
+            <small class="warning">*minimum one subject must me selected</small>
         </div>
         
     </div>
@@ -81,7 +82,7 @@
                 required ngModel name="gurdname" #gurdname="ngModel"
                 type="text" placeholder="Enter Full Name" class="name"
             >
-            <small class="warning" *ngIf="gurdname.invalid && gurdname.touched" >feild required</small>
+            <small class="warning" *ngIf="gurdname.invalid && gurdname.touched" >*feild required</small>
         </div>
         <div>
             <label id="ugurdianlbl"> Parent/Gurdience NIC : </label><br>
@@ -89,7 +90,7 @@
                 required ngModel name="gurdNIC" #gurdNIC="ngModel"
                 type="text" class="id"
             >
-            <small class="warning" *ngIf="gurdNIC.invalid && gurdNIC.touched">feild required</small>
+            <small class="warning" *ngIf="gurdNIC.invalid && gurdNIC.touched">*feild required</small>
         </div>
     </div>
 
@@ -100,7 +101,7 @@
             required ngModel name="username" #username="ngModel"
             type="text" placeholder="User name for login" class="name"
         >
-        <small class="warning" *ngIf="username.invalid || username.untouched">feild required</small>
+        <small class="warning" *ngIf="username.invalid || username.untouched">*feild required</small>
     </div>
 
     <div>
@@ -109,7 +110,7 @@
             required ngModel name="password" #password="ngModel"
             type="password" placeholder="5-8 Characters" class="password"
         >
-        <small class="warning" *ngIf="password.invalid || password.untouched">feild required</small>
+        <small class="warning" *ngIf="password.invalid || password.untouched">*feild required</small>
     </div>
     <div>
         <label id="cpasswordlbl"> Confirm Password : </label><br>
@@ -117,21 +118,21 @@
             required ngModel name="cpassword" #cpassword="ngModel"
             type="password" placeholder="Re-Enter the password" class="password"
         >
-
+        
         <small class="warning" *ngIf="(cpassword.value != password.value) && cpassword.touched">
 
-            password not matched and required
+            *password not matched and required
 
         </small>
     </div>
 
-    <small class="error" *ngIf="studentregisterForm.form.invalid && studentregisterForm.form.untouched">
+    <small class="error" *ngIf="studentregisterForm.form.invalid && studentregisterForm.form.touched">
 
-        fill the required feilds and submit the form ( --form incomplete --)
+        ***fill the required feilds and submit the form ( --form incomplete --)
     </small>
 
     <button
     [disabled]="studentregisterForm.form.invalid" type="submit"
-    > Submit Form </button><br>
+    > Submit Form </button>
     
-</form>
+</form><br>
