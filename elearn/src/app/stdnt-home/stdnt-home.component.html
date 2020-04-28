@@ -1,47 +1,74 @@
-<h1>welcome {{ name }} </h1>
-<hr>
-
-<!--any new anouncemrs are posted-->
-<div class="form-group">
-    <label>anouncements</label>
-</div>
-
-<!--signout and reach login interface-->
-<button (click)="signout(login)">Sign out</button>
-<img src="">
-
-<!--intended navigation bar-->
-<nav>
-
-    <!--all the teachers-->
-    <div>
-        <a href="/teacher-details" (click)="tchrdetails()" >teacher-details</a>
-        <img>
-    </div>
-
-    <!--all the subjects-->
-    <div>
-        <a href="/subjects-details" (click)="studen-details()" >subjects-details</a>
-        <img>
-    </div>
-</nav>
-
-<!--subjects folloing by student-->
-<div>
-    <label>subjects following</label>
-    <output></output>
-</div>
-
 <!--content-->
 <div class="content">
-
-    <!--profile-->
-    <img><br>
-    {{name.toUpperCase()}}
-    <button>update profile</button>
-
     <!--subject detail of studdent following is displayed-->
-    <label>Subject Details</label>
+    <label></label>
     <output></output>
 
 </div>
+
+
+<!----------=================================================-->
+<form class="form">
+    <h1>welcome {{ name }} </h1>
+    <hr>
+
+    <div class="container">
+        <body class="body">
+            
+            <div class="anouncement">
+                <label>anouncements</label>
+            </div><!--any new anouncements are updated-->
+            <div class="option">
+
+                <div class="button-group">
+        
+                    <button class="signout" (click)="signout(login)">Sign out</button>
+                    <img>
+        
+                </div><!--signout-->
+        
+                <div class="button-group-report">
+        
+                    {{name.toUpperCase()}}
+                   <button class="profile" (click)="update(profile)" >update profile</button>
+                
+                </div><!--button reports-->
+                 
+                <div class="report-group">
+        
+                    <label>Subject Details</label>
+    
+                </div><!--view report-->
+        
+            </div><!--options-->
+        </body><!--body-->
+
+        <div class="sidebar">
+            
+            <div class="title-group">
+                <label class="title">A-Z ENGLISH ACADEMY </label>
+            </div><!--title-->
+            <nav class="navigation">
+
+                <div class="refernce-group">
+                    <a href="/teacher-details" (click)="tchrdetails()" >teacher-details</a>
+                    <img>
+                </div><!--all the teachers-->
+
+                <div class="refernce-group">
+                    <a href="/studen-details" (click)="studetails()" >Student details</a>
+                    <img>
+                </div><!--all the sttudents-->
+            </nav><!--navigation bar -->
+    
+            <div class="info-group">
+                <label class="info-group-title">subjects following</label>
+                <output></output>
+            </div><!--the subjects-->
+    
+        </div>
+
+    </div>
+    
+    
+</form>

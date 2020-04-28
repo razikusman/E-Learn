@@ -1,44 +1,70 @@
-<h1>welcome {{ name }} </h1>
-<hr>
-<!--any new anouncemrs are posted-->
-<div class="form-group">
-    <label>anouncements</label>
-</div>
-<!--intended navigation bar-->
-<nav>
-    <div>
-        <a href="/studen-details" (click)="studen-details()" >student-details</a>
-        <img>
+<!--------------=============================================666666666-->
+<form class="form">
+    <h1>welcome {{ name }} </h1>
+
+    <hr>
+
+    <div class="container">
+        <body class="body">
+            
+            <div class="anouncement">
+                <label>anouncements</label>
+            </div><!--any new anouncements are updated-->
+            <div class="option">
+
+                <div class="button-group">
+        
+                    <button class="signout" (click)="signout(login)">Sign out</button>
+                    <img>
+        
+                </div><!--signout-->
+        
+                <div class="button-group-report">
+        
+                    <button class="quize" (click)="add(quize)">add quize</button>
+                    
+                    <img><br>
+                    {{name.toUpperCase()}}
+                    <button class="profile" (click)="profile(update)" >update profile</button>
+                    
+                    <button class="quizeupdate" (click)="update(quize)" >update quize</button>
+        
+                </div><!--button reports-->
+                 
+                <div class="report-group">
+        
+                    <label>subject name</label>
+    
+                </div><!--view report-->
+        
+            </div><!--options-->
+        </body><!--body-->
+
+        <div class="sidebar">
+            
+            <div class="title-group">
+                <label class="title">A-Z ENGLISH ACADEMY </label>
+            </div><!--title-->
+            <nav class="navigation">
+                <div class="refernce-group">
+                    <a href="/studen-details" (click)="studetails()" >Student details</a>
+                    <img>
+                </div><!--all the sttudents-->
+            
+                <div class="refernce-group">
+                    <a href="/subject-details" (click)="subdetails()" >subject-details</a>
+                    <img>
+                </div><!--all subjects-->
+            </nav><!--navigation bar -->
+    
+            <div class="info-group">
+                <label class="info-group-title">subjects teaching</label>
+                <output></output>
+            </div><!--the subjects-->
+    
+        </div>
+
     </div>
-
-    <div>
-        <a href="/subject-details" (click)="subject-details()" >teacher-details</a>
-        <img>
-    </div>
-
-</nav>
-
-<!--subjects taught by teacher-->
-<div>
-    <label>subjects</label>
-    <output></output>
-</div>
-
-<!--profile-->
-<img><br>
-{{name.toUpperCase()}}
-<button>update profile</button>
-
-<!--signout and reach logininteraafce-->
-<button (click)="signout(login)">Sign out</button>
-<img src="">
-
-<!--subject detail of subject taught by teacher-->
-<label>subject name</label>
-<output></output>
-
-<!--add qize-->
-<button (click)="add(quize)">add quize</button>
-
-<!--do some change on quize already uploaded-->
-<button>update quize</button>
+    
+    
+</form>

@@ -1,45 +1,78 @@
-<h1>welcome {{ name }} </h1>
-<hr>
-<!--any new anouncements are updated-->
-<div class="form-group">
-    <label>anouncements</label>
-</div>
-<!--navigation bar -->
-<nav>
-    <!--all the sttudents-->
-    <div>
-        <a href="/studen-details" (click)="studetails()" >Student details</a>
-        <img>
+<form class="form">
+    <h1>welcome {{ name }} </h1>
+
+    <hr>
+
+    <div class="container">
+        <body class="body">
+            
+            <div class="anouncement">
+                <label>anouncements</label>
+            </div><!--any new anouncements are updated-->
+            <div class="option">
+
+                <div class="button-group">
+        
+                    <button class="signout" (click)="signout(login)">Sign out</button>
+                    <img>
+        
+                </div><!--signout-->
+
+                <div class="button-group">
+        
+                    <button class="addanouncement">Add anouncements</button>
+        
+                </div><!--create new anouncement-->
+        
+                <div class="button-group-report">
+        
+                    <button class="salary" (click)="salarypayment(salary)" >salary payment report</button>
+                    
+                    <button class="fees" (click)="feespayment(fees)" >monthly fees payment report</button>
+                    
+                    <button class="overrall" (click)="overallreport(overall)" >ovrall report</button>
+        
+                </div><!--button reports-->
+                 
+                <div class="report-group">
+        
+                    <label>reports</label>
+    
+                </div><!--view report-->
+        
+            </div><!--options-->
+        </body><!--body-->
+
+        <div class="sidebar">
+            
+            <div class="title-group">
+                <label class="title">A-Z ENGLISH ACADEMY </label>
+            </div><!--title-->
+            <nav class="navigation">
+                <div class="refernce-group">
+                    <a href="/studen-details" (click)="studetails()" >Student details</a>
+                    <img>
+                </div><!--all the sttudents-->
+            
+                <div class="refernce-group">
+                    <a href="/teacher-details" (click)="tchrdetails()" >teacher-details</a>
+                    <img>
+                </div><!--all the teachers-->
+            
+                <div class="refernce-group">
+                    <a href="/subject-details" (click)="subdetails()" >subject-details</a>
+                    <img>
+                </div><!--all subjects-->
+            </nav><!--navigation bar -->
+    
+            <div class="info-group">
+                <label class="info-group-title">subjects teaching</label>
+                <output></output>
+            </div><!--the subjects-->
+    
+        </div>
+
     </div>
-
-    <!--all the teachers-->
-    <div>
-        <a href="/teacher-details" (click)="tchrdetails()" >teacher-details</a>
-        <img>
-    </div>
-
-    <!--all subjects-->
-    <div>
-        <a href="/subject-details" (click)="subdetails()" >subject-details</a>
-        <img>
-    </div>
-</nav>
-
-<!--the subjects-->
-<div>
-    <label>subjects teaching</label>
-    <output></output>
-</div>
-
-<!--create nes anouncement-->
-<button>Add anouncements</button>
-
-<!--signout and reach login interface-->
-<button (click)="signout(login)">Sign out</button>
-<img>
-
-<!--view reports-->
-<button (click)="salarypayment(salary)" >salary payment report</button>
-<button (click)="feespayment(fees)" >monthly fees payment report</button>
-<button (click)="overallreport(overall)" >ovrall report</button>
-<output>reports</output>
+    
+    
+</form>
