@@ -1,78 +1,35 @@
-<form class="form">
-    <h1>welcome {{ name }} </h1>
+<app-top-bar></app-top-bar><!--top bar-->
 
-    <hr>
 
-    <div class="container">
+<!--container start-->
+<div class="container">
+    <div class="anouncement">
+        <label>anouncements</label>
+    </div><!--any new anouncements are updated-->
+    
         <body class="body">
-            
-            <div class="anouncement">
-                <label>anouncements</label>
-            </div><!--any new anouncements are updated-->
-            <div class="option">
 
-                <div class="button-group">
-        
-                    <button class="signout" (click)="signout(login)">Sign out</button>
-                    <img>
-        
-                </div><!--signout-->
+        <!--option starts-->
+        <div class="option">
 
-                <div class="button-group">
-        
-                    <button class="addanouncement">Add anouncements</button>
-        
-                </div><!--create new anouncement-->
-        
-                <div class="button-group-report">
-        
-                    <button class="salary" (click)="salarypayment(salary)" >salary payment report</button>
-                    
-                    <button class="fees" (click)="feespayment(fees)" >monthly fees payment report</button>
-                    
-                    <button class="overrall" (click)="overallreport(overall)" >ovrall report</button>
-        
-                </div><!--button reports-->
-                 
-                <div class="report-group">
-        
-                    <label>reports</label>
+            <button class="btn btn-primary">Add anouncements</button><!--create new anouncement-->
     
-                </div><!--view report-->
-        
-            </div><!--options-->
-        </body><!--body-->
+            <div class="btn btn-grpprimary">
+    
+                <button class="btn btn-primary" (click)="salarypayment(salary)" >salary payment report</button>
+                
+                <button class="btn btn-primary" (click)="feespayment(fees)" >monthly fees payment report</button>
+                
+                <button class="btn btn-primary" (click)="overallreport(overall)" >ovrall report</button>
+    
+            </div><!--button reports-->
+                
+            <div class="report-group">
+                <label>reports</label>
+            </div><!--view report-->
+    
+        </div><!--options-->
+    </body><!--body-->
 
-        <div class="sidebar">
-            
-            <div class="title-group">
-                <label class="title">A-Z ENGLISH ACADEMY </label>
-            </div><!--title-->
-            <nav class="navigation">
-                <div class="refernce-group">
-                    <a href="/studen-details" (click)="studetails()" >Student details</a>
-                    <img>
-                </div><!--all the sttudents-->
-            
-                <div class="refernce-group">
-                    <a href="/teacher-details" (click)="tchrdetails()" >teacher-details</a>
-                    <img>
-                </div><!--all the teachers-->
-            
-                <div class="refernce-group">
-                    <a href="/subject-details" (click)="subdetails()" >subject-details</a>
-                    <img>
-                </div><!--all subjects-->
-            </nav><!--navigation bar -->
-    
-            <div class="info-group">
-                <label class="info-group-title">subjects teaching</label>
-                <output></output>
-            </div><!--the subjects-->
-    
-        </div>
-
-    </div>
-    
-    
-</form>
+</div><!--container ends-->
+<app-nav-bar></app-nav-bar><!--nav bar-->

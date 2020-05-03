@@ -14,17 +14,17 @@ export class CreteComponent implements OnInit {
 
   //direct to stuent signup form
   student(stdntcrete){
-    this.router.navigate(['/stdntcrete'], stdntcrete);
+    this.router.navigate(['/studentcreate'], stdntcrete);
   }
 
   //dierct to the teacher signup form
   teacher(teachercrete){
-    this.router.navigate(['/teachercrete'], teachercrete);
+    this.router.navigate(['/teachercreate'], teachercrete);
   }
 
   //direct to the parent signup form
   parent(prntcrete){
-    this.router.navigate(['/parentcrete'], prntcrete);
+    this.router.navigate(['/parentcreate'], prntcrete);
   }
 
 }

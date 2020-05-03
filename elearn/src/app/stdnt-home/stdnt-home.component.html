@@ -1,16 +1,7 @@
-<!--content-->
-<div class="content">
-    <!--subject detail of studdent following is displayed-->
-    <label></label>
-    <output></output>
+<app-top-bar></app-top-bar><!--top bar-->
+<app-nav-bar></app-nav-bar><!--navigation bar-->
 
-</div>
-
-
-<!----------=================================================-->
 <form class="form">
-    <h1>welcome {{ name }} </h1>
-    <hr>
 
     <div class="container">
         <body class="body">
@@ -29,7 +20,7 @@
         
                 <div class="button-group-report">
         
-                    {{name.toUpperCase()}}
+                    <!--{{name.toUpperCase()}} need to uncoment-->
                    <button class="profile" (click)="update(profile)" >update profile</button>
                 
                 </div><!--button reports-->
@@ -45,9 +36,7 @@
 
         <div class="sidebar">
             
-            <div class="title-group">
-                <label class="title">A-Z ENGLISH ACADEMY </label>
-            </div><!--title-->
+            
             <nav class="navigation">
 
                 <div class="refernce-group">

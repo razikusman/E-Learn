@@ -23,23 +23,23 @@ import { FeesPaymentComponent } from './fees-payment/fees-payment.component';
 const routes: Routes = [
   {path:'',redirectTo:'/login', pathMatch: 'full'},
   {path:'login', component:LoginComponent},
-  {path:'crete', component:CreteComponent},
-  {path:'stdntcrete', component:StdntcreteComponent},
-  {path:'teachercrete', component:TeachercreteComponent},
-  {path:'parentcrete', component:ParentcreteComponent},
-  {path:'parent-home', component:ParentHomeComponent},
-  {path:'stdnt-home', component:StdntHomeComponent},
-  {path:'teacher-home', component:TeacherHomeComponent},
-  {path:'admin-home', component:AdminHomeComponent},
-  {path: 'studen-details', component:StudenDetailsComponent},
-  {path: 'teacher-details', component:TeacherDetailsComponent},
-  {path: 'subjects-details', component:SubjectsDetailsComponent},
+  {path:'create', component:CreteComponent},
+  {path:'studentcreate', component:StdntcreteComponent},
+  {path:'teachercreate', component:TeachercreteComponent},
+  {path:'parentcreate', component:ParentcreteComponent},
+  {path:'parent/home', component:ParentHomeComponent},
+  {path:'student/home', component:StdntHomeComponent},
+  {path:'teacher/home', component:TeacherHomeComponent},
+  {path:'admin/home', component:AdminHomeComponent},
+  {path: 'student/details', component:StudenDetailsComponent},
+  {path: 'teacher/details', component:TeacherDetailsComponent},
+  {path: 'subjects/details', component:SubjectsDetailsComponent},
   {path: 'about', component:AboutComponent},
   {path:'quize', component:QuizeComponent},
-  {path: 'overall-report', component:OverallReportComponent},
-  {path: 'student-progress', component:StudentProgressComponent},
-  {path: 'salary-payment', component:SalaryPaymentComponent},
-  {path: 'fees-payment', component:FeesPaymentComponent}
+  {path: 'overall/report', component:OverallReportComponent},
+  {path: 'student/progress', component:StudentProgressComponent},
+  {path: 'salary/payment', component:SalaryPaymentComponent},
+  {path: 'fees/payment', component:FeesPaymentComponent}
   
 ];
 

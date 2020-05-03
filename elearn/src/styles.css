@@ -1,1 +1,27 @@
 /* You can add global styles to this file, and also import other style files */
+app-top-bar {
+  position: fixed;
+  left: 20%;
+  width: calc(100% - 20%);
+  height: 10%;
+  background-color: rgb(1, 126, 119);
+  padding: 2%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+app-nav-bar{
+  left: 0%;
+  position: fixed;
+  width: 20%;
+  top: 0px;
+  bottom: 0px;
+  height: 100%;
+  background-color: rgb(1, 126, 119);
+  white-space: nowrap;
+  margin: 0%;
+  overflow: auto;
+  padding: 1%;
+}
