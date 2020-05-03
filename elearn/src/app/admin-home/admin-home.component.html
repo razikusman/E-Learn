@@ -6,30 +6,25 @@
     <div class="anouncement">
         <label>anouncements</label>
     </div><!--any new anouncements are updated-->
-    
-        <body class="body">
+    <!--option starts-->
+    <div class="option">
 
-        <!--option starts-->
-        <div class="option">
+        <button class="btn btn-primary">Add anouncements</button><!--create new anouncement-->
 
-            <button class="btn btn-primary">Add anouncements</button><!--create new anouncement-->
-    
-            <div class="btn btn-grpprimary">
-    
-                <button class="btn btn-primary" (click)="salarypayment(salary)" >salary payment report</button>
-                
-                <button class="btn btn-primary" (click)="feespayment(fees)" >monthly fees payment report</button>
-                
-                <button class="btn btn-primary" (click)="overallreport(overall)" >ovrall report</button>
-    
-            </div><!--button reports-->
-                
-            <div class="report-group">
-                <label>reports</label>
-            </div><!--view report-->
-    
-        </div><!--options-->
-    </body><!--body-->
+        <div class="btn btn-grpprimary">
 
+            <button class="btn btn-primary" (click)="salarypayment(salary)" >salary payment report</button>
+            
+            <button class="btn btn-primary" (click)="feespayment(fees)" >monthly fees payment report</button>
+            
+            <button class="btn btn-primary" (click)="overallreport(overall)" >ovrall report</button>
+
+        </div><!--button reports-->
+            
+        <div class="report-group">
+            <label>reports</label>
+        </div><!--view report-->
+
+    </div><!--options-->
 </div><!--container ends-->
 <app-nav-bar></app-nav-bar><!--nav bar-->

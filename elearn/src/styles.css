@@ -23,5 +23,45 @@ app-nav-bar{
   white-space: nowrap;
   margin: 0%;
   overflow: auto;
-  padding: 1%;
+  padding-left: 1%;
+}
+
+.btn-primary{
+  background-color: rgb(210, 218, 217);
+  border-color: rgb(1, 126, 119);
+  color: black;
+  border-width: 2px;
+  border-bottom-color: black;
+  border-right-color: black;
+  text-transform: uppercase;
+
+}
+
+.btn-primary:hover:not(.active){
+  background-color: lightseagreen;
+  color: white ;
+}
+
+.btn-primary.active{
+  background-color:  rgb(1, 48, 45);
+  color: white;
+  border-color: white;
+  border-width: 5px;
+}
+
+.anouncement{
+  border-radius: 15px;
+}
+
+a{
+    position: relative;
+    display: block;
+    margin: 0%;
+    height: 100%;
+    top: 10px;
+    font-size: 20px;
+    text-transform: uppercase;
+    font-weight: bold;
+    color: white;
+    text-decoration: none;
 }

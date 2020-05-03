@@ -1,63 +1,26 @@
 <app-top-bar></app-top-bar><!--top bar-->
 <app-nav-bar></app-nav-bar><!--navigation bar-->
 
-<form class="form">
+<div class="container">
+    <div class="anouncement">
+        <label>anouncements</label>
+    </div><!--any new anouncements are updated-->
 
-    <div class="container">
-        <body class="body">
+    <div class="option">
+    
+        <div class="profile">
+
+            <!--{{name.toUpperCase()}} need to uncoment-->
+            <button class="btn btn-primary" (click)="update(profile)" >update profile</button>
+        
+        </div><!--button reports-->
             
-            <div class="anouncement">
-                <label>anouncements</label>
-            </div><!--any new anouncements are updated-->
-            <div class="option">
+        <div class="report-group">
 
-                <div class="button-group">
-        
-                    <button class="signout" (click)="signout(login)">Sign out</button>
-                    <img>
-        
-                </div><!--signout-->
-        
-                <div class="button-group-report">
-        
-                    <!--{{name.toUpperCase()}} need to uncoment-->
-                   <button class="profile" (click)="update(profile)" >update profile</button>
-                
-                </div><!--button reports-->
-                 
-                <div class="report-group">
-        
-                    <label>Subject Details</label>
-    
-                </div><!--view report-->
-        
-            </div><!--options-->
-        </body><!--body-->
+            <label>Subject Details</label>
 
-        <div class="sidebar">
-            
-            
-            <nav class="navigation">
+        </div><!--view report-->
 
-                <div class="refernce-group">
-                    <a href="/teacher-details" (click)="tchrdetails()" >teacher-details</a>
-                    <img>
-                </div><!--all the teachers-->
+    </div><!--options-->
 
-                <div class="refernce-group">
-                    <a href="/studen-details" (click)="studetails()" >Student details</a>
-                    <img>
-                </div><!--all the sttudents-->
-            </nav><!--navigation bar -->
-    
-            <div class="info-group">
-                <label class="info-group-title">subjects following</label>
-                <output></output>
-            </div><!--the subjects-->
-    
-        </div>
-
-    </div>
-    
-    
-</form>
+</div>

@@ -5,21 +5,33 @@
 }
 
 .reference:hover{
-    background-color: rgb(107, 238, 231);
+    background-color: rgb(87, 151, 144);
+    color: white;
     
+}
+
+.reference.active{
+    background-color:  rgb(1, 48, 45);
+    color: white;
+    border-color: white;
+    border-width: 5px;
 }
 
 .reference{
     position: relative;
-    height: 10%;
+    height: 50px;
+    width: 100%;
 }
 
 .info-container{
-    position: relative;
+    background-attachment: fixed;
+    position: absolute;
     background-color: rgba(255, 255, 255, 0.26);
-    width: 100%;
-    height: calc(70% - 64px );
-    padding: 1%;
-
-    
+    height: calc(100% - 214px );
+    min-width: 100%;
+    background-size: cover;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    top: calc(214px);
 }

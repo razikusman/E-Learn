@@ -1,41 +1,23 @@
 <app-top-bar></app-top-bar><!--top bar-->
-<app-nav-bar></app-nav-bar><!--navigation bar-->
 
-<form class="form">
-    <h1>welcome {{ name }} </h1>
-
-    <hr>
-
-    <div class="container">
-        <body class="body">
+<div class="container">
+        
+    <div class="anouncement">
+        <label>anouncements</label>
+    </div><!--any new anouncements are updated-->
+    <div class="option">
+        <div class="btn btn-grpprimary">
+            <button class="btn btn-primary" (click)="profile(update)" >update profile</button>
             
-            <div class="anouncement">
-                <label>anouncements</label>
-            </div><!--any new anouncements are updated-->
-            <div class="option">
+        </div><!--button reports-->
+            
+        <div class="report-group">
 
-                <div class="button-group">
-        
-                    <button class="signout" (click)="signout(login)">Sign out</button>
-                    <img>
-        
-                </div><!--signout-->
-                <div class="button-group-report">
-                    <button class="profile" (click)="profile(update)" >update profile</button>
-                    
-                </div><!--button reports-->
-                 
-                <div class="report-group">
-        
-                    <label>reports</label>
-    
-                </div><!--view report-->
-        
-            </div><!--options-->
-        </body><!--body-->
+            <label>reports</label>
 
-        
-    </div>
+        </div><!--view report-->
+
+    </div><!--options-->
     
-    
-</form>
+</div>
+<app-nav-bar></app-nav-bar><!--navigation bar-->

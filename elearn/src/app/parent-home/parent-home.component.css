@@ -1,3 +1,22 @@
+.container{
+    position: absolute;
+    top: 11%;
+    left: calc(21%);
+    width: calc(78%);
+    height: calc(88%);
+    padding: 0%;
+    margin: 0;
+    background-color: yellow;
+    overflow: auto;
+}
+
+.anouncement{
+    background-color: rgb(185, 218, 215);
+    position: relative;
+    height: 30%;
+    width: 100%;
+    align-items: center;
+}
 /*form{
     position: absolute;
     height: 100%;
