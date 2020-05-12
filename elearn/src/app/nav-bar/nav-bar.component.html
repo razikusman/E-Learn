@@ -32,15 +32,16 @@
 </div>
 
 <div class="info-container">
-    <ng-container *ngIf= "teacherhome() || adminhome; else studentparent" >
+    <ng-container *ngIf= "teacherhome() || adminhome(); else studentparent" >
     
         <h5 class="h5">
             Subjects Teaching
         </h5>
         
     </ng-container><!--ng container-->
+
     <ng-template #studentparent>
-        <div *ngIf="studenthome() || parenthome()">
+        <div *ngIf="studenthome() || parenthome();">
             <h5 class="h5">
                 Subjects Following
             </h5>

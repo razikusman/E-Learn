@@ -10,6 +10,9 @@ body{
     height: 100%;
     width: 100%;
     margin: 0%;
+    display: block;
+    white-space: nowrap;
+    overflow: visible;
 }
 
 h1{
@@ -25,6 +28,7 @@ h1{
     font-style: italic;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     margin: 0%;
+
 }
 
 h2{
@@ -63,19 +67,20 @@ img.i{
 .block{
     background-position: unset;
     position: relative;
-    right: 25%;
-    left: 15%;
+    left: 25%;
     top: 10%;
-    bottom: 10%;
     width: 80%;
     align-content: center;
     margin: 0%;
+    padding: 0%;
+    display: inline-block;
 }
 
-img{
+.login{
     position: relative;
     height: 50%;
     width: 40%;
+    top: 0%;
 }
 
 form{
@@ -87,8 +92,6 @@ form{
     border-bottom-left-radius: 25%;
     border-top-right-radius: 25%;
     margin: 0%;
-    
-    
 }
 
 label{
