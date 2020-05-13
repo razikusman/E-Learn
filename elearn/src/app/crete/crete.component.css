@@ -1,51 +1,4 @@
-html{
-    position: relative;
-}
-
-.student, .teacher, .parent{
-    position: relative;
-    height: 100%;
-    width: 33.3%;
-    margin: 2%;
-}
-
-img{
-    position: absolute;
-    height: 100%;
-    width: 100%;
-    border-color: black;
-    border: 2px solid ;
-}
-
-.user{
-    background-position: unset;
-    position: absolute;
-    left: 10%;
-    right: 10%;
-    top: 0%;
-    bottom: 10%;
-    display: flex;
-}
-
-.user{
-    height: 60%;
-    margin: 0%;
-}
-
-button{
-    position: relative;
-    font-family: sans-serif;
-    background-color: rgb(95, 180, 166);
-    font-size: 218%;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    border-radius: 20%;
-    top: 100%;
-    left: 50%;
-    transform: translate(-50%, 0%);
-}
-
-body{
+.card-img{
     background: url("../../assets/background.jpg")  center center no-repeat ;
     background-size: cover ;
     position: absolute;
@@ -58,22 +11,11 @@ body{
     width: 100%;
 }
 
-form{
-    position: relative;
-    top: 4%;
-    left: 0%;
-    bottom: 0px;
-    height: 75%;
-    width: 100%;
-    margin-bottom: 0%;
-    background-color: rgba(255, 255, 255, 0.801);
-}
 
 h1{
     position: relative;
     margin: 0%;
     text-align: center;
-    font-size: 375%;
     letter-spacing: 2px;
 }
 
@@ -81,5 +23,55 @@ h3{
     position: relative;
     margin: 0%;
     padding: 1%;
-    font-size: 187.5%;
+}
+
+.block{
+    position: relative;
+    top: 4%;
+    left: 0%;
+    bottom: 0px;
+    height: 75%;
+    width: 100%;
+    margin-bottom: 0%;
+    background-color: rgba(248, 248, 248, 0.432);
+}
+
+
+.user{
+    background-size: cover;
+    position: absolute;
+    left: 10%;
+    right: 10%;
+    top: 0%;
+    bottom: 10%;
+    display: flex;
+    height: 60%;
+    margin: 0%;
+}
+
+.card{
+    position: relative;
+    height: 100%;
+    width: 33.3%;
+    margin: 2%;
+    background-color: rgba(0, 0, 0, 0);
+}
+
+img{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    border: 5px ;
+    border-style: solid;
+    border-color: rgb(95, 180, 166);
+}
+button{
+    position: relative;
+    font-family: sans-serif;
+    background-color: rgb(95, 180, 166);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    top: 100%;
+    left: 50%;
+    transform: translate(-50%, 0%);
 }

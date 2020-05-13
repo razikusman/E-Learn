@@ -1,18 +1,10 @@
-
-body{
+.bg{
     background:url('../../assets/background.jpg') no-repeat center;
     background-size: cover ;
     position: absolute;
-    bottom: 0%;
-    right: 0%;
-    left: 0%;
-    top: 0%;
     height: 100%;
     width: 100%;
     margin: 0%;
-    display: block;
-    white-space: nowrap;
-    overflow: visible;
 }
 
 h1{
@@ -23,15 +15,12 @@ h1{
     left: 25%;
     width: 50%;
     text-align: left;
-    font-size: 3.5em;
     letter-spacing: 4px;
     font-style: italic;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    margin: 0%;
-
 }
 
-h2{
+h3{
     position: relative;
     top: 0%;
     right: 10%;
@@ -64,34 +53,32 @@ img.i{
     height: 65%;
 }
 
-.block{
-    background-position: unset;
-    position: relative;
-    left: 25%;
-    top: 10%;
-    width: 80%;
-    align-content: center;
-    margin: 0%;
-    padding: 0%;
-    display: inline-block;
+.card-image{
+    background-color: rgba(255, 255, 255, 0);
+    border: ivory;
+    top: 5%;
+    height: 100%;
+}
+.row{
+    padding: 1%;
 }
 
 .login{
     position: relative;
-    height: 50%;
-    width: 40%;
-    top: 0%;
-}
-
-form{
-    position: relative;
-    height: 40%;
-    width: 40%;
-    padding: 3%;
-    background-color: rgba(0, 0, 0, 0.801);
+    height: fit-content;
+    width: fit-content;
+    text-align: justify;
     border-bottom-left-radius: 25%;
     border-top-right-radius: 25%;
-    margin: 0%;
+    padding: 3%;
+    background-color: rgba(0, 0, 0, 0.801);
+}
+
+.loginimage{
+    position: relative;
+    height: 100%;
+    width: 100%;
+    top: 0%;
 }
 
 label{
@@ -103,26 +90,14 @@ label{
     color: rgb(255, 255, 255);
     letter-spacing: 5px;
     text-transform: uppercase;
-    width: auto;
-    top: 0%;
-    right: 0%;
-    left: 1%;
-    bottom: 0%;
 }
 
 label.i{
     letter-spacing: 0px;
 }
 
-button{
+.btn-primary{
     position: relative;
-    font-size: 120%;
-    margin: 1%;
-    padding: .7% 1% .7% 1%;
-    border-radius: 10%;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    letter-spacing: 2px;
-    
 }
 input{
     margin: 1.5%;
@@ -130,7 +105,6 @@ input{
     width: 60%;
     background: transparent;
     color: white;
-
 }
 
 a{

@@ -34,7 +34,19 @@ app-nav-bar{
   border-bottom-color: black;
   border-right-color: black;
   text-transform: uppercase;
+  border-radius: 10%;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  letter-spacing: 2px;
 
+}
+.btn-primary[disabled]{
+  background-color: rgba(210, 218, 217, 0.644);
+  border-color: violet;
+}
+
+.btn-primary:hover:not(.active)[disabled]{
+  background-color: rgba(210, 218, 217, 0.644);
+  border-color: violet;
 }
 
 .btn-primary:hover:not(.active){
