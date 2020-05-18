@@ -8,14 +8,20 @@ import { Router } from '@angular/router'
 })
 export class LoginComponent implements OnInit {
 
+  //ngForm = ;
   constructor(private router : Router) { }
+
+  //get f() { return this.ngForm.controls; }
 
   ngOnInit() {
   }
+  //private uname=('uname');
+  //private password="";
 
   //direct to the home page of user type 
-  home(stdntcrete){
-    this.router.navigate(['/student/home'], stdntcrete);
+  login(home){
+    
+    console.log("this.uname");
   }
 
 //direct to the signup user type 

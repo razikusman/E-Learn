@@ -1,14 +1,6 @@
 <h1>Taecher Registration Form</h1>
 <form #teacherregistrationForm="ngForm">
-    {{teacherregistrationForm.form.valid}}
-    <div>
-        <label id="uidlbl"> User id : </label><br>
-        <input 
-            required ngModel name="userid" #userid="ngModel" type="text" placeholder="eg:-AZ/T/XXX" class="id"
-        >
-        <small class="warning" *ngIf="userid.invalid && userid.touched">feild required</small>
-    </div>
-    
+    <!--{{teacherregistrationForm.form.valid}}-->
     <div>
         <label id="unamelbl"> Name : </label><br>
         <input 
@@ -50,11 +42,11 @@
 
     <hr>
     <div>
-        <label id="usenamelbl"> User Name : </label><br>
+        <label id="uidlbl"> User id : </label><br>
         <input 
-            required ngModel #username="ngModel" type="text" placeholder="User name for login" class="name" name="username"
+            required ngModel name="userid" #userid="ngModel" type="text" placeholder="this will be Your username (eg:-AZ/T/XXX)" class="id"
         >
-        <small class="warning" *ngIf="username.invalid && username.touched">feild required</small>
+        <small class="warning" *ngIf="userid.invalid || userid.untouched">feild required</small>
     </div>
 
     <div>
@@ -62,14 +54,14 @@
         <input
             required ngModel name="password" #password="ngModel" type="password" placeholder="5-8 Characters" class="password"
         >
-        <small class="warning" *ngIf="password.invalid && password.touched">feild required</small>
+        <small class="warning" *ngIf="password.invalid || password.untouched">feild required</small>
     </div>
     <div>
         <label id="cpasswordlbl"> Confirm Password : </label><br>
         <input 
             required ngModel name="cpassword" #cpassword="ngModel" type="password" placeholder="Re-Enter the password" class="password"
         >
-        <small class="warning" *ngIf="(cpassword.value != password.value) && cpassword.invalid && cpassword.touched">feild required</small>
+        <small class="warning" *ngIf="(cpassword.value != password.value) && cpassword.touched">feild required</small>
     </div>
 
 

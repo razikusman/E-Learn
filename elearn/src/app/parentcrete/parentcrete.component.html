@@ -1,6 +1,6 @@
 <h1>Parent Registration Form</h1>
 <form #parentregisterForm="ngForm">
-    {{parentregisterForm.form.valid}}
+    <!--{{parentregisterForm.form.valid}}-->
     <div>
         <label id="unamelbl"> Name : </label><br>
         <input 
@@ -38,7 +38,7 @@
         <label id="ugurdianlbl">  NIC : </label><br>
         <input 
             required ngModel name="NIC" #NIC="ngModel"
-            type="text" class="id"
+            type="text" class="id" placeholder="this will be Your username"
         >
         <small class="warning" *ngIf="NIC.invalid && NIC.touched">
             *feild required 

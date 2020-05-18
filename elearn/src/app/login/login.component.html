@@ -1,53 +1,56 @@
+<div class="bg ">
+    <div class="container">
+        <div class="row justify-content-end">
+            <h1 class="col-md-8 ">A-Z English Academy</h1><!--title-->
 
-<div class="bg">
-    <h1>A-Z English Academy</h1><!--title-->
-    <h3>the place to achive dreams.........</h3>
-
-    <div class="about">
-        <img src="assets/about.png" (click)="about(about)" class="i">
-        <label class="i">about</label><!--info-->
-    </div>
-
-    <div class="row">
-        <div class="col-md-4">
-            <div class="card card-image ">
-                <img class="loginimage" src="assets/login.png"><!--login image-->
+            <div class="col-md-2  abt ">
+                <button class="btn btn-info">
+                <img src="assets/about.png" (click)="about(about)" class="i">about
+                </button>
             </div>
         </div>
+        <div class="row justify-content-end">
+            <h3 class="col-md-8">the place to achive dreams.........</h3>
+        </div>
 
-        <div class="col-md-6 ">
-            <form #loginForm="ngForm" class="card card-image login">
-                
-            <!--{{loginForm.form.valid}}-->
-                <label id="usernsme">User Name</label><br>
-
-                <input 
-                    type="text" required #name="ngModel" name="uname" placeholder="User Name"  ngModel
-                ><br>
-
-                <label id="password">Password</label><br>
-
-                <input 
-                    required #name="ngModel" type="password" placeholder="5-8 Characters" name="password" ngModel
-                ><br>
-
-                <small *ngIf="loginForm.form.invalid" class="warning">Sign-Up if You have not registered....</small>
-                <br>
-                <div>
-                    <a href="" class="col-md-12" id="fgt">forgot password...?</a>
-                </div><br>
-                <div class="row">
-                    <button  [disabled]="loginForm.form.invalid"  (click) = "home(stdntcrete)"  
-                    class="btn btn-primary col-md-4">login</button>
+        <div class="row justify-content-end frm">
+            <div class="col-md-4 align-self-center">
+                <div class="card card-image ">
+                    <img class="loginimage" src="assets/login.png"><!--login image-->
                 </div>
-                <div class="row">
-                    <button (click)= "create(crete)" class="btn btn-primary col-md-4">Sign up</button>
-                    <label class="noaccount col-md-7 ">don't have an account</label>
-                </div>
-                
-                        
-            </form><!--login form-->       
+            </div>
+
+            <div class="col-md-6 ">
+                <form #loginForm="ngForm" class="card card-image login">
+                    
+                    <!--{{loginForm.form.valid}}-->
+                    <label id="usernsme">User ID</label><br>
+
+                    <input 
+                        type="text" required #name="ngModel" name="uname" placeholder="User ID"  ngModel
+                    ><br>
+
+                    <label id="password">Password</label><br>
+
+                    <input 
+                        required #name="ngModel" type="password" placeholder="5-8 Characters" name="password" ngModel
+                    ><br>
+
+                    <small *ngIf="loginForm.form.invalid" class="text-danger">Sign-Up if You have not registered....</small>
+                    <br>
+                    <div>
+                        <a href="" class="col-md-12 text-info" id="fgt">forgot password...?</a>
+                    </div><br>
+                    <div class="row">
+                        <button  [disabled]="loginForm.form.invalid"  (click) = "login(home)"  
+                        class="btn btn-primary col-md-4">login</button>
+                    </div>
+                    <div class="row">
+                        <button (click)= "create(crete)" class="btn btn-primary col-md-3">Sign up</button>
+                        <label class="text-warning col-md-8 ">don't have an account</label>
+                    </div>     
+                </form><!--login form-->       
+            </div>
         </div>
     </div>
-    
 </div>
