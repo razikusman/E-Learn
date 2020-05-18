@@ -33,30 +33,18 @@
         </div>
    
     </div><br>
-    
+
+    <hr>
     <div>
         <label id="ugurdianlbl">  NIC : </label><br>
         <input 
             required ngModel name="NIC" #NIC="ngModel"
             type="text" class="id" placeholder="this will be Your username"
         >
-        <small class="warning" *ngIf="NIC.invalid && NIC.touched">
+        <small class="warning" *ngIf="NIC.invalid || NIC.untouched">
             *feild required 
         </small>
     </div>
-
-    <hr>
-    <div>
-        <label id="usenamelbl"> User Name : </label><br>
-        <input 
-            required ngModel name="username" #username="ngModel"
-            type="text" placeholder="User name for login" class="name" >
-    </div>
-    <small class="warning" *ngIf="username.invalid && username.touchedd">
-
-        *feild required
-
-    </small>
 
     <div>
         <label id="passwordlbl"> Password : </label><br>

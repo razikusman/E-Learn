@@ -42,9 +42,9 @@
 
     <hr>
     <div>
-        <label id="uidlbl"> User id : </label><br>
+        <label id="uidlbl"> NIC: </label><br>
         <input 
-            required ngModel name="userid" #userid="ngModel" type="text" placeholder="this will be Your username (eg:-AZ/T/XXX)" class="id"
+            required ngModel name="userid" #userid="ngModel" type="text" placeholder="this will be Your username " class="id"
         >
         <small class="warning" *ngIf="userid.invalid || userid.untouched">feild required</small>
     </div>
@@ -63,7 +63,6 @@
         >
         <small class="warning" *ngIf="(cpassword.value != password.value) && cpassword.touched">feild required</small>
     </div>
-
 
     <button [disabled]="teacherregistrationForm.form.invalid" type="submit"> Submit Form </button>
 </form>
