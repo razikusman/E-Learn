@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { CreateParent } from '../create-parent';
+import { ParentService } from '../parent.service';
 
 @Component({
   selector: 'app-parentcrete',
@@ -7,9 +9,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ParentcreteComponent implements OnInit {
 
-  constructor() { }
+  constructor(private parentService: ParentService) { }
+
+  parent = new CreateParent('',1,'Parent','','');
 
   ngOnInit() {
+  }
+
+  onSubmit(){
+    //console.log(this.parent);
+    this.parentService.createparent(this.parent)
+    .subscribe(data =>console.log('success!',data))
+
   }
 
 }
