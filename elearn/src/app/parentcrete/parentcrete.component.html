@@ -15,7 +15,7 @@
     <div>
         <label id="ucontactlbl"> Contact Number : </label><br>
         <input
-        [(ngModel)]="parent.Contact" name="Contact" 
+        [(ngModel)]="parent.pContact" name="Contact" 
             type="tel" class="tel">
     </div>
 
@@ -23,14 +23,16 @@
         <h2 id="utypelbl"> USER TYPE </h2>
         <div id="utypeselect">
             <label >Student : </label>
-            <input [(ngModel)]="parent.user" name="user" type="radio" value="Student"><br>
+            <input disabled [(ngModel)]="parent.user" name="user" type="radio" value="Student"><br>
 
             <label >Teacher : </label>
-            <input [(ngModel)]="parent.user" name="user" type="radio" value="Teacher"><br>
+            <input disabled [(ngModel)]="parent.user" name="user" type="radio" value="Teacher"><br>
 
             <label >Parent   : </label>
-            <input [(ngModel)]="parent.user"  name="user" type="radio" value="Parent">
+            <input disabled [(ngModel)]="parent.user"  name="user" type="radio" value="Parent">
         </div>
+
+        <button (click)="change(create)" class="btn btn-info">change</button>
    
     </div><br>
 

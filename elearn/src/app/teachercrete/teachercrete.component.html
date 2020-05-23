@@ -20,14 +20,16 @@
         <h2 id="utypelbl"> USER TYPE </h2>
         <div id="utypeselect">
             <label >Student : </label>
-            <input name="user" type="radio" ><br>
+            <input disabled name="user" type="radio" ><br>
 
             <label >Teacher : </label>
-            <input name="user" type="radio" ><br>
+            <input disabled name="user" type="radio" ><br>
 
             <label >Parent   : </label>
-            <input name="user" type="radio" >
+            <input disabled name="user" type="radio" >
         </div>
+
+        <button (click)="change(create)" class="btn btn-info">change</button>
         
     </div>
     <div>

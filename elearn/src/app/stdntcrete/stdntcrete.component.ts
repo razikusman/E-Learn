@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-stdntcrete',
@@ -7,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class StdntcreteComponent implements OnInit {
 
-  constructor() { }
+  constructor(private route:Router) { }
 
   ngOnInit() {
   }
@@ -16,5 +17,9 @@ export class StdntcreteComponent implements OnInit {
   subjects:Array<String>=[
     "english","second language tamil","tamil(first language)","maths","science","second language sinhala",
   ];
+
+  change(create){
+    this.route.navigate(['/create'],create);
+  }
 
 }

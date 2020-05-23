@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router'
+import { Login } from '../login';
 
 @Component({
   selector: 'app-login',
@@ -9,19 +10,18 @@ import { Router } from '@angular/router'
 export class LoginComponent implements OnInit {
 
   //ngForm = ;
-  constructor(private router : Router) { }
+  constructor(private router : Router,) { }
 
-  //get f() { return this.ngForm.controls; }
-
+  log = new Login(null,null);
   ngOnInit() {
   }
-  //private uname=('uname');
-  //private password="";
+
 
   //direct to the home page of user type 
   login(home){
-    
-    console.log("this.uname");
+    if(this.log.name=='admin' && this.log.password== 'admin'){
+      this.router.navigate(['/admin/home'], home);
+    }
   }
 
 //direct to the signup user type 

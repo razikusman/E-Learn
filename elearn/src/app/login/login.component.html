@@ -27,13 +27,13 @@
                     <label id="usernsme">User ID</label><br>
 
                     <input 
-                        type="text" required #name="ngModel" name="uname" placeholder="User ID"  ngModel
+                        type="text" required #name="ngModel" name="uname" placeholder="User ID"  [(ngModel)]="log.name"
                     ><br>
 
                     <label id="password">Password</label><br>
 
                     <input 
-                        required #name="ngModel" type="password" placeholder="5-8 Characters" name="password" ngModel
+                        required #name="ngModel" type="password" placeholder="5-8 Characters" name="password" [(ngModel)]="log.password"
                     ><br>
 
                     <small *ngIf="loginForm.form.invalid" class="text-danger">Sign-Up if You have not registered....</small>

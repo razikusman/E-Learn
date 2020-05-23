@@ -41,14 +41,16 @@
         <h2 id="utypelbl"> USER TYPE </h2>
         <div id="utypeselect">
             <label >Student : </label>
-            <input ngModel name="user" type="radio" ><br>
+            <input disabled ngModel name="user" type="radio" ><br>
 
             <label >Teacher : </label>
-            <input ngModel name="user" type="radio" ><br>
+            <input disabled ngModel name="user" type="radio" ><br>
 
             <label >Parent   : </label>
-            <input ngModel name="user" type="radio" >
+            <input disabled ngModel name="user" type="radio" >
         </div>
+
+        <button (click)="change(create)" class="btn btn-info">change</button>
 
         <div>
             <h2>Subjects </h2>
