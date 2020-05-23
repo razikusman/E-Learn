@@ -12,14 +12,14 @@ export class LoginComponent implements OnInit {
   //ngForm = ;
   constructor(private router : Router,) { }
 
-  log = new Login(null,null);
+  lgin = new Login(null,null);
   ngOnInit() {
   }
 
 
   //direct to the home page of user type 
   login(home){
-    if(this.log.name=='admin' && this.log.password== 'admin'){
+    if(this.lgin.name=='admin' && this.lgin.password== 'admin'){
       this.router.navigate(['/admin/home'], home);
     }
   }
