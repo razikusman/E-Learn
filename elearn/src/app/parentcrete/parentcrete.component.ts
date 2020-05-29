@@ -21,12 +21,12 @@ export class ParentcreteComponent implements OnInit {
 
   ngOnInit() {
     this.addForm = this.formBuilder.group({
-      name: [''],
-      pContact: [''],
+      name: [null],
+      pContact: [null],
       user: ['Parent'],
-      NIC: [''],
-      password: [''],
-      cpassword:['']
+      NIC: [null],
+      password: [null],
+      cpassword:[null]
     });
   }
 

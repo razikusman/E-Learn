@@ -1,35 +1,41 @@
 <h1>Parent Registration Form</h1>
-<form  #parentregisterForm="ngForm" [formGroup]="addForm"  (ngSubmit)= "onSubmit()" novalidate>
+<form class="container" #parentregisterForm="ngForm" [formGroup]="addForm"  (ngSubmit)= "onSubmit()" novalidate>
     <!--{{parentregisterForm.form.valid}}-->
     <div>
-        <label id="unamelbl"> Name : </label><br>
+        <label id="unamelbl" class="text-uppercase font-weight-bold"> Name : </label><br>
         <input 
             name="name" formControlName="name"
             type="text" placeholder="Enter Full Name"  class="form-control"
         >
-        <div class="warning" *ngIf="addForm.get('name').invalid && addForm.get('name').touched">
+        <div class="text-danger text-uppercase font-weight-bold" *ngIf="addForm.get('name').valid && addForm.get('name').touched">
             *feild required
         </div>
     </div>
 
     <div>
-        <label id="ucontactlbl"> Contact Number : </label><br>
+        <label id="ucontactlbl" class="text-uppercase font-weight-bold"> Contact Number : </label><br>
         <input
-            name="pContact" formControlName="pContact"
-            type="tel" class="tel">
+            name="pContact" formControlName="pContact" class="col-md-3 form-control"
+            type="tel" >
     </div>
 
     <div>
         <h2 id="utypelbl"> USER TYPE </h2>
-        <div id="utypeselect">
-            <label >Student : </label>
-            <input disabled formControlName="user" name="user" type="radio" value="Student"><br>
-
-            <label >Teacher : </label>
-            <input disabled formControlName="user" name="user" type="radio" value="Teacher"><br>
-
-            <label >Parent   : </label>
-            <input disabled formControlName="user" name="user" type="radio" value="Parent">
+        
+        <div class="row">
+            <label class="text-uppercase align-self-center font-weight-bold col-md-2 col-form-label">
+            <input disabled formControlName="user" name="user" type="radio" class="radio align-self-center" value="Student">
+            : Student </label>
+        </div>
+        <div class="row">
+            <label class="text-uppercase align-self-center font-weight-bold col-md-2 col-form-label">
+            <input disabled formControlName="user" name="user" type="radio" class="radio align-self-center" value="Teacher">
+            : Teacher </label>
+        </div>
+        <div class="row">
+            <label class="text-uppercase align-self-center font-weight-bold col-md-2 col-form-label">
+            <input disabled formControlName="user" name="user" type="radio" class="radio align-self-center" value="Parent">
+            : Parent </label>
         </div>
 
         <button (click)="change(create)" class="btn btn-info">change</button>
@@ -38,23 +44,23 @@
 
     <hr>
     <div>
-        <label id="ugurdianlbl">  NIC : </label><br>
+        <label id="ugurdianlbl" class="text-uppercase font-weight-bold">  NIC : </label><br>
         <input 
-            required formControlName="NIC" name="NIC"
-            type="text" class="id" placeholder="this will be Your username"
+            required formControlName="NIC" name="NIC" class="col-md-3 form-control"
+            type="text" class="form-control" placeholder="this will be Your username"
         >
-        <small class="warning" *ngIf="addForm.get('NIC').invalid || addForm.get('NIC').untouched">
+        <small class="text-danger text-uppercase font-weight-bold" *ngIf="addForm.get('NIC').invalid || addForm.get('NIC').untouched">
             *feild required 
         </small>
     </div>
 
     <div>
-        <label id="passwordlbl"> Password : </label><br>
+        <label id="passwordlbl" class="text-uppercase font-weight-bold"> Password : </label><br>
         <input
-            required name="password" formControlName="password"
-            type="password" placeholder="5-8 Characters" class="password"
+            required name="password" formControlName="password" class="form-control"
+            type="password" placeholder="5-8 Characters" class="password col-md-3"
         >
-        <small class="warning" *ngIf="addForm.get('password').invalid || addForm.get('password').untouched">
+        <small class="text-danger text-uppercase font-weight-bold" *ngIf="addForm.get('password').invalid || addForm.get('password').untouched">
 
             *feild required
 
@@ -62,28 +68,26 @@
 
     </div>
     <div>
-        <label id="cpasswordlbl"> Confirm Password : </label><br>
+        <label id="cpasswordlbl" class=" text-uppercase font-weight-bold"> Confirm Password : </label><br>
         <input 
-            name="cpassword" formControlName="cpassword"
-            type="password" placeholder="Re-Enter the password" class="password"
+            name="cpassword" formControlName="cpassword" class="form-control"
+            type="password" placeholder="Re-Enter the password" class="password col-md-3"
         >
         
-        <small class="warning" *ngIf="(addForm.get('cpassword').value != addForm.get('password').value) && addForm.get('cpassword').touched">
+        <small class="text-danger text-uppercase font-weight-bold" *ngIf="(addForm.get('cpassword').value != addForm.get('password').value) && addForm.get('cpassword').touched">
 
             *password not matched and required
 
         </small>
     </div>
 
-    <small class="error" *ngIf="parentregisterForm.form.invalid && parentregisterForm.form.touched">
+    <small class="text-info text-uppercase font-weight-bold" *ngIf="parentregisterForm.form.invalid && parentregisterForm.form.touched">
 
         ***fill the required feilds and submit the form ( --form incomplete --)
     </small>
-
-    
         <button
-        
         [disabled]=" ( addForm.get('cpassword').value != addForm.get('password').value ) || parentregisterForm.form.invalid" type="submit"
-        > Submit Form </button>
+        > Submit Form 
+    </button>
     
 </form>
