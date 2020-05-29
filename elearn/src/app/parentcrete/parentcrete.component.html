@@ -15,7 +15,7 @@
     <div>
         <label id="ucontactlbl" class="text-uppercase font-weight-bold"> Contact Number : </label><br>
         <input
-            name="pContact" formControlName="pContact" class="col-md-3 form-control"
+            name="pContact" formControlName="pContact" class="col-md-4 form-control"
             type="tel" >
     </div>
 
@@ -46,8 +46,8 @@
     <div>
         <label id="ugurdianlbl" class="text-uppercase font-weight-bold">  NIC : </label><br>
         <input 
-            required formControlName="NIC" name="NIC" class="col-md-3 form-control"
-            type="text" class="form-control" placeholder="this will be Your username"
+            required formControlName="NIC" name="NIC" class="col-md-4 form-control"
+            type="text" placeholder="this will be Your username"
         >
         <small class="text-danger text-uppercase font-weight-bold" *ngIf="addForm.get('NIC').invalid || addForm.get('NIC').untouched">
             *feild required 
@@ -81,7 +81,7 @@
         </small>
     </div>
 
-    <small class="text-info text-uppercase font-weight-bold" *ngIf="parentregisterForm.form.invalid && parentregisterForm.form.touched">
+    <small class="text-info text-uppercase font-weight-bold col col-md-4" *ngIf="parentregisterForm.form.invalid && parentregisterForm.form.touched">
 
         ***fill the required feilds and submit the form ( --form incomplete --)
     </small>
