@@ -1,5 +1,5 @@
 <h1>Taecher Registration Form</h1>
-<form #teacherregistrationForm="ngForm">
+<form class="container border border-success" #teacherregistrationForm="ngForm">
     <!--{{teacherregistrationForm.form.valid}}-->
     <div>
         <label id="unamelbl" class="text-uppercase align-self-center font-weight-bold col-md-2 col-form-label"> Name : </label><br>
@@ -10,7 +10,7 @@
     </div>
 
     <div>
-        <label id="ucontactlbl"> Contact Number : </label><br>
+        <label id="ucontactlbl" class="text-uppercase align-self-center font-weight-bold col-md-2 col-form-label"> Contact Number : </label><br>
         <input 
             required type="tel" class="form-control col-md-4"
         >
@@ -45,33 +45,39 @@
             <input
                 ng-repeat="subject in subjects" type="checkbox"
             >
-            {{subject}}
+            <label class="text-uppercase align-self-center font-weight-bold col-md-4 col-form-label">
+            {{subject}}</label>
         </div>
     </div>
 
     <hr>
     <div>
-        <label id="uidlbl"> NIC: </label><br>
+        <label id="uidlbl" class="text-uppercase align-self-center font-weight-bold col-md-4 col-form-label"> NIC: </label><br>
         <input 
-            required ngModel name="userid" #userid="ngModel" type="text" placeholder="this will be Your username " class="id"
+            required ngModel name="userid" #userid="ngModel" type="text" placeholder="this will be Your username " class="form-control col-md-4"
         >
-        <small class="warning" *ngIf="userid.invalid || userid.untouched">feild required</small>
+        <small class="text-danger text-uppercase align-self-center font-weight-bold col-md-4 col-form-label" *ngIf="userid.invalid || userid.untouched">feild required</small>
     </div>
 
     <div>
-        <label id="passwordlbl"> Password : </label><br>
+        <label id="passwordlbl" class="text-uppercase align-self-center font-weight-bold col-md-4 col-form-label"> Password : </label><br>
         <input
             required ngModel name="password" #password="ngModel" type="password" placeholder="5-8 Characters" class="password"
         >
-        <small class="warning" *ngIf="password.invalid || password.untouched">feild required</small>
+        <small class="text-danger text-uppercase align-self-center font-weight-bold col-md-4 col-form-label" *ngIf="password.invalid || password.untouched">feild required</small>
     </div>
     <div>
-        <label id="cpasswordlbl"> Confirm Password : </label><br>
+        <label id="cpasswordlbl" class="text-uppercase align-self-center font-weight-bold col-md-4 col-form-label"> Confirm Password : </label><br>
         <input 
             required ngModel name="cpassword" #cpassword="ngModel" type="password" placeholder="Re-Enter the password" class="password"
         >
-        <small class="warning" *ngIf="(cpassword.value != password.value) && cpassword.touched">feild required</small>
+        <small class="text-danger text-uppercase align-self-center font-weight-bold col-md-4 col-form-label" *ngIf="(cpassword.value != password.value) && cpassword.touched">feild required</small>
     </div>
+
+    <small class="text-info text-uppercase font-weight-bold" *ngIf="teacherregistrationForm.form.invalid && teacherregistrationForm.form.touched">
+
+        ***fill the required feilds and submit the form ( --form incomplete --)
+    </small>
 
     <button [disabled]="teacherregistrationForm.form.invalid" type="submit"> Submit Form </button>
 </form>
