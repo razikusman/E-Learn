@@ -2,36 +2,43 @@
 <form #teacherregistrationForm="ngForm">
     <!--{{teacherregistrationForm.form.valid}}-->
     <div>
-        <label id="unamelbl"> Name : </label><br>
+        <label id="unamelbl" class="text-uppercase align-self-center font-weight-bold col-md-2 col-form-label"> Name : </label><br>
         <input 
-            required ngModel name="name" #name="ngModel" type="text" placeholder="Enter Full Name" class="name"
+            required ngModel name="name" #name="ngModel" type="text" placeholder="Enter Full Name" class="form-control"
         >
-        <small class="warning" *ngIf="name.invalid && name.touched">feild required</small>
+        <small class="text-danger text-uppercase font-weight-bold" *ngIf="name.invalid && name.touched">feild required</small>
     </div>
 
     <div>
         <label id="ucontactlbl"> Contact Number : </label><br>
         <input 
-            required type="tel" class="tel"
+            required type="tel" class="form-control col-md-4"
         >
     </div>
 
     <div>
         <h2 id="utypelbl"> USER TYPE </h2>
         <div id="utypeselect">
-            <label >Student : </label>
-            <input disabled name="user" type="radio" ><br>
+            <div class="row">
+                <label class="text-uppercase align-self-center font-weight-bold col-md-2 col-form-label">
+                <input disabled name="user" type="radio" >
+                :Student</label>
+            </div>
 
-            <label >Teacher : </label>
-            <input disabled name="user" type="radio" ><br>
-
-            <label >Parent   : </label>
-            <input disabled name="user" type="radio" >
+            <div class="row">
+                <label class="text-uppercase align-self-center font-weight-bold col-md-2 col-form-label">
+                <input disabled name="user" type="radio" >
+                :Teacher</label>
+            </div>
+            <div class="row">
+                <label class="text-uppercase align-self-center font-weight-bold col-md-2 col-form-label">
+                <input disabled formControlName="user" name="user" type="radio" class="radio align-self-center" value="Parent">
+                : Parent </label>
+            </div>
         </div>
-
         <button (click)="change(create)" class="btn btn-info">change</button>
-        
     </div>
+    
     <div>
         <h2>Subjects Teaching</h2><br>
         <div *ngFor="let subject of subjects">

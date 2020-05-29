@@ -1,67 +1,75 @@
 <h1>Student Registration Form</h1>
-<form #studentregisterForm="ngForm">
+<form class="container border border-success" #studentregisterForm="ngForm">
     <!--{{studentregisterForm.form.valid}}-->
     <div>
-        <label id="unamelbl"> Name : </label><br>
+        <label id="unamelbl" class="text-uppercase font-weight-bold"> Name : </label><br>
         <input
             required ngModel name="name" #name="ngModel" 
-            type="text" placeholder="Enter Full Name" class="name"
+            type="text" placeholder="Enter Full Name" class="form-control"
         >
-        <small class="warning" *ngIf="name.invalid && name.touched">*feild required</small>
+        <small class="text-danger text-uppercase font-weight-bold" *ngIf="name.invalid && name.touched">*feild required</small>
     </div>
 
     <div class="form-group" > 
-        <label id="ugrdlbl"> Grade : </label>
-        <select required ngModel name="grade" #grade="ngModel"  id="ugrade">
+        <label id="ugrdlbl" class="text-uppercase font-weight-bold"> Grade : </label>
+        <select required ngModel name="grade" #grade="ngModel"  id="ugrade" class="dropdown btn-info">
             <option selected>Grade</option>
             <option *ngFor="let grade of grades"> {{grade}} </option>
         </select>
-        <small class="warning" *ngIf="grade.invalid && grade.touched">*select a grade from dropdown</small>
+        <small class="text-danger text-uppercase font-weight-bold" *ngIf="grade.invalid && grade.touched">*select a grade from dropdown</small>
     </div>
-    <br>
 
     <div>
-        <label id="udoblbl"> Date of Birth : </label><br>
+        <label id="udoblbl" class="text-uppercase font-weight-bold"> Date of Birth : </label><br>
         <input 
             required ngModel name="DOB" #DOB="ngModel"
-            type="date" class="date"
+            type="date" class="form-control col-md-4"
         >
     </div>
 
     <div>
-        <label id="ucontactlbl"> Contact Number : </label><br>
+        <label id="ucontactlbl" class="text-uppercase font-weight-bold"> Contact Number : </label><br>
         <input
-            required ngModel name="contact" #contact="ngModel" ng-pattern=""
-            type="tel" class="tel"
+            required ngModel name="contact" #contact="ngModel"
+            type="tel" class="form-control col-md-4"
         >
-        <small class="warning" *ngIf="">*phone number must be ten digit</small>
+        <small class="text-danger text-uppercase font-weight-bold" *ngIf="">*phone number must be ten digit</small>
     </div>
 
     <div>
         <h2 id="utypelbl"> USER TYPE </h2>
-        <div id="utypeselect">
-            <label >Student : </label>
-            <input disabled ngModel name="user" type="radio" ><br>
-
-            <label >Teacher : </label>
-            <input disabled ngModel name="user" type="radio" ><br>
-
-            <label >Parent   : </label>
-            <input disabled ngModel name="user" type="radio" >
+        <div class="row">
+            <label class="text-uppercase align-self-center font-weight-bold col-md-2 col-form-label">
+            <input disabled type="radio" class="radio align-self-center" value="Student">
+            :Student</label>
+        </div>
+        <div class="row">
+            <label class="text-uppercase align-self-center font-weight-bold col-md-2 col-form-label">
+            <input disabled type="radio" class="radio align-self-center" value="Teacher">
+            :Teacher</label>
+        </div>
+        <div class="row">
+            <label class="text-uppercase align-self-center font-weight-bold col-md-2 col-form-label">
+            <input disabled formControlName="user" name="user" type="radio" class="radio align-self-center" value="Parent">
+            : Parent </label>
         </div>
 
         <button (click)="change(create)" class="btn btn-info">change</button>
+   
+    </div><br>
 
+    <div>
+        <h2>Subjects </h2>
+        <div *ngFor="let subject of subjects">
+            <input
+                
+                ng-repeat="subject in subjects" type="checkbox" class="checkbox"
+            >
+            <label class="text-uppercase font-weight-bold" >
+            {{subject}}</label>
+        </div>
         <div>
-            <h2>Subjects </h2>
-            <div *ngFor="let subject of subjects">
-                <input
-                    
-                    ng-repeat="subject in subjects" type="checkbox"
-                >
-                {{subject}}
-            </div>
-            <small class="warning">*minimum one subject must me selected</small>
+            <small class="text-danger text-uppercase font-weight-bold">*minimum one subject must me selected</small>
         </div>
         
     </div>
@@ -70,40 +78,40 @@
 
     <div>
         <div>
-            <label id="ugurdianlbl"> Parent/Gurdience Name : </label><br>
+            <label id="ugurdianlbl" class="text-uppercase font-weight-bold"> Parent/Gurdience Name : </label><br>
             <input
                 required ngModel name="gurdname" #gurdname="ngModel"
-                type="text" placeholder="Enter Full Name" class="name"
+                type="text" placeholder="Enter Full Name" class="form-control"
             >
-            <small class="warning" *ngIf="gurdname.invalid && gurdname.touched" >*feild required</small>
+            <small class="text-danger text-uppercase font-weight-bold" *ngIf="gurdname.invalid && gurdname.touched" >*feild required</small>
         </div>
         <div>
-            <label id="ugurdianlbl"> Parent/Gurdience NIC : </label><br>
+            <label id="ugurdianlbl" class="text-uppercase font-weight-bold"> Parent/Gurdience NIC : </label><br>
             <input
                 required ngModel name="gurdNIC" #gurdNIC="ngModel"
-                type="text" class="id"
+                type="text" class="form-control col-md-4"
             >
-            <small class="warning" *ngIf="gurdNIC.invalid && gurdNIC.touched">*feild required</small>
+            <small class="text-danger text-uppercase font-weight-bold" *ngIf="gurdNIC.invalid && gurdNIC.touched">*feild required</small>
         </div>
     </div>
 
     <hr>
     <div>
-        <label id="uidlbl"> User id : </label><br>
+        <label id="uidlbl" class="text-uppercase font-weight-bold"> User id : </label><br>
         <input
             required ngModel name="userid" #userid="ngModel" 
-            type="text" placeholder="this will be Your username (eg:-AZ/20XX/XXX)" class="id"
+            type="text" placeholder="this will be Your username (eg:-AZ/20XX/XXX)" class="form-control col-md-4"
         >
-        <small class="warning" *ngIf="userid.invalid || userid.untouched" >*feild required</small>
+        <small class="text-danger text-uppercase font-weight-bold" *ngIf="userid.invalid || userid.untouched" >*feild required</small>
     </div>
 
     <div>
-        <label id="passwordlbl"> Password : </label><br>
+        <label id="passwordlbl" class="text-uppercase font-weight-bold"> Password : </label><br>
         <input
             required ngModel name="password" #password="ngModel"
             type="password" placeholder="5-8 Characters" class="password"
         >
-        <small class="warning" *ngIf="password.invalid || password.untouched">
+        <small class="text-danger text-uppercase font-weight-bold" *ngIf="password.invalid || password.untouched">
             
             *feild required
 
@@ -111,20 +119,20 @@
     </div>
     
     <div>
-        <label id="cpasswordlbl"> Confirm Password : </label><br>
+        <label id="cpasswordlbl" class="text-uppercase font-weight-bold"> Confirm Password : </label><br>
         <input 
             required ngModel name="cpassword" #cpassword="ngModel"
             type="password" placeholder="Re-Enter the password" class="password"
         >
         
-        <small class="warning" *ngIf="(cpassword.value != password.value) && cpassword.touched">
+        <small class="text-danger text-uppercase font-weight-bold" *ngIf="(cpassword.value != password.value) && cpassword.touched">
 
             *password not matched and required
 
         </small>
     </div>
 
-    <small class="error" *ngIf="studentregisterForm.form.invalid && studentregisterForm.form.touched">
+    <small class="text-info text-uppercase font-weight-bold" *ngIf="studentregisterForm.form.invalid && studentregisterForm.form.touched">
 
         ***fill the required feilds and submit the form ( --form incomplete --)
     </small>

@@ -1,9 +1,3 @@
-label{
-    font-size: 20px;
-    margin: 10px;
-    background-color: rgba(136, 136, 136, 0.842);
-}
-
 h1{
     text-transform: uppercase;
     text-align: center;
@@ -15,28 +9,6 @@ h1{
 h2{
     text-transform: uppercase;
     margin-bottom: 0px;
-}
-
-.name, .id, .tel, .date{
-    width: 85%;
-    padding: 5px;
-    padding-right: -5px;
-    margin: 0px 0 20px 10px;
-    border-style: hidden ;
-    border-bottom-style: dotted;
-}
-
-.password, .id, .tel, .date{
-    width: 20%;
-    padding: 5px;
-    margin: 0px 0 20px 10px;
-}
-
-input[name="username"], .password{
-    border-style: ridge;
-    width: 20%;
-    padding: 5px;
-    margin: 0px 0 20px 10px;
 }
 
 hr{
@@ -57,18 +29,6 @@ button{
     text-transform: uppercase;
 }
 
-.warning{
-    color: red;
-    text-transform: uppercase;
-    font-style: italic;
-    font-weight: bold;
-    letter-spacing: 2px;
-}
-
-.error{
-    color: rgb(38, 0, 255);
-    text-transform: uppercase;
-    font-style: italic;
-    font-weight: bold;
-    line-height: 2px;
+.container{
+    margin-left: 3%;
 }
