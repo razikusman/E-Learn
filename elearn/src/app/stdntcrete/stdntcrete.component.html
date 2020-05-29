@@ -12,11 +12,10 @@
 
     <div class="form-group" > 
         <label id="ugrdlbl" class="text-uppercase font-weight-bold"> Grade : </label>
-        <select required ngModel name="grade" #grade="ngModel"  id="ugrade" class="dropdown btn-info">
-            <option selected>Grade</option>
-            <option *ngFor="let grade of grades"> {{grade}} </option>
+        <select required ngModel name="grad" #grad="ngModel"  id="ugrade" class="dropdown btn-info">
+            <option *ngFor="let grde of grades"> {{ grde }} </option>
         </select>
-        <small class="text-danger text-uppercase font-weight-bold" *ngIf="grade.invalid && grade.touched">*select a grade from dropdown</small>
+        <small class="text-danger text-uppercase font-weight-bold" *ngIf=" (grad.invalid && grad.touched) || (grad.value == 'grade' && grad.touched)">*select a grade from dropdown</small>
     </div>
 
     <div>
