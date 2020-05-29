@@ -1,21 +1,21 @@
 <h1>Parent Registration Form</h1>
-<form #parentregisterForm="ngForm" (ngSubmit)= "onSubmit()" novalidate>
+<form  #parentregisterForm="ngForm" [formGroup]="addForm"  (ngSubmit)= "onSubmit()" novalidate>
     <!--{{parentregisterForm.form.valid}}-->
     <div>
         <label id="unamelbl"> Name : </label><br>
         <input 
-            required [(ngModel)]="parent.name" name="name" #name="ngModel"
-            type="text" placeholder="Enter Full Name" class="name"
+            name="name" formControlName="name"
+            type="text" placeholder="Enter Full Name"  class="form-control"
         >
-        <small class="warning" *ngIf="name.invalid && name.touched">
+        <div class="warning" *ngIf="addForm.get('name').invalid && addForm.get('name').touched">
             *feild required
-        </small>
+        </div>
     </div>
 
     <div>
         <label id="ucontactlbl"> Contact Number : </label><br>
         <input
-        [(ngModel)]="parent.pContact" name="Contact" 
+            name="pContact" formControlName="pContact"
             type="tel" class="tel">
     </div>
 
@@ -23,13 +23,13 @@
         <h2 id="utypelbl"> USER TYPE </h2>
         <div id="utypeselect">
             <label >Student : </label>
-            <input disabled [(ngModel)]="parent.user" name="user" type="radio" value="Student"><br>
+            <input disabled formControlName="user" name="user" type="radio" value="Student"><br>
 
             <label >Teacher : </label>
-            <input disabled [(ngModel)]="parent.user" name="user" type="radio" value="Teacher"><br>
+            <input disabled formControlName="user" name="user" type="radio" value="Teacher"><br>
 
             <label >Parent   : </label>
-            <input disabled [(ngModel)]="parent.user"  name="user" type="radio" value="Parent">
+            <input disabled formControlName="user" name="user" type="radio" value="Parent">
         </div>
 
         <button (click)="change(create)" class="btn btn-info">change</button>
@@ -40,10 +40,10 @@
     <div>
         <label id="ugurdianlbl">  NIC : </label><br>
         <input 
-            required [(ngModel)]="parent.NIC" name="NIC" #NIC="ngModel"
+            required formControlName="NIC" name="NIC"
             type="text" class="id" placeholder="this will be Your username"
         >
-        <small class="warning" *ngIf="NIC.invalid || NIC.untouched">
+        <small class="warning" *ngIf="addForm.get('NIC').invalid || addForm.get('NIC').untouched">
             *feild required 
         </small>
     </div>
@@ -51,10 +51,10 @@
     <div>
         <label id="passwordlbl"> Password : </label><br>
         <input
-            required [(ngModel)]="parent.password" name="password" #password="ngModel"
+            required name="password" formControlName="password"
             type="password" placeholder="5-8 Characters" class="password"
         >
-        <small class="warning" *ngIf="password.invalid || password.untouched">
+        <small class="warning" *ngIf="addForm.get('password').invalid || addForm.get('password').untouched">
 
             *feild required
 
@@ -64,14 +64,13 @@
     <div>
         <label id="cpasswordlbl"> Confirm Password : </label><br>
         <input 
-            required ngModel name="cpassword" #cpassword="ngModel"
+            name="cpassword" formControlName="cpassword"
             type="password" placeholder="Re-Enter the password" class="password"
         >
         
-        <small class="warning" *ngIf="(cpassword.value != password.value) && cpassword.touched">
+        <small class="warning" *ngIf="(addForm.get('cpassword').value != addForm.get('password').value) && addForm.get('cpassword').touched">
 
             *password not matched and required
-            parentregisterForm.form.invalid
 
         </small>
     </div>
@@ -84,7 +83,7 @@
     
         <button
         
-        [disabled]=" ( cpassword.value != password.value ) || parentregisterForm.form.invalid" type="submit"
+        [disabled]=" ( addForm.get('cpassword').value != addForm.get('password').value ) || parentregisterForm.form.invalid" type="submit"
         > Submit Form </button>
     
 </form>

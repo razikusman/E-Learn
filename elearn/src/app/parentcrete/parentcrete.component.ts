@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { CreateParent } from '../create-parent';
 import { ParentService } from '../parent.service';
 import { Router } from '@angular/router';
+import { FormBuilder,FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-parentcrete',
@@ -10,18 +11,29 @@ import { Router } from '@angular/router';
 })
 export class ParentcreteComponent implements OnInit {
 
-  constructor(private parentService: ParentService, private route: Router) { }
+  constructor(
+    private parentService: ParentService, 
+    private route: Router,
+    private formBuilder : FormBuilder ) { }
 
-  parent = new CreateParent(null,null,'Parent',null,null);
+  addForm: FormGroup;
+  parent : CreateParent[];
 
   ngOnInit() {
+    this.addForm = this.formBuilder.group({
+      name: [''],
+      pContact: [''],
+      user: ['Parent'],
+      NIC: [''],
+      password: [''],
+      cpassword:['']
+    });
   }
 
   onSubmit(){
-    console.log(this.parent);
-    this.parentService.createparent(this.parent)
+    console.log(this.addForm.value);
+    this.parentService.createparent(this.addForm.value)
     .subscribe(data =>console.log('success!',data));
-
   }
 
   change(create){
