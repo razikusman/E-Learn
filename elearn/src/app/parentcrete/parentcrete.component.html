@@ -7,7 +7,7 @@
             name="name" formControlName="name"
             type="text" placeholder="Enter Full Name"  class="form-control"
         >
-        <div class="text-danger text-uppercase font-weight-bold" *ngIf="addForm.get('name').valid && addForm.get('name').touched">
+        <div class="text-danger text-uppercase font-weight-bold" *ngIf="addForm.get('name').invalid && addForm.get('name').touched">
             *feild required
         </div>
     </div>
