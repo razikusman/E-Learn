@@ -28,3 +28,8 @@ button{
     font-weight: bolder;
     text-transform: uppercase;
 }
+
+hr{
+    height: 3px;
+    background-color: rgba(136, 136, 136, 0.842);
+}

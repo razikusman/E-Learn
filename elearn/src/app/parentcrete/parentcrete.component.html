@@ -1,4 +1,16 @@
-<h1>Parent Registration Form</h1>
+<br>
+<div class="container">
+    <div class="row">
+        <h1 class="col-md-9">Parent Registration Form</h1>
+        <button class="col-md-1">
+            <h3>
+                <i class="fas fa-user"></i>
+            </h3>login
+        </button><br>
+    </div>
+</div>
+
+
 <form class="container border border-success" #parentregisterForm="ngForm" [formGroup]="addForm"  (ngSubmit)= "onSubmit()" novalidate>
     <!--{{parentregisterForm.form.valid}}-->
     <div>
@@ -80,11 +92,13 @@
 
         </small>
     </div>
+    <br>
 
     <small class="text-info text-uppercase font-weight-bold col col-md-4" *ngIf="parentregisterForm.form.invalid && parentregisterForm.form.touched">
 
         ***fill the required feilds and submit the form ( --form incomplete --)
     </small>
+    <br>
     <button
         [disabled]=" ( addForm.get('cpassword').value != addForm.get('password').value ) || parentregisterForm.form.invalid" type="submit"
         > Submit Form 

@@ -17,6 +17,7 @@ export class TeachercreteComponent implements OnInit {
     private formBuilder : FormBuilder) { }
 
     addForm : FormGroup;
+    sub : FormGroup;
     teacher : CreateTeacher;
 
   ngOnInit() {
@@ -26,7 +27,15 @@ export class TeachercreteComponent implements OnInit {
       name: [null],
       contact:[null],
       user :['Teacher'],
-      subjects : [null],
+      //subjects : [null],
+      subjects : this.sub = this.formBuilder.group({
+        english: [''],
+        maths: [''],
+        science: [null],
+        second_language_sinhala: [null],
+        second_language_tamil: [null],
+        tamil_first_language_: [null],
+       }),
       userid : [null],
       password :[null],
       cpassword :[null],

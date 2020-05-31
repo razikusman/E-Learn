@@ -1,4 +1,14 @@
-<h1>Student Registration Form</h1>
+<br>
+<div class="container">
+    <div class="row">
+        <h1 class="col-md-9">Student Registration Form</h1>
+        <button class="col-md-1">
+            <h3>
+                <i class="fas fa-user"></i>
+            </h3>login
+        </button><br>
+    </div>
+</div>
 <form class="container border border-success" #studentregisterForm="ngForm" [formGroup]="addForm"  (ngSubmit)= "onSubmit()" novalidate>
     <!--{{studentregisterForm.form.valid}}-->
     <div>
@@ -57,11 +67,11 @@
    
     </div><br>
 
-    <div  >
+    <div [formGroup]="sub" >
         <h2>Subjects</h2>
         <div *ngFor="let subject of subjects">
             <input
-                formControlName="subjects" name="subjects" 
+                formControlName="{{subject}}" name="subjects" 
                 ng-repeat="subject in subjects" type="checkbox" class="checkbox" value="xx"
             >
             <label class="text-uppercase font-weight-bold" >
