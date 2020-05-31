@@ -20,6 +20,8 @@ export class ParentcreteComponent implements OnInit {
   parent : CreateParent[];
 
   ngOnInit() {
+
+    //rest api
     this.addForm = this.formBuilder.group({
       name: [null],
       pContact: [null],
@@ -30,12 +32,14 @@ export class ParentcreteComponent implements OnInit {
     });
   }
 
+  //insert in to database
   onSubmit(){
     console.log(this.addForm.value);
     this.parentService.createparent(this.addForm.value)
     .subscribe(data =>console.log('success!',data));
   }
 
+  //change user type
   change(create){
     this.route.navigate(['/create'],create);
   }

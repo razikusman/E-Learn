@@ -4,7 +4,7 @@
     <div>
         <label id="unamelbl" class="text-uppercase font-weight-bold"> Name : </label><br>
         <input 
-            name="name" formControlName="name"
+            name="name" formControlName="name" required
             type="text" placeholder="Enter Full Name"  class="form-control"
         >
         <div class="text-danger text-uppercase font-weight-bold" *ngIf="addForm.get('name').invalid && addForm.get('name').touched">
@@ -85,7 +85,7 @@
 
         ***fill the required feilds and submit the form ( --form incomplete --)
     </small>
-        <button
+    <button
         [disabled]=" ( addForm.get('cpassword').value != addForm.get('password').value ) || parentregisterForm.form.invalid" type="submit"
         > Submit Form 
     </button>

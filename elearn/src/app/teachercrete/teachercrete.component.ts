@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { FormBuilder,FormGroup, Validators } from '@angular/forms';
+import { TeacherService } from '../teacher.service';
+import { CreateTeacher} from '../create-teacher';
 
 @Component({
   selector: 'app-teachercrete',
@@ -8,7 +11,13 @@ import { Router } from '@angular/router';
 })
 export class TeachercreteComponent implements OnInit {
 
-  constructor(private route : Router) { }
+  constructor( 
+    private route:Router,
+    private studenttService: TeacherService,
+    private formBuilder : FormBuilder) { }
+
+    addForm : FormGroup;
+    teacher : CreateTeacher;
 
   ngOnInit() {
   }

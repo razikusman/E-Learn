@@ -12,4 +12,5 @@ export class ParentService {
   createparent(parent : CreateParent ){
     return this.http.post<any>('http://localhost/elearn/addparent.php', parent); 
   }
+
 }
