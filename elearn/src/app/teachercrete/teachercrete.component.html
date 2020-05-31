@@ -1,10 +1,10 @@
 <h1>Taecher Registration Form</h1>
-<form class="container border border-success" [formGroup]="addForm" #teacherregistrationForm="ngForm">
+<form class="container border border-success" [formGroup]="addForm" #teacherregistrationForm="ngForm" (ngSubmit)= "onSubmit()" novalidate>
     <!--{{teacherregistrationForm.form.valid}}-->
     <div>
         <label id="unamelbl" class="text-uppercase align-self-center font-weight-bold col-md-2 col-form-label"> Name : </label><br>
         <input 
-            formControlName="name" name="name"  type="text" placeholder="Enter Full Name" class="form-control"
+            required formControlName="name" name="name"  type="text" placeholder="Enter Full Name" class="form-control"
         >
         <small class="text-danger text-uppercase font-weight-bold" *ngIf="addForm.get('name').invalid && addForm.get('name').touched">feild required</small>
     </div>
@@ -12,7 +12,7 @@
     <div>
         <label id="ucontactlbl" class="text-uppercase align-self-center font-weight-bold  col-form-label"> Contact Number : </label><br>
         <input 
-            required type="tel" class="form-control col-md-4" formControlName="contact" name="contact"
+            type="tel" class="form-control col-md-4" formControlName="contact" name="contact"
         >
     </div>
 
@@ -21,13 +21,13 @@
         <div id="utypeselect">
             <div class="row">
                 <label class="text-uppercase align-self-center font-weight-bold col-md-2 col-form-label">
-                <input disabled formControlName="user" name="user" type="radio" >
+                <input disabled formControlName="user" name="user" type="radio" class="radio align-self-center" value="Student">
                 :Student</label>
             </div>
 
             <div class="row">
                 <label class="text-uppercase align-self-center font-weight-bold col-md-2 col-form-label">
-                <input disabled formControlName="user" name="user" type="radio" >
+                <input disabled formControlName="user" name="user" type="radio" class="radio align-self-center" value="Teacher">
                 :Teacher</label>
             </div>
             <div class="row">
@@ -43,9 +43,10 @@
         <h2>Subjects Teaching</h2><br>
         <div *ngFor="let subject of subjects">
             <input
-                ng-repeat="subject in subjects" type="checkbox"
+                formControlName="subjects" name="subjects" 
+                ng-repeat="subject in subjects" type="checkbox" class="checkbox"
             >
-            <label class="text-uppercase align-self-center font-weight-bold col-md-4 col-form-label">
+            <label class="text-uppercase font-weight-bold" >
             {{subject}}</label>
         </div>
     </div>
@@ -54,24 +55,24 @@
     <div>
         <label id="uidlbl" class="text-uppercase align-self-center font-weight-bold col-md-4 col-form-label"> NIC: </label><br>
         <input 
-            formControlName="userid" name="userid" type="text" placeholder="this will be Your username " class="form-control col-md-4"
+            required formControlName="userid" name="userid" type="text" placeholder="this will be Your username " class="form-control col-md-4"
         >
-        <small class="text-danger text-uppercase align-self-center font-weight-bold col-md-4 col-form-label" *ngIf="addForm.get('userid').invalid || addForm.get('userid').untouched">feild required</small>
+        <small class="text-danger text-uppercase align-self-center font-weight-bold col-md-4 col-form-label" *ngIf="addForm.get('userid').invalid">feild required</small>
     </div>
 
     <div>
-        <label id="passwordlbl" class="text-uppercase align-self-center font-weight-bold col-md-4 col-form-label"> Password : </label><br>
+        <label class="text-uppercase align-self-center font-weight-bold col-md-4 col-form-label"> Password : </label><br>
         <input
-            formControlName="password" name="password" type="password" placeholder="5-8 Characters" class="password"
+            required formControlName="password" name="password" type="password" placeholder="5-8 Characters" class="password"
         >
-        <small class="text-danger text-uppercase align-self-center font-weight-bold col-md-4 col-form-label" *ngIf="addForm.get('password').invalid || addForm.get('password').untouched">feild required</small>
+        <small class="text-danger text-uppercase align-self-center font-weight-bold col-md-4 col-form-label" *ngIf="addForm.get('password').invalid">feild required</small>
     </div>
     <div>
         <label id="cpasswordlbl" class="text-uppercase align-self-center font-weight-bold col-md-4 col-form-label"> Confirm Password : </label><br>
         <input 
-            formControlName="cpassword" name="cpassword"  type="password" placeholder="Re-Enter the password" class="password"
+            required formControlName="cpassword" name="cpassword"  type="password" placeholder="Re-Enter the password" class="password"
         >
-        <small class="text-danger text-uppercase align-self-center font-weight-bold col-md-4 col-form-label" *ngIf="(addForm.get('cpassword').value != addForm.get('password').value) && addForm.get('cpassword').touched">feild required</small>
+        <small class="text-danger text-uppercase align-self-center font-weight-bold col-md-4 col-form-label" *ngIf="(addForm.get('cpassword').value != addForm.get('password').value) && addForm.get('cpassword').touched">doesnt match with password</small>
     </div>
 
     <small class="text-info text-uppercase font-weight-bold" *ngIf="teacherregistrationForm.form.invalid && teacherregistrationForm.form.touched">

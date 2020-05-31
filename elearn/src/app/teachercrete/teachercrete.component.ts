@@ -13,18 +13,35 @@ export class TeachercreteComponent implements OnInit {
 
   constructor( 
     private route:Router,
-    private studenttService: TeacherService,
+    private teachertService: TeacherService,
     private formBuilder : FormBuilder) { }
 
     addForm : FormGroup;
     teacher : CreateTeacher;
 
   ngOnInit() {
+
+    //rest api
+    this.addForm = this.formBuilder.group({
+      name: [null],
+      contact:[null],
+      user :['Teacher'],
+      subjects : [null],
+      userid : [null],
+      password :[null],
+      cpassword :[null],
+    });
   }
 
+  onSubmit(){
+    console.log(this.addForm.value);
+    this.teachertService.CreateTeacher(this.addForm.value)
+    .subscribe(data =>console.log('success!',data));
+  };
+
   subjects:Array<String>=[
-    "english","second language tamil","tamil(first language)","maths","science","second language sinhala",
-  ];
+    "english","maths","science","second_language_sinhala","second_language_tamil","tamil_first_language_"
+  ];;
 
   change(create){
     this.route.navigate(['/create'],create);
