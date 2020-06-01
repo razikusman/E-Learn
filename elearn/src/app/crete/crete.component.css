@@ -1,5 +1,5 @@
 .card-img{
-    background: url("../../assets/background.jpg")  center center no-repeat ;
+    background: url("../../assets/background2.jpg")  center center no-repeat ;
     background-size: cover ;
     position: absolute;
     left: 0%;
@@ -17,12 +17,14 @@ h1{
     margin: 0%;
     text-align: center;
     letter-spacing: 2px;
+    color: white;
 }
 
 h3{
     position: relative;
     margin: 0%;
     padding: 1%;
+    color: white;
 }
 
 .block{
