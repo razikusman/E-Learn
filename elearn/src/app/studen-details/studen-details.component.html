@@ -1,28 +1,30 @@
 <div class="bg">
     <h2 class="text-uppercase font-weight-bold">student-details </h2><hr>
     <div class="container border border-dark">
-        <div style="background-color: rgb(0, 5, 5); color: white;">
+        <div class="row" style="background-color: rgb(0, 5, 5); color: white;">
             <label class="font-weight-bold col-md-1"> Student ID </label>
             <label class="font-weight-bold col-md-2"> Student Name </label> 
             <label class="font-weight-bold col-md-1"> Grade </label>
-            <label class="font-weight-bold col-md-1"> Student Contact </label>
+            <label class="font-weight-bold col-md-1" style="margin-left: 2%;"> Student Contact </label>
             <label class="font-weight-bold col-md-2"> Parent Name </label> 
             <label class="font-weight-bold col-md-1"> Parent_NIC </label> 
-            <label class="font-weight-bold col-md-2"> Parent Contact </label> 
+            <label class="font-weight-bold col-md-1" style="margin-left: 1%;"> Parent Contact </label>
+            <label class="font-weight-bold col-md-1" style="margin-left: 2%;"></label> 
+            <label class="font-weight-bold col-md-1"> </label>
         </div>
         <br>
 
         <div *ngFor="let student of students">
-            <div style="background-color: rgb(64, 70, 70); color: white;" >
+            <div class="row" style="background-color: rgb(64, 70, 70); color: white;" >
                 <label  class="font-weight-bold col-md-1">{{student.Student_ID}} </label>
                 <label class="font-weight-bold col-md-2">{{student.Name}} </label> 
                 <label class="font-weight-bold col-md-1">{{student.Grade}} </label>
-                <label class="font-weight-bold col-md-1">{{student.Contact}} </label> 
+                <label class="font-weight-bold col-md-1" style="margin-left: 2%;">{{student.Contact}} </label> 
                 <label class="font-weight-bold col-md-2">{{student.Parent_Name}} </label>
-                <label class="font-weight-bold col-md-1">{{student.Parent_NIC}} </label>  
-                <label class="font-weight-bold col-md-2">{{student.Parent_Contact}} </label> 
-                <button class="btn btn-danger col-md-1" (click)="delete(student)">DELETE</button>
-                <button class="btn btn-info col-md-1" (click)="delete(student)">UPDATE</button>
+                <label class="font-weight-bold col-md-1">{{student.Parent_NIC}}</label>  
+                <label class="font-weight-bold col-md-1" style="margin-left: 1%;">{{student.Parent_Contact}} </label> 
+                <button class="btn btn-danger col-md-1" style="margin-left: 2%;" (click)="delete(student)">DELETE</button>
+                <button class="btn btn-info col-md-1" (click)="delete(student)" style="margin-left: 2%;">UPDATE</button>
                 
             </div>
             <hr style="background-color: rgb(0, 0, 0); height: 5px;">

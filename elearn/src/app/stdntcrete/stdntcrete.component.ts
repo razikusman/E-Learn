@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { FormBuilder,FormGroup, Validators } from '@angular/forms';
 import { StudentService } from '../student.service';
-import { Variable } from '@angular/compiler/src/render3/r3_ast';
 @Component({
   selector: 'app-stdntcrete',
   templateUrl: './stdntcrete.component.html',
@@ -34,12 +33,12 @@ export class StdntcreteComponent implements OnInit {
       //subjects : [null],
       subjects : this.sub = this.formBuilder.group({
         
-        // english: ['english'],
-        // maths: ['maths'],
-        // science: ['science'],
-        // second_language_sinhala: ['s_l_sinhala'],
-        // second_language_tamil: ['s_l_tamil'],
-        // tamil_first_language_: ['tamil_f_l'],
+        english: ['english'],
+        maths: ['maths'],
+        science: ['science'],
+        second_language_sinhala: ['s_l_sinhala'],
+        second_language_tamil: ['s_l_tamil'],
+        tamil_first_language_: ['tamil_f_l'],
        }),
       password : [null],
       cpassword : [null],
@@ -69,5 +68,5 @@ export class StdntcreteComponent implements OnInit {
   change(create){
     this.route.navigate(['/create'],create);
   }
-  
+
 }

@@ -9,6 +9,10 @@ export class TeacherService {
 
   constructor(private http : HttpClient) { }
 
+  viewteacher(){
+    return this.http.get<[]>('http://localhost/elearn/teacherview.php'); 
+  }
+
   CreateTeacher(teacher : CreateTeacher ){
     return this.http.post<any>('http://localhost/elearn/addteacher.php', teacher); 
   }
