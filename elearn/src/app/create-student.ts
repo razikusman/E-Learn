@@ -7,7 +7,8 @@ export class CreateStudent {
     public gurdname : string;
     public gurdNIC : Number;
     public userid : string;
-    public subjects : string;
+    public subjects : any;
+    public english : string;
     public password : string;
     public cpassword : string;
 }

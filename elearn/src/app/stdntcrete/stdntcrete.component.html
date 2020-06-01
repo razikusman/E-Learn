@@ -72,12 +72,14 @@
         <div *ngFor="let subject of subjects">
             <input
                 formControlName="{{subject}}" name="subjects" 
-                ng-repeat="subject in subjects" type="checkbox" class="checkbox" value="xx"
+                ng-repeat="subject in subjects" type="checkbox" class="checkbox"
             >
             <label class="text-uppercase font-weight-bold" >
                 {{subject}}</label>
         </div>
         <div>
+            <small class="text-info text-uppercase font-weight-bold">*uncheck the subjects you are not willing to follow</small>
+            <br>
             <small class="text-danger text-uppercase font-weight-bold">*minimum one subject must me selected</small>
         </div>
         

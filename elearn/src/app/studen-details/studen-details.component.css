@@ -1,0 +1,9 @@
+.img{
+    background-color: rgba(6, 175, 130, 0.459);
+    background-size: cover ;
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    margin: 0%;
+    overflow: auto;
+}
