@@ -1,12 +1,12 @@
 export class CreateStudent {
     public name : string;
-    public grad : Number;
+    public grad : number;
     public DOB : Date;
-    public pContact : Number;
+    public pContact : number;
     public user : string;
     public gurdname : string;
-    public gurdNIC : Number;
-    public userid : string;
+    public gurdNIC : number;
+    public userid : number;
     public subjects : any;
     public english : string;
     public password : string;

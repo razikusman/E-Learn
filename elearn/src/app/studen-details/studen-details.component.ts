@@ -15,12 +15,20 @@ export class StudenDetailsComponent implements OnInit {
      ) { }
 
   ngOnInit() {
-
     this.studentsservicce.viewstudent()
     .subscribe((data:CreateStudent[])=>{
       this.students =data;
       console.log(this.students);
     });
+  }
+
+  delete(students : CreateStudent): void{
+    console.log(students.userid);
+    this.studentsservicce.deletestudent(students.userid)
+    .subscribe(data => {
+      this.students = this.students.filter(u => u !== students);
+      
+    })
   }
 
 }
