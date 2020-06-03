@@ -17,10 +17,10 @@
 			$teacher[$cr]['Contact'] = $row['tContact'];
 			//$id = $teacher[$cr]['Parent_NIC'];
 			$cr++;
-			
-			echo json_encode($teacher);
-			
 		}
+		echo json_encode($teacher);
+		
+		
 		
 		
 	}
