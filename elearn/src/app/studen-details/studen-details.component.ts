@@ -26,11 +26,11 @@ export class StudenDetailsComponent implements OnInit {
 
   //delete student
   delete(students : CreateStudent): void{
-    //
-    this.studentsservicce.deletestudent(students.userid)
+    console.log(students.Student_ID);
+    this.studentsservicce.deletestudent(students.Student_ID)
     .subscribe(data => {
       this.students = this.students.filter(u => u !== students);
-      console.log(students.userid);
+      
     })
   }
 

@@ -10,14 +10,14 @@ export class StudentService {
   constructor(private http: HttpClient) { }
 
   //delete student
-  deletestudent(userid : number) {
-    return this.http.get<CreateStudent[]>('http://localhost/elearn/studentdelete.php?userid=' + userid);
+  deletestudent(Student_ID : number) {
+    return this.http.delete<CreateStudent[]>('http://localhost/elearn/studentdelete.php?userid=' + Student_ID);
   }
 
 
   //view students
   viewstudent(){
-    return this.http.get<[]>('http://localhost/elearn/studentview.php'); 
+    return this.http.get<CreateStudent[]>('http://localhost/elearn/studentview.php'); 
   }
 
   //create a student
