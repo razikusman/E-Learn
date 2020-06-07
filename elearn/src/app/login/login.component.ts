@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router'
 import { Login } from '../login';
+import { MatDialog } from '@angular/material';
+import { DialogExampleComponent } from '../dialog-example/dialog-example.component';
 
 @Component({
   selector: 'app-login',
@@ -10,7 +12,9 @@ import { Login } from '../login';
 export class LoginComponent implements OnInit {
 
   //ngForm = ;
-  constructor(private router : Router,) { }
+  constructor(
+    private router : Router,
+    private dialog : MatDialog) { }
 
   lgin = new Login(null,null);
   ngOnInit() {
@@ -19,8 +23,11 @@ export class LoginComponent implements OnInit {
 
   //direct to the home page of user type 
   login(home){
-    if(this.lgin.name=='admin' && this.lgin.password== 'admin'){
+    if(this.lgin.name =='admin' && this.lgin.password == 'admin'){
       this.router.navigate(['/admin/home'], home);
+    }
+    else{
+      this.dialog.open(DialogExampleComponent);
     }
   }
 

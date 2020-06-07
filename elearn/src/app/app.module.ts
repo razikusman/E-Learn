@@ -6,24 +6,27 @@ import { FormsModule,ReactiveFormsModule } from '@angular/forms';
 import { TopBarComponent } from './top-bar/top-bar.component';
 import { NavBarComponent } from './nav-bar/nav-bar.component';
 import { HttpClientModule } from '@angular/common/http';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
-
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MaterialsModule } from './materials/materials.module';
+import { DialogExampleComponent } from './dialog-example/dialog-example.component';
 @NgModule({
   declarations: [
     AppComponent,
     RoutingComponents,
     TopBarComponent,
     NavBarComponent,
+    DialogExampleComponent,
     
   ],
+  entryComponents : [DialogExampleComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
-    BrowserAnimationsModule
-    
+    BrowserAnimationsModule,
+    MaterialsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
