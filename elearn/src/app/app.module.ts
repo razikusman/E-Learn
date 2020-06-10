@@ -10,6 +10,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialsModule } from './materials/materials.module';
 import { DialogExampleComponent } from './dialog-example/dialog-example.component';
 import { AnouncementComponent } from './anouncement/anouncement.component';
+import { AnouncementCreateComponent } from './anouncement-create/anouncement-create.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -18,6 +19,7 @@ import { AnouncementComponent } from './anouncement/anouncement.component';
     NavBarComponent,
     DialogExampleComponent,
     AnouncementComponent,
+    AnouncementCreateComponent,
     
   ],
   entryComponents : [DialogExampleComponent],
