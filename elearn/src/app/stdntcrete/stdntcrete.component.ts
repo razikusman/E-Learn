@@ -32,7 +32,6 @@ export class StdntcreteComponent implements OnInit {
       userid : [null],
       //subjects : [null],
       subjects : this.sub = this.formBuilder.group({
-        
         english: ['english'],
         maths: ['maths'],
         science: ['science'],
