@@ -10,7 +10,7 @@
             </button><br>
         </div>
     </div>
-    <form style="background-color: rgba(255, 255, 255, 0.507);" class="container border border-success" #studentregisterForm="ngForm" [formGroup]="addForm"  (ngSubmit)= "onSubmit()" novalidate>
+    <form style="background-color: rgba(255, 255, 255, 0.247);" class="container border border-success" #studentregisterForm="ngForm" [formGroup]="addForm"  (ngSubmit)= "onSubmit()" novalidate>
         <!--{{studentregisterForm.form.valid}}-->
         <div>
             <label id="unamelbl" class="text-uppercase font-weight-bold"> Name : </label><br>
@@ -50,7 +50,7 @@
             <h2 id="utypelbl"> USER TYPE </h2>
             <div class="row">
                 <label class="text-uppercase align-self-center font-weight-bold col-md-2 col-form-label">
-                <input  disabled formControlName="user" type="radio" class="radio align-self-center" value="Student">
+                <input style="color: blue;"  formControlName="user" type="radio" class="radio align-self-center" value="Student">
                 :Student</label>
             </div>
             <div class="row">
@@ -79,7 +79,7 @@
                     {{subject}}</label>
             </div>
             <div>
-                <small class="text-info text-uppercase font-weight-bold">*uncheck the subjects you are not willing to follow</small>
+                <small style="background-color: blue; color: white;" class=" text-uppercase font-weight-bold">*uncheck the subjects you are not willing to follow</small>
                 <br>
                 <small class="text-danger text-uppercase font-weight-bold">*minimum one subject must me selected</small>
             </div>
@@ -134,7 +134,7 @@
             <label id="cpasswordlbl" class="text-uppercase font-weight-bold"> Confirm Password : </label><br>
             <input 
                 required  name="cpassword"  formControlName="cpassword"
-                type="password" placeholder="Re-Enter the password" class="password"
+                type="password" placeholder="Re-Enter the password" class="password glyphicon glyphicon-lock"
             >
             
             <small class="text-danger text-uppercase font-weight-bold" *ngIf="(addForm.get('cpassword').value !=addForm.get('password').value) && addForm.get('cpassword').touched">
@@ -144,12 +144,12 @@
             </small>
         </div>
 
-        <small class="text-info text-uppercase font-weight-bold" *ngIf="studentregisterForm.form.invalid && studentregisterForm.form.touched">
+        <small style="background-color: white;" class="text-info text-uppercase font-weight-bold" *ngIf="studentregisterForm.form.invalid && studentregisterForm.form.touched">
 
             ***fill the required feilds and submit the form ( --form incomplete --)
         </small>
 
-        <button
+        <button class="btn btn-info"
             [disabled]=" ( addForm.get('cpassword').value != addForm.get('password').value ) || studentregisterForm.form.invalid" type="submit"
             > Submit Form 
         </button>

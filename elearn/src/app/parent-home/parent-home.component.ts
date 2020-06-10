@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+//import { LoginComponent } from '../login/login.component';
 
 @Component({
   selector: 'app-parent-home',
@@ -8,13 +9,21 @@ import { Router } from '@angular/router';
 })
 export class ParentHomeComponent implements OnInit {
 
-  constructor(private router: Router) { }
+  constructor(
+    private router: Router,
+    //private lgin : LoginComponent
+  ) { }
+
+  
 
   ngOnInit() {
+    // const name = this.lgin.value;
+    // console.log(name);
   }
 
-  name="parent";
+  
 
+  
   //sign out and reach login
   signout(login){
     this.router.navigate(['/login'], login)

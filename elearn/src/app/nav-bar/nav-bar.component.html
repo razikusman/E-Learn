@@ -1,51 +1,55 @@
-<img class="imgaz" src="assets/az.png" alt="">
+<div class="side">
+    <img class="imgaz" src="assets/az1.png" alt="">
 
 
-<div *ngFor="let detail of details">
-    <ng-container *ngIf= "teacherhome(); else student" >
-        <div class="reference" *ngIf="(detail.url) != 'teacherhome()'">
-            <a>
-                {{ detail.type }} Details
-            </a>
-        </div>
-        
-    </ng-container><!--ng container-->
-    <ng-template #student>
-        <div *ngIf="studenthome(); else otherhome ">
-            <div class="reference" *ngIf="(detail.url) != 'studenthome()'">
-                <a >
+    <div *ngFor="let detail of details">
+        <ng-container *ngIf= "teacherhome(); else student" >
+            <div class="reference" *ngIf="(detail.url) != 'teacherhome()'">
+                <a style="color: white;">
+                    {{ detail.type }} Details
+                </a>
+                <hr>
+            </div>
+            
+        </ng-container><!--ng container-->
+        <ng-template #student>
+            <div *ngIf="studenthome(); else otherhome ">
+                <div class="reference" *ngIf="(detail.url) != 'studenthome()'">
+                    <a style="color: white;">
+                        {{ detail.type }} Details
+                    </a>
+                    <hr style="color: white; height: 3px;">
+                </div>
+            </div>
+        </ng-template><!--student contaoner-->
+    
+        <ng-template #otherhome>
+            <div class="reference">
+                <a style="color: white;">
                     {{ detail.type }} Details
                 </a>
             </div>
-        </div>
-    </ng-template><!--student contaoner-->
-
-    <ng-template #otherhome>
-        <div class="reference">
-            <a >
-                {{ detail.type }} Details
-            </a>
-        </div>
-        
-    </ng-template><!--other-->
-    <!-- -->
-</div>
-
-<div class="info-container">
-    <ng-container *ngIf= "teacherhome() || adminhome(); else studentparent" >
+            
+        </ng-template><!--other-->
+        <!-- -->
+    </div>
     
-        <h5 class="h5">
-            Subjects Teaching
-        </h5>
+    <div class="info-container">
+        <ng-container *ngIf= "teacherhome() || adminhome(); else studentparent" >
         
-    </ng-container><!--ng container-->
-
-    <ng-template #studentparent>
-        <div *ngIf="studenthome() || parenthome();">
-            <h5 class="h5">
-                Subjects Following
+            <h5 style="color: white;" class="h5">
+                Subjects Teaching
             </h5>
-        </div>
-    </ng-template><!--student contaoner-->
-
+            
+        </ng-container><!--ng container-->
+    
+        <ng-template #studentparent>
+            <div *ngIf="studenthome() || parenthome();">
+                <h5 style="color: white;" class="h5">
+                    Subjects Following
+                </h5>
+            </div>
+        </ng-template><!--student contaoner-->
+    
+    </div>
 </div>

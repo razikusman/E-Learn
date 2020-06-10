@@ -38,7 +38,7 @@
 
                 <div class="row">
                     <label class="text-uppercase align-self-center font-weight-bold col-md-2 col-form-label">
-                    <input disabled formControlName="user" name="user" type="radio" class="radio align-self-center" value="Teacher">
+                    <input style="color: blue;" formControlName="user" name="user" type="radio" class="radio align-self-center" value="Teacher">
                     :Teacher</label>
                 </div>
                 <div class="row">
@@ -93,7 +93,7 @@
             ***fill the required feilds and submit the form ( --form incomplete --)
         </small>
 
-        <button
+        <button class="btn btn-info"
             [disabled]=" ( addForm.get('cpassword').value != addForm.get('password').value ) || teacherregistrationForm.form.invalid" type="submit"
             > Submit Form 
         </button>

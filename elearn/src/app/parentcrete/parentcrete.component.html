@@ -47,7 +47,7 @@
             </div>
             <div class="row">
                 <label class="text-uppercase align-self-center font-weight-bold col-md-2 col-form-label">
-                <input disabled formControlName="user" name="user" type="radio" class="radio align-self-center" value="Parent">
+                <input style="color: blue;" formControlName="user" name="user" type="radio" class="radio align-self-center" value="Parent">
                 : Parent </label>
             </div>
 
@@ -100,7 +100,7 @@
             ***fill the required feilds and submit the form ( --form incomplete --)
         </small>
         <br>
-        <button
+        <button class="btn btn-info"
             [disabled]=" ( addForm.get('cpassword').value != addForm.get('password').value ) || parentregisterForm.form.invalid" type="submit"
             > Submit Form 
         </button>

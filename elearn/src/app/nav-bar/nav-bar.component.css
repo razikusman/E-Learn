@@ -5,13 +5,13 @@
 }
 
 .reference:hover{
-    background-color: rgb(87, 151, 144);
+    background-color: rgb(36, 37, 37);
     color: white;
     
 }
 
 .reference.active{
-    background-color:  rgb(1, 48, 45);
+    background-color:  rgb(31, 30, 30);
     color: white;
     border-color: white;
     border-width: 5px;
@@ -21,6 +21,8 @@
     position: relative;
     height: 50px;
     width: 100%;
+    margin: 0;
+    padding: 0;
 }
 
 .info-container{

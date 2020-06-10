@@ -11,4 +11,8 @@ export class LoginServiceService {
   logincheck(){
     return this.http.get<Login[]>('http://localhost/elearn/login.php');
   }
+
+  // getdata(){
+
+  // }
 }

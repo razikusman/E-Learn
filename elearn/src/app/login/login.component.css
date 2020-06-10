@@ -1,5 +1,5 @@
 .bg{
-    background:url('../../assets/background3.jpg') no-repeat center;
+    background:url('../../assets/background5.jpg') no-repeat center;
     background-size: cover ;
     position: fixed;
     height: 100%;
@@ -67,7 +67,7 @@ h3{
     border-bottom-left-radius: 25%;
     border-top-right-radius: 25%;
     padding: 4%;
-    background-color: rgba(0, 0, 0, 0.829);
+    background-color: rgba(0, 0, 0, 0.959);
 }
 
 label{
