@@ -19,7 +19,7 @@
 		$password = mysqli_real_escape_string($con, trim($request -> password));
 
 
-		//add to user table
+		//add to user table from student form
 		$sql1 = "INSERT INTO user( uType,uID,uPassword ) VALUES('Parent','{$pNIC}',null ),('{$user}','{$userid}','{$password}' )"; 
 		
 		if(mysqli_query($con,$sql1))
@@ -27,26 +27,43 @@
 			http_response_code(201);
 		}
 		
+		else
+		{
+			$sql2 = "INSERT INTO user( uType,uID,uPassword ) VALUES ('{$user}','{$userid}','{$password}' )"; 
+		
+			if(mysqli_query($con,$sql2))
+			{
+				http_response_code(201);
+			}
+		
+			$sql3 = "INSERT INTO student( sID,sName,sGrade,sDOB,sContact,sParentNIC) VALUES( '{$userid}','{$name}','{$grade}','{$DOB}','{$pContact}','{$pNIC}')";
+		
+			if(mysqli_query($con,$sql3))
+			{
+				http_response_code(201);
+				
+			}
+		}
 		
 		
-		//add to parent table
-		$sql3 = "INSERT INTO parent( NIC,pName,pContact ) VALUES( '{$pNIC}','{$pName}','{$pContact}')";
+		
+		//add parent detail from student form to parent table
+		$sql4 = "INSERT INTO parent( NIC,pName,pContact ) VALUES( '{$pNIC}','{$pName}','{$pContact}')";
 					
-		if(mysqli_query($con,$sql3))
+		if(mysqli_query($con,$sql4))
 		{
 			http_response_code(201);
 		}
 
 					
-		//add to student table
-		$sql4 = "INSERT INTO student( sID,sName,sGrade,sDOB,sContact,sParentNIC) VALUES( '{$userid}','{$name}','{$grade}','{$DOB}','{$pContact}','{$pNIC}')";
+		//add to student table from student form
+		$sql5 = "INSERT INTO student( sID,sName,sGrade,sDOB,sContact,sParentNIC) VALUES( '{$userid}','{$name}','{$grade}','{$DOB}','{$pContact}','{$pNIC}')";
 		
-		if(mysqli_query($con,$sql4))
+		if(mysqli_query($con,$sql5))
 		{
 			http_response_code(201);
 			
 		}
-		
 		
 	}
 	
@@ -65,6 +82,39 @@
 		//$subreq = json_decode($sub);                           //this is for testing
 		$englsh = ($sub.$english);
 		}*/
+		
+		/*
+		//add Student detail from student form to user table
+		$sql = "INSERT INTO user( uType,uID,uPassword ) VALUES ('{$user}','{$userid}','{$password}' )";
+		if(mysqli_query($con,$sql))
+		{
+			http_response_code(201);
+		}
+		
+		//add parent detail from student form to user table
+		$sql1 = "INSERT INTO user( uType,uID,uPassword ) VALUES('Parent','{$pNIC}',null )
+			WHERE NOT EXISTS(
+				SELECT uID FROM user WHERE uID != '$pNIC'
+			) LIMIT 1"; 
+		
+		if(mysqli_query($con,$sql1))
+		{
+			http_response_code(201);
+		}
+		
+		
+		
+		//add parent detail from student form to parent table
+		$sql3 = "INSERT INTO parent( NIC,pName,pContact ) VALUES( '{$pNIC}','{$pName}','{$pContact}'))
+			WHERE NOT EXISTS(
+				SELECT NIC FROM parent WHERE NIC != '$pNIC'
+			) LIMIT 1"; 
+					
+		if(mysqli_query($con,$sql3))
+		{
+			http_response_code(201);
+		}
+		*/
 		
 		
 ?>
