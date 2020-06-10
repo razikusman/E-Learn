@@ -18,6 +18,8 @@ import { OverallReportComponent } from './overall-report/overall-report.componen
 import { StudentProgressComponent } from './student-progress/student-progress.component';
 import { SalaryPaymentComponent } from './salary-payment/salary-payment.component';
 import { FeesPaymentComponent } from './fees-payment/fees-payment.component';
+import { ViewAnouncementComponent } from './view-anouncement/view-anouncement.component';
+import { AnouncementCreateComponent } from './anouncement-create/anouncement-create.component';
 
 //path for the url
 const routes: Routes = [
@@ -39,7 +41,9 @@ const routes: Routes = [
   {path: 'overall/report', component:OverallReportComponent},
   {path: 'student/progress', component:StudentProgressComponent},
   {path: 'salary/payment', component:SalaryPaymentComponent},
-  {path: 'fees/payment', component:FeesPaymentComponent}
+  {path: 'fees/payment', component:FeesPaymentComponent},
+  { path: 'anouncements', component: ViewAnouncementComponent},
+  { path: 'create/anouncement', component: AnouncementCreateComponent}
   
 ];
 
@@ -69,5 +73,7 @@ export const RoutingComponents= [
                                   StudentProgressComponent,
                                   SalaryPaymentComponent,
                                   FeesPaymentComponent,
+                                  ViewAnouncementComponent,
+                                  AnouncementCreateComponent
                                 ]
  

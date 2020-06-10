@@ -42,4 +42,8 @@ export class AdminHomeComponent implements OnInit {
     this.router.navigate(['/overall/report'], overall)
   }
 
+  add(anouncement){
+    this.router.navigate(['/anouncements'], anouncement)
+  }
+
 }
