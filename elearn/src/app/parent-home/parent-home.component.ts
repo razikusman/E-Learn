@@ -20,13 +20,14 @@ export class ParentHomeComponent implements OnInit {
     // const name = this.lgin.value;
     // console.log(name);
   }
-
-  
-
   
   //sign out and reach login
   signout(login){
     this.router.navigate(['/login'], login)
   }
 
+  //update profile
+  update(profile){
+    this.router.navigate(['/login'], profile)
+  }
 }

@@ -16,5 +16,10 @@ export class StdntHomeComponent implements OnInit {
   //sign out and reach login
   signout(login){
     this.router.navigate(['/login'], login)
+  };
+
+  //update profile
+  update(profile){
+    this.router.navigate(['/login'], profile)
   }
 }

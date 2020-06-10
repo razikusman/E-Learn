@@ -4,8 +4,8 @@
 
     <div *ngFor="let detail of details">
         <ng-container *ngIf= "teacherhome(); else student" >
-            <div class="reference" *ngIf="(detail.url) != 'teacherhome()'">
-                <a style="color: white;">
+            <div *ngIf="(detail.url) != 'teacherhome()'">
+                <a class="reference"  style="color: white;">
                     {{ detail.type }} Details
                 </a>
                 <hr>
@@ -14,18 +14,18 @@
         </ng-container><!--ng container-->
         <ng-template #student>
             <div *ngIf="studenthome(); else otherhome ">
-                <div class="reference" *ngIf="(detail.url) != 'studenthome()'">
-                    <a style="color: white;">
+                <div  *ngIf="(detail.url) != 'studenthome()'">
+                    <a class="reference" style="color: white;">
                         {{ detail.type }} Details
                     </a>
                     <hr style="color: white; height: 3px;">
                 </div>
             </div>
-        </ng-template><!--student contaoner-->
+        </ng-template><!--student contioner-->
     
         <ng-template #otherhome>
-            <div class="reference">
-                <a style="color: white;">
+            <div>
+                <a  class="reference" style="color: white;">
                     {{ detail.type }} Details
                 </a>
             </div>
