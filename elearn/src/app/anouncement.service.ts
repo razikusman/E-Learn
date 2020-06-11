@@ -9,11 +9,15 @@ export class AnouncementService {
 
   constructor(private http : HttpClient) { }
 
-  createanouncemnt(anouncemnt : Anouncement ){
-    return this.http.post<any>('http://localhost/elearn/addanouncemnt.php', anouncemnt); 
+  createanouncemnt(anouncement : Anouncement ){
+    return this.http.post<any>('http://localhost/elearn/addanouncemnt.php', anouncement); 
   }
 
   viewanouncemnt(){
-    return this.http.get<any>('http://localhost/elearn/viewanouncemnt.php');
+    return this.http.get<any>('http://localhost/elearn/viewanouncent.php');
+  }
+
+  deleteanouncemnt(id : number) {
+    return this.http.delete<Anouncement[]>('http://localhost/elearn/anouncementdelete.php?id=' + id);
   }
 }
