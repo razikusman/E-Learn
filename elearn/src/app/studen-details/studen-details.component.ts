@@ -9,6 +9,7 @@ import { CreateStudent } from '../create-student';
 })
 export class StudenDetailsComponent implements OnInit {
 
+  public nam = "0";
   students: CreateStudent[];
   constructor(
      private studentsservicce: StudentService,
@@ -24,16 +25,41 @@ export class StudenDetailsComponent implements OnInit {
     });
   }
 
-  select(six){
-    for(let i=0 ; i<this.students.length ; i++){
-      if(this.students[i].grad==6){
-        this.studentsservicce.viewstudent()
-        .subscribe((data:CreateStudent[])=>{
-          this.students = data;
-        });
-      }
-    }
+  //sort out students of all grade 
+  selecta(){
+    this.nam = "0";
   }
+
+  //sort out students of grade 6
+  select6(){
+    this.nam = "6";
+  }
+
+  //sort out students of grade 7
+  select7(){
+    this.nam = "7";
+  }
+
+  //sort out students of grade 8
+  select8(){
+    this.nam = "8";
+  }
+
+  //sort out students of grade 9
+  select9(){
+    this.nam = "9";
+  }
+
+  //sort out students of grade 10
+  select10(){
+    this.nam = "10";
+  }
+
+  //sort out students of grade 11
+  select11(six){
+    this.nam = "11";
+  }
+
   //delete student
   delete(students : CreateStudent): void{
     console.log(students.Student_ID);
