@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { StudentProgressComponent } from '../student-progress/student-progress.component';
 
 @Component({
   selector: 'app-nav-bar',

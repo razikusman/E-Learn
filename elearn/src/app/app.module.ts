@@ -9,9 +9,6 @@ import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialsModule } from './materials/materials.module';
 import { DialogExampleComponent } from './dialog-example/dialog-example.component';
-import { AnouncementComponent } from './anouncement/anouncement.component';
-import { AnouncementCreateComponent } from './anouncement-create/anouncement-create.component';
-import { ViewAnouncementComponent } from './view-anouncement/view-anouncement.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -19,9 +16,6 @@ import { ViewAnouncementComponent } from './view-anouncement/view-anouncement.co
     TopBarComponent,
     NavBarComponent,
     DialogExampleComponent,
-    AnouncementComponent,
-    AnouncementCreateComponent,
-    ViewAnouncementComponent,
     
   ],
   entryComponents : [DialogExampleComponent],
