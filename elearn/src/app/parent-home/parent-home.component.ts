@@ -28,6 +28,6 @@ export class ParentHomeComponent implements OnInit {
 
   //update profile
   update(profile){
-    this.router.navigate(['/login'], profile)
+    this.router.navigate([''], profile)
   }
 }

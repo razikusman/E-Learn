@@ -37,9 +37,9 @@ export class LoginComponent implements OnInit {
       
         //validating
         if(this.lgin.name == this.users[x].name && this.lgin.password ==  this.users[x].password){
-          // console.log("id:" + this.users[x].name);
-          // console.log("password :" + this.users[x].password);
-          // console.log("type:"+ this.users[x].type);
+          //  console.log("id:" + this.users[x].name);
+          //  console.log("password :" + this.users[x].password);
+          //  console.log("type:"+ this.users[x].type);
   
           //student login
           if(this.users[x].type == "Student"){

@@ -11,9 +11,10 @@
                 <hr>
             </div>
             
-        </ng-container><!--ng container-->
+        </ng-container><!--teacher container-->
+
         <ng-template #student>
-            <div *ngIf="studenthome(); else otherhome ">
+            <div *ngIf="studenthome(); else admin ">
                 <div  *ngIf="(detail.url) != 'studenthome()'">
                     <a class="reference" style="color: white;">
                         {{ detail.type }} Details
@@ -23,6 +24,17 @@
             </div>
         </ng-template><!--student contioner-->
     
+        <ng-template #admin>
+            <div *ngIf="adminhome(); else otherhome ">
+                <div>
+                    <a href="{{detail.type}}/details" class="reference" style="color: white;">
+                        {{ detail.type }} Details
+                    </a>
+                    <hr style="color: white; height: 3px;">
+                </div>
+            </div>
+        </ng-template><!--admin contioner-->
+
         <ng-template #otherhome>
             <div>
                 <a  class="reference" style="color: white;">
@@ -30,7 +42,7 @@
                 </a>
             </div>
             
-        </ng-template><!--other-->
+        </ng-template><!--parent-->
         <!-- -->
     </div>
     
