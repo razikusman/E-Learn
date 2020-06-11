@@ -46,7 +46,7 @@ export class NavBarComponent implements OnInit {
     },
 
     {
-        type: 'subject',
+        type: 'subjects',
         name: 'noornisa',
         url: 'subject()'
     },
