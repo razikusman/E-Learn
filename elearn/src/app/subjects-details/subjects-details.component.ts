@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { SubjectsService } from '../subjects.service';
+import { SubjectCreate } from '../subject-create';
 
 @Component({
   selector: 'app-subjects-details',
@@ -7,9 +9,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SubjectsDetailsComponent implements OnInit {
 
-  constructor() { }
+  subjects : SubjectCreate[]
+  constructor(
+    private subjectservice: SubjectsService,
+  ) { }
 
   ngOnInit() {
+    this.subjectservice.viewsubjects()
+    .subscribe((data: SubjectCreate[])=>{
+      this.subjects = data
+    });
   }
 
 }
