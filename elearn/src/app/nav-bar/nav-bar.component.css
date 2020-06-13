@@ -5,14 +5,12 @@
 }
 
 .reference:hover{
-    background-color: rgb(36, 37, 37);
-    color: white;
+    background-color: rgb(4, 63, 180);
     
 }
 
 .reference.active{
     background-color:  rgb(31, 30, 30);
-    color: white;
     border-color: white;
     border-width: 5px;
 }

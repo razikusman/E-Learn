@@ -1,54 +1,52 @@
+<app-top-bar style="width: -webkit-fill-available;position: inherit;"></app-top-bar><!--top bar-->
 <div class="bg ">
     <div class="container">
         <div class="row justify-content-end">
             <h1 class="col-md-8 ">A-Z English Academy</h1><!--title-->
 
-            <div class="col-md-2  abt ">
-                <button class="btn btn-info" (click)="about(about)">
-                <img src="assets/about.png"  class="i">about
-                </button>
-            </div>
+            
         </div>
         <div class="row justify-content-end">
             <h3 class="col-md-8">the place to achive dreams.........</h3>
         </div>
 
-        <div class="row justify-content-end frm">
-            <div class="col-md-4 align-self-center">
+        <div class="row  frm">
+            <div class="col-md-4 align-self-center text-right">
                 <div class="card card-image ">
                     <img class="loginimage" src="assets/login.png"><!--login image-->
                 </div>
             </div>
 
-            <div class="col-md-6 ">
-                <form #loginForm="ngForm" class="card card-image login">
-                    
-                    <!--{{loginForm.form.valid}}-->
+            <div class="col-md-4 ">
+                <form #loginForm="ngForm" class="card card-image login raised">
                     <label id="username">User ID</label><br>
 
-                    <input 
-                        type="text" required #name="ngModel" name="uname" placeholder="User ID"  [(ngModel)]="lgin.name"
-                    ><br>
+                    <div class="d-flex">
+                        <input class="col-md-9"
+                            type="text" required #name="ngModel" name="uname" placeholder="User ID"  [(ngModel)]="lgin.name"
+                        >
+                    </div>
+                    <small style="color: rgb(206, 252, 4); text-transform: uppercase; font-weight: bold; letter-spacing: 5px;"
+                        *ngIf="name.invalid && name.touched"> fill out the user name
+                    </small><br>
 
                     <label id="password">Password</label><br>
 
-                    <input 
-                        required #name="ngModel" type="password" placeholder="5-8 Characters" name="password" [(ngModel)]="lgin.password"
-                    ><br>
-
-                    <small *ngIf="loginForm.form.invalid" class="text-danger">Sign-Up if You have not registered....</small>
-                    <br>
-                    <div>
-                        <a href="" class="col-md-12 text-info" id="fgt">forgot password...?</a>
-                    </div><br>
-                    <div class="row">
+                    <div class="d-flex">
+                        <input class="col-md-9"
+                            required #password="ngModel" type="password" placeholder="5-8 Characters" name="password" [(ngModel)]="lgin.password"
+                        >
                         <button  [disabled]="loginForm.form.invalid"  (click) = "login(home)"  
-                        class="btn btn-primary col-md-4">login</button>
-                    </div>
-                    <div class="row">
+                        class="btn btn-primary col-md-3">login</button>
+                        </div>
+                    <small style="color: rgb(206, 252, 4); text-transform: uppercase; font-weight: bold; letter-spacing: 5px;" 
+                        *ngIf="password.invalid && password.touched"> fill out the password
+                    </small>
+                    <br>
+                    <div class="d-flex">
+                        <label class="text-warning col-md-9 ">sign up if you don't have an account</label>
                         <button (click)= "create(crete)" class="btn btn-primary col-md-3">Sign up</button>
-                        <label class="text-warning col-md-8 ">don't have an account</label>
-                    </div>     
+                    </div>   
                 </form><!--login form-->       
             </div>
         </div>

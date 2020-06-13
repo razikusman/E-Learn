@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { LoginComponent } from '../login/login.component';
 
 @Component({
   selector: 'app-stdnt-home',
@@ -8,11 +9,15 @@ import { Router } from '@angular/router';
 })
 export class StdntHomeComponent implements OnInit {
 
-  constructor(private router: Router) { }
+  constructor(
+    private router: Router,
+    private login : LoginComponent) { }
 
   ngOnInit() {
+    console.log(this.login.id);
   }
 
+  
   //sign out and reach login
   signout(login){
     this.router.navigate(['/login'], login)

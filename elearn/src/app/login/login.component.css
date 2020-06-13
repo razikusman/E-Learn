@@ -29,12 +29,6 @@ h1{
     height: 2%;
 }
 
-img.i{
-    position: relative;
-    width: 20%;
-    height: 20%;
-}
-
 h3{
     letter-spacing: 5px;
     text-align: left;
@@ -64,10 +58,8 @@ h3{
 .login{
     height: fit-content;
     text-align: justify;
-    border-bottom-left-radius: 25%;
-    border-top-right-radius: 25%;
     padding: 4%;
-    background-color: rgba(0, 0, 0, 0.959);
+    background-color: rgba(16, 14, 160, 0.89);
 }
 
 label{
@@ -94,7 +86,9 @@ input{
 
 .text-warning{
     font-style: italic;
-    font-family: monospace;
+    font-family: monospace;  
+    color: red;
+    text-transform: uppercase;
 }
 
 img, form{

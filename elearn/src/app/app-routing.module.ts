@@ -40,7 +40,7 @@ const routes: Routes = [
   {path: 'about', component:AboutComponent},
   {path:'quize', component:QuizeComponent},
   {path: 'overall/report', component:OverallReportComponent},
-  {path: 'student/progress', component:StudentProgressComponent},
+  {path: 'student/progres', component:StudentProgressComponent},
   {path: 'salary/payment', component:SalaryPaymentComponent},
   {path: 'fees/payment', component:FeesPaymentComponent},
   {path: 'anouncements', component: ViewAnouncementComponent},

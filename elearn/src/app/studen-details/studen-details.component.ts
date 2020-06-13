@@ -10,6 +10,7 @@ import { CreateStudent } from '../create-student';
 export class StudenDetailsComponent implements OnInit {
 
   public nam = "0";
+  public no = "0";
   students: CreateStudent[];
   constructor(
      private studentsservicce: StudentService,
@@ -22,9 +23,11 @@ export class StudenDetailsComponent implements OnInit {
     .subscribe((data:CreateStudent[])=>{
       this.students =data;
       //console.log(this.students);
+      
     });
   }
 
+  
   //sort out students of all grade 
   selecta(){
     this.nam = "0";

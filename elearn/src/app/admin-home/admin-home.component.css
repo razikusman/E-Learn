@@ -1,4 +1,9 @@
 .container{
+    background-color: rgba(69, 186, 240, 0.384);
+    background-size: cover ;
+    height: 100%;
+    width: 100%;
+    margin: 0%;
     position: absolute;
     overflow: auto;
 }

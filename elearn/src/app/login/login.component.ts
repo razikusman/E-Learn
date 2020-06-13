@@ -14,14 +14,14 @@ import { identifierModuleUrl } from '@angular/compiler';
 export class LoginComponent implements OnInit {
 
   users : Login[]; // aray to store the user information
-  
+  public id = "";
   constructor(
     private router : Router,
     private dialog : MatDialog,
     private loginservice : LoginServiceService) { }
 
   lgin = new Login(null,null,null); //taking the inputs into a format
-
+  dt : Login[]
   ngOnInit() {
     // take all the details from user tble for validation
     this.loginservice.logincheck()
@@ -44,8 +44,9 @@ export class LoginComponent implements OnInit {
           //student login
           if(this.users[x].type == "Student"){
             this.router.navigate(['/student/home'], home);
-
-            //this.loginservice.getdata(this.lgin.name);
+            console.log(this.users[x].password);
+            this.id = this.users[x].password;
+            this.loginservice.log();
           }
           
   
@@ -71,6 +72,7 @@ export class LoginComponent implements OnInit {
     //admin login
     else if(this.lgin.name =='admin' && this.lgin.password == 'admin'){
       this.router.navigate(['/admin/home'], home);
+      this.id = this.lgin.password;
     }  
   }
 
