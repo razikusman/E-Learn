@@ -20,5 +20,12 @@ export class SubjectsDetailsComponent implements OnInit {
       this.subjects = data
     });
   }
+  delete(subjects : SubjectCreate): void{
+    console.log(subjects.Sub_ID);
+    this.subjectservice.deleteubjects(subjects.Sub_ID)
+    .subscribe(data => {
+      this.subjects = this.subjects.filter(u => u !== subjects);
+    })
+  }
 
 }

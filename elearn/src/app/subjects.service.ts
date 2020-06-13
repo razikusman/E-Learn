@@ -15,8 +15,8 @@ export class SubjectsService {
     return this.http.get<SubjectCreate[]>('http://localhost/elearn/subjectview.php');
   }
 
-  deleteubjects(){
-    return this.http.delete<SubjectCreate[]>('http://localhost/elearn/subjectview.php?subid=');
+  deleteubjects(Sub_ID: any){
+    return this.http.delete<SubjectCreate[]>('http://localhost/elearn/subjectdelete.php?subid='+ Sub_ID);
   }
 
   Createbjects(){
