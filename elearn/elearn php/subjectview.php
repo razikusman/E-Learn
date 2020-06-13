@@ -10,7 +10,7 @@
 	{
 		$cr = 0;
 		while($row = mysqli_fetch_assoc($result)){
-			$subjects[$cr]['Sub_ID'] = $row['aubid'];
+			$subjects[$cr]['Sub_ID'] = $row['subId'];
 			$subjects[$cr]['Name'] = $row['subName'];
 			$cr++;
 		}echo json_encode($subjects);
