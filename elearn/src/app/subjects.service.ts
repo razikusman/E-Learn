@@ -14,4 +14,16 @@ export class SubjectsService {
   viewsubjects(){
     return this.http.get<SubjectCreate[]>('http://localhost/elearn/subjectview.php');
   }
+
+  deleteubjects(){
+    return this.http.delete<SubjectCreate[]>('http://localhost/elearn/subjectview.php?subid=');
+  }
+
+  Createbjects(){
+    return this.http.get<SubjectCreate[]>('http://localhost/elearn/subjectview.php');
+  }
+
+ updatebjects(){
+    return this.http.get<SubjectCreate[]>('http://localhost/elearn/subjectview.php');
+  }
 }
