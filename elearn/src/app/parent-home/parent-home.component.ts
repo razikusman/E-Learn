@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { LoginServiceService } from '../login-service.service';
 //import { LoginComponent } from '../login/login.component';
 
 @Component({
@@ -11,14 +12,14 @@ export class ParentHomeComponent implements OnInit {
 
   constructor(
     private router: Router,
-    //private lgin : LoginComponent
+    private loginservice : LoginServiceService
   ) { }
 
   
 
   ngOnInit() {
-    // const name = this.lgin.value;
-    // console.log(name);
+    
+    console.log(this.loginservice.getog()); //get student id 
   }
   
   //sign out and reach login

@@ -46,25 +46,27 @@ export class LoginComponent implements OnInit {
             this.router.navigate(['/student/home'], home);
             console.log(this.users[x].password);
             this.id = this.users[x].password;
-            this.loginservice.log();
+            this.loginservice.setlog(this.users[x].type,this.users[x].password);//pass id to hme page
           }
           
   
           //parent login
           else if(this.users[x].type == "Parent"){
             this.router.navigate(['/parent/home'], home);
+            this.loginservice.setlog(this.users[x].type,this.users[x].password);//pass id to hme page
           }
   
           //teacher login
           else if(this.users[x].type == "Teacher"){
             this.router.navigate(['/teacher/home'], home);
+            this.loginservice.setlog(this.users[x].type,this.users[x].password);//pass id to hme page
           }
           return x = x;
         }
 
         //lgin error
         else if(x == this.users.length - 1){
-          this.dialog.open(DialogExampleComponent);
+          this.dialog.open(DialogExampleComponent); //error mesage
         }
       };
     }
@@ -73,7 +75,11 @@ export class LoginComponent implements OnInit {
     else if(this.lgin.name =='admin' && this.lgin.password == 'admin'){
       this.router.navigate(['/admin/home'], home);
       this.id = this.lgin.password;
-    }  
+    }
+    
+    else{
+      this.dialog.open(DialogExampleComponent); //error mesage
+    }
   }
 
   //direct to the signup user type 

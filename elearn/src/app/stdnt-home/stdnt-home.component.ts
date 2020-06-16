@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { LoginComponent } from '../login/login.component';
+import { LoginServiceService } from '../login-service.service';
 
 @Component({
   selector: 'app-stdnt-home',
@@ -11,10 +12,11 @@ export class StdntHomeComponent implements OnInit {
 
   constructor(
     private router: Router,
-    private login : LoginComponent) { }
+    private loginservice : LoginServiceService) { }
 
   ngOnInit() {
-    console.log(this.login.id);
+    
+    console.log(this.loginservice.getog()); //get student id 
   }
 
   

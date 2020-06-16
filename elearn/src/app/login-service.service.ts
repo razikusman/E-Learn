@@ -12,11 +12,12 @@ export class LoginServiceService {
     return this.http.get<Login[]>('http://localhost/elearn/login.php');
   }
 
-  log(){
-    
+  private value = {};
+  setlog(type,id){
+    this.value[type] = id;
   }
 
-  // getdata(){
-
-  // }
+  getog(){
+    return this.value;
+  }
 }
