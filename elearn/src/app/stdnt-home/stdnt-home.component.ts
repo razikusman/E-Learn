@@ -15,7 +15,7 @@ export class StdntHomeComponent implements OnInit {
     private loginservice : LoginServiceService) { }
 
   ngOnInit() {
-    
+    debugger;
     console.log(this.loginservice.getog()); //get student id 
   }
 

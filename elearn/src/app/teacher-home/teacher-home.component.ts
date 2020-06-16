@@ -15,7 +15,7 @@ export class TeacherHomeComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    
+    debugger;
     console.log(this.loginservice.getog()); //get student id 
   }
 
