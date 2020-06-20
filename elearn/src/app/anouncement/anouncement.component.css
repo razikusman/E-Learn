@@ -1,0 +1,11 @@
+.anouncement{
+    background:url('../../assets/background.jpg') ;
+    background-size: contain;
+    left: 0%;
+    right: 0%;
+    bottom: auto;
+    height: 100%;
+    position: absolute;
+    line-break: anywhere;
+    overflow: auto;
+}

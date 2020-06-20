@@ -1,11 +1,12 @@
 <div class="side">
     <img class="imgaz" src="assets/az1.png" alt="">
 
+    <h2 style="color: black; background-color: blue;">navigation</h2>
 
     <div *ngFor="let detail of details">
         <ng-container *ngIf= "teacherhome(); else student" >
             <div *ngIf="(detail.url) != 'teacherhome()'">
-                <a class="reference"  style="color: white;">
+                <a class="reference"  style="color: blue;">
                     {{ detail.type }} Details
                 </a>
                 <hr>
@@ -16,10 +17,10 @@
         <ng-template #student>
             <div *ngIf="studenthome(); else admin ">
                 <div  *ngIf="(detail.url) != 'studenthome()'">
-                    <a class="reference" style="color: white;">
+                    <a class="reference" style="color:blue;">
                         {{ detail.type }} Details
                     </a>
-                    <hr style="color: white; height: 3px;">
+                    <hr style="color: blue; height: 3px;">
                 </div>
             </div>
         </ng-template><!--student contioner-->
@@ -27,17 +28,17 @@
         <ng-template #admin>
             <div *ngIf="adminhome(); else otherhome ">
                 <div >
-                    <a href="{{detail.type}}/details" class="reference" style="color: white;">
+                    <a href="{{detail.type}}/details" class="reference" style="color:blue;">
                         {{ detail.type }} Details
                     </a>
-                    <hr style="color: white; height: 3px;">
+                    <hr style="color: blue; height: 3px;">
                 </div>
             </div>
         </ng-template><!--admin contioner-->
 
         <ng-template #otherhome>
             <div>
-                <a  class="reference" style="color: white;">
+                <a  class="reference" style="color: blue;">
                     {{ detail.type }} Details
                 </a>
             </div>
@@ -49,7 +50,7 @@
     <div class="info-container">
         <ng-container *ngIf= "teacherhome() || adminhome(); else studentparent" >
         
-            <h5 style="color: white;" class="h5">
+            <h5 style="color: blue;" class="h5">
                 Subjects Teaching
             </h5>
             
@@ -57,7 +58,7 @@
     
         <ng-template #studentparent>
             <div *ngIf="studenthome() || parenthome();">
-                <h5 style="color: white;" class="h5">
+                <h5 style="color: blue;" class="h5">
                     Subjects Following
                 </h5>
             </div>

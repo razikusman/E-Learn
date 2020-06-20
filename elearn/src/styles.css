@@ -1,86 +1,68 @@
 /*top bar*/
 app-top-bar {
-  position: fixed;
-  left: 20%;
-  width: calc(100% - 20%);
-  height: 10%;
+  position: relative;
+  width: 100%;
+  height: fit-content;
   top: 0%;
-  background-color: rgb(0, 51, 153);
-  padding: 2%;
-  display: flex;
+  left: 0%;
+  background-color:blue;
   justify-content: space-between;
-  align-items: center;
 }
 
 /*anouncements*/
 app-anouncement{
-  background:url('assets/background.jpg') ;
-  position:fixed;
-  left: 20%;
-  width: calc(100% - 20%);
-  height: 39%;
-  top: 11%;
-  background-color: rgb(185, 218, 215);
-  padding-left: 1%;
-  padding-right: 1%;
-  border-radius: 15px;
-  overflow: auto;
+  left: 16%;
+  right: 0%;
+  height: 40%;
+  bottom: auto;
+  position: absolute;
 }
 
 /*nav bar*/
 app-nav-bar{
   left: 0%;
-  position: fixed;
-  width: 20%;
-  top: 0px;
-  bottom: 0px;
-  height: 100%;
-  background-color: rgb(0, 51, 153);
-  white-space: nowrap;
-  margin: 0%;
-  overflow: auto;
-  padding-left: 1%;
-}
-
-/*admin home*/
-app-admin-home{
-  position: fixed;
-  left: 20%;
-  width: calc(100% - 20%);
-  height: 60%;
-  top:51%;
-  overflow: auto;
-  border-radius: 15px;
-}
-
-/*parent hom*/
-app-parent-home{
-  position: fixed;
-  left: 20%;
-  width: calc(100% - 20%);
-  height: 60%;
-  top:51%;
-  overflow: auto;
+  right: 85%;
+  bottom: auto;
+  position: absolute;
+  line-break: anywhere;
+  height: inherit;
+  border-right: #777474 solid 3px;
 }
 
 /*stdnt hom*/
 app-stdnt-home{
-  position: fixed;
-  left: 20%;
-  width: calc(100% - 20%);
-  height: 60%;
-  top:51%;
-  overflow: auto;
+  position: inherit;
+  left: 0%;
+  width: calc(100%);
+  height: 100%;
+  top:2%;
+}
+
+/*admin home*/
+app-admin-home{
+  position: inherit;
+  left: 0%;
+  width: calc(100%);
+  height: 100%;
+  top:2%;
+}
+
+/*parent hom*/
+app-parent-home{
+  position: inherit;
+  left: 0%;
+  width: calc(100%);
+  height: 100%;
+  top:2%;
 }
 
 /*teacher hom*/
 app-teacher-home{
-  position: fixed;
-  left: 20%;
-  width: calc(100% - 20%);
-  height: 60%;
-  top:51%;
-  overflow: auto;
+  position: inherit;
+  left: 0%;
+  width: calc(100%);
+  height: 100%;
+  top:2%;
 }
 
 /*links a*/
