@@ -1,6 +1,6 @@
 /*top bar*/
 app-top-bar {
-  position: relative;
+  position: sticky;
   width: 100%;
   height: fit-content;
   top: 0%;
