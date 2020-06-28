@@ -8,8 +8,8 @@
     <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
         <ol class="carousel-indicators">
           <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-          <div *ngFor = "let ad of ads">
-            <li data-target="#carouselExampleIndicators" data-slide-to="ad.index"></li>
+          <div *ngFor = "let ad of ads ; let i = 'index + 1'">
+            <li data-target="#carouselExampleIndicators" data-slide-to="i"></li>
           </div>
         </ol>
         <div  class="carousel-inner">
@@ -18,11 +18,11 @@
               style="font-size: 70px; color: mediumblue;font-weight: bold"> hello everyone ....!</h1>
           </div>
           
-          <div class="carousel-item" *ngFor="let ad of ads">
+          <div class="carousel-item" *ngFor="let ad of ads ; let i = 'index + 1'">
             <h1 class="d-flex justify-content-center text-uppercase font-weight-bold" 
               style="font-size: 70px; color: mediumblue;font-weight: bold"> {{ad.h1}}</h1>
               <h1 class="d-flex justify-content-center text-uppercase font-weight-bold" 
-              style="font-size: 70px; color: mediumblue;font-weight: bold"> {{ad.index}}</h1>
+              style="font-size: 70px; color: mediumblue;font-weight: bold"> {{i}} </h1>
           </div>
         </div>
         <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
