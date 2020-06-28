@@ -46,7 +46,7 @@ export class AdminHomeComponent implements OnInit {
   }
 
   add(anouncement){
-    this.router.navigate(['/anouncements'], anouncement)
+    this.router.navigate(['/anouncements/view'], anouncement)
   }
 
 }

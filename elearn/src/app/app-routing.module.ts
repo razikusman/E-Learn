@@ -21,15 +21,18 @@ import { FeesPaymentComponent } from './fees-payment/fees-payment.component';
 import { AnouncementComponent } from './anouncement/anouncement.component';
 import { AnouncementCreateComponent } from './anouncement-create/anouncement-create.component';
 import { ViewAnouncementComponent } from './view-anouncement/view-anouncement.component';
+import { DetailsTeachersComponent } from './details-teachers/details-teachers.component';
+import { DetailsSubjectsComponent } from './details-subjects/details-subjects.component';
+import { DetailsStudentComponent } from './details-student/details-student.component';
 
 //path for the url
 const routes: Routes = [
   {path:'',redirectTo:'/login', pathMatch: 'full'},
   {path:'login', component:LoginComponent},
   {path:'create', component:CreteComponent},
-  {path:'studentcreate', component:StdntcreteComponent},
-  {path:'teachercreate', component:TeachercreteComponent},
-  {path:'parentcreate', component:ParentcreteComponent},
+  {path:'student/create', component:StdntcreteComponent},
+  {path:'teacher/create', component:TeachercreteComponent},
+  {path:'parent/create', component:ParentcreteComponent},
   {path:'parent/home', component:ParentHomeComponent},
   {path:'student/home', component:StdntHomeComponent},
   {path:'teacher/home', component:TeacherHomeComponent},
@@ -43,9 +46,12 @@ const routes: Routes = [
   {path: 'student/progres', component:StudentProgressComponent},
   {path: 'salary/payment', component:SalaryPaymentComponent},
   {path: 'fees/payment', component:FeesPaymentComponent},
-  {path: 'anouncements', component: ViewAnouncementComponent},
+  {path: 'anouncements/view', component: ViewAnouncementComponent},
   {path: 'create/anouncement', component: AnouncementCreateComponent},
-  {path: 'anouncement', component:AnouncementComponent}
+  {path: 'anouncement', component:AnouncementComponent},
+  {path: 'details/student', component: DetailsStudentComponent},
+  {path: 'details/subject', component: DetailsSubjectsComponent},
+  {path: 'details/teacher', component:DetailsTeachersComponent}
   
 ];
 
@@ -77,6 +83,9 @@ export const RoutingComponents= [
                                   FeesPaymentComponent,
                                   ViewAnouncementComponent,
                                   AnouncementCreateComponent,
-                                  AnouncementComponent
+                                  AnouncementComponent,
+                                  DetailsStudentComponent,
+                                  DetailsSubjectsComponent,
+                                  DetailsTeachersComponent
                                 ]
  

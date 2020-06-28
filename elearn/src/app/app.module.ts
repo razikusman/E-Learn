@@ -9,6 +9,9 @@ import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialsModule } from './materials/materials.module';
 import { DialogExampleComponent } from './dialog-example/dialog-example.component';
+import { DetailsStudentComponent } from './details-student/details-student.component';
+import { DetailsSubjectsComponent } from './details-subjects/details-subjects.component';
+import { DetailsTeachersComponent } from './details-teachers/details-teachers.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -16,6 +19,9 @@ import { DialogExampleComponent } from './dialog-example/dialog-example.componen
     TopBarComponent,
     NavBarComponent,
     DialogExampleComponent,
+    DetailsStudentComponent,
+    DetailsSubjectsComponent,
+    DetailsTeachersComponent,
     
   ],
   entryComponents : [DialogExampleComponent],

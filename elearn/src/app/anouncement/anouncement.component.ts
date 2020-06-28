@@ -12,4 +12,13 @@ export class AnouncementComponent implements OnInit {
   ngOnInit() {
   }
 
+  ads = [
+    {
+      h1:"klsjdl"
+    },
+
+    {
+      h1:"ppppl"
+    }
+  ];
 }

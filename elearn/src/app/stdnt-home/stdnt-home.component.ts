@@ -10,15 +10,19 @@ import { LoginServiceService } from '../login-service.service';
 })
 export class StdntHomeComponent implements OnInit {
 
+  
   constructor(
     private router: Router,
     private loginservice : LoginServiceService) { }
 
+     
   ngOnInit() {
     
     console.log(this.loginservice.getog()); //get student id 
+    
   }
 
+  ids = this.loginservice.getog();
   
   //sign out and reach login
   signout(login){

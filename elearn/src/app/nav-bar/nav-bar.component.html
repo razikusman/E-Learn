@@ -38,7 +38,7 @@
 
         <ng-template #otherhome>
             <div>
-                <a  class="reference" style="color: blue;">
+                <a  class="reference" style="color: black; background-color: blue;">
                     {{ detail.type }} Details
                 </a>
             </div>
@@ -50,17 +50,17 @@
     <div class="info-container">
         <ng-container *ngIf= "teacherhome() || adminhome(); else studentparent" >
         
-            <h5 style="color: blue;" class="h5">
+            <h2 style="color: black; background-color: blue;" class="h5">
                 Subjects Teaching
-            </h5>
+            </h2>
             
         </ng-container><!--ng container-->
     
         <ng-template #studentparent>
             <div *ngIf="studenthome() || parenthome();">
-                <h5 style="color: blue;" class="h5">
+                <h2 style="color: black; background-color: blue;" class="h5">
                     Subjects Following
-                </h5>
+                </h2>
             </div>
         </ng-template><!--student contaoner-->
     
