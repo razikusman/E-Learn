@@ -9,14 +9,14 @@ import { LoginServiceService } from '../login-service.service';
 })
 export class TeacherHomeComponent implements OnInit {
 
+  public value = {};
   constructor(
     private router: Router,
     private loginservice : LoginServiceService
   ) { }
 
   ngOnInit() {
-    debugger;
-    console.log(this.loginservice.getog()); //get student id 
+    this.value = this.loginservice.getog();//get student id 
   }
 
   add(quize){

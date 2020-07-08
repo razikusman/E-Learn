@@ -10,6 +10,7 @@ import { LoginServiceService } from '../login-service.service';
 })
 export class ParentHomeComponent implements OnInit {
 
+  public value = {};
   constructor(
     private router: Router,
     private loginservice : LoginServiceService
@@ -18,8 +19,7 @@ export class ParentHomeComponent implements OnInit {
   
 
   ngOnInit() {
-    debugger;
-    console.log(this.loginservice.getog()); //get student id 
+    this.value = this.loginservice.getog();//get student id 
   }
   
   //sign out and reach login
