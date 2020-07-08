@@ -13,8 +13,9 @@ export class LoginServiceService {
   }
 
   private value = {};
-  setlog(type,id){
-    this.value[type] = id;
+  setlog(name,id){
+    this.value["user_id"] = id;
+    this.value["user_name"] = name;
   }
 
   getog(){

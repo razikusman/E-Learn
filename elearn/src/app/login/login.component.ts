@@ -15,6 +15,7 @@ export class LoginComponent implements OnInit {
 
   users : Login[]; // aray to store the user information
   public id = "";
+  public name = "";
   constructor(
     private router : Router,
     private dialog : MatDialog,
@@ -44,9 +45,9 @@ export class LoginComponent implements OnInit {
           //student login
           if(this.users[x].type == "Student"){
             this.router.navigate(['/student/home'], home);
-            console.log(this.users[x].password);
             this.id = this.users[x].password;
-            this.loginservice.setlog(this.users[x].type,this.users[x].password);//pass id to hme page
+            this.name = this.users[x].name;
+            this.loginservice.setlog(this.users[x].name,this.users[x].password);//pass id to hme page
           }
           
   
