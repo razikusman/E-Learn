@@ -1,28 +1,25 @@
-<!--<app-top-bar></app-top-bar>top bar-->
+<app-nav-bar></app-nav-bar><!--nav bar-->
 <app-anouncement></app-anouncement>
 
 <!--container start-->
 <div class="container">
-    <!--option starts-->
-    <div class="option">
 
-        <button class="btn btn-primary" (click)="add(anouncement)" >Add anouncements</button><!--create new anouncement-->
+    <button class="btn btn-primary" (click)="add(anouncement)" >Add anouncements</button><!--create new anouncement-->
+    
+    <!--button reports starts-->
+    <div class="btn btn-group">
 
-        <div class="btn btn-group">
+        <button style="border-right: double" class="btn btn-primary" (click)="salarypayment(salary)" >salary payment report</button>
+        
+        <button style="border-right: double" class="btn btn-primary" (click)="feespayment(fees)" >monthly fees payment report</button>
+        
+        <button class="btn btn-primary" (click)="overallreport(overall)" >ovrall report</button>
 
-            <button style="border-right: double" class="btn btn-primary" (click)="salarypayment(salary)" >salary payment report</button>
-            
-            <button style="border-right: double" class="btn btn-primary" (click)="feespayment(fees)" >monthly fees payment report</button>
-            
-            <button class="btn btn-primary" (click)="overallreport(overall)" >ovrall report</button>
+        <hr>
+    </div><!--button reports end-->
+        
+    <div class="report-group">
+        <label>reports</label>
+    </div><!--view report-->
 
-            <hr>
-        </div><!--button reports-->
-            
-        <div class="report-group">
-            <label>reports</label>
-        </div><!--view report-->
-
-    </div><!--options-->
 </div><!--container ends-->
-<app-nav-bar></app-nav-bar><!--nav bar-->

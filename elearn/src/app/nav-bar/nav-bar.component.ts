@@ -14,23 +14,23 @@ export class NavBarComponent implements OnInit {
   }
 
   teacherhome(){
-    return this.router.url=='/teacher/home'
+    return this.router.url=='/teacher/home';
   }
 
   subject(){
-    return this.router.url=='/subject/details'
+    return this.router.url=='/subject/details';
   }
 
   studenthome(){
-    return this.router.url=='/student/home'
+    return this.router.url=='/student/home';
   }
 
   adminhome(){
-    return this.router.url=='/admin/home'
+    return this.router.url=='/admin/home';
   }
 
   parenthome(){
-    return this.router.url=='/parent/home'
+    return this.router.url=='/parent/home';
   }
   
 

@@ -35,37 +35,33 @@ app-nav-bar{
 /*stdnt hom*/
 app-stdnt-home{
   position: inherit;
-  left: 0%;
+  left: 18%;
   width: calc(100%);
   height: 100%;
-  top:5%;
 }
 
 /*admin home*/
 app-admin-home{
   position: inherit;
-  left: 0%;
+  left: 18%;
   width: calc(100%);
-  height: 100%;
-  top:2%;
+  height: 100%;;
 }
 
 /*parent hom*/
 app-parent-home{
   position: inherit;
-  left: 0%;
+  left: 18%;
   width: calc(100%);
   height: 100%;
-  top:2%;
 }
 
 /*teacher hom*/
 app-teacher-home{
   position: inherit;
-  left: 0%;
+  left: 18%;
   width: calc(100%);
   height: 100%;
-  top:2%;
 }
 
 /*links a*/

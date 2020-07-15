@@ -6,7 +6,7 @@
     <div *ngFor="let detail of details">
         <ng-container *ngIf= "teacherhome(); else student" >
             <div *ngIf="(detail.url) != 'teacherhome()'">
-                <a class="reference"  style="color: blue;">
+                <a href="details/{{detail.type}}" class="reference"  style="color: blue;">
                     {{ detail.type }} Details
                 </a>
                 <hr style="color: blue; height: 3px;">
@@ -17,7 +17,7 @@
         <ng-template #student>
             <div *ngIf="studenthome(); else admin ">
                 <div  *ngIf="(detail.url) != 'studenthome()'">
-                    <a class="reference" style="color:blue;">
+                    <a href="details/{{detail.type}}" class="reference" style="color:blue;">
                         {{ detail.type }} Details
                     </a>
                     <hr style="color: blue; height: 3px;">
@@ -38,7 +38,7 @@
 
         <ng-template #otherhome>
             <div>
-                <a  class="reference" style="color: blue;">
+                <a href="details/{{detail.type}}"  class="reference" style="color: blue;">
                     {{ detail.type }} Details
                 </a>
                 <hr style="color: blue; height: 3px;">

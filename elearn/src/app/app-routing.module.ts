@@ -50,7 +50,7 @@ const routes: Routes = [
   {path: 'create/anouncement', component: AnouncementCreateComponent},
   {path: 'anouncement', component:AnouncementComponent},
   {path: 'details/student', component: DetailsStudentComponent},
-  {path: 'details/subject', component: DetailsSubjectsComponent},
+  {path: 'details/subjects', component: DetailsSubjectsComponent},
   {path: 'details/teacher', component:DetailsTeachersComponent}
   
 ];
