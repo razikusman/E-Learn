@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { AnouncementService } from '../anouncement.service';
+import { Anouncement } from '../anouncement';
 
 @Component({
   selector: 'app-anouncement',
@@ -7,18 +9,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AnouncementComponent implements OnInit {
 
-  constructor() { }
+  ads : Anouncement[];
+  constructor(
+    private anouncementsservice : AnouncementService
+  ) { }
 
   ngOnInit() {
+    this.anouncementsservice.viewanouncemnt()
+    .subscribe((data:Anouncement[])=>{
+      this.ads=data;
+    });//anouncements
   }
 
-  ads = [
-    {
-      h1:"klsjdl"
-    },
-
-    {
-      h1:"ppppl"
-    }
-  ];
+  
 }
