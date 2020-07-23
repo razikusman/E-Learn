@@ -27,7 +27,6 @@ export class StudenDetailsComponent implements OnInit {
     });
   }
 
-  
   //sort out students of all grade 
   selecta(){
     this.nam = "0";
@@ -72,5 +71,11 @@ export class StudenDetailsComponent implements OnInit {
     })
   }
 
-  
+  //evaluate student
+  evaluate(){
+/*
+bind data to a model
+as 
+*/
+  }
 }

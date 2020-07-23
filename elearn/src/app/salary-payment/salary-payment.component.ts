@@ -7,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SalaryPaymentComponent implements OnInit {
 
-  myDate: number = Date.now();
+  myDate: number = 1+ Date.now();
   constructor() {}
 
   ngOnInit() {
