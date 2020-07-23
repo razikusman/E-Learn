@@ -5,6 +5,8 @@
             <label class="font-weight-bold col-md-2"> NIC</label>
             <label class="font-weight-bold col-md-2"> Teacher Name </label>
             <label class="font-weight-bold col-md-2" > Teacher Contact </label>
+            <label class="font-weight-bold col-md-2" > Qualification </label>
+            <label class="font-weight-bold col-md-2" > Gender </label>
         </div>
         <br>
 
@@ -13,7 +15,8 @@
                 <label  class="font-weight-bold col-md-2">{{teacher.Teacher_NIC}} </label>
                 <label class="font-weight-bold col-md-2">{{teacher.Name}} </label>
                 <label class="font-weight-bold col-md-2" >{{teacher.Contact}} </label>
-                <label class="font-weight-bold col-md-2" style="margin-left: 1%;" >{{teacher.Contact}} </label>
+                <label class="font-weight-bold col-md-2" >{{teacher.qualification}} </label>
+                <label class="font-weight-bold col-md-2" style="margin-left: 1%;" >{{teacher.Gender}} </label>
                 <button class="btn btn-danger col-md-1" (click)="delete(student)" style="margin-left: 2%;">DELETE</button>
                 <button class="btn btn-info col-md-1" (click)="delete(student)" style="margin-left: 2%;">UPDATE</button>
             </div>

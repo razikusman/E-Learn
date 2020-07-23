@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder } from '@angular/forms';
 import { SubjectsService } from '../subjects.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-subject-create',
@@ -12,7 +13,8 @@ export class SubjectCreateComponent implements OnInit {
   addForm: FormGroup;
   constructor(
     private formBuilder :FormBuilder,
-    private subjectservice : SubjectsService
+    private subjectservice : SubjectsService,
+    private router : Router
   ) { }
 
   ngOnInit() {
@@ -29,5 +31,6 @@ export class SubjectCreateComponent implements OnInit {
     console.log(this.addForm.value);
     this.subjectservice.addsubjects(this.addForm.value)
     .subscribe(data =>console.log('success!',data));
+    this.router.navigate(["subjects/details"]);
   }
 }

@@ -71,6 +71,14 @@
             <select required formControlName="sub" name="sub" class="dropdown btn-info">
                 <option *ngFor="let subject of subjects"> {{subject}}</option>
             </select>
+        </div><br>
+
+        <div>
+            <label id="uidlbl" class="text-uppercase align-self-center font-weight-bold col-md-4 col-form-label"> Qualifiaction: </label><br>
+            <input 
+                required formControlName="qualification" name="qualification" type="text" placeholder="Your qualification in (100 Characters)" class="form-control col-md-12"
+            >
+            <small class="text-danger text-uppercase align-self-center font-weight-bold col-md-4 col-form-label" *ngIf="addForm.get('qualification').invalid">feild required</small>
         </div>
 
         <hr>

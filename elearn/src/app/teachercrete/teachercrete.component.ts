@@ -29,6 +29,7 @@ export class TeachercreteComponent implements OnInit {
       user :['Teacher'],
       gender : [null],
       sub : [null],
+      qualification : [null],
       userid : [null],
       password :[null],
       cpassword :[null],

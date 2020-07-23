@@ -9,6 +9,8 @@
 		//asign data to variables
 		$name = mysqli_real_escape_string($con, trim($request -> name));
 		$tContact = mysqli_real_escape_string($con, (int)($request -> contact));
+		$gender = mysqli_real_escape_string($con, trim($request -> gender));
+		$qualification = mysqli_real_escape_string($con, trim($request -> qualification));
 		$user = mysqli_real_escape_string($con, trim($request -> user));
 		$NIC = mysqli_real_escape_string($con, trim($request -> userid));
 		$password = mysqli_real_escape_string($con, trim($request -> password));
@@ -22,7 +24,7 @@
 		}
 		
 		//add to teacher table
-		$sql2 = "INSERT INTO teacher( NIC,tName,tContact ) VALUES( '{$NIC}','{$name}','{$tContact}' )";
+		$sql2 = "INSERT INTO teacher( NIC,tName,tContact,qualification,Gender ) VALUES( '{$NIC}','{$name}','{$tContact}','{$qualification}','{$gender}' )";
 		
 		if(mysqli_query($con,$sql2))
 		{

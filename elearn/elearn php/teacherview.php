@@ -11,11 +11,10 @@
 		$cr = 0;
 		while($row = mysqli_fetch_assoc($result)){
 			$teacher[$cr]['Teacher_NIC'] = $row['NIC'];
-			//$teacher[$cr]['Student_ID'] = $row['sID'];
+			$teacher[$cr]['qualification'] = $row['qualification'];
 			$teacher[$cr]['Name'] = $row['tName'];
-			//$teacher[$cr]['Grade'] = $row['sGrade'];
+			$teacher[$cr]['Gender'] = $row['Gender'];
 			$teacher[$cr]['Contact'] = $row['tContact'];
-			//$id = $teacher[$cr]['Parent_NIC'];
 			$cr++;
 		}
 		echo json_encode($teacher);
