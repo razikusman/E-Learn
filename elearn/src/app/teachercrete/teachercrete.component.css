@@ -10,15 +10,6 @@ h2{
     text-transform: uppercase;
     margin-bottom: 0px;
 }
-.bg{
-    background:url('../../assets/background2.jpg') no-repeat center;
-    background-size: cover ;
-    position: fixed;
-    height: 100%;
-    width: 100%;
-    margin: 0%;
-    overflow: auto;
-}
 
 hr{
     height: 3px;
@@ -36,7 +27,7 @@ button{
     text-transform: uppercase;
 }
 
-hr{
-    height: 3px;
-    background-color: rgba(136, 136, 136, 0.842);
+input{
+    background-color: transparent;
+    border: 1px solid black;
 }

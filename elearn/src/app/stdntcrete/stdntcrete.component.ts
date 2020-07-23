@@ -23,6 +23,7 @@ export class StdntcreteComponent implements OnInit {
     //rest api
     this.addForm = this.formBuilder.group({
       name: [null],
+      gender:[null],
       grad : [null],
       DOB : [null],
       pContact : [null],

@@ -1,5 +1,4 @@
-<div class="bg">
-    <br>
+<div class="container">
     <div class="container" >
         <div class="row">
             <h1 class="col-md-9">Student Registration Form</h1>
@@ -10,7 +9,7 @@
             </button><br>
         </div>
     </div>
-    <form style="background-color: rgba(255, 255, 255, 0.247);" class="container border border-success" #studentregisterForm="ngForm" [formGroup]="addForm"  (ngSubmit)= "onSubmit()" novalidate>
+    <form style="padding: 1%; background-color: rgba(0, 174, 255, 0.171);" class="container border border-success"  #studentregisterForm="ngForm" [formGroup]="addForm"  (ngSubmit)= "onSubmit()" novalidate>
         <!--{{studentregisterForm.form.valid}}-->
         <div>
             <label id="unamelbl" class="text-uppercase font-weight-bold"> Name : </label><br>
@@ -19,7 +18,21 @@
                 type="text" placeholder="Enter Full Name" class="form-control"
             >
             <small class="text-danger text-uppercase font-weight-bold" *ngIf="addForm.get('name').invalid && addForm.get('name').touched ">*feild required</small>
-        </div>
+        </div><br>
+        
+        <div>
+            <label id="utypelbl"> GENDER </label>>
+            <div class="row">
+                <label class="text-uppercase align-self-center font-weight-bold col-md-2 col-form-label">
+                <input  formControlName="gender" type="radio" class="radio align-self-center" value="Male">
+                :Male</label>
+            </div>
+            <div class="row">
+                <label class="text-uppercase align-self-center font-weight-bold col-md-2 col-form-label">
+                <input formControlName="gender" type="radio" class="radio align-self-center" value="Female">
+                :Female</label>
+            </div>
+        </div><br>
 
         <div class="form-group" > 
             <label id="ugrdlbl" class="text-uppercase font-weight-bold"> Grade : </label>
@@ -27,7 +40,7 @@
                 <option *ngFor="let grde of grades"> {{ grde }} </option>
             </select>
             <small class="text-danger text-uppercase font-weight-bold" *ngIf="(addForm.get('grad').invalid && addForm.get('grad').untouched) || (addForm.get('grad').invalid && addForm.get('grad').touched) || (addForm.get('grad').value == 'grade' && addForm.get('grad').touched)">*select a grade from dropdown</small>
-        </div>
+        </div><br>
 
         <div>
             <label id="udoblbl" class="text-uppercase font-weight-bold"> Date of Birth : </label><br>
@@ -35,7 +48,7 @@
                 required name="DOB" formControlName="DOB"
                 type="date" class="form-control col-md-4"
             >
-        </div>
+        </div><br>
 
         <div>
             <label class="text-uppercase font-weight-bold"> Contact Number : </label><br>
@@ -44,7 +57,7 @@
                 type="tel" class="form-control col-md-4"
             >
             <small class="text-danger text-uppercase font-weight-bold" *ngIf="addForm.get('pContact').invalid && addForm.get('pContact').touched">*phone number must be ten digit</small>
-        </div>
+        </div><br>
 
         <div>
             <h2 id="utypelbl"> USER TYPE </h2>

@@ -27,15 +27,8 @@ export class TeachercreteComponent implements OnInit {
       name: [null],
       contact:[null],
       user :['Teacher'],
-      //subjects : [null],
-      subjects : this.sub = this.formBuilder.group({
-        english: [''],
-        maths: [''],
-        science: [null],
-        second_language_sinhala: [null],
-        second_language_tamil: [null],
-        tamil_first_language_: [null],
-       }),
+      gender : [null],
+      sub : [null],
       userid : [null],
       password :[null],
       cpassword :[null],
@@ -48,9 +41,7 @@ export class TeachercreteComponent implements OnInit {
     .subscribe(data =>console.log('success!',data));
   };
 
-  subjects:Array<String>=[
-    "english","maths","science","second_language_sinhala","second_language_tamil","tamil_first_language_"
-  ];;
+  subjects = ['english','maths','science','second_language_sinhala','second_language_tamil','tamil_first_language'];
 
   change(create){
     this.route.navigate(['/create'],create);
