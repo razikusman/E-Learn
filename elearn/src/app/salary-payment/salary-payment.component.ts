@@ -8,9 +8,7 @@ import { Component, OnInit } from '@angular/core';
 export class SalaryPaymentComponent implements OnInit {
 
   myDate: number = Date.now();
-  constructor(
-    
-  ) { }
+  constructor() {}
 
   ngOnInit() {
   }

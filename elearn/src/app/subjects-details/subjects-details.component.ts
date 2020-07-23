@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { SubjectsService } from '../subjects.service';
-import { SubjectCreate } from '../subject-create';
+import { SubjectCreate } from '../create-subject';
 import { Router } from '@angular/router';
 
 @Component({
