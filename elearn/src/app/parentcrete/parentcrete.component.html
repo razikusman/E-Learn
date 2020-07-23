@@ -10,7 +10,7 @@
             </button><br>
         </div>
     </div>
-    
+
     <form style="background-color: rgba(0, 174, 255, 0.171);" class="container border border-success" #parentregisterForm="ngForm" [formGroup]="addForm"  (ngSubmit)= "onSubmit()" novalidate>
         <!--{{parentregisterForm.form.valid}}-->
         <div>
@@ -100,7 +100,8 @@
         </small>
         <br>
         <button class="btn btn-info"
-            [disabled]=" ( addForm.get('cpassword').value != addForm.get('password').value ) || parentregisterForm.form.invalid" type="submit"
+            [disabled]=" ( addForm.get('cpassword').value != addForm.get('password').value ) || parentregisterForm.form.invalid"
+             type="submit"
             > Submit Form 
         </button>
         
