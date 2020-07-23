@@ -7,9 +7,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SalaryPaymentComponent implements OnInit {
 
-  constructor() { }
+  myDate: number = Date.now();
+  constructor(
+    
+  ) { }
 
   ngOnInit() {
   }
-
 }

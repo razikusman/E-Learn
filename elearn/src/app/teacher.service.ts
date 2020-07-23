@@ -11,9 +11,9 @@ export class TeacherService {
 
   viewteacher(){
     return this.http.get<[]>('http://localhost/elearn/teacherview.php'); 
-  }
+  }//view teachers
 
   CreateTeacher(teacher : CreateTeacher ){
     return this.http.post<any>('http://localhost/elearn/addteacher.php', teacher); 
-  }
+  }//add teacher
 }

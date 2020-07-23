@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { SubjectsService } from '../subjects.service';
 import { SubjectCreate } from '../subject-create';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-subjects-details',
@@ -12,6 +13,7 @@ export class SubjectsDetailsComponent implements OnInit {
   subjects : SubjectCreate[]
   constructor(
     private subjectservice: SubjectsService,
+    private route : Router
   ) { }
 
   ngOnInit() {
@@ -26,6 +28,10 @@ export class SubjectsDetailsComponent implements OnInit {
     .subscribe(data => {
       this.subjects = this.subjects.filter(u => u !== subjects);
     })
+  }
+
+  add_subject(add){
+    this.route.navigate(['add/subject'],add);
   }
 
 }

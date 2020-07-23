@@ -7,6 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FeesPaymentComponent implements OnInit {
 
+  myDate: number = Date.now();
   constructor() { }
 
   ngOnInit() {

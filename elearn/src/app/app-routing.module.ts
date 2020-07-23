@@ -51,7 +51,8 @@ const routes: Routes = [
   {path: 'anouncement', component:AnouncementComponent},
   {path: 'details/student', component: DetailsStudentComponent},
   {path: 'details/subjects', component: DetailsSubjectsComponent},
-  {path: 'details/teacher', component:DetailsTeachersComponent}
+  {path: 'details/teacher', component:DetailsTeachersComponent},
+  {path: 'add/subject', component:DetailsTeachersComponent}
   
 ];
 
