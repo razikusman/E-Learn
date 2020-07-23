@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { StudentService } from '../student.service';
+import { CreateStudent } from '../create-student';
 
 @Component({
   selector: 'app-details-student',
@@ -7,9 +9,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DetailsStudentComponent implements OnInit {
 
-  constructor() { }
+  students : CreateStudent[];
+  constructor(
+    private studentsservicce : StudentService
+  ) { }
 
   ngOnInit() {
+    this.studentsservicce.viewstudent()
+    .subscribe((data:CreateStudent[])=>{
+      this.students =data;
+    });  
   }
 
 }

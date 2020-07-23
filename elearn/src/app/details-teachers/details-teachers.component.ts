@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { TeacherService } from '../teacher.service';
+import { CreateTeacher } from '../create-teacher';
 
 @Component({
   selector: 'app-details-teachers',
@@ -7,9 +9,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DetailsTeachersComponent implements OnInit {
 
-  constructor() { }
+  teachers : CreateTeacher[];
+  
+  constructor(
+    private teacherservice : TeacherService
+    ) { }
 
   ngOnInit() {
+    this.teacherservice.viewteacher()
+    .subscribe((data:CreateTeacher[])=>{
+      this.teachers =data;
+      console.log(this.teachers);
+    });
   }
 
 }

@@ -17,6 +17,7 @@ export class TeacherHomeComponent implements OnInit {
 
   ngOnInit() {
     this.value = this.loginservice.getog();//get student id 
+    
   }
 
   add(quize){
