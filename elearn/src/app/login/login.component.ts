@@ -47,20 +47,20 @@ export class LoginComponent implements OnInit {
             this.router.navigate(['/student/home'], home);
             this.id = this.users[x].password;
             this.name = this.users[x].name;
-            this.loginservice.setlog(this.users[x].name,this.users[x].password);//pass id to hme page
+            this.loginservice.setlog(this.users[x].name);//pass id to hme page
           }
           
   
           //parent login
           else if(this.users[x].type == "Parent"){
             this.router.navigate(['/parent/home'], home);
-            this.loginservice.setlog(this.users[x].type,this.users[x].password);//pass id to hme page
+            this.loginservice.setlog(this.users[x].name);//pass id to hme page
           }
   
           //teacher login
           else if(this.users[x].type == "Teacher"){
             this.router.navigate(['/teacher/home'], home);
-            this.loginservice.setlog(this.users[x].type,this.users[x].password);//pass id to hme page
+            this.loginservice.setlog(this.users[x].name);//pass id to hme page
           }
           return x = x;
         }

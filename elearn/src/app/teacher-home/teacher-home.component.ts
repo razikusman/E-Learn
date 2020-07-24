@@ -10,21 +10,15 @@ import { LoginServiceService } from '../login-service.service';
 export class TeacherHomeComponent implements OnInit {
 
 
-  public value = {};
+  public value ={};
   constructor(
     private router: Router,
     private loginservice : LoginServiceService
   ) { }
 
   ngOnInit() {
-    if(!(this.value=="")){
       this.value = this.loginservice.getog();
-      sessionStorage.setItem("value",JSON.stringify(this.value));
-    }
-
-    else
-    this.value = sessionStorage.getItem(JSON.parse("value"));
-    
+      console.log(this.loginservice.getog());
   }
 
   add(quize){

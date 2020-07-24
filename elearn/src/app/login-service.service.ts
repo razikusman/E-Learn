@@ -13,8 +13,7 @@ export class LoginServiceService {
   }
 
   private value = {};
-  setlog(name,id){
-    this.value["user_id"] = id;
+  setlog(name){
     this.value["user_name"] = name;
   }
 
