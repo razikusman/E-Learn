@@ -3,6 +3,8 @@ import { Router } from '@angular/router';
 import { FormBuilder,FormGroup, Validators } from '@angular/forms';
 import { TeacherService } from '../teacher.service';
 import { CreateTeacher} from '../create-teacher';
+import { SubjectsService } from '../subjects.service';
+import { SubjectCreate } from '../create-subject';
 
 @Component({
   selector: 'app-teachercrete',
@@ -10,10 +12,12 @@ import { CreateTeacher} from '../create-teacher';
   styleUrls: ['./teachercrete.component.css']
 })
 export class TeachercreteComponent implements OnInit {
+  subjects: SubjectCreate[]; //subjects array
 
   constructor( 
-    private route:Router,
-    private teachertService: TeacherService,
+    private route:Router, //router SubjectsService 
+    private teachertService: TeacherService, //teacher service
+    private subjectservice : SubjectsService, //subject service
     private formBuilder : FormBuilder) { }
 
     addForm : FormGroup;
@@ -34,16 +38,24 @@ export class TeachercreteComponent implements OnInit {
       password :[null],
       cpassword :[null],
     });
+
+
+    //get subjects list
+    this.subjectservice.viewsubjects()
+     .subscribe((data : SubjectCreate[]) => {
+       this.subjects = data 
+     });
   }
 
   onSubmit(){
-    console.log(this.addForm.value);
+    //create teacher
+    //console.log(this.addForm.value);
     this.teachertService.CreateTeacher(this.addForm.value)
-    .subscribe(data =>console.log('success!',data));
+    .subscribe(data =>console.log('success!',data)); //pass data to teacher service
+    this.route.navigate(['teacher/home']);
   };
 
-  subjects = ['english','maths','science','second_language_sinhala','second_language_tamil','tamil_first_language'];
-
+  //reddirect to previouse page
   change(create){
     this.route.navigate(['/create'],create);
   }

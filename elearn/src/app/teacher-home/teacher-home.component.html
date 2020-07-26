@@ -22,9 +22,19 @@
         </div><!--- profile end -->
 
         <!-- user details start -->
-        <div class="col-md-5" >
-            <h3>Teacher id : {{value.user_name.toUpperCase()}}</h3>
-            <h3>Teacher Name : </h3>
+        <div class="col-md-5">
+            <div *ngFor = "let user of users" >
+                <div class="row" *ngIf = "user.password == id">
+                    <div class="col-md-4">
+                        <h5>Teacher NIC </h5>
+                        <h5>Teacher Name </h5>
+                    </div>
+                    <div class="col-md-6">
+                        <h5>:-  {{id}}v</h5>
+                        <h5 class="text-capitalize" >:-  {{user.name}} </h5>
+                    </div>
+                </div>
+            </div>
         </div><!-- user details end -->
 
     </div><!--row end-->

@@ -22,16 +22,19 @@ export class SubjectsDetailsComponent implements OnInit {
       this.subjects = data
     });
   }
+
+  //delete a subject
   delete(subjects : SubjectCreate): void{
     console.log(subjects.Sub_ID);
     this.subjectservice.deleteubjects(subjects.Sub_ID)
     .subscribe(data => {
       this.subjects = this.subjects.filter(u => u !== subjects);
-    })
+    }) // pass to subject service
   }
 
+  //add subjects
   add_subject(add){
-    this.route.navigate(['add/subject'],add);
+    this.route.navigate(['add/subject'],add); //navigate subject create form
   }
 
 }

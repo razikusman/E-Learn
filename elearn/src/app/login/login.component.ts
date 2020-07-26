@@ -14,15 +14,15 @@ import { identifierModuleUrl } from '@angular/compiler';
 export class LoginComponent implements OnInit {
 
   users : Login[]; // aray to store the user information
-  public id = "";
-  public name = "";
+   public id = "";
+  // public name = "";
   constructor(
     private router : Router,
     private dialog : MatDialog,
     private loginservice : LoginServiceService) { }
 
   lgin = new Login(null,null,null); //taking the inputs into a format
-  dt : Login[]
+  //dt : Login[]
   ngOnInit() {
     // take all the details from user tble for validation
     this.loginservice.logincheck()
@@ -45,9 +45,11 @@ export class LoginComponent implements OnInit {
           //student login
           if(this.users[x].type == "Student"){
             this.router.navigate(['/student/home'], home);
-            this.id = this.users[x].password;
-            this.name = this.users[x].name;
+            // this.id = this.users[x].password;
+            // this.name = this.users[x].name;
             this.loginservice.setlog(this.users[x].name);//pass id to hme page
+
+            localStorage.setItem("id", this.users[x].name);
           }
           
   
@@ -55,12 +57,16 @@ export class LoginComponent implements OnInit {
           else if(this.users[x].type == "Parent"){
             this.router.navigate(['/parent/home'], home);
             this.loginservice.setlog(this.users[x].name);//pass id to hme page
+
+            localStorage.setItem("id", this.users[x].name);
           }
   
           //teacher login
           else if(this.users[x].type == "Teacher"){
             this.router.navigate(['/teacher/home'], home);
             this.loginservice.setlog(this.users[x].name);//pass id to hme page
+
+            localStorage.setItem("id", this.users[x].name);
           }
           return x = x;
         }
@@ -70,7 +76,8 @@ export class LoginComponent implements OnInit {
           this.dialog.open(DialogExampleComponent); //error mesage
         }
       };
-    }
+
+    } //login user end
 
     //admin login
     else if(this.lgin.name =='admin' && this.lgin.password == 'admin'){
@@ -81,7 +88,7 @@ export class LoginComponent implements OnInit {
     else{
       this.dialog.open(DialogExampleComponent); //error mesage
     }
-  }
+  } //login end
 
   //direct to the signup user type 
   create(crete){
