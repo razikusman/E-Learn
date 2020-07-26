@@ -1,8 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { LoginComponent } from '../login/login.component';
 import { LoginServiceService } from '../login-service.service';
-import { parse } from 'querystring';
 import { Login } from '../login';
 
 @Component({
@@ -12,7 +10,8 @@ import { Login } from '../login';
 })
 export class StdntHomeComponent implements OnInit {
 
-  public value = {};
+  users : Login[]; // store user data
+  public id ="";// store id
   constructor(
     private router: Router,
     private loginservice : LoginServiceService) { }
@@ -20,7 +19,11 @@ export class StdntHomeComponent implements OnInit {
   
   ngOnInit() {
     //console.log(this.loginservice.getog());
-    this.value = this.loginservice.getog();
+    this.id = localStorage.getItem("id");
+    this.loginservice.user_student()
+    .subscribe((data : Login[] ) => {
+      this.users = data; //user store the data from user table
+    });
   }
   
   //sign out and reach login

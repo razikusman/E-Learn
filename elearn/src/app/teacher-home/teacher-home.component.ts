@@ -10,16 +10,14 @@ import { Login } from '../login';
 })
 export class TeacherHomeComponent implements OnInit {
 
-  users : Login[];
-  public id ="";
-  public name ="";
+  users : Login[]; // store user data
+  public id ="";// store id
   constructor(
     private router: Router,
     private loginservice : LoginServiceService
   ) { }
 
   ngOnInit() {
-    
       this.id = localStorage.getItem("id");
       this.loginservice.user_teacher()
       .subscribe((data : Login[] ) => {
