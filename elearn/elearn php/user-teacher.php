@@ -1,7 +1,7 @@
 <?php 
 	require 'connect.php';
 	//$parent = [];
-	$teacher = [];
+	$user = [];
 	
 	//////////////////
 	
@@ -10,14 +10,17 @@
 	{
 		$cr = 0;
 		while($row = mysqli_fetch_assoc($result)){
-			$teacher[$cr]['Teacher_NIC'] = $row['NIC'];
-			$teacher[$cr]['qualification'] = $row['qualification'];
-			$teacher[$cr]['Name'] = $row['tName'];
-			$teacher[$cr]['Gender'] = $row['Gender'];
-			$teacher[$cr]['Contact'] = $row['tContact'];
+			$user[$cr]['name'] = $row['tName'];
+			$user[$cr]['password'] = $row['NIC'];
+			$teacher[$cr]['type'] = $row['qualification'];
+			//$user[$cr]['type'] = $row['uType'];
+			//$id = $teacher[$cr]['Parent_NIC'];
 			$cr++;
 		}
-		echo json_encode($teacher);
+		echo json_encode($user);
+		
+		
+		
 		
 	}
 	else{

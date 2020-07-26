@@ -28,7 +28,6 @@
 					
 				}
 				
-				
 			}
 			$cr++;
 		}echo json_encode($student);
