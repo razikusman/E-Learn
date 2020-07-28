@@ -1,5 +1,5 @@
 .anouncement{
-    background:url('../../assets/background.jpg') ;
+    background:url('../../assets/background.jpg') no-repeat center;
     background-size: contain;
     left: 0%;
     right: 0%;

@@ -1,1 +1,21 @@
-<p>details-subjects works!</p>
+<h2 class="text-uppercase font-weight-bold text-center" style="color: black;">subjects Teaching details</h2>
+
+<div class="container shadow-lg sm-3 mb-5 bg-white rounded" style="padding: 1%;" *ngFor= "let subjectteaching of subjectsteaching">
+    <div *ngFor= "let subject of subjects">
+        <div *ngIf = "(id == subjectteaching.tID) && (subjectteaching.Sub_ID == subject.Sub_ID)">
+            <div class="row">
+                <label class="col-md-2"> Subject ID </label>
+                <label class="col-md-6 text-capitalize">: {{subject.Sub_ID}} </label>
+            </div>
+            <div class="row">
+                <label class="col-md-2"> Subject Name </label>
+                <label class="col-md-6 text-capitalize">: {{subject.Name}} </label>
+            </div>
+            <div class="row">
+                <label class="col-md-2"> Number of Student/s </label>
+                <label class="col-md-6">:  </label>
+            </div>
+        </div>
+    </div>
+</div>
+ 

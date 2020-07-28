@@ -19,10 +19,6 @@ export class SubjectsService {
     return this.http.delete<SubjectCreate[]>('http://localhost/elearn/subjectdelete.php?subid='+ Sub_ID);
   }//delete subject
 
-  // Createbjects(){
-  //   return this.http.get<SubjectCreate[]>('http://localhost/elearn/subjectview.php');
-  // }
-
   updatesubjects(){
     return this.http.get<SubjectCreate[]>('http://localhost/elearn/subjectview.php');
   }//update subjet
@@ -30,4 +26,8 @@ export class SubjectsService {
   addsubjects(subject : SubjectCreate ){
     return this.http.post<any>('http://localhost/elearn/subjectadd.php',subject);
   }//add subject
+
+  viewsubjectsteaching(){
+    return this.http.get<SubjectCreate[]>('http://localhost/elearn/subjectteachingview.php');
+  }//view subjectsteaching
 }

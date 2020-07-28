@@ -1,40 +1,25 @@
 .bg{
-    background:url('../../assets/background5.jpg') no-repeat center;
-    background-size: cover ;
-    position: fixed;
+    background:url('../../assets/background.jpg') no-repeat center;
+    position: inherit;
     height: 100%;
     width: 100%;
     margin: 0%;
-    overflow: auto;
-}
-
-.container{
-    
-    height: 100%;
-    width: 100%;
-    margin: 0%;
+    overflow: visible;
 }
 
 h1{
     margin: 0%;
     letter-spacing: 4px;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    color: white;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, serif;
+    color: rgb(29, 119, 2);
 }
 
-.abt{
-    top: 0%;
-    margin: 0.5% 0% 0% 0%;
-    width: 3%;
-    height: 2%;
-}
-
-h3{
+h4{
     letter-spacing: 5px;
     text-align: left;
     margin: 0%;
     text-transform: uppercase;
-    color: white;
+    color: rgb(29, 119, 2);
 }
 
 .card-image{
@@ -44,22 +29,6 @@ h3{
 }
 .row{
     padding-top: 1%;
-}
-
-.loginimage{
-    position: relative;
-    height: 100%;
-    width: 100%;
-    top: 0%;
-    padding: 0%;
-    margin: 0%;
-}
-
-.login{
-    height: fit-content;
-    text-align: justify;
-    padding: 4%;
-    background-color: rgba(16, 14, 160, 0.89);
 }
 
 label{
@@ -74,8 +43,6 @@ input{
     margin: 1.5%;
     padding: 1.5%;
     width: 60%;
-    background: transparent;
-    color: white;
 }
 
 .text-info{
@@ -94,3 +61,41 @@ input{
 img, form{
     display: inline-block;
 }
+
+.zoom {
+    transition: transform .5s; /* Animation */
+    
+    height: fit-content;
+    text-align: justify;
+    padding: 4% 2% 4% 2%;
+    background-color:#092532bb ;
+  }
+  
+  .zoom:hover {
+    transform: scale(1.2); /* (120% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
+  }
+
+  .zoomi {
+    transition: transform .5s; /* Animation */
+  }
+
+  .zoomi:hover {
+    transform: scale(0.7); /* (70% zoomin - Note: if the zoom is too large, it will go outside of the viewport) */
+  }
+  
+  .mesege h4 {
+    color: #000;
+    font-family: 'montserrat';
+    font-weight: bold;
+    letter-spacing: 5px;
+    max-width: 700px;
+    text-align: center;
+    background: -webkit-linear-gradient( left, #ff0000 0%, #3cfd01 25%, #00030c 50%, #22009c 100%) repeat;
+    -webkit-background-clip: text;
+    -ms-background-clip: text;
+    -moz-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    -ms-text-fill-color: transparent;
+    -moz-text-fill-color: transparent;
+  }

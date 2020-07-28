@@ -1,53 +1,59 @@
 <!--<app-top-bar style="width: -webkit-fill-available;position: inherit;"></app-top-bar>top bar-->
 <div class="bg ">
     <div class="container">
-        <div class="row justify-content-end">
+        <div class="row justify-content-start">
             <h1 class="col-md-8 ">A-Z English Academy</h1><!--title-->
-
-            
         </div>
+
         <div class="row justify-content-end">
-            <h3 class="col-md-8">the place to achive dreams.........</h3>
+            <h4 class="col-md-8">the place to achive dreams.........</h4>
         </div>
 
-        <div class="row  frm">
-            <div class="col-md-4 align-self-center text-right">
-                <div class="card card-image ">
-                    <img class="loginimage" src="assets/login.png"><!--login image-->
+        <div class="row d-flex flex-row-reverse" >
+            
+            <form #loginForm="ngForm" class="zoom card card-image login col-sm-6 col-md-4 border border-danger">
+                <label id="username">User ID</label><br>
+
+                <div class="d-flex">
+                    <input class="col-md-9"
+                        type="text" required #name="ngModel" name="uname" placeholder="User ID"  
+                        [(ngModel)]="lgin.name"
+                    >
                 </div>
-            </div>
 
-            <div class="col-md-4 ">
-                <form #loginForm="ngForm" class="card card-image login raised">
-                    <label id="username">User ID</label><br>
+                <small style="color: rgb(206, 252, 4); text-transform: uppercase; font-weight: bold; letter-spacing: 5px;"
+                    *ngIf="name.invalid && name.touched"> fill out the user name
+                </small><br>
 
-                    <div class="d-flex">
-                        <input class="col-md-9"
-                            type="text" required #name="ngModel" name="uname" placeholder="User ID"  [(ngModel)]="lgin.name"
-                        >
-                    </div>
-                    <small style="color: rgb(206, 252, 4); text-transform: uppercase; font-weight: bold; letter-spacing: 5px;"
-                        *ngIf="name.invalid && name.touched"> fill out the user name
-                    </small><br>
+                <label id="password">Password</label><br>
 
-                    <label id="password">Password</label><br>
+                <div class="d-flex">
+                    <input class="col-md-9"
+                        required #password="ngModel" type="password" placeholder="5-8 Characters" 
+                        name="password" [(ngModel)]="lgin.password"
+                    >
+                    <button  [disabled]="loginForm.form.invalid"  (click) = "login(home)"  
+                    class="btn btn-primary col-md-3">login</button>
+                </div>
 
-                    <div class="d-flex">
-                        <input class="col-md-9"
-                            required #password="ngModel" type="password" placeholder="5-8 Characters" name="password" [(ngModel)]="lgin.password"
-                        >
-                        <button  [disabled]="loginForm.form.invalid"  (click) = "login(home)"  
-                        class="btn btn-primary col-md-3">login</button>
-                        </div>
-                    <small style="color: rgb(206, 252, 4); text-transform: uppercase; font-weight: bold; letter-spacing: 5px;" 
-                        *ngIf="password.invalid && password.touched"> fill out the password
-                    </small>
-                    <br>
-                    <div class="d-flex">
-                        <label class="text-warning col-md-9 ">sign up if you don't have an account</label>
-                        <button (click)= "create(crete)" class="btn btn-primary col-md-3">Sign up</button>
-                    </div>   
-                </form><!--login form-->       
+                <small 
+                style="color: rgb(206, 252, 4); text-transform: uppercase; font-weight: bold; letter-spacing: 5px;" 
+                    *ngIf="password.invalid && password.touched"> fill out the password
+                </small>
+                <br>
+                <div class="d-flex">
+                    <label class="text-warning col-md-9 ">sign up if you don't have an account</label>
+                    <button (click)= "create(crete)" class="btn btn-primary col-md-3">Sign up</button>
+                </div>   
+            </form><!--login form-->       
+
+            <img src="assets/login.png" 
+            class="zoomi col-md-4 col-sm-6 p-2 flex-shrink-1 bd-highlight text-right img-fluid" 
+            alt="smaple image" style="margin: 0">
+
+            <div class="zoom mesege col-md-4 col-sm-6 text-uppercase font-italic d-flex align-items-center" style="background-color: transparent;">
+                <h4>"Education is the passport to the future,
+                    for tomorrow belongs to those who prepare for it today."</h4>
             </div>
         </div>
     </div>

@@ -54,6 +54,16 @@
             <h2 style="color: black; background-color: blue;" class="h5">
                 Subjects Teaching
             </h2>
+
+            <div class="container shadow-lg sm-3 mb-5 bg-white rounded" style="padding: 1%;" *ngFor= "let subjectteaching of subjectsteaching">
+                <div *ngFor= "let subject of subjects">
+                    <div *ngIf = "(id == subjectteaching.tID) && (subjectteaching.Sub_ID == subject.Sub_ID)">
+                        <div class="row">
+                            <label class="col-md-6 text-capitalize">{{subject.Name}} </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
             
         </ng-container><!--ng container-->
     

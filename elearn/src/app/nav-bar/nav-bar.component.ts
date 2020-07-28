@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { SubjectCreate } from '../create-subject';
+import { SubjectsService } from '../subjects.service';
 
 @Component({
   selector: 'app-nav-bar',
@@ -8,9 +10,27 @@ import { Router } from '@angular/router';
 })
 export class NavBarComponent implements OnInit {
 
-  constructor(private router: Router) { }
+  public subjects ; //variable to store suject details
+  public subjectsteaching; //variable to store suject teaching details
+  public id = ""; //variable to store id
+
+  constructor(
+    private subjectservice: SubjectsService,
+    private router: Router
+  ) { }
 
   ngOnInit() {
+    this.id = localStorage.getItem("id"); // user id
+
+    this.subjectservice.viewsubjects()
+    .subscribe((data: SubjectCreate[])=>{
+      this.subjects = data
+    }); //subject details
+
+    this.subjectservice.viewsubjectsteaching()
+    .subscribe((data: SubjectCreate[])=>{
+      this.subjectsteaching = data
+    }); //subjectteaching details
   }
 
   teacherhome(){

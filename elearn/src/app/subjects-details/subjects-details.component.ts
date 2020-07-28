@@ -10,7 +10,7 @@ import { Router } from '@angular/router';
 })
 export class SubjectsDetailsComponent implements OnInit {
 
-  subjects : SubjectCreate[]
+  subjects;
   constructor(
     private subjectservice: SubjectsService,
     private route : Router
