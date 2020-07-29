@@ -9,7 +9,10 @@
             </button><br>
         </div>
     </div>
-    <form style="padding: 1%; background-color: rgba(0, 174, 255, 0.171);" class="container border border-success"  #studentregisterForm="ngForm" [formGroup]="addForm"  (ngSubmit)= "onSubmit()" novalidate>
+    <form style="padding: 1%; background-color: rgba(0, 174, 255, 0.171);" 
+          class="container border border-success"  #studentregisterForm="ngForm" 
+          [formGroup]="addForm"  (ngSubmit)= "onSubmit()" novalidate
+    >
         <!--{{studentregisterForm.form.valid}}-->
         <div>
             <label id="unamelbl" class="text-uppercase font-weight-bold"> Name : </label><br>
@@ -80,16 +83,16 @@
             <button (click)="change(create)" class="btn btn-info">change</button>
     
         </div><br>
-
-        <div [formGroup]="sub" >
+<!--<div [formGroup]="sub" >
+        <div  >
             <h2>Subjects</h2>
             <div *ngFor="let subject of subjects">
                 <input
-                    formControlName="{{subject}}" name="{{subject}}" 
+                    formControlName="subject" name="{{subject.Name}}" 
                     ng-repeat="subject in subjects" type="checkbox" class="checkbox"
                 >
                 <label class="text-uppercase font-weight-bold" >
-                    {{subject}}</label>
+                    {{subject.Name}}</label>
             </div>
             <div>
                 <small style="background-color: blue; color: white;" class=" text-uppercase font-weight-bold">*uncheck the subjects you are not willing to follow</small>
@@ -97,7 +100,7 @@
                 <small class="text-danger text-uppercase font-weight-bold">*minimum one subject must me selected</small>
             </div>
             
-        </div>
+        </div>-->
 
         <hr>
 

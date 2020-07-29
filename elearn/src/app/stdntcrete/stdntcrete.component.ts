@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { FormBuilder,FormGroup, Validators } from '@angular/forms';
 import { StudentService } from '../student.service';
+import { SubjectsService } from '../subjects.service';
+import { SubjectCreate } from '../create-subject';
 @Component({
   selector: 'app-stdntcrete',
   templateUrl: './stdntcrete.component.html',
@@ -9,9 +11,12 @@ import { StudentService } from '../student.service';
 })
 export class StdntcreteComponent implements OnInit {
 
+  subjects: SubjectCreate[]; //subjects array
+
   constructor(
     private route:Router,
     private studenttService: StudentService,
+    private subjectservice : SubjectsService,
     private formBuilder : FormBuilder) { }
 
   addForm: FormGroup;
@@ -20,6 +25,13 @@ export class StdntcreteComponent implements OnInit {
 
   ngOnInit() {
 
+    //get subjects list
+    this.subjectservice.viewsubjects()
+     .subscribe((data : SubjectCreate[]) => {
+       this.subjects = data 
+     });
+
+    console.log(this.subjects);
     //rest api
     this.addForm = this.formBuilder.group({
       name: [null],
@@ -31,38 +43,34 @@ export class StdntcreteComponent implements OnInit {
       gurdname : [null],
       gurdNIC : [null],
       userid : [null],
-      //subjects : [null],
-      subjects : this.sub = this.formBuilder.group({
-        english: ['english'],
-        maths: ['maths'],
-        science: ['science'],
-        second_language_sinhala: ['s_l_sinhala'],
-        second_language_tamil: ['s_l_tamil'],
-        tamil_first_language_: ['tamil_f_l'],
-       }),
       password : [null],
       cpassword : [null],
+      // subject : [""]
+      
+      // subjects : this.sub = this.formBuilder.group({
+        
+      //  }),
     });
+
   }
 
   //insert in to database
   onSubmit(){
-    console.log(this.addForm.value);
-    this.studenttService.createstudent(this.addForm.value)
-    .subscribe(data =>console.log('success!',data));
+     console.log(this.addForm.value);
+     this.studenttService.createstudent(this.addForm.value) //studentservice==>create student
+     .subscribe(data =>console.log('success!',data));
 
-    console.log(this.sub.value);
-    this.studenttService.addsubjects(this.sub.value)
-    .subscribe(data =>console.log('success!',data));
+    //console.log(this.addForm.value);
+    // this.subjectservice.subjectsfollowig(this.sub.value) //subjectservice==>subjectsfollowing
+    // .subscribe(data =>console.log('success!',data));
+
   };
 
   //gradearray
   grades = ['grade','6','7','8','9','10','11'];
 
   //subject array
-  subjects:Array<String>=[
-    "english","maths","science","second_language_sinhala","second_language_tamil","tamil_first_language_"
-  ];
+  
 
   //change user type
   change(create){

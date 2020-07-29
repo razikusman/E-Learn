@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { SubjectCreate } from './create-subject';
+import { CreateStudent } from './create-student';
 
 @Injectable({
   providedIn: 'root'
@@ -30,4 +31,9 @@ export class SubjectsService {
   viewsubjectsteaching(){
     return this.http.get<SubjectCreate[]>('http://localhost/elearn/subjectteachingview.php');
   }//view subjectsteaching
+
+  
+  subjectsfollowig(student : CreateStudent ){
+    return this.http.post<any>('http://localhost/elearn/addsubjects.php', student); 
+  }
 }

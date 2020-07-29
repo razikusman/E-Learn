@@ -9,13 +9,14 @@ import { CreateTeacher } from '../create-teacher';
 })
 export class DetailsTeachersComponent implements OnInit {
 
-  teachers : CreateTeacher[];
+  teachers : CreateTeacher[]; //variable to store teacher details
   
   constructor(
-    private teacherservice : TeacherService
+    private teacherservice : TeacherService, //teacher service component
     ) { }
 
   ngOnInit() {
+    //get teacherdetails
     this.teacherservice.viewteacher()
     .subscribe((data:CreateTeacher[])=>{
       this.teachers =data;

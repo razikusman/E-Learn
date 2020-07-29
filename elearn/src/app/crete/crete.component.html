@@ -2,21 +2,26 @@
     <h1>Welcome to A-Z English Acdemy</h1>
 
     <h3>select your user type......</h3>
-    <div class="block">
-        <div class="user">
-        
-            <div class="card">
-                <img src="assets/student.png" (click) = "student(stdntcrete)"><br>
+    <div class="container ">
+        <div class="row">
+            <div class="card shadow col-md-4 col-sm-4">
+                <div class="inner">
+                    <img class="zoom card-img-top" src="assets/student.png" (click) = "student(stdntcrete)">
+                </div>
                 <button class="btn btn-success " (click) = "student(stdntcrete)" >Student</button>
             </div><!--student-->
         
-            <div class="card">
-                <img src="assets/teacher.png" (click) = "teacher(teachercrete)"><br>
+            <div class="card shadow col-md-4 col-sm-4">
+                <div class="inner">
+                    <img class="zoom card-img-top" src="assets/teacher.png" (click) = "teacher(teachercrete)">
+                </div>
                 <button class="btn btn-success" (click) = "teacher(teachercrete)" >Teacher</button>
             </div><!--teacher-->
         
-            <div class="card">  
-                <img src="assets/parent.png" (click) = "parent(prntcrete)"><br>
+            <div class="card shadow col-md-4 col-sm-4">  
+                <div class="inner">
+                    <img class="zoom card-img-top" src="assets/parent.png" (click) = "parent(prntcrete)">
+                </div>
                 <button class="btn btn-success" (click) = "parent(prntcrete)" >Parent</button>
             </div><!--parent-->
         </div>

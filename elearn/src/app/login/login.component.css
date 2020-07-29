@@ -64,7 +64,6 @@ img, form{
 
 .zoom {
     transition: transform .5s; /* Animation */
-    
     height: fit-content;
     text-align: justify;
     padding: 4% 2% 4% 2%;

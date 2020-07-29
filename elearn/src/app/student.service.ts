@@ -25,7 +25,4 @@ export class StudentService {
     return this.http.post<any>('http://localhost/elearn/addstudent.php', student); 
   }
 
-  addsubjects(student : CreateStudent ){
-    return this.http.post<any>('http://localhost/elearn/addsubjects.php', student); 
-  }
 }
