@@ -18,25 +18,42 @@
             </div>
         </div>
         <!-- user details start -->
-        <div class="col-md-5">
+        <div class="col-md-5 align-self-center">
             <div *ngFor = "let user of users" >
-                <div class="row" *ngIf = "user.password == id">
-                    <div class="col-md-4">
-                        <h5>Student ID </h5>
-                        <h5>Student Name </h5>
+                <div class="row " *ngIf = "user.password == id">
+                    <div class="col-md-5 ">
+                        <h4>Student ID </h4>
+                        <h4>Student Name </h4>
                     </div>
                     <div class="col-md-6">
-                        <h5>:-  {{id}}</h5>
-                        <h5 class="text-capitalize" >:-  {{user.name}} </h5>
+                        <h4>:-  {{id}}</h4>
+                        <h4 class="text-capitalize" >:-  {{user.name}} </h4>
                     </div>
                 </div>
             </div>
         </div><!-- user details end -->
     </div>
         
-    <div class="report-group">
+    <div >
+        <h2 class="font-weight-bold col-md-12 col-sm-12 raw" ><u> Subject Details </u></h2>
 
-        <label>Subject Details</label>
+        <div *ngFor="let subject of subjects" style="width: 50%;" class="col-md-12 col-sm-12 ">
+            <div class="zoom1 row shadow sm-3 mb-5 rounded border border-info">
+                <div class="col-md-4 col-sm-4">
+                    <label  >Subject ID </label><br>
+                    <label class="text-capitalize">subject Name </label>
+                </div>
+                <div class="col-md-6 col-sm-6">
+                    <label  >: {{subject.Sub_ID}} </label><br>
+                    <label class="text-capitalize">: {{subject.Name}} </label>
+                </div>
+                <div class="col-md-3 col-sm-3">
+                    <button class="btn btn-info" (click) = "enroll(subject)">ENROLL </button>
+                    <button class="btn btn-info" (click) = "unenroll()">UNENROLL </button>
+                </div>
+            </div>
+            
+        </div>
 
     </div><!--view report-->
 

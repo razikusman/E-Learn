@@ -3,6 +3,7 @@ import { SubjectsService } from '../subjects.service';
 import { SubjectCreate } from '../create-subject';
 import { Router } from '@angular/router';
 
+
 @Component({
   selector: 'app-subjects-details',
   templateUrl: './subjects-details.component.html',
@@ -10,7 +11,7 @@ import { Router } from '@angular/router';
 })
 export class SubjectsDetailsComponent implements OnInit {
 
-  subjects;
+  subjects;//variable to store subject details
   constructor(
     private subjectservice: SubjectsService,
     private route : Router
@@ -20,7 +21,7 @@ export class SubjectsDetailsComponent implements OnInit {
     this.subjectservice.viewsubjects()
     .subscribe((data: SubjectCreate[])=>{
       this.subjects = data
-    });
+    });//subject details
   }
 
   //delete a subject
