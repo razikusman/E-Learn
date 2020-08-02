@@ -34,7 +34,9 @@ export class SubjectsService {
   
   enrollsubjects(Sub_ID: any,stu_id:any ){
     return this.http.get<any>('http://localhost/elearn/enrollsubjects.php?data='+stu_id+Sub_ID);
-    //this.http.get<any>('http://localhost/elearn/enrollsubjects.php?subid='+Sub_ID);
-    
   }//enroll subject
+
+  viewsubjectspermision(){
+    return this.http.get<SubjectCreate[]>('http://localhost/elearn/enrolsubjectview.php');
+  }//view subjects
 }

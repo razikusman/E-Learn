@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { StudentService } from '../student.service';
 import { CreateStudent } from '../create-student';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-details-student',
@@ -11,7 +12,8 @@ export class DetailsStudentComponent implements OnInit {
 
   students : CreateStudent[];
   constructor(
-    private studentsservicce : StudentService
+    private studentsservicce : StudentService,
+    private router : Router
   ) { }
 
   ngOnInit() {
@@ -19,6 +21,11 @@ export class DetailsStudentComponent implements OnInit {
     .subscribe((data:CreateStudent[])=>{
       this.students =data;
     });  
+  }
+
+  //add student to the subject
+  addstudent(){
+    this.router.navigateByUrl("add/student")
   }
 
 }

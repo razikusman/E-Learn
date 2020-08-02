@@ -25,6 +25,7 @@ import { DetailsTeachersComponent } from './details-teachers/details-teachers.co
 import { DetailsSubjectsComponent } from './details-subjects/details-subjects.component';
 import { DetailsStudentComponent } from './details-student/details-student.component';
 import { SubjectCreateComponent } from './subject-create/subject-create.component';
+import { AddStudentComponent } from './add-student/add-student.component';
 
 //path for the url
 const routes: Routes = [
@@ -52,8 +53,9 @@ const routes: Routes = [
   {path: 'anouncement', component:AnouncementComponent},
   {path: 'details/student', component: DetailsStudentComponent},
   {path: 'details/subjects', component: DetailsSubjectsComponent},
-  {path: 'details/teacher', component:DetailsTeachersComponent},
-  {path: 'add/subject', component:SubjectCreateComponent}
+  {path: 'details/teacher', component: DetailsTeachersComponent},
+  {path: 'add/subject', component: SubjectCreateComponent},
+  {path: 'add/student', component: AddStudentComponent}
   
 ];
 
@@ -89,6 +91,7 @@ export const RoutingComponents= [
                                   DetailsStudentComponent,
                                   DetailsSubjectsComponent,
                                   DetailsTeachersComponent,
-                                  SubjectCreateComponent
+                                  SubjectCreateComponent,
+                                  AddStudentComponent
                                 ]
  

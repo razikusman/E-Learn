@@ -1,82 +1,88 @@
 <h2 class="text-uppercase font-weight-bold text-center" style="color: black;">subjects details</h2>
 
-<div    *ngFor= "let subjectteaching of subjectsteaching" >
-    <!--subject details for teacher login start-->
-    <div *ngIf = "(id == subjectteaching.tID)  ; else student">
-        <div *ngFor= "let subject of subjects">
-            <div *ngIf = " (subjectteaching.Sub_ID == subject.Sub_ID)"
+<ng-container *ngIf = "type == 'Teacher'; else student">
+    fff
+    <div *ngFor= "let subjectteaching of subjectsteaching" >
+<!--subject details for teacher login start-->    
+        <div *ngIf = "(id == subjectteaching.tID)">
+            
+            <div *ngFor= "let subject of subjects">
+                <div *ngIf = "(subjectteaching.Sub_ID == subject.Sub_ID)"
                 class="container shadow-lg sm-3 mb-5 bg-white rounded" style="padding: 2%; width: 60%;"
-            >
+                >
             <!--subject information start-->
-                <div class="row">
-                    <label class="col-md-4"> Subject ID </label>
-                    <label class="col-md-6 text-capitalize">: {{subject.Sub_ID}} </label>
-                </div>
-                <div class="row">
-                    <label class="col-md-4"> Subject Name </label>
-                    <label class="col-md-6 text-capitalize">: {{subject.Name}} </label>
-                </div>
-                <div class="row">
-                    <label class="col-md-4"> Number of Student/s </label>
-                    <label class="col-md-6">:  </label>
-                </div>
-            <!--subject information end-->
-                <hr>
+                    <div class="row">
+                        <label class="col-md-4"> Subject ID </label>
+                        <label class="col-md-6 text-capitalize">: {{subject.Sub_ID}} </label>
+                    </div>
+                    <div class="row">
+                        <label class="col-md-4"> Subject Name </label>
+                        <label class="col-md-6 text-capitalize">: {{subject.Name}} </label>
+                    </div>
+                    <div class="row">
+                        <label class="col-md-4"> Number of Student/s </label>
+                        <label class="col-md-6">:  </label>
+                    </div>
+                <!--subject information end-->
+                    <hr>
 
             <!--Materials add start-->
-                <u id="ugrdlbl" class="text-uppercase  font-weight-bold">Materials</u>
+                    <u id="ugrdlbl" class="text-uppercase  font-weight-bold">Materials</u>
 
-                <div class=" d-flex flex-column row">
-                    <div>
-                        <label id="ugrdlbl" class="text-uppercase"> Grade : </label>
-                        <select required  name="grad" class="dropdown btn-info">
-                            <option *ngFor="let grde of grades"> {{ grde }} </option>
-                        </select>
+                    <div class=" d-flex flex-column row">
+                        <div>
+                            <label id="ugrdlbl" class="text-uppercase"> Grade : </label>
+                            <select required  name="grad" class="dropdown btn-info">
+                                <option *ngFor="let grde of grades"> {{ grde }} </option>
+                            </select>
+                        </div>
+                        
+                        <input type="file" (click) = "add($event)" ><br>
+                        <button class="btn-success " (click) = "upload()">upload</button>
                     </div>
-                    
-                    <input type="file" (click) = "add($event)" ><br>
-                    <button class="btn-success " (click) = "upload()">upload</button>
-                </div>
             <!--Materials add end-->
-                <hr>
-                
-            </div> 
+                    <hr>
+                </div> 
+            </div>
         </div>
     </div>
+</ng-container>
     <!--subject details for teacher login end-->
 
     <!--subject details for student login start-->
-    <ng-template #student >
-        <div  *ngFor= "let subjectteaching of subjectsteaching" >
-            <div *ngFor= "let subject of subjects">
-                <div *ngIf = " (subjectteaching.Sub_ID == subject.Sub_ID)">
-                    <div *ngFor="let teacher of teachers"
-                        class="zoom border border-info container shadow-lg sm-3 mb-5 bg-white rounded" 
-                        style="padding: 2%; width: 40%;"
+<ng-template #student >
+    <div *ngFor= "let subjectteaching of subjectsteaching" >
+        <div *ngFor= "let subject of subjects">
+            <div *ngIf = " (subjectteaching.Sub_ID == subject.Sub_ID)">
+                <div *ngFor="let teacher of teachers">
+                    <div *ngIf = " (teacher.Teacher_NIC== subjectteaching.tID)"
+                    class="zoom border border-info container shadow-lg sm-3 mb-5 bg-white rounded" 
+                    style="padding: 2%; width: 40%;"
                     >
-                        <div *ngIf = "teacher.Teacher_NIC == subjectteaching.tID ">
-                            <div class="row">
-                                <label class="col-md-4"> Subject ID </label>
-                                <label class="col-md-6 text-capitalize">: {{subject.Sub_ID}} </label>
-                            </div>
-                            <div class="row">
-                                <label class="col-md-4"> Subject Name </label>
-                                <label class="col-md-6 text-capitalize">: {{subject.Name}} </label>
-                            </div>
-                            <div class="row">
-                                <label class="col-md-4"> Teacher Name </label>
-                                <label class="col-md-6 text-capitalize">: {{teacher.Name}} </label>
-                            </div>
-                            <div class="row">
-                                <label class="col-md-4"> Teacher NIC </label>
-                                <label class="col-md-6 text-capitalize">: {{teacher.Teacher_NIC}}v </label>
-                            </div>
+                        <div class="row">
+                            <label class="col-md-4"> Subject ID </label>
+                            <label class="col-md-6 text-capitalize">: {{subject.Sub_ID}} </label>
+                        </div>
+                        <div class="row">
+                            <label class="col-md-4"> Subject Name </label>
+                            <label class="col-md-6 text-capitalize">: {{subject.Name}} </label>
+                        </div>
+                        <div class="row">
+                            <label class="col-md-4"> Teacher Name </label>
+                            <label class="col-md-6 text-capitalize">: {{teacher.Name}} </label>
+                        </div>
+                        <div class="row">
+                            <label class="col-md-4"> Teacher NIC </label>
+                            <label class="col-md-6 text-capitalize">: {{teacher.Teacher_NIC}}v </label>
+                        </div>
+                        <div class="col-md-3 col-sm-3">
+                            <button class="btn btn-info" (click) = "enroll(subject)">ENROLL </button>
+                            <button class="btn btn-info" (click) = "unenroll()">UNENROLL </button>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </ng-template>
-    <!--subject details for student login end-->
-</div>
- 
+        </div>    
+    </div>
+</ng-template>
+<!--subject details for student login end-->

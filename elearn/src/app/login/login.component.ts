@@ -50,6 +50,7 @@ export class LoginComponent implements OnInit {
             this.loginservice.setlog(this.users[x].name);//pass id to hme page
 
             localStorage.setItem("id", this.users[x].name);
+            localStorage.setItem("type", this.users[x].type);
           }
           
   
@@ -59,6 +60,7 @@ export class LoginComponent implements OnInit {
             this.loginservice.setlog(this.users[x].name);//pass id to hme page
 
             localStorage.setItem("id", this.users[x].name);
+            localStorage.setItem("type", this.users[x].type);
           }
   
           //teacher login
@@ -67,6 +69,7 @@ export class LoginComponent implements OnInit {
             this.loginservice.setlog(this.users[x].name);//pass id to hme page
 
             localStorage.setItem("id", this.users[x].name);
+            localStorage.setItem("type", this.users[x].type);
           }
           return x = x;
         }

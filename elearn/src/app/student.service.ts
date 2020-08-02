@@ -25,4 +25,14 @@ export class StudentService {
     return this.http.post<any>('http://localhost/elearn/addstudent.php', student); 
   }
 
+  //add student to subject
+  addstudent(){
+    return this.http.get<CreateStudent[]>('http://localhost/elearn/add_student_to_subjet.php');
+  }
+
+  enrollstudent(stu_id:any,Sub_ID: any ){
+    return this.http.get<any>('http://localhost/elearn/enrolstudent.php?data='+stu_id+Sub_ID);
+    
+    
+  }//enroll student to subject
 }

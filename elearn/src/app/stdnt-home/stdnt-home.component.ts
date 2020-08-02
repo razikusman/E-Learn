@@ -5,6 +5,7 @@ import { Login } from '../login';
 import { SubjectsService } from '../subjects.service';
 import { SubjectCreate } from '../create-subject';
 import { FormBuilder, FormGroup } from '@angular/forms';
+import { StudentService } from '../student.service';
 
 
 @Component({
@@ -18,6 +19,7 @@ export class StdntHomeComponent implements OnInit {
   users : Login[]; // store user data
   public id ="";// store id
   public sid : ""; //sore subject id
+  access ; //sore subject detais of allowed
 
   constructor(
     private router: Router,
@@ -42,11 +44,16 @@ export class StdntHomeComponent implements OnInit {
       this.subjects = data
     });//subject details
 
-    console.log(this.id);
-    this.add = this.formBuilder.group({
-      stuid: [this.id],
-      subid: [this.sid],
+    // console.log(this.id);
+    // this.add = this.formBuilder.group({
+    //   stuid: [this.id],
+    //   subid: [this.sid],
+    // });
 
+    this.subjectservice.viewsubjectspermision()
+    .subscribe((data:SubjectCreate[])=>{
+      this.access =data;
+      console.log(this.access);
     });
 
   }
@@ -62,17 +69,17 @@ export class StdntHomeComponent implements OnInit {
     this.router.navigate(['/login'], profile)
   }
 
-  //enroll to a subject
-  enroll(subject) :void{
+  // //enroll to a subject
+  // enroll(subject) :void{
     
-    this.sid = subject.Sub_ID;
-    //this.enrolstudent();
-    console.log(this.id);
-    this.subjectservice.enrollsubjects(subject.Sub_ID,this.id)
-     .subscribe(data =>console.log('success!',data))
-     //console.log(this.add.value);
+  //   this.sid = subject.Sub_ID;
+  //   //this.enrolstudent();
+  //   console.log(this.id);
+  //   this.subjectservice.enrollsubjects(subject.Sub_ID,this.id)
+  //    .subscribe(data =>console.log('success!',data))
+  //    //console.log(this.add.value);
     
-  }
+  // }
 
   // public enrolstudent(){
   //   this.subjectservice.enrollsubjects(this.add.value,t)

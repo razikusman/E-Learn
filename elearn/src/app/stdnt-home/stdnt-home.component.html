@@ -34,27 +34,29 @@
         </div><!-- user details end -->
     </div>
         
+    <!-- subjects details start--> 
     <div >
         <h2 class="font-weight-bold col-md-12 col-sm-12 raw" ><u> Subject Details </u></h2>
 
-        <div *ngFor="let subject of subjects" style="width: 50%;" class="col-md-12 col-sm-12 ">
-            <div class="zoom1 row shadow sm-3 mb-5 rounded border border-info">
-                <div class="col-md-4 col-sm-4">
-                    <label  >Subject ID </label><br>
-                    <label class="text-capitalize">subject Name </label>
-                </div>
-                <div class="col-md-6 col-sm-6">
-                    <label  >: {{subject.Sub_ID}} </label><br>
-                    <label class="text-capitalize">: {{subject.Name}} </label>
-                </div>
-                <div class="col-md-3 col-sm-3">
-                    <button class="btn btn-info" (click) = "enroll(subject)">ENROLL </button>
-                    <button class="btn btn-info" (click) = "unenroll()">UNENROLL </button>
+        <div *ngFor="let subject of access" style="width: 50%;" class="col-md-12 col-sm-12 ">
+            <div *ngIf ="subject.stu_id == id">
+                <div class="zoom1 shadow sm-3 mb-5 rounded border border-info">
+                    <div class="row">
+                        <label class="col-md-4 col-sm-4" >Subject ID </label>
+                        <label class="text-capitalize col-md-4 col-sm-4"> : {{subject.Sub_ID}} </label>
+                    </div>
+                    <div class="row">
+                        <label class="col-md-4 col-sm-4" >Subject Name </label>
+                        <label class="text-capitalize col-md-6 col-sm-6">: {{subject.sub_Name}} </label>
+                    </div>
+                    <div class="col-md-3 col-sm-3">
+                        <button class="btn btn-info" (click) = "unenroll()">UNENROLL </button>
+                    </div>
                 </div>
             </div>
             
         </div>
 
-    </div><!--view report-->
+    </div><!--view report-->-->
 
 </div>

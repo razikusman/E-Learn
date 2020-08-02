@@ -1,5 +1,11 @@
 <h2 class="text-uppercase font-weight-bold text-center" style="color: black;">student-details </h2><hr>
-<div class="container " style="padding: 1%;">
+<div class="container" style="padding: 1%;">
+
+    
+    <div class="container  d-flex justify-content-end">
+        <button class="btn btn-success text-uppercase" (click) = "addstudent()">add student</button>
+    </div><br>
+
     <div *ngFor="let student of students" class="shadow-lg sm-3 mb-5 bg-white rounded" style="padding: 1%; background-color: rgba(0, 0, 255, 0.952); " >
         <div class="row">
             <label class="col-md-2"> Student ID </label>
