@@ -1,10 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router'
 import { Login } from '../login';
-import { MatDialog } from '@angular/material';
 import { DialogExampleComponent } from '../dialog-example/dialog-example.component';
 import { LoginServiceService } from '../login-service.service';
 import { identifierModuleUrl } from '@angular/compiler';
+import { MatDialog, MatDialogRef } from  '@angular/material';
+import { MessageComponent } from '../message/message.component';
 
 @Component({
   selector: 'app-login',
@@ -75,9 +76,9 @@ export class LoginComponent implements OnInit {
         }
 
         //lgin error
-        else if(x == this.users.length - 1){
-          this.dialog.open(DialogExampleComponent); //error mesage
-        }
+         else if(x == this.users.length - 1){
+           this.dialog.open(MessageComponent); //error mesage
+         }
       };
 
     } //login user end
@@ -88,9 +89,9 @@ export class LoginComponent implements OnInit {
       this.id = this.lgin.password;
     }
     
-    else{
-      this.dialog.open(DialogExampleComponent); //error mesage
-    }
+    // else{
+    //   this.dialog.open(DialogExampleComponent); //error mesage
+    // }
   } //login end
 
   //direct to the signup user type 
@@ -104,3 +105,6 @@ export class LoginComponent implements OnInit {
   }
 
 }
+
+///import { MatDialog } from '@angular/material';
+///
