@@ -29,17 +29,21 @@
             <!--Materials add start-->
                     <u id="ugrdlbl" class="text-uppercase  font-weight-bold">Materials</u>
 
-                    <div class=" d-flex flex-column row">
+                    <form class=" d-flex flex-column row"
+                        #DetailsForm="ngForm" 
+                        [formGroup]="addForm"  (ngSubmit)= "onSubmit()" novalidate>
                         <div>
                             <label id="ugrdlbl" class="text-uppercase"> Grade : </label>
-                            <select required  name="grad" class="dropdown btn-info">
+                            <select required  name="grad" class="dropdown btn-info"
+                                    formControlName="grad" name="grad">
+
                                 <option *ngFor="let grde of grades"> {{ grde }} </option>
                             </select>
                         </div>
                         
-                        <input type="file" (click) = "add($event)" ><br>
-                        <button class="btn-success " (click) = "upload()">upload</button>
-                    </div>
+                        <input type="file" (click) = "add($event)" name = "file" formControlName="file" ><br>
+                        <button class="btn-success "  type="submit">upload</button>
+                    </form>
             <!--Materials add end-->
                     <hr>
                 </div> 

@@ -4,6 +4,8 @@ import { SubjectsService } from '../subjects.service';
 import { TeacherService } from '../teacher.service';
 import { CreateTeacher } from '../create-teacher';
 import { Router } from '@angular/router';
+import { HttpClient } from '@angular/common/http';
+import { FormGroup, FormBuilder } from '@angular/forms';
 
 @Component({
   selector: 'app-details-subjects',
@@ -25,10 +27,22 @@ export class DetailsSubjectsComponent implements OnInit {
   constructor(
     private subjectservice: SubjectsService, //subject service
     private teacherservice : TeacherService, //teacher service component
-    private router : Router
+    private router : Router,
+    private http : HttpClient,
+    private formBuilder : FormBuilder
   ) { }
 
+  addForm: FormGroup;
+
   ngOnInit() {
+
+    this.addForm = this.formBuilder.group({
+      grad : [null],
+      file : [this.file]
+    });
+
+
+
     this.id = localStorage.getItem("id"); // user id
     this.type = localStorage.getItem("type");
     console.log(this.type);
@@ -55,12 +69,16 @@ export class DetailsSubjectsComponent implements OnInit {
 
   //add materials
   add(event){
-    this.file = event.target.files[0];
+    this.file = <File>event.target.files[0];
   }
 
   //u[load the material
-  upload(){
-
+  onSubmit(){
+    console.log(this.addForm.value);
+    this.http.post('http://localhost/elearn/addfile.php',this.addForm.value)
+    .subscribe(res => {
+      console.log(res);
+    });
   }
   //gradearray
   grades = ['grade','6','7','8','9','10','11'];

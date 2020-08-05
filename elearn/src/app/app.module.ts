@@ -9,6 +9,9 @@ import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialsModule } from './materials/materials.module';
 import { DialogExampleComponent } from './dialog-example/dialog-example.component';
+import { ChartsModule } from 'ng2-charts';
+import { MatSliderModule } from '@angular/material/slider';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -26,7 +29,9 @@ import { DialogExampleComponent } from './dialog-example/dialog-example.componen
     ReactiveFormsModule,
     HttpClientModule,
     BrowserAnimationsModule,
-    MaterialsModule
+    MaterialsModule,
+    ChartsModule,
+    MatSliderModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

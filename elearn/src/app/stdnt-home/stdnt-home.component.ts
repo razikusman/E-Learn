@@ -4,8 +4,8 @@ import { LoginServiceService } from '../login-service.service';
 import { Login } from '../login';
 import { SubjectsService } from '../subjects.service';
 import { SubjectCreate } from '../create-subject';
-import { FormBuilder, FormGroup } from '@angular/forms';
-import { StudentService } from '../student.service';
+import {  FormGroup } from '@angular/forms';
+import* as fileSaver from 'file-saver';
 
 
 @Component({
@@ -16,6 +16,7 @@ import { StudentService } from '../student.service';
 export class StdntHomeComponent implements OnInit {
 
   subjects ;//variable to store subject details
+  materials ;//variable to store subject materials details
   users : Login[]; // store user data
   public id ="";// store id
   public sid : ""; //sore subject id
@@ -25,7 +26,6 @@ export class StdntHomeComponent implements OnInit {
     private router: Router,
     private loginservice : LoginServiceService,
     private subjectservice: SubjectsService,
-    private formBuilder : FormBuilder,
   ) { }
 
   add: FormGroup;
@@ -43,6 +43,8 @@ export class StdntHomeComponent implements OnInit {
     .subscribe((data: SubjectCreate[])=>{
       this.subjects = data
     });//subject details
+
+    
 
     // console.log(this.id);
     // this.add = this.formBuilder.group({
@@ -86,5 +88,15 @@ export class StdntHomeComponent implements OnInit {
   //    .subscribe(data =>console.log('success!',data))
   //    console.log(this.add.value);
   // };
+
+  download(){
+    this.subjectservice.viewmaterials().subscribe(response => {
+			let blob:any = new Blob([response]);
+			const url = window.URL.createObjectURL(blob);
+			//window.open(url);{ type: 'text/json; charset=utf-8' }
+			//window.location.href = response.url;'employees.json'
+			fileSaver.saveAs(blob);
+		})
+  }
 }
 

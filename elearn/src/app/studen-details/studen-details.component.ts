@@ -71,11 +71,5 @@ export class StudenDetailsComponent implements OnInit {
     })
   }
 
-  //evaluate student
-  evaluate(){
-/*
-bind data to a model
-as 
-*/
-  }
+  
 }

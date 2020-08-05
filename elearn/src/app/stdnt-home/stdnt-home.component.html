@@ -53,10 +53,22 @@
                         <button class="btn btn-info" (click) = "unenroll()">UNENROLL </button>
                     </div>
                 </div>
-            </div>
-            
+            </div>   
         </div>
 
-    </div><!--view report-->-->
+        <div class="container">
+            <!--{{material.material}}<br>-->
+            <button class="btn btn-success" (click)="download()">Download</button>
+     
+          </div>
 
+    </div><!--view report
+    
+    in type scrip to view
+console.log(this.subjectservice.viewmaterials());
+    this.subjectservice.viewmaterials()
+    .subscribe((data: SubjectCreate[])=>{
+      this.materials = data
+    });//materials details-->-->
+    
 </div>

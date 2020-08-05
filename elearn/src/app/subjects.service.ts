@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpResponse } from '@angular/common/http';
 import { SubjectCreate } from './create-subject';
+//import { ResponseContenType } from '@angular/http';
 
 @Injectable({
   providedIn: 'root'
@@ -39,4 +40,8 @@ export class SubjectsService {
   viewsubjectspermision(){
     return this.http.get<SubjectCreate[]>('http://localhost/elearn/enrolsubjectview.php');
   }//view subjects
+
+  viewmaterials() : any {
+    return this.http.get('http://localhost/elearn/materialview.php', { responseType: 'blob'});
+  }//view subjects materials
 }

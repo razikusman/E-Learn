@@ -1,4 +1,46 @@
-<h4>A-z English Academy</h4><br>
-<h5>Date : {{ myDate | date: 'MM - dd(E) - yyyy '}} </h5><br>
-<h5>Time : {{ myDate | date: ' h:mm a'}} </h5><br>
-<h5>Students Fees Payment Details</h5>
+<div class="container">
+    <h3>A-z English Academy</h3><br>
+    <h5>Date : {{ myDate | date: 'MM - dd(E) - yyyy '}} </h5><br>
+    <h5>Time : {{ myDate | date: ' h:mm a'}} </h5><br>
+    <h5>Students Fees Payment Details</h5>
+    <hr>
+    
+    <div class="container border border-dar">
+        <table class="table">
+            <thead>
+              <tr>
+                <th scope="col">#</th>
+                <th scope="col">Name</th>
+                <th scope="col">ID</th>
+                <th scope="col">Grade</th>
+                <th scope="col">Date</th>
+                <th scope="col">Amount(Rs.)</th>
+              </tr>
+            </thead>
+            <tbody *ngFor = "let payment of payments ; let i = index">
+              <tr>
+                <th scope="row">{{i +1}}</th>
+                <td class="text-caplitalise">{{payment.name}}</td>
+                <td>{{payment.Stu_ID}}</td>
+                <td>{{payment.grade}}</td>
+                <td>{{payment.date}}</td>
+                <td>{{payment.amount}}</td>
+              </tr>
+            </tbody>
+          </table>
+    </div>
+
+    <!--chart-->
+    <div style="display: block">
+        <canvas mdbChart
+            [chartType]="chartType"
+            [datasets]="chartDatasets"
+            [labels]="chartLabels"
+            [colors]="chartColors"
+            [options]="chartOptions"
+            [legend]="true"
+            (chartHover)="chartHovered($event)"
+            (chartClick)="chartClicked($event)">
+        </canvas>
+    </div>
+</div>

@@ -37,16 +37,18 @@ export class AdminHomeComponent implements OnInit {
 
   salarypayment(salary){
     this.router.navigate(['/salary/payment'], salary)
-  }
-  feespayment(fees){
-    this.router.navigate(['/fees/payment'], fees)
-  }
+  }//view teacher salary payment
+  
+  feespayment(student){
+    this.router.navigate(['/student/evaluate'], student)
+  }//view the student payment details
+
   overallreport(overall){
     this.router.navigate(['/overall/report'], overall)
-  }
+  }//view the overall report
 
   add(anouncement){
     this.router.navigate(['/anouncements/view'], anouncement)
-  }
+  }//add anouncemnt
 
 }

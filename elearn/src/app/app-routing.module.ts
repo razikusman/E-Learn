@@ -26,6 +26,7 @@ import { DetailsSubjectsComponent } from './details-subjects/details-subjects.co
 import { DetailsStudentComponent } from './details-student/details-student.component';
 import { SubjectCreateComponent } from './subject-create/subject-create.component';
 import { AddStudentComponent } from './add-student/add-student.component';
+import { StudentEvaluateComponent } from './student-evaluate/student-evaluate.component';
 
 //path for the url
 const routes: Routes = [
@@ -48,6 +49,7 @@ const routes: Routes = [
   {path: 'student/progres', component:StudentProgressComponent},
   {path: 'salary/payment', component:SalaryPaymentComponent},
   {path: 'fees/payment', component:FeesPaymentComponent},
+  {path: 'student/evaluate', component:StudentEvaluateComponent},
   {path: 'anouncements/view', component: ViewAnouncementComponent},
   {path: 'create/anouncement', component: AnouncementCreateComponent},
   {path: 'anouncement', component:AnouncementComponent},
@@ -92,6 +94,7 @@ export const RoutingComponents= [
                                   DetailsSubjectsComponent,
                                   DetailsTeachersComponent,
                                   SubjectCreateComponent,
-                                  AddStudentComponent
+                                  AddStudentComponent,
+                                  StudentEvaluateComponent,
                                 ]
  
