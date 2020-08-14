@@ -1,0 +1,97 @@
+<div class="bg ">
+    <h2 class="text-uppercase font-weight-bold text-center" style="color: black;">student-payment-details </h2><hr>
+    
+    <!-- sort out buttons start-->
+    <div class="container  text-center bg-info " style="padding: 1%;" >
+        <div class="btn-group btn-group-toggle" data-toggle="buttons">
+            <label class="btn btn-secondary active" (click)="selecta()">
+                <input type="radio" name="options" id="option1" autocomplete="off" checked>allstudents
+            </label>
+            <label class="btn btn-secondary" (click)="select6()">
+                <input type="radio" name="options" id="option2" autocomplete="off">grade 6
+            </label>
+            <label class="btn btn-secondary" (click)="select7()">
+                <input type="radio" name="options" id="option2" autocomplete="off">grade 7
+            </label>
+            <label class="btn btn-secondary" (click)="select8()">
+                <input type="radio" name="options" id="option2" autocomplete="off">grade 8
+            </label>
+            <label class="btn btn-secondary" (click)="select9()">
+                <input type="radio" name="options" id="option2" autocomplete="off">grade 9
+            </label>
+            <label class="btn btn-secondary" (click)="select10()">
+                <input type="radio" name="options" id="option2" autocomplete="off">grade 10
+            </label>
+            <label class="btn btn-secondary" (click)="select11()">
+                <input type="radio" name="options" id="option2" autocomplete="off">grade 11
+            </label>
+        </div>
+    </div>
+    <!-- sort out buttons ends-->
+
+    <br>
+    <!-- coloumn labels start-->
+    <div class="container border border-dark ">
+        <div class="row" style="background-color: rgb(0, 5, 5); color: white;">
+            <label class="font-weight-bold col-md-1"> Student ID </label>
+            <label class="font-weight-bold col-md-2"> Student Name </label> 
+            <label class="font-weight-bold col-md-1"> Grade </label>
+            <label class="font-weight-bold col-md-3"> Fees </label>
+            <label class="font-weight-bold col-md-1"> Status </label>
+        </div>
+        <!-- coloumn labels end-->
+        <br>
+
+        <!-- coloumn data start-->
+        <div *ngFor="let student of students">
+
+            <!-- sort outed data start-->
+            <ng-container *ngIf= " nam != 0 ; else all">
+                <div *ngIf= "student.Grade == nam" >
+                    <div class="row" style="background-color: rgb(90, 173, 211); color: white;" >
+                        <label  class="font-weight-bold col-md-1">{{student.Student_ID}} </label>
+                        <label class="font-weight-bold col-md-2 text-capitalize">{{student.Name}} </label> 
+                        <label class="font-weight-bold col-md-1">{{student.Grade}} </label>
+                        <form #studentpayForm="ngForm" [formGroup]="addForm" (ngSubmit)= "onSubmit()" novalidate>
+                            <input name="fees" formControlName="fees" required class="col-md-3" type="text" placeholder="amount in Rs." style ="margin: 2px; padding: 0%;">
+                            
+                            <input name="id" formControlName="id" required class="col-md-3" type="text" placeholder="student id" style ="margin: 2px; padding: 0%;">
+                            <input name="paid" formControlName="paid" required class="align-self-center" type="checkbox" style="margin-left: 1%;"><label class="align-self-center font-weight-bold" >: paid </label>
+                            <input name="not" formControlName="not" class="align-self-center" type="checkbox" style="margin-left: 1%;"><label class="align-self-center font-weight-bold" >: not-paid</label>
+                            <button [disabled]="studentpayForm.form.invalid" class="btn btn-warning col-md-2 font-weight-bold" type="submit" style="margin-left: 2%;">EVALUATE</button>
+                        </form>
+                    </div>
+                </div>
+                <br>
+            </ng-container>
+            <!-- sort outed data end-->
+
+            <!-- all data start-->
+            <ng-template #all>
+                <div class="row" style="background-color: rgb(90, 173, 211); color: rgb(0, 0, 0);" >
+                    <label  class="font-weight-bold col-md-1">{{student.Student_ID}} </label>
+                    <label class="font-weight-bold col-md-2 text-capitalize">{{student.Name}} </label> 
+                    <label class="font-weight-bold col-md-1">{{student.Grade}} </label>
+                    <form #studentpayForm="ngForm" [formGroup]="addForm" (ngSubmit)= "onSubmit()" novalidate>
+                        <input name="fees" formControlName="fees" required class="col-md-3" type="text" placeholder="amount in Rs." style ="margin: 2px; padding: 0%;">
+                        
+                        <input name="id" formControlName="id" required class="col-md-3" type="text" placeholder="student id" style ="margin-left: 4px; padding: 0%;">
+                        <input name="paid" formControlName="paid" required class="align-self-center" type="checkbox" style="margin-left: 1%;" value="paid"><label class="align-self-center font-weight-bold" >: paid </label>
+                        <input name="not" formControlName="not" class="align-self-center" type="checkbox" style="margin-left: 1%;"><label class="align-self-center font-weight-bold" >: not-paid</label>
+                        <button [disabled]=" (addForm.get('fees').value == null) || (addForm.get('id').value != student.Student_ID) || (addForm.get('paid').value == null)  " class="btn btn-warning col-md-2 font-weight-bold" type="submit" style="margin-left: 2%;">EVALUATE</button>
+                    </form>
+                </div>
+                <!--{{pay.invalid}}-->
+                <br>
+            </ng-template>
+            <!-- all data end-->
+        </div>
+        <!-- coloumn data end-->
+
+    </div><br>
+    <div class="container d-flex justify-content-center">
+        <button class="btn btn-info text-uppercase" (click)="viewreport()">viewreport</button>
+    </div>
+    
+</div>
+

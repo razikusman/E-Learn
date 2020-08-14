@@ -1,0 +1,25 @@
+<div class="bg">
+    <H2 class="text-uppercase font-weight-bold text-center" style="color: black;" >ANOUNCEMENTS</H2>
+    <form class="container border border-dark">
+        <div class="row" style="background-color: rgb(0, 0, 0); color: white;" >
+            <label style="overflow: auto;" class="font-weight-bold col-md-3">heading1 </label>
+            <label style="overflow: auto;" class="font-weight-bold col-md-3">heading2 </label> 
+            <label style="overflow: auto;" class="font-weight-bold col-md-4">content </label>
+        </div><br>
+
+        <div *ngFor="let anouncement of anouncements">
+            <div class="row" style="background-color: rgb(64, 70, 70); color: white;" >
+                <label style="overflow: auto;" class="font-weight-bold col-md-3">{{anouncement.h1}} </label>
+                <label style="overflow: auto;" class="font-weight-bold col-md-3">{{anouncement.h2}} </label> 
+                <label style="overflow: auto;" class="font-weight-bold col-md-4">{{anouncement.content}} </label>
+            </div>
+            <div class="row">
+                <br>
+                <button class="btn btn-danger col-md-1" style="margin-left: 2%;" (click)="delete(anouncement)">DELETE</button>
+                <button class="btn btn-info col-md-1" (click)="update(students)" style="margin-left: 2%;">UPDATE</button>
+            </div>
+            <hr style="background-color: rgb(0, 0, 0); height: 5px;">
+        </div>
+        <button class="btn btn-primary" (click)="cretae(anounceent)">create</button>
+    </form>
+</div>

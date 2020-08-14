@@ -1,0 +1,79 @@
+<div class="side">
+    <img class="imgaz" src="assets/az1.png">
+
+    <h2 style="color: black; background-color: blue;">navigation</h2>
+
+    <div *ngFor="let detail of details">
+        <ng-container *ngIf= "teacherhome(); else student" >
+            <div *ngIf="(detail.url) != 'teacherhome()'">
+                <a href="details/{{detail.type}}" class="reference"  style="color: blue;">
+                    {{ detail.type }} Details
+                </a>
+                <hr style="color: blue; height: 3px;">
+            </div>
+            
+        </ng-container><!--teacher container-->
+
+        <ng-template #student>
+            <div *ngIf="studenthome(); else admin ">
+                <div  *ngIf="(detail.url) != 'studenthome()'">
+                    <a href="details/{{detail.type}}" class="reference" style="color:blue;">
+                        {{ detail.type }} Details
+                    </a>
+                    <hr style="color: blue; height: 3px;">
+                </div>
+            </div>
+        </ng-template><!--student contioner-->
+    
+        <ng-template #admin>
+            <div *ngIf="adminhome(); else otherhome ">
+                <div >
+                    <a href="{{detail.type}}/details" class="reference" style="color:blue;">
+                        {{ detail.type }} Details
+                    </a>
+                    <hr style="color: blue; height: 3px;">
+                </div>
+            </div>
+        </ng-template><!--admin contioner-->
+
+        <ng-template #otherhome>
+            <div>
+                <a href="details/{{detail.type}}"  class="reference" style="color: blue;">
+                    {{ detail.type }} Details
+                </a>
+                <hr style="color: blue; height: 3px;">
+            </div>
+            
+        </ng-template><!--parent-->
+        <!-- -->
+    </div>
+    
+    <div class="info-container">
+        <ng-container *ngIf= "teacherhome() ; else studentparent" >
+        
+            <h2 style="color: black; background-color: blue;" class="h5">
+                Subjects Teaching
+            </h2>
+
+            <div class="container shadow-lg sm-3 mb-5 bg-white rounded" style="padding: 1%;" *ngFor= "let subjectteaching of subjectsteaching">
+                <div *ngFor= "let subject of subjects">
+                    <div *ngIf = "(id == subjectteaching.tID) && (subjectteaching.Sub_ID == subject.Sub_ID)">
+                        <div class="row">
+                            <label class="col-md-6 text-capitalize">{{subject.Name}} </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+        </ng-container><!--ng container-->
+    
+        <ng-template #studentparent>
+            <div *ngIf="studenthome();">
+                <h2 style="color: black; background-color: blue;" class="h5">
+                    Subjects Following
+                </h2>
+            </div>
+        </ng-template><!--student contaoner-->
+    
+    </div>
+</div>

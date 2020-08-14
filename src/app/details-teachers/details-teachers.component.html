@@ -1,0 +1,27 @@
+<h2 class="text-uppercase font-weight-bold text-center" style="color: black;">teacher-details </h2><hr>
+<div class="container " style="padding: 1%;">
+    <div *ngFor="let teacher of teachers" class="shadow sm-3 mb-5 bg-white rounded" style="padding: 1%; " >
+        <div class="row">
+            <label class="col-md-2">NIC</label>
+            <label class="col-md-6">: {{teacher.Teacher_NIC}} </label>
+        </div>
+        <div class="row ">
+            <label class="col-md-2">Teacher Name</label>
+            <label class="col-md-6 text-capitalize">: {{teacher.Name}} </label>
+        </div>
+        <div class="row">
+            <label class="col-md-2">Teacher qualification</label>
+            <label class="col-md-6">: {{teacher.qualification}} </label>
+        </div>
+        <div class="row">
+            <label class="col-md-2">Gender</label>
+            <label class="col-md-6">: {{teacher.Gender}} </label>
+        </div>
+        <div class="row ">
+            <label class="col-md-2">Teacher Contact</label>
+            <label class="col-md-6">: {{teacher.Contact}} </label>
+        </div>
+    </div>
+</div>
+
+

@@ -1,0 +1,15 @@
+.bg{
+    background:url('../../assets/detailsbackground1.jpg') no-repeat center;
+    background-size: cover ;
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    margin: 0%;
+    overflow: auto;
+}
+
+.container{
+    padding-right: 1%;
+    padding-left: 1%;
+    
+}

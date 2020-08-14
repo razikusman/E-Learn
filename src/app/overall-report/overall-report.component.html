@@ -1,0 +1,140 @@
+<div class="container" id="report">
+    <h3>A-z English Academy</h3><br>
+    <h5>Date : {{ myDate | date: 'MM - dd(E) - yyyy '}} </h5><br>
+    <h5>Time : {{ myDate | date: ' h:mm a'}} </h5><br>
+    <h5>overall-report </h5>
+    <hr>
+
+    <!--month selection strt-->
+    <div class="form-group" >
+        <label>Month : </label>
+        <select  name="yaer" class="dropdown btn-info" (change)='onMonthSelected($event)'>
+            <option selected> {{monthtoday}}</option>
+            <option *ngFor="let month of months"> {{month}}</option>
+        </select>
+    </div><br>
+    <!--month selection end-->
+
+    <!--table container start-->
+    <div class="container border border-dar"> 
+        <table class="table"><!--table start-->
+            <thead><!--table haedins start-->
+                <tr>
+                    <th scope="col"></th>
+                    <th scope="col"></th>
+                    <th scope="col"></th>
+                    <th scope="col"></th>
+                    <th scope="col">Date</th>
+                    <th scope="col">Dr(Rs.)</th>
+                    <th scope="col">Cr(Rs.)</th>
+                </tr>
+            </thead><!--table haedins end-->
+            <tbody><!--table body strat-->
+                <tr *ngFor = "let payment of payments ; let i = index"><!--table raw start-->
+                    <th *ngIf="(payment.month == monthtoday) && (payment.year == yeartoday) " scope="row"></th>
+                    <td *ngIf="(payment.month == monthtoday) && (payment.year == yeartoday) " class="text-capitalize">{{payment.name}}</td>
+                    <td *ngIf="(payment.month == monthtoday) && (payment.year == yeartoday) ">{{payment.userid}}</td>
+                    <td *ngIf="(payment.month == monthtoday) && (payment.year == yeartoday) ">Techer Salry</td>
+                    <td *ngIf="(payment.month == monthtoday) && (payment.year == yeartoday) ">{{payment.date}}</td>
+                    <td *ngIf="(payment.month == monthtoday) && (payment.year == yeartoday) ">**</td>
+                    <td *ngIf="(payment.month == monthtoday) && (payment.year == yeartoday) ">Rs.({{payment.amount}})</td>
+                </tr><!--table raw end-->
+    <tr></tr>
+                <tr *ngFor = "let feespayment of feespayments ; let i = index">
+                    <th *ngIf="(feespayment.month == monthtoday) && (feespayment.year == yeartoday) " scope="row"></th>
+                    <td *ngIf="(feespayment.month == monthtoday) && (feespayment.year == yeartoday) " class="text-capitalize">{{feespayment.name}}</td>
+                    <td *ngIf="(feespayment.month == monthtoday) && (feespayment.year == yeartoday) ">{{feespayment.Student_ID}}</td>
+                    <td *ngIf="(feespayment.month == monthtoday) && (feespayment.year == yeartoday) ">Monthly Fees</td>
+                    <td *ngIf="(feespayment.month == monthtoday) && (feespayment.year == yeartoday) ">{{feespayment.date}}</td>
+                    <td *ngIf="(feespayment.month == monthtoday) && (feespayment.year == yeartoday) ">Rs.{{feespayment.amount}}</td>
+                    <td *ngIf="(feespayment.month == monthtoday) && (feespayment.year == yeartoday) ">**</td>
+                </tr>
+                <tr>
+                    <th scope="row">**</th>
+                    <td >Balance brouugh Forward</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td>**</td>
+                    <td >Rs.{{feestotalyesterday - salarytotalyesterday}}</td>
+                </tr>
+                <tr>
+                    <th scope="row">**</th>
+                    <td class="text-caplitalise font-weight-bold text-uppercase"><h4>Total</h4></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td class="font-weight-bold"><h4>Rs.{{feestotalyesterday - salarytotalyesterday + feestotal - salarytotal}}</h4></td>
+                </tr>
+            </tbody><!--table body end-->
+        </table><!--table end-->
+    </div><!--table container end-->   
+    
+    <br>
+
+    <hr>
+
+    <!--year selection strt-->
+    <div class="form-group" >
+        <label>Year : </label>
+        <select  name="yaer" class="dropdown btn-info" (change)='onYearSelected($event)'>
+            <option selected> {{yeartoday}}</option>
+            <option *ngFor="let year of years"> {{year}}</option>
+        </select>
+    </div><br>
+    <!--year selection end-->
+
+
+    <!-- </div>
+    <div class="container"> -->
+    <!-- google chart strt -->
+    <google-chart  #chart
+        [title]="'Salary Payments'" 
+        [type]="type" 
+        [data]= "[ ['Jan',   salaryarray[1] ],
+                    ['Feb',  salaryarray[2] ],
+                    ['Mar',  salaryarray[3] ],
+                    ['Apr',  salaryarray[4] ],
+                    ['May',  salaryarray[5] ],
+                    ['Jun',  salaryarray[6] ],
+                    ['Jul',  salaryarray[7] ],
+                    ['Aug',  salaryarray[8] ],
+                    ['Sep',  salaryarray[9] ],
+                    ['Oct',  salaryarray[10] ],
+                    ['Nov',  salaryarray[11] ],
+                    ['Dec',  salaryarray[12] ]
+                ]"
+        
+        [columns]="columnNames" 
+        [options]="options1">
+    </google-chart>
+
+    <google-chart  #chart
+        [title]="'Fees Payments'" 
+        [type]="type" 
+        [data]= "[ ['Jan',   feesarray[1]],
+                    ['Feb',  feesarray[2]],
+                    ['Mar',  feesarray[3]],
+                    ['Apr',  feesarray[4]],
+                    ['May',  feesarray[5]],
+                    ['Jun',  feesarray[6]],
+                    ['Jul',  feesarray[7]],
+                    ['Aug',  feesarray[8]],
+                    ['Sep',  feesarray[9]],
+                    ['Oct',  feesarray[10]],
+                    ['Nov',  feesarray[11]],
+                    ['Dec',  feesarray[12]]
+                ]"
+        
+        [columns]="columnNames" 
+        [options]="options2">
+    </google-chart>
+    <!-- google chart end -->
+</div>
+
+<div class="container action">
+    <button class="export-button" (click)="onExportClick()">
+        export as pdf
+    </button>
+</div>

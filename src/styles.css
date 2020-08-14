@@ -1,1 +1,109 @@
 /* You can add global styles to this file, and also import other style files */
+/* You can add global styles to this file, and also import other style files */
+/*top bar*/
+app-top-bar {
+    position: sticky;
+    width: 100%;
+    height: fit-content;
+    top: 0%;
+    left: 0%;
+    background-color:blue;
+    justify-content: space-between;
+  }
+  
+  /*anouncements*/
+  app-anouncement{
+    left: 18%;
+    right: 0%;
+    height: 40%;
+    bottom: auto;
+    position: absolute;
+    padding-top: 1%;
+  }
+  
+  /*nav bar*/
+  app-nav-bar{
+    left: 0%;
+    right: 85%;
+    bottom: auto;
+    position: absolute;
+    line-break: loose;
+    height: inherit;
+    border-right: #777474 solid 3px;
+    padding: 1%;
+    width: fit-content;
+  }
+  
+  /*stdnt hom*/
+  app-stdnt-home{
+    position: inherit;
+    left: 20%;
+    width: calc(100%);
+    height: 100%;
+  }
+  
+  /*admin home*/
+  app-admin-home{
+    position: inherit;
+    left: 18%;
+    width: calc(100%);
+    height: 100%;;
+  }
+  
+  /*parent hom*/
+  app-parent-home{
+    position: inherit;
+    left: 18%;
+    width: calc(100%);
+    height: 100%;
+  }
+  
+  /*teacher hom*/
+  app-teacher-home{
+    position: inherit;
+    left: 18%;
+    width: calc(100%);
+    height: 100%;
+  }
+  
+  /*links a*/
+  a{
+      position: relative;
+      display: block;
+      margin: 0%;
+      height: 100%;
+      top: 10px;
+      font-size: 20px;
+      text-transform: uppercase;
+      font-weight: bold;
+      color: white;
+      text-decoration: none;
+  }
+  
+  html, body { height: 100%; }
+  body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+  
+  .zoom {
+    transition: transform .5s; /* Animation */
+    height: fit-content;
+    text-align: justify;
+    padding: 4% 2% 4% 2%;
+  }
+  
+  .zoom:hover {
+    transform: scale(1.2); /* (120% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
+  }
+  
+  .zoom1 {
+    transition: transform .5s; /* Animation */
+    height: fit-content;
+    text-align: justify;
+    padding: 4% 2% 4% 2%;
+  }
+  
+  .zoom1:hover {
+    transform: scale(1.1); /* (120% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
+  }
+  html, body { height: 100%; }
+  body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+  

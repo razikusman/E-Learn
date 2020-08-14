@@ -1,0 +1,57 @@
+.card-img{
+    background: url("../../assets/detailsbackground1.jpg")  center center no-repeat ;
+    background-size: cover ;
+    position: absolute;
+    left: 0%;
+    right: 0%;
+    bottom: 0%;
+    top: 0%;
+    margin: 0%;
+    height: 100%;
+    width: 100%;
+}
+
+
+h1{
+    position: relative;
+    margin: 0%;
+    text-align: center;
+    letter-spacing: 2px;
+    color: white;
+}
+
+h3{
+    position: relative;
+    margin: 0%;
+    padding: 1%;
+    color: white;
+}
+.card{
+    background-color: rgba(0, 0, 0, 0);
+}
+
+img{
+    border-color: rgb(95, 180, 166);
+}
+button{
+    position: relative;
+    font-family: sans-serif;
+    background-color: rgb(95, 180, 166);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    bottom: 0%;
+    left: 50%;
+    transform: translate(-50%, 0%);
+}
+
+.inner{
+    overflow: hidden;
+}
+
+.zoom {
+    transition: transform .5s; /* Animation */
+  }
+
+  .zoom:hover {
+    transform: scale(1.5); /* (70% zoomin - Note: if the zoom is too large, it will go outside of the viewport) */
+  }

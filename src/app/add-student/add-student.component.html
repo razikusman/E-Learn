@@ -1,0 +1,31 @@
+<h1 class="text-uppercase font-weight-bold text-center">add-student</h1>
+<div class="container ">
+    <div *ngFor="let student of students" >
+        <div *ngIf = "student.teacher_NIC == id" 
+             class="shadow-lg sm-3 mb-5 bg-white rounded" 
+             style="padding: 1%; background-color: rgba(0, 0, 255, 0.952); " >
+            <div class="row">
+                <label class="col-md-2"> Student ID </label>
+                <label class="col-md-6 text-capitalize">: {{student.Student_ID}}  </label>
+            </div>
+            <div class="row">
+                <label class="col-md-2"> student Name </label>
+                <label class="col-md-6 text-capitalize">: {{student.stu_Name}} </label>
+            </div>
+            <div class="row">
+                <label class="col-md-2"> Subject ID </label>
+                <label class="col-md-6">: {{student.Subject_ID}} </label>
+            </div>
+            <div class="row">
+                <label class="col-md-2"> Subject Name </label>
+                <label class="col-md-6 text-capitalize">: {{student.sub_Name}} </label>
+            </div>
+            <div class="row">
+                <label class="col-md-2"> Student Grade </label>
+                <label class="col-md-6">: {{student.stu_Grade}} </label>
+            </div>
+            
+            <button class="btn btn-success" (click) = "add(student)"> give access</button>
+        </div>
+    </div>
+</div> 

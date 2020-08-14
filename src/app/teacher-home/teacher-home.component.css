@@ -1,0 +1,9 @@
+.container{
+    left: 16%;
+    right: 0%;
+    top:55%;
+    height: 100%;
+    bottom: auto;
+    position: absolute;
+    padding: 0%;
+}

@@ -1,0 +1,17 @@
+.container{
+    left: 16%;
+    right: 0%;
+    height: 100%;
+    bottom: auto;
+    position: absolute;
+    padding: 0%;
+}
+
+.option{
+    left: 0%;
+    right: 0%;
+    height: 40%;
+    top: 40%;
+    bottom: auto;
+    position: absolute;
+}

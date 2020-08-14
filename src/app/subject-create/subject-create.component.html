@@ -1,0 +1,39 @@
+<div class="container">
+    <br>
+    <div class="container">
+        <div class="row">
+            <h1 class="col-md-9">add subject</h1>
+        </div>
+    </div>
+    
+    <form style="background-color: rgba(0, 174, 255, 0.171);" class="container border border-success" #subjectaddForm="ngForm" [formGroup]="addForm"  (ngSubmit)= "onSubmit()" novalidate>
+        <!--{{subjectaddForm.form.valid}}-->
+        <div>
+            <label id="unamelbl" class="text-uppercase font-weight-bold"> Subject Name : </label><br>
+            <input 
+                name="name" formControlName="name" required
+                type="text" placeholder="Enter Subject Name"  class="form-control"
+            >
+            <div class="text-danger text-uppercase font-weight-bold" *ngIf="addForm.get('name').invalid && addForm.get('name').touched">
+                *feild required
+            </div>
+        </div>
+
+        <div>
+            <label id="unamelbl" class="text-uppercase font-weight-bold"> ID : </label><br>
+            <input 
+                name="id" formControlName="id" required
+                type="text" placeholder="Enter subject id"  class="form-control"
+            >
+            <div class="text-danger text-uppercase font-weight-bold" *ngIf="addForm.get('id').invalid && addForm.get('id').touched">
+                *feild required
+            </div>
+        </div><br>
+
+        <button class="btn btn-info"
+            [disabled]="subjectaddForm.form.invalid"
+             type="submit"
+            > Submit Form 
+        </button>
+    </form>
+</div>

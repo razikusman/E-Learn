@@ -1,0 +1,93 @@
+<div class="bg">
+    <h2 class="text-uppercase font-weight-bold text-center" style="color: black;">subject-details </h2><hr>
+
+    <!-- sort out buttons start-->
+    <div class="container  text-center bg-info" style="padding: 1%;" >
+        <div class="btn-group btn-group-toggle" data-toggle="buttons">
+            <label class="btn btn-secondary active" (click)="selecta()">
+                <input type="radio" name="options" id="option1" autocomplete="off" checked>allstudents
+            </label>
+            <label class="btn btn-secondary" (click)="select6()">
+                <input type="radio" name="options" id="option2" autocomplete="off">grade 6
+            </label>
+            <label class="btn btn-secondary" (click)="select7()">
+                <input type="radio" name="options" id="option2" autocomplete="off">grade 7
+            </label>
+            <label class="btn btn-secondary" (click)="select8()">
+                <input type="radio" name="options" id="option2" autocomplete="off">grade 8
+            </label>
+            <label class="btn btn-secondary" (click)="select9()">
+                <input type="radio" name="options" id="option2" autocomplete="off">grade 9
+            </label>
+            <label class="btn btn-secondary" (click)="select10()">
+                <input type="radio" name="options" id="option2" autocomplete="off">grade 10
+            </label>
+            <label class="btn btn-secondary" (click)="select11()">
+                <input type="radio" name="options" id="option2" autocomplete="off">grade 11
+            </label>
+        </div>
+        <button class="btn btn-secondary" style="margin-left: 2%;" (click)="add_subject(add)" > add subject </button>
+    </div>
+    <!-- sort out buttons ends-->
+
+    <br>
+    <!-- coloumn labels start-->
+    <div class="container border border-dark">
+        <div class="row" style="background-color: rgb(0, 5, 5); color: white;">
+            <label class="font-weight-bold col-md-1"> Subject ID </label>
+            <label class="font-weight-bold col-md-2"> Subject Name </label> 
+            <label class="font-weight-bold col-md-1"> number of students </label>
+            <label class="font-weight-bold col-md-2" style="margin-left: 2%;"> Teacher Incharge </label>
+            <label class="font-weight-bold col-md-2"> Teacher ID </label> 
+            <label class="font-weight-bold col-md-2"> Teacher Name </label>
+        </div>
+        <!-- coloumn labels end-->
+        <br>
+
+        <!-- coloumn data start-->
+        <div *ngFor="let subject of subjects">
+
+            <!-- sort outed data start-->
+            <!--<ng-container *ngIf= " nam != 0 ; else all">
+                <div *ngIf= "student.Grade == nam" >
+                    <div class="row" style="background-color: rgb(64, 70, 70); color: white;" >
+                        <label  class="font-weight-bold col-md-1">{{student.Student_ID}} </label>|
+                        <label class="font-weight-bold col-md-2">{{student.Name}} </label> |
+                        <label class="font-weight-bold col-md-1">{{student.Grade}} </label>|
+                        <label class="font-weight-bold col-md-2" style="margin-left: 2%;">{{student.Contact}} </label>|
+                        <label class="font-weight-bold col-md-2">{{student.Parent_Name}} </label>|
+                        <label class="font-weight-bold col-md-2">{{student.Parent_NIC}}</label> | 
+                        <label class="font-weight-bold col-md-1" style="margin-left: 1%;">{{student.Parent_Contact}} </label>|
+                    </div>
+                    <div class="d-flex flex-row-reverse bd-highlight">
+                        <button class="btn btn-danger col-md-1" style="margin-left: 2%;" (click)="delete(student)">DELETE</button>
+                        <button class="btn btn-info col-md-1" (click)="update(students)" style="margin-left: 2%;">UPDATE</button>
+                    </div>
+                    <hr style="background-color: rgb(0, 0, 0); height: 5px;">
+                </div>
+            </ng-container>
+             sort outed data end-->
+
+            <!-- all data start-->
+            <!--<ng-template#all -->
+                <div class="row" style="background-color: rgb(64, 70, 70); color: white;" >
+                    <label  class="font-weight-bold col-md-1">{{subject.Sub_ID}} </label>|
+                    <label class="font-weight-bold col-md-2 text-capitalize">{{subject.Name}} </label> |
+                    <label class="font-weight-bold col-md-1"></label>|
+                    <label class="font-weight-bold col-md-2" style="margin-left: 2%;"></label> |
+                    <label class="font-weight-bold col-md-2"></label> |
+                    <label class="font-weight-bold col-md-2"></label>  |
+                    </div>
+                <div class="d-flex flex-row-reverse bd-highlight">
+                    <button class="btn btn-danger col-md-1" style="margin-left: 2%;" (click)="delete(subject)">DELETE</button>
+                    <button class="btn btn-info col-md-1" style="margin-left: 2%;" (click)="update(subject)">UPDATE</button>
+                </div>
+                <hr style="background-color: rgb(0, 0, 0); height: 5px;">
+            <!-- </ng-template>
+            all data end-->
+        </div>
+        <button class="btn btn-success"(click)="create(subject)">Create</button>
+                
+        <!-- coloumn data end-->
+
+</div>

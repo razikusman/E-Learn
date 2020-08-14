@@ -1,0 +1,119 @@
+<div class="container">
+    <br>
+    <div class="container">
+        <div class="row">
+            <h1 class="col-md-9">Taecher Registration Form</h1>
+            <button class="col-md-1">
+                <h3>
+                    <i class="fas fa-user"></i>
+                </h3>login
+            </button><br>
+        </div>
+    </div>
+    <form style="background-color: rgba(0, 174, 255, 0.171);" class="container border border-success" [formGroup]="addForm" #teacherregistrationForm="ngForm" (ngSubmit)= "onSubmit()" novalidate>
+        <!--{{teacherregistrationForm.form.valid}}-->
+        <div>
+            <label id="unamelbl" class="text-uppercase align-self-center font-weight-bold col-md-2 col-form-label"> Name : </label><br>
+            <input 
+                required formControlName="name" name="name"  type="text" placeholder="Enter Full Name" class="form-control"
+            >
+            <small class="text-danger text-uppercase font-weight-bold" *ngIf="addForm.get('name').invalid && addForm.get('name').touched">feild required</small>
+        </div><br>
+        
+        <div>
+            <label id="utypelbl"> GENDER </label>
+            <div class="row">
+                <label class="text-uppercase align-self-center font-weight-bold col-md-2 col-form-label">
+                <input  formControlName="gender" type="radio" class="radio align-self-center" value="Male">
+                :Male</label>
+            </div>
+            <div class="row">
+                <label class="text-uppercase align-self-center font-weight-bold col-md-2 col-form-label">
+                <input formControlName="gender" type="radio" class="radio align-self-center" value="Female">
+                :Female</label>
+            </div>
+        </div><br>
+
+        <div>
+            <label id="ucontactlbl" class="text-uppercase align-self-center font-weight-bold  col-form-label"> Contact Number : </label><br>
+            <input 
+                type="tel" class="form-control col-md-4" formControlName="contact" name="contact"
+            >
+        </div>
+
+        <div>
+            <h2 id="utypelbl"> USER TYPE </h2>
+            <div id="utypeselect">
+                <div class="row">
+                    <label class="text-uppercase align-self-center font-weight-bold col-md-2 col-form-label">
+                    <input disabled formControlName="user" name="user" type="radio" class="radio align-self-center" value="Student">
+                    :Student</label>
+                </div>
+
+                <div class="row">
+                    <label class="text-uppercase align-self-center font-weight-bold col-md-2 col-form-label">
+                    <input style="color: blue;" formControlName="user" name="user" type="radio" class="radio align-self-center" value="Teacher">
+                    :Teacher</label>
+                </div>
+                <div class="row">
+                    <label class="text-uppercase align-self-center font-weight-bold col-md-2 col-form-label">
+                    <input disabled formControlName="user" name="user" type="radio" class="radio align-self-center" value="Parent">
+                    : Parent </label>
+                </div>
+            </div>
+            <button (click)="change(create)" class="btn btn-info">change</button>
+        </div><br>
+
+        <hr>
+        
+        <div class="form-group" >
+            <label>Subjects Teaching : </label>
+            <select required formControlName="sub" name="sub" class="dropdown btn-info">
+                <option *ngFor="let subject of subjects"> {{subject.Name}}</option>
+            </select>
+        </div><br>
+
+        <div>
+            <label id="uidlbl" class="text-uppercase align-self-center font-weight-bold col-md-4 col-form-label"> Qualifiaction: </label><br>
+            <input 
+                required formControlName="qualification" name="qualification" type="text" placeholder="Your qualification in (100 Characters)" class="form-control col-md-12"
+            >
+            <small class="text-danger text-uppercase align-self-center font-weight-bold col-md-4 col-form-label" *ngIf="addForm.get('qualification').invalid">feild required</small>
+        </div>
+
+        <hr>
+        <div>
+            <label id="uidlbl" class="text-uppercase align-self-center font-weight-bold col-md-4 col-form-label"> NIC: </label><br>
+            <input 
+                required formControlName="userid" name="userid" type="text" placeholder="this will be Your username " class="form-control col-md-4"
+            >
+            <small class="text-danger text-uppercase align-self-center font-weight-bold col-md-4 col-form-label" *ngIf="addForm.get('userid').invalid">feild required</small>
+        </div>
+
+        <div>
+            <label class="text-uppercase align-self-center font-weight-bold col-md-4 col-form-label"> Password : </label><br>
+            <input
+                required formControlName="password" name="password" type="password" placeholder="5-8 Characters" class="password"
+            >
+            <small class="text-danger text-uppercase align-self-center font-weight-bold col-md-4 col-form-label" *ngIf="addForm.get('password').invalid">feild required</small>
+        </div>
+        <div>
+            <label id="cpasswordlbl" class="text-uppercase align-self-center font-weight-bold col-md-4 col-form-label"> Confirm Password : </label><br>
+            <input 
+                required formControlName="cpassword" name="cpassword"  type="password" placeholder="Re-Enter the password" class="password"
+            >
+            <small class="text-danger text-uppercase align-self-center font-weight-bold col-md-4 col-form-label" *ngIf="(addForm.get('cpassword').value != addForm.get('password').value) && addForm.get('cpassword').touched">doesnt match with password</small>
+        </div>
+
+        <small class="text-info text-uppercase font-weight-bold" *ngIf="teacherregistrationForm.form.invalid && teacherregistrationForm.form.touched">
+
+            ***fill the required feilds and submit the form ( --form incomplete --)
+        </small>
+
+        <button class="btn btn-info"
+            [disabled]=" ( addForm.get('cpassword').value != addForm.get('password').value ) || teacherregistrationForm.form.invalid" type="submit"
+            > Submit Form 
+        </button>
+        
+    </form>
+</div>

@@ -1,0 +1,109 @@
+<div class="container">
+    <br>
+    <div class="container">
+        <div class="row">
+            <h1 class="col-md-9">Parent Registration Form</h1>
+            <button class="col-md-1">
+                <h3>
+                    <i class="fas fa-user"></i>
+                </h3>login
+            </button><br>
+        </div>
+    </div>
+
+    <form style="background-color: rgba(0, 174, 255, 0.171);" class="container border border-success" #parentregisterForm="ngForm" [formGroup]="addForm"  (ngSubmit)= "onSubmit()" novalidate>
+        <!--{{parentregisterForm.form.valid}}-->
+        <div>
+            <label id="unamelbl" class="text-uppercase font-weight-bold"> Name : </label><br>
+            <input 
+                name="name" formControlName="name" required
+                type="text" placeholder="Enter Full Name"  class="form-control"
+            >
+            <div class="text-danger text-uppercase font-weight-bold" *ngIf="addForm.get('name').invalid && addForm.get('name').touched">
+                *feild required
+            </div>
+        </div>
+
+        <div>
+            <label id="ucontactlbl" class="text-uppercase font-weight-bold"> Contact Number : </label><br>
+            <input
+                name="pContact" formControlName="pContact" class="col-md-4 form-control"
+                type="tel" >
+        </div>
+
+        <div>
+            <h2 id="utypelbl"> USER TYPE </h2>
+            
+            <div class="row">
+                <label class="text-uppercase align-self-center font-weight-bold col-md-2 col-form-label">
+                <input disabled formControlName="user" name="user" type="radio" class="radio align-self-center" value="Student">
+                : Student </label>
+            </div>
+            <div class="row">
+                <label class="text-uppercase align-self-center font-weight-bold col-md-2 col-form-label">
+                <input disabled formControlName="user" name="user" type="radio" class="radio align-self-center" value="Teacher">
+                : Teacher </label>
+            </div>
+            <div class="row">
+                <label class="text-uppercase align-self-center font-weight-bold col-md-2 col-form-label">
+                <input style="color: blue;" formControlName="user" name="user" type="radio" class="radio align-self-center" value="Parent">
+                : Parent </label>
+            </div>
+
+            <button (click)="change(create)" class="btn btn-info">change</button>
+    
+        </div><br>
+
+        <hr>
+        <div>
+            <label id="ugurdianlbl" class="text-uppercase font-weight-bold">  NIC : </label><br>
+            <input 
+                required formControlName="NIC" name="NIC" class="col-md-4 form-control"
+                type="text" placeholder="this will be Your username"
+            >
+            <small class="text-danger text-uppercase font-weight-bold" *ngIf="addForm.get('NIC').invalid || addForm.get('NIC').untouched">
+                *feild required 
+            </small>
+        </div>
+
+        <div>
+            <label id="passwordlbl" class="text-uppercase font-weight-bold"> Password : </label><br>
+            <input
+                required name="password" formControlName="password" class="form-control"
+                type="password" placeholder="5-8 Characters" class="password col-md-3"
+            >
+            <small class="text-danger text-uppercase font-weight-bold" *ngIf="addForm.get('password').invalid || addForm.get('password').untouched">
+
+                *feild required
+
+            </small>
+
+        </div>
+        <div>
+            <label id="cpasswordlbl" class=" text-uppercase font-weight-bold"> Confirm Password : </label><br>
+            <input 
+                name="cpassword" formControlName="cpassword" class="form-control"
+                type="password" placeholder="Re-Enter the password" class="password col-md-3"
+            >
+            
+            <small class="text-danger text-uppercase font-weight-bold" *ngIf="(addForm.get('cpassword').value != addForm.get('password').value) && addForm.get('cpassword').touched">
+
+                *password not matched and required
+
+            </small>
+        </div>
+        <br>
+
+        <small class="text-info text-uppercase font-weight-bold col col-md-4" *ngIf="parentregisterForm.form.invalid && parentregisterForm.form.touched">
+
+            ***fill the required feilds and submit the form ( --form incomplete --)
+        </small>
+        <br>
+        <button class="btn btn-info"
+            [disabled]=" ( addForm.get('cpassword').value != addForm.get('password').value ) || parentregisterForm.form.invalid"
+             type="submit"
+            > Submit Form 
+        </button>
+        
+    </form>
+</div>

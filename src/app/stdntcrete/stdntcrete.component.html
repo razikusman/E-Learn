@@ -1,0 +1,155 @@
+<div class="container">
+    <div class="container" >
+        <div class="row">
+            <h1 class="col-md-9">Student Registration Form</h1>
+            <button class="col-md-1">
+                <h3>
+                    <i class="fas fa-user"></i>
+                </h3>login
+            </button><br>
+        </div>
+    </div>
+    <form style="padding: 1%; background-color: rgba(0, 174, 255, 0.171);" 
+          class="container border border-success"  #studentregisterForm="ngForm" 
+          [formGroup]="addForm"  (ngSubmit)= "onSubmit()" novalidate
+    >
+        <!--{{studentregisterForm.form.valid}}-->
+        <div>
+            <label id="unamelbl" class="text-uppercase font-weight-bold"> Name : </label><br>
+            <input
+                name="name" formControlName="name" required 
+                type="text" placeholder="Enter Full Name" class="form-control"
+            >
+            <small class="text-danger text-uppercase font-weight-bold" *ngIf="addForm.get('name').invalid && addForm.get('name').touched ">*feild required</small>
+        </div><br>
+        
+        <div>
+            <label id="utypelbl"> GENDER </label>>
+            <div class="row">
+                <label class="text-uppercase align-self-center font-weight-bold col-md-2 col-form-label">
+                <input  formControlName="gender" type="radio" class="radio align-self-center" value="Male">
+                :Male</label>
+            </div>
+            <div class="row">
+                <label class="text-uppercase align-self-center font-weight-bold col-md-2 col-form-label">
+                <input formControlName="gender" type="radio" class="radio align-self-center" value="Female">
+                :Female</label>
+            </div>
+        </div><br>
+
+        <div class="form-group" > 
+            <label id="ugrdlbl" class="text-uppercase font-weight-bold"> Grade : </label>
+            <select required formControlName="grad" name="grad" class="dropdown btn-info">
+                <option *ngFor="let grde of grades"> {{ grde }} </option>
+            </select>
+            <small class="text-danger text-uppercase font-weight-bold" *ngIf="(addForm.get('grad').invalid && addForm.get('grad').untouched) || (addForm.get('grad').invalid && addForm.get('grad').touched) || (addForm.get('grad').value == 'grade' && addForm.get('grad').touched)">*select a grade from dropdown</small>
+        </div><br>
+
+        <div>
+            <label id="udoblbl" class="text-uppercase font-weight-bold"> Date of Birth : </label><br>
+            <input 
+                required name="DOB" formControlName="DOB"
+                type="date" class="form-control col-md-4"
+            >
+        </div><br>
+
+        <div>
+            <label class="text-uppercase font-weight-bold"> Contact Number : </label><br>
+            <input
+            required name="pContact" formControlName="pContact"
+                type="tel" class="form-control col-md-4"
+            >
+            <small class="text-danger text-uppercase font-weight-bold" *ngIf="addForm.get('pContact').invalid && addForm.get('pContact').touched">*phone number must be ten digit</small>
+        </div><br>
+
+        <div>
+            <h2 id="utypelbl"> USER TYPE </h2>
+            <div class="row">
+                <label class="text-uppercase align-self-center font-weight-bold col-md-2 col-form-label">
+                <input style="color: blue;"  formControlName="user" type="radio" class="radio align-self-center" value="Student">
+                :Student</label>
+            </div>
+            <div class="row">
+                <label class="text-uppercase align-self-center font-weight-bold col-md-2 col-form-label">
+                <input disabled formControlName="user" type="radio" class="radio align-self-center" value="Teacher">
+                :Teacher</label>
+            </div>
+            <div class="row">
+                <label class="text-uppercase align-self-center font-weight-bold col-md-2 col-form-label">
+                <input disabled formControlName="user" name="user" type="radio" class="radio align-self-center" value="Parent">
+                : Parent </label>
+            </div>
+
+            <button (click)="change(create)" class="btn btn-info">change</button>
+    
+        </div><br>
+        <hr>
+
+        <div>
+            <div>
+                <label id="ugurdianlbl" class="text-uppercase font-weight-bold"> Parent/Gurdience Name : </label><br>
+                <input
+                    required  name="gurdname" formControlName="gurdname"
+                    type="text" placeholder="Enter Full Name" class="form-control"
+                >
+                <small class="text-danger text-uppercase font-weight-bold" *ngIf="addForm.get('gurdname').invalid && addForm.get('gurdname').touched" >*feild required</small>
+            </div>
+            <div>
+                <label id="ugurdianlbl" class="text-uppercase font-weight-bold"> Parent/Gurdience NIC : </label><br>
+                <input
+                    required  name="gurdNIC" formControlName="gurdNIC" 
+                    type="text" class="form-control col-md-4"
+                >
+                <small class="text-danger text-uppercase font-weight-bold" *ngIf="addForm.get('gurdNIC').invalid && addForm.get('gurdNIC').touched">*feild required</small>
+            </div>
+        </div>
+
+        <hr>
+        <div>
+            <label id="uidlbl" class="text-uppercase font-weight-bold"> User id : </label><br>
+            <input
+                required  name="userid"  formControlName="userid" 
+                type="text" placeholder="this will be Your username (eg:-AZ/20XX/XXX)" class="form-control col-md-4"
+            >
+            <small class="text-danger text-uppercase font-weight-bold" *ngIf="addForm.get('userid').invalid || addForm.get('userid').untouched" >*feild required</small>
+        </div>
+
+        <div>
+            <label id="passwordlbl" class="text-uppercase font-weight-bold"> Password : </label><br>
+            <input
+                required  name="password"  formControlName="password"
+                type="password" placeholder="5-8 Characters" class="password"
+            >
+            <small class="text-danger text-uppercase font-weight-bold" *ngIf="addForm.get('password').invalid || addForm.get('password').untouched">
+                
+                *feild required
+
+            </small>
+        </div>
+        
+        <div>
+            <label id="cpasswordlbl" class="text-uppercase font-weight-bold"> Confirm Password : </label><br>
+            <input 
+                required  name="cpassword"  formControlName="cpassword"
+                type="password" placeholder="Re-Enter the password" class="password glyphicon glyphicon-lock"
+            >
+            
+            <small class="text-danger text-uppercase font-weight-bold" *ngIf="(addForm.get('cpassword').value !=addForm.get('password').value) && addForm.get('cpassword').touched">
+
+                *password not matched and required
+
+            </small>
+        </div>
+
+        <small style="background-color: white;" class="text-info text-uppercase font-weight-bold" *ngIf="studentregisterForm.form.invalid && studentregisterForm.form.touched">
+
+            ***fill the required feilds and submit the form ( --form incomplete --)
+        </small>
+
+        <button class="btn btn-info"
+            [disabled]=" ( addForm.get('cpassword').value != addForm.get('password').value ) || studentregisterForm.form.invalid" type="submit"
+            > Submit Form 
+        </button>
+
+    </form>
+</div>

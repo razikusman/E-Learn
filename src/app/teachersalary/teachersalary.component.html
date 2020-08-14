@@ -1,0 +1,33 @@
+<div class="bg">
+    <h2 class="text-uppercase font-weight-bold text-center" style="color: black;">teacher-salary-details </h2><hr>
+    <div class="container border border-dark">
+        <div class="row" style="background-color: rgb(0, 5, 5); color: white;">
+            <label class="font-weight-bold col-md-2"> NIC</label>
+            <label class="font-weight-bold col-md-2"> Teacher Name </label>
+            <label class="font-weight-bold col-md-2" > Qualification </label>
+        </div>
+        <br>
+
+        <div *ngFor="let teacher of teachers ; let i = index">
+            <div class="row" style="background-color: rgb(90, 173, 211); color: black;" >
+                <label  class="font-weight-bold col-md-2">{{teacher.Teacher_NIC}} </label>
+                <label class="font-weight-bold col-md-2">{{teacher.Name}} </label>
+                <label class="font-weight-bold col-md-2" >{{teacher.qualification}} </label>
+                <form #studentpayForm="ngForm" [formGroup]="addForm" (ngSubmit)= "onSubmit()" novalidate>
+                    <input name="salary" formControlName="salary" required class="col-md-3" type="text" placeholder="amount in Rs." style ="margin: 2px; padding: 0%;">
+                    <input name="id" formControlName="id" required class="col-md-3" type="text" placeholder="techer NIC" style ="margin: 2px; padding: 0%;">
+                    <input name="paid" formControlName="paid" required class="align-self-center" type="checkbox" style="margin-left: 1%;" value="{{i}}">
+                        <label class="align-self-center font-weight-bold" >: paid </label>
+                    <button [disabled]=" (addForm.get('salary').value == null) || (addForm.get('id').value != teacher.Teacher_NIC) || (addForm.get('paid').value == null)  " class="btn btn-warning col-md-2 font-weight-bold" type="submit" style="margin-left: 2%;">PAY</button>
+                </form>
+            </div>
+            <br>
+            
+        </div>
+
+    </div><br>
+    <div class="container d-flex justify-content-center">
+        <button class="btn btn-info text-uppercase" (click)="viewreport()">viewreport</button>
+    </div>
+
+</div>

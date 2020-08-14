@@ -1,0 +1,25 @@
+<app-nav-bar></app-nav-bar><!--nav bar-->
+<app-anouncement></app-anouncement>
+
+<!--container start-->
+<div class="container">
+
+    <button class="btn btn-primary" (click)="add(anouncement)" >Add anouncements</button><!--create new anouncement-->
+    
+    <!--button reports starts-->
+    <div class="btn btn-group">
+
+        <button style="border-right: double" class="btn btn-primary" (click)="salarypayment(salary)" >salary payment report</button>
+        
+        <button style="border-right: double" class="btn btn-primary" (click)="feespayment(student)" >monthly fees payment report</button>
+        
+        <button class="btn btn-primary" (click)="overallreport(overall)" >ovrall report</button>
+
+        <hr>
+    </div><!--button reports end-->
+        
+    <div class="report-group">
+        <label>reports</label>
+    </div><!--view report-->
+
+</div><!--container ends-->

@@ -1,0 +1,100 @@
+.bg{
+    background:url('../../assets/background.jpg') no-repeat center;
+    position: inherit;
+    height: 100%;
+    width: 100%;
+    margin: 0%;
+    overflow: visible;
+}
+
+h1{
+    margin: 0%;
+    letter-spacing: 4px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, serif;
+    color: rgb(29, 119, 2);
+}
+
+h4{
+    letter-spacing: 5px;
+    text-align: left;
+    margin: 0%;
+    text-transform: uppercase;
+    color: rgb(29, 119, 2);
+}
+
+.card-image{
+    background-color: rgba(255, 255, 255, 0);
+    border: ivory;
+    height: 100%;
+}
+.row{
+    padding-top: 1%;
+}
+
+label{
+    font-family: sans-serif;
+    font: bolder;
+    margin: 2%;
+    color: rgb(255, 255, 255);
+    letter-spacing: 5px;
+    text-transform: uppercase;
+}
+input{
+    margin: 1.5%;
+    padding: 1.5%;
+    width: 60%;
+}
+
+.text-info{
+    font-style: italic;
+    font-family: 'Courier New', Courier, monospace;
+    text-transform: uppercase;
+}
+
+.text-warning{
+    font-style: italic;
+    font-family: monospace;  
+    color: red;
+    text-transform: uppercase;
+}
+
+img, form{
+    display: inline-block;
+}
+
+.zoom {
+    transition: transform .5s; /* Animation */
+    height: fit-content;
+    text-align: justify;
+    padding: 4% 2% 4% 2%;
+    background-color:#092532bb ;
+  }
+  
+  .zoom:hover {
+    transform: scale(1.2); /* (120% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
+  }
+
+  .zoomi {
+    transition: transform .5s; /* Animation */
+  }
+
+  .zoomi:hover {
+    transform: scale(0.8); /* (70% zoomin - Note: if the zoom is too large, it will go outside of the viewport) */
+  }
+  
+  .mesege h4 {
+    color: #000;
+    font-family: 'montserrat';
+    font-weight: bold;
+    letter-spacing: 5px;
+    max-width: 700px;
+    text-align: center;
+    background: -webkit-linear-gradient( left, #ff0000 0%, #3cfd01 25%, #000000 50%, #22009c 100%) repeat;
+    -webkit-background-clip: text;
+    -ms-background-clip: text;
+    -moz-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    -ms-text-fill-color: transparent;
+    -moz-text-fill-color: transparent;
+  }

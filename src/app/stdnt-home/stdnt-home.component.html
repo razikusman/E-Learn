@@ -1,0 +1,82 @@
+<app-nav-bar></app-nav-bar><!--navigation bar-->
+<app-anouncement></app-anouncement>
+
+<!--container start-->
+<div class="container">
+    <div class="row">
+        <div class="col-md-5" >
+            <div style="text-align: center;">
+                <svg class="bi bi-person-circle" width="50%" height="50%" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                    <path style="color: rgb(7, 71, 248);" d="M13.468 12.37C12.758 11.226 11.195 10 8 10s-4.757 1.225-5.468 2.37A6.987 6.987 0 0 0 8 15a6.987 6.987 0 0 0 5.468-2.63z"/>
+                    <path style="color: rgb(7, 71, 248);" fill-rule="evenodd" d="M8 9a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/>
+                    <path fill-rule="evenodd" d="M8 1a7 7 0 1 0 0 14A7 7 0 0 0 8 1zM0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8z"/>
+                </svg>
+            </div>
+            
+            <div class="row" style="justify-content: center;">
+                <button class="btn btn-primary" (click)="update(profile)" >update profile</button>
+            </div>
+        </div>
+        <!-- user details start -->
+        <div class="col-md-5 align-self-center">
+            <div *ngFor = "let user of users" >
+                <div class="row " *ngIf = "user.password == id">
+                    <div class="col-md-5 ">
+                        <h4>Student ID </h4>
+                        <h4>Student Name </h4>
+                        <h4>Student Grade </h4>
+                    </div>
+                    <div class="col-md-6">
+                        <h4>:  {{id}}</h4>
+                        <h4 class="text-capitalize" >:  {{user.name}} </h4>
+                        <h4 >:  {{user.sGrade}} </h4>
+                    </div>
+                </div>
+            </div>
+        </div><!-- user details end -->
+    </div>
+        
+    <!-- subjects details start--> 
+    <div >
+        <h2 class="font-weight-bold col-md-12 col-sm-12 raw" ><u> Subject Details </u></h2>
+
+        <div *ngFor="let subject of access" style="width: 50%;" class="col-md-12 col-sm-12 ">
+            <div *ngIf ="subject.stu_id == id">
+                <div class="zoom1 shadow sm-3 mb-5 rounded border border-info">
+                    <div class="row">
+                        <label class="col-md-4 col-sm-4" >Subject ID </label>
+                        <label class="text-capitalize col-md-4 col-sm-4"> : {{subject.Sub_ID}} </label>
+                    </div>
+                    <div class="row">
+                        <label class="col-md-4 col-sm-4" >Subject Name </label>
+                        <label class="text-capitalize col-md-6 col-sm-6">: {{subject.sub_Name}} </label>
+                    </div>
+                    <div class="col-md-3 col-sm-3">
+                        <button class="btn btn-info" (click) = "unenroll()">UNENROLL </button>
+                    </div>
+
+                    <h4><u>Quize/s</u></h4>
+                    <div class="col-md-2 col-sm-2" *ngFor = "let quizelist of listquizes">
+                        <button *ngIf = "(quizelist.subid == subject.Sub_ID ); else no" class="btn btn-info" (click) = "quize(quizelist)">QUIZZ({{quizelist.quizzid}}) </button>
+                        <ng-template #no >No quizes available for this subject</ng-template>
+                    </div>
+                </div>
+            </div>   
+        </div>
+
+        <div class="container">
+            <!--{{material.material}}<br>-->
+            <button class="btn btn-success" (click)="download()">Download</button>
+     
+          </div>
+
+    </div><!--view report
+    
+    in type scrip to view
+console.log(this.subjectservice.viewmaterials());
+    this.subjectservice.viewmaterials()
+    .subscribe((data: SubjectCreate[])=>{
+      this.materials = data
+    });//materials details-->
+    
+</div>
