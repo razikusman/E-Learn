@@ -1,7 +1,7 @@
 /* You can add global styles to this file, and also import other style files */
 /* You can add global styles to this file, and also import other style files */
 /*top bar*/
-app-top-bar {
+  app-top-bar {
     position: sticky;
     width: 100%;
     height: fit-content;
@@ -13,7 +13,7 @@ app-top-bar {
   
   /*anouncements*/
   app-anouncement{
-    left: 18%;
+    left: 25%;
     right: 0%;
     height: 40%;
     bottom: auto;
@@ -39,31 +39,31 @@ app-top-bar {
     position: inherit;
     left: 20%;
     width: calc(100%);
-    height: 100%;
+    height: fit-content;
   }
   
   /*admin home*/
   app-admin-home{
     position: inherit;
-    left: 18%;
-    width: calc(100%);
-    height: 100%;;
+    left: 20%;
+    width: calc(75%);
+    height: fit-content;
   }
   
   /*parent hom*/
   app-parent-home{
     position: inherit;
-    left: 18%;
-    width: calc(100%);
-    height: 100%;
+    left: 20%;
+    width: calc(80%);
+    height: fit-content;
   }
   
   /*teacher hom*/
   app-teacher-home{
     position: inherit;
-    left: 18%;
-    width: calc(100%);
-    height: 100%;
+    left: 20%;
+    width: calc(80%);
+    height: fit-content;
   }
   
   /*links a*/

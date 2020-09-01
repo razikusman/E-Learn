@@ -210,13 +210,9 @@ export class OverallReportComponent implements OnInit {
   }
 
 
-
-
 /////////////////////////////////year selection and display relevent data in chart//////////////////////////////////////////////
 
 
-
-  
   public onYearSelected(event) {
   this.value = event.target.value;//getdrop down list value
     

@@ -38,8 +38,8 @@
             <label class="font-weight-bold col-md-1"> Grade </label>
             <label class="font-weight-bold col-md-2" style="margin-left: 2%;"> Student Contact </label>
             <label class="font-weight-bold col-md-2"> Parent Name </label> 
-            <label class="font-weight-bold col-md-2"> Parent_NIC </label> 
-            <label class="font-weight-bold col-md-1" style="margin-left: 1%;"> Parent Contact </label>
+            <label class="font-weight-bold col-md-1"> Subject</label> 
+            <label class="font-weight-bold col-md-2" style="margin-left: 1%;"> Parent Contact </label>
         </div>
         <!-- coloumn labels end-->
         <br>
@@ -51,32 +51,18 @@
             <ng-container *ngIf= " nam != 0 ; else all">
                 <div *ngIf= "student.Grade == nam" >
                     <div class="row" style="background-color: rgb(64, 70, 70); color: white;" >
-                        <label  class="font-weight-bold col-md-1">{{student.Student_ID}} </label>|
-                        <label class="font-weight-bold col-md-2 text-capitalize">{{student.Name}} </label> |
-                        <label class="font-weight-bold col-md-1">{{student.Grade}} </label>|
+                        <label  class="font-weight-bold col-md-1">{{student.Student_ID}} </label>
+                        <label class="font-weight-bold col-md-2 text-capitalize">{{student.Name}} </label>
+                        <label class="font-weight-bold col-md-1">{{student.Grade}} </label>
                         <label class="font-weight-bold col-md-2" style="margin-left: 2%;">{{student.Contact}} </label>|
-                        <label class="font-weight-bold col-md-2 text-capitalize">{{student.Parent_Name}} </label>|
-                        <label class="font-weight-bold col-md-2">{{student.Parent_NIC}}</label> | 
-                        <label class="font-weight-bold col-md-1" style="margin-left: 1%;">{{student.Parent_Contact}} </label>|
+                        <label class="font-weight-bold col-md-2 text-capitalize">{{student.Parent_Name}} </label>
+                        <label class="font-weight-bold col-md-1">{{student.Subject_Name}}</label>
+                        <label class="font-weight-bold col-md-1" style="margin-left: 1%;">{{student.Parent_contact}} </label>
                     </div>
                     <div class="d-flex flex-row-reverse bd-highlight">
                         <button class="btn btn-danger col-md-1" style="margin-left: 2%;" (click)="delete(student)">DELETE</button>
                         <button class="btn btn-info col-md-1" (click)="update(students)" style="margin-left: 2%;">UPDATE</button>
-                        <button 
-                        class="btn btn-success col-md-2" (click)="evaluate()" style="margin-left: 2%;" 
-                        [disabled]="pay.valid && pay.untouched">
-                        evaluate</button>
     
-                        <div class="col-md-1">
-                            <input type="radio" #pay="ngModel" name="paymnt" (ngModel)="pay" value="paid"
-                            class="text-uppercase align-self-center font-weight-bold col-form-label">
-                            <label class="text-uppercase align-self-center font-weight-bold col-form-label">paid</label>
-                        </div>
-                        <div class="col-md-1">
-                            <input type="radio" #warning="ngModel" name="paymnt" (ngModel)="warning" value="warning"
-                            class="text-uppercase align-self-center font-weight-bold col-form-label">
-                            <label class="text-uppercase align-self-center font-weight-bold col-form-label">warn</label>
-                        </div>
                     </div>
                     <hr style="background-color: rgb(0, 0, 0); height: 5px;">
                 </div>
@@ -86,35 +72,21 @@
             <!-- all data start-->
             <ng-template #all>
                 <div class="row" style="background-color: rgb(64, 70, 70); color: white;" >
-                    <label  class="font-weight-bold col-md-1">{{student.Student_ID}} </label>|
-                    <label class="font-weight-bold col-md-2">{{student.Name}} </label> |
-                    <label class="font-weight-bold col-md-1">{{student.Grade}} </label>|
-                    <label class="font-weight-bold col-md-2" style="margin-left: 2%;">{{student.Contact}} </label> |
-                    <label class="font-weight-bold col-md-2">{{student.Parent_Name}} </label> |
-                    <label class="font-weight-bold col-md-2">{{student.Parent_NIC}}</label>  |
-                    <label class="font-weight-bold col-md-1" style="margin-left: 1%;">{{student.Parent_Contact}} </label>|
+                    <label  class="font-weight-bold col-md-1">{{student.Student_ID}} </label>
+                    <label class="font-weight-bold col-md-2 text-capitalize">{{student.Name}} </label>
+                    <label class="font-weight-bold col-md-1">{{student.Grade}} </label>
+                    <label class="font-weight-bold col-md-2" style="margin-left: 2%;">{{student.Contact}} </label>
+                    <label class="font-weight-bold col-md-2 text-capitalize">{{student.Parent_Name}} </label>
+                    <label class="font-weight-bold col-md-1">{{student.Subject_Name}}</label>
+                    <label class="font-weight-bold col-md-1" style="margin-left: 1%;">{{student.Parent_contact}} </label>|
                 </div>
-                <div class="d-flex flex-row-reverse bd-highlight">
+                <div class="d-flex row flex-row-reverse bd-highlight">
                     <button class="btn btn-danger col-md-1" style="margin-left: 2%;" (click)="delete(student)">DELETE</button>
-                    <button class="btn btn-info col-md-1" (click)="update(student)" style="margin-left: 2%;">UPDATE</button>
-                    <button 
-                    class="btn btn-success col-md-2" (click)="evaluate()" style="margin-left: 2%;" 
-                    [disabled]="pay.valid && pay.untouched">
-                    evaluate</button>
+                    <button class="btn btn-info col-md-1" (click)="update(students)" style="margin-left: 2%;">UPDATE</button>
 
-                    <div class="col-md-1">
-                        <input type="radio" #pay="ngModel" name="paymnt" (ngModel)="pay" value="paid"
-                        class="text-uppercase align-self-center font-weight-bold col-form-label">
-                        <label class="text-uppercase align-self-center font-weight-bold col-form-label">paid</label>
-                    </div>
-                    <div class="col-md-1">
-                        <input type="radio" #warning="ngModel" name="paymnt" (ngModel)="warning" value="warning"
-                        class="text-uppercase align-self-center font-weight-bold col-form-label">
-                        <label class="text-uppercase align-self-center font-weight-bold col-form-label">warn</label>
-                    </div>
                 </div>
-                <!--{{pay.invalid}}-->
                 <hr style="background-color: rgb(0, 0, 0); height: 5px;">
+                
             </ng-template>
             <!-- all data end-->
         </div>

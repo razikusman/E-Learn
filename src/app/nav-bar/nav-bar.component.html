@@ -3,10 +3,11 @@
 
     <h2 style="color: black; background-color: blue;">navigation</h2>
 
+    <!-- Links satrt -->
     <div *ngFor="let detail of details">
         <ng-container *ngIf= "teacherhome(); else student" >
             <div *ngIf="(detail.url) != 'teacherhome()'">
-                <a href="details/{{detail.type}}" class="reference"  style="color: blue;">
+                <a href="details/{{detail.type}}" class="reference"  >
                     {{ detail.type }} Details
                 </a>
                 <hr style="color: blue; height: 3px;">
@@ -17,7 +18,7 @@
         <ng-template #student>
             <div *ngIf="studenthome(); else admin ">
                 <div  *ngIf="(detail.url) != 'studenthome()'">
-                    <a href="details/{{detail.type}}" class="reference" style="color:blue;">
+                    <a href="details/{{detail.type}}" class="reference" >
                         {{ detail.type }} Details
                     </a>
                     <hr style="color: blue; height: 3px;">
@@ -28,7 +29,7 @@
         <ng-template #admin>
             <div *ngIf="adminhome(); else otherhome ">
                 <div >
-                    <a href="{{detail.type}}/details" class="reference" style="color:blue;">
+                    <a href="{{detail.type}}/details" class="reference" >
                         {{ detail.type }} Details
                     </a>
                     <hr style="color: blue; height: 3px;">
@@ -47,9 +48,11 @@
         </ng-template><!--parent-->
         <!-- -->
     </div>
-    
+    <!-- links end -->
+
+    <!-- info start -->
     <div class="info-container">
-        <ng-container *ngIf= "teacherhome() ; else studentparent" >
+        <ng-container *ngIf= "teacherhome() ; else student" >
         
             <h2 style="color: black; background-color: blue;" class="h5">
                 Subjects Teaching
@@ -57,9 +60,10 @@
 
             <div class="container shadow-lg sm-3 mb-5 bg-white rounded" style="padding: 1%;" *ngFor= "let subjectteaching of subjectsteaching">
                 <div *ngFor= "let subject of subjects">
-                    <div *ngIf = "(id == subjectteaching.tID) && (subjectteaching.Sub_ID == subject.Sub_ID)">
+                    <div *ngIf = "(subjectteaching.Sub_ID == subject.Sub_ID)">
                         <div class="row">
-                            <label class="col-md-6 text-capitalize">{{subject.Name}} </label>
+                            <label *ngIf = "(id == subjectteaching.tID) " class="col-md-6 text-capitalize">{{subject.Name}} </label><br>
+                            <label *ngIf = "(id == subjectteaching.tID) " class="col-md-6 text-capitalize">Grade : {{subjectteaching.Grade}} </label>
                         </div>
                     </div>
                 </div>
@@ -67,7 +71,7 @@
             
         </ng-container><!--ng container-->
     
-        <ng-template #studentparent>
+        <ng-template #student>
             <div *ngIf="studenthome();">
                 <h2 style="color: black; background-color: blue;" class="h5">
                     Subjects Following
@@ -76,4 +80,6 @@
         </ng-template><!--student contaoner-->
     
     </div>
+
+    <!-- info end -->
 </div>

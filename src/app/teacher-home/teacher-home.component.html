@@ -15,14 +15,11 @@
                     <path style="color: rgb(7, 71, 248);" fill-rule="evenodd" d="M8 9a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/>
                     <path fill-rule="evenodd" d="M8 1a7 7 0 1 0 0 14A7 7 0 0 0 8 1zM0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8z"/>
                 </svg>
-            </div>
-            <div class="row" style="justify-content: center;">
-                <button class="btn btn-primary" (click)="update(profile)" >update profile</button>
-            </div>
+            </div><br>
         </div><!--- profile end -->
 
         <!-- user details start -->
-        <div class="col-md-5 align-self-center" *ngFor = "let user of users" > 
+        <div class="col-md-7 align-self-center" *ngFor = "let user of users" > 
             <div class="row" *ngIf = "user.password == id">
                 <div class="col-md-4">
                     <h5>Teacher NIC </h5>
@@ -35,24 +32,56 @@
             </div>   
         </div><!-- user details end -->
 
+        <!-- butons start -->
+        <div class="col-md-12">
+            <div class="row align-self-center" >
+                <button class="btn btn-primary text-uppercase font-weight-bold" style="border: double;" (click)="update()" >update profile</button>
+                <button class="btn btn-warning text-uppercase font-weight-bold" style="border: double;" (click)="updatequize(subjectteaching)" >update quize date</button><br>
+                <button *ngIf ="!showgrade" class="btn btn-primary text-uppercase font-weight-bold" style="border: double;" (click)="updategrade()" >teach for</button>
+                <button *ngIf ="showgrade" class="btn btn-warning text-uppercase font-weight-bold" style="border: double;" (click)="updategrade()" > hide teach for</button>
+            </div>
+        </div>
+        <!-- butons end -->
+
     </div><!--row end-->
     <br>
-    <div class="shadow-lg sm-3 mb-5 bg-white rounded" style="padding: 2%; width: 50%; height: fit-content;" 
+    <!-- grades start -->
+    <div *ngIf ="showgrade">
+            <form [formGroup]="addForm">
+                
+                <label>Grade </label>
+                <select  class="dropdown btn-info" (change)='onGradeSelected($event)'>
+                    <option *ngFor="let garde of grades"> {{garde}}</option>
+                </select><br>
+
+                <label>Subjects Teaching : </label>
+                <select class="dropdown btn-info" (change)='onSubjectSelected($event)'>
+                    <option selected> select subject</option>
+                    <option *ngFor="let subject of subjects"> {{subject.Name}}</option>
+                </select><br>
+                <button class="btn-success" (click)="grade()">add</button>
+            </form>
+    </div>
+    <!-- grades end -->
+<br>
+    <div class="shadow-lg sm-3 mb-5 bg-white rounded border border-dark" style="padding: 2%; width: 50%; height: fit-content;" 
         *ngFor= "let subjectteaching of subjectsteaching">
         <div *ngFor= "let subject of subjects">
             <div *ngIf = "(id == subjectteaching.tID) && (subjectteaching.Sub_ID == subject.Sub_ID)">
                 <div class="row">
                     <label class="col-md-6 text-capitalize">Subject Name : {{subject.Name}} </label>
+                    <label class="col-md-6 text-capitalize">Grade : {{subjectteaching.Grade}} </label>
                 </div>
-                
                 <!--quize start-->
                 <div class="btn-group row" role="group" >
-                    <button class="btn btn-primary" (click)="add(subjectteaching)" style="border-right: double">add quize</button>
-                    <button class="btn btn-primary" (click)="update(subjectteaching)" >update quize</button>
+                    <button class="btn btn-primary" (click)="add(subjectteaching)" style="border: double">add quize</button>
+                    <button class="btn-danger">drop grade</button>
                 </div><!--quize end-->
 
             </div>
         </div>
     </div>
+
+   
 
 </div><!--container ends -->

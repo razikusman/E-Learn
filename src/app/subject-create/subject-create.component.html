@@ -35,5 +35,14 @@
              type="submit"
             > Submit Form 
         </button>
-    </form>
+    </form><br>
+<h3><u>Subjects</u></h3>
+    <div class="container">
+        <label class="col-md-2 font-weight-bold text-uppercase">Sub_ID</label>
+        <label class="col-md-2 font-weight-bold text-uppercase">Name</label>
+    </div>
+    <div *ngFor="let subject of subjects" class="container">
+        <label class="col-md-2 ">{{subject.Sub_ID}}</label>
+        <label class="col-md-10 text-capitalize">{{subject.Name}}</label>
+    </div>
 </div>

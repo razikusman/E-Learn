@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder } from '@angular/forms';
 import { SubjectsService } from '../subjects.service';
 import { Router } from '@angular/router';
+import { SubjectCreate } from '../create-subject';
 
 @Component({
   selector: 'app-subject-create',
@@ -11,6 +12,8 @@ import { Router } from '@angular/router';
 export class SubjectCreateComponent implements OnInit {
 
   addForm: FormGroup;
+  subjects;
+  
   constructor(
     private formBuilder :FormBuilder,
     private subjectservice : SubjectsService,
@@ -24,6 +27,12 @@ export class SubjectCreateComponent implements OnInit {
       name: [null],
       id: [null],
     });
+
+    //get subjects list
+    this.subjectservice.viewallsubjects()
+     .subscribe((data : SubjectCreate[]) => {
+       this.subjects = data 
+     });
   }
 
   //insert in to database
@@ -32,5 +41,7 @@ export class SubjectCreateComponent implements OnInit {
     this.subjectservice.addsubjects(this.addForm.value)
     .subscribe(data =>console.log('success!',data));
     this.router.navigate(["subjects/details"]);
+
+    //window.location.reload();
   }
 }

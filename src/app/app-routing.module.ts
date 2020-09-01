@@ -30,6 +30,11 @@ import { StudentEvaluateComponent } from './student-evaluate/student-evaluate.co
 import { TeachersalaryComponent } from './teachersalary/teachersalary.component';
 import { UpdatequizeComponent } from './updatequize/updatequize.component';
 import { ViewquizeComponent } from './viewquize/viewquize.component';
+import { AtendenceComponent } from './atendence/atendence.component';
+import { UpdateTeacherComponent } from './update-teacher/update-teacher.component';
+import { UpdateStudentComponent } from './update-student/update-student.component';
+import { UpdateParentComponent } from './update-parent/update-parent.component';
+import { EvalutionCriteriaComponent } from './evalution-criteria/evalution-criteria.component';
 
 //path for the url
 const routes: Routes = [
@@ -64,6 +69,12 @@ const routes: Routes = [
   {path: 'salary/payment', component: TeachersalaryComponent},
   {path: 'quize/update', component: UpdatequizeComponent},
   {path: 'quize/atempt', component: ViewquizeComponent},
+  {path: 'atendence/student', component: AtendenceComponent},
+  {path: 'update/teacher', component: UpdateTeacherComponent},
+  {path: 'update/parent', component:UpdateParentComponent},
+  {path: 'atendence/student', component: EvalutionCriteriaComponent},
+  {path: 'update/student', component: UpdateStudentComponent},
+  { path: '**', component: LoginComponent }
 ];
 
 @NgModule({
@@ -103,5 +114,10 @@ export const RoutingComponents= [
                                   TeachersalaryComponent,
                                   UpdatequizeComponent,
                                   ViewquizeComponent,
+                                  AtendenceComponent,
+                                  UpdateTeacherComponent,
+                                  UpdateStudentComponent,
+                                  EvalutionCriteriaComponent,
+                                  UpdateParentComponent
                                 ]
 

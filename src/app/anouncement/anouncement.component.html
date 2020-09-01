@@ -10,13 +10,19 @@
           <div class="carousel-item active">
             <h1 class="d-flex justify-content-center text-uppercase font-weight-bold" 
               style="color: mediumblue;font-weight: bold"> hello everyone ....!</h1>
+              <h3 class="d-flex justify-content-center text-uppercase font-weight-bold" 
+              style="color: mediumblue;font-weight: bold"> Welcome to A-Z English Academy </h3>
+              <h4 class="d-flex justify-content-center text-uppercase font-weight-bold" 
+              style="background-color: rgb(255, 255, 255);font-weight: bold"> This is anouncement</h4>
           </div>
           
           <div class="carousel-item" *ngFor="let ad of ads ; let i = 'index + 1'">
             <h1 class="d-flex justify-content-center text-uppercase font-weight-bold" 
               style="color: mediumblue;font-weight: bold"> {{ad.h1}}</h1>
-              <h1 class="d-flex justify-content-center text-uppercase font-weight-bold" 
-              style="color: mediumblue;font-weight: bold"> {{i}} </h1>
+              <h3 class="d-flex justify-content-center text-uppercase font-weight-bold" 
+              style="color: mediumblue;font-weight: bold"> {{ad.h2}} </h3>
+              <h3 class="d-flex justify-content-center text-uppercase font-weight-bold" 
+              style="background-color: rgb(255, 255, 255);font-weight: bold"> {{ad.content}} </h3>
           </div>
         </div>
         <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">

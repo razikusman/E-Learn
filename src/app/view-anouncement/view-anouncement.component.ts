@@ -36,4 +36,8 @@ export class ViewAnouncementComponent implements OnInit {
       
     })
   }
+
+  Home(){
+    this.router.navigate(["/admin/home"]);
+  }
 }

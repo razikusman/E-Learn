@@ -23,7 +23,7 @@ export class NavBarComponent implements OnInit {
     
     this.id = localStorage.getItem("id"); // user id
 
-    this.subjectservice.viewsubjects()
+    this.subjectservice.viewallsubjects()
     .subscribe((data: SubjectCreate[])=>{
       this.subjects = data
     }); //subject details

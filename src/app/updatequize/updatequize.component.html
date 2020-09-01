@@ -1,1 +1,17 @@
-<p>updatequize works!</p>
+<div class="container">
+    <h2 class="text-uppercase"><u>update quize </u></h2>
+
+    <div class="shadow sm-3 mb-5 rounded border border-info" style="padding: 2%;" 
+        *ngFor = "let quize of listquizes ; let i = 'index + 1'">
+        <label class="text-uppercase font-weight-bold">quize id : {{quize.quizzid}}</label><br>
+        <label class="text-uppercase font-weight-bold">Grade : {{quize.grade}}</label><br>
+        <button class="btn btn-warning" (click) = "edit(quize)">edit({{quize.quizzid}})</button>
+        <div *ngIf = "quiz == i">
+            <form [formGroup]="addForm" #quizeupdateForm="ngForm">
+                <label>Start Date : </label><input formControlName="sdate" name="sdate" type="date" class="text-uppercase font-weight-bold"><br>
+                <label>End Date :</label><input formControlName="edate" name="edate" type="date" class="text-uppercase font-weight-bold">
+                <button class="btn btn-success" style="border: double" (click) = "save(quize)">save</button>
+            </form>
+        </div>
+    </div>
+</div>

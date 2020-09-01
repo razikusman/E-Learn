@@ -59,7 +59,7 @@ export class SalaryPaymentComponent implements OnInit {
 
       ////////////////////relevent to current month///////////////////////////////
         if(this.payments[index].month== this.monthtoday && this.payments[index].year== this.yeartoday) {
-          this.salarytotal = this.salarytotal + this.amount;
+          this.salarytotal = this.salarytotal + this.amount; 
         }
 
         ////////////////////relevent to yesterday month///////////////////////////////
@@ -145,11 +145,7 @@ export class SalaryPaymentComponent implements OnInit {
   }
 
 
-
-
 /////////////////////////////////year selection and display relevent data in chart//////////////////////////////////////////////
-
-
 
   
   public onYearSelected(event) {

@@ -69,9 +69,24 @@
         <div class="form-group" >
             <label>Subjects Teaching : </label>
             <select required formControlName="sub" name="sub" class="dropdown btn-info">
+                <option selected> select subject</option>
                 <option *ngFor="let subject of subjects"> {{subject.Name}}</option>
             </select>
+            <small class="text-info text-uppercase font-weight-bold" 
+            *ngIf="(addForm.get('sub').untouched)">
+
+                ***fill the feild and submit the form ( --form incomplete --)
+            </small>
+    
         </div><br>
+
+        <div>
+            <label>Grade </label>
+            <select  name="grade" formControlName="grade" class="dropdown btn-info">
+                <option selected value="0"> all</option>
+                <option *ngFor="let garde of grades"> {{garde}}</option>
+            </select>
+        </div>
 
         <div>
             <label id="uidlbl" class="text-uppercase align-self-center font-weight-bold col-md-4 col-form-label"> Qualifiaction: </label><br>

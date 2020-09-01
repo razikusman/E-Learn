@@ -37,7 +37,7 @@ export class ParentcreteComponent implements OnInit {
     console.log(this.addForm.value);
     this.parentService.createparent(this.addForm.value)
     .subscribe(data =>console.log('success!',data));
-
+    this.route.navigate(['/parent/home']);
     
   }
 

@@ -7,36 +7,33 @@
     </div><br>
 
     <div *ngFor="let student of students" class="shadow-lg sm-3 mb-5 bg-white rounded" style="padding: 1%; background-color: rgba(0, 0, 255, 0.952); " >
-        <div class="row">
-            <label class="col-md-2"> Student ID </label>
-            <label class="col-md-6 text-capitalize">: {{student.Student_ID}}  </label>
+        <div *ngIf = "(id == student.teacher_ID) && (student.sGrade == student.Grade)">
+            <div class="row">
+                <label class="col-md-3"> Student ID </label>
+                <label class="col-md-6 text-capitalize">: {{student.Student_ID}}  </label>
+            </div>
+            <div class="row">
+                <label class="col-md-3"> Student Name </label>
+                <label class="col-md-6">: {{student.Name}} </label>
+            </div>
+            <div class="row">
+                <label class="col-md-3"> Grade </label>
+                <label class="col-md-6">: {{student.Grade}} </label>
+            </div>
+            <div class="row ">
+                <label class="col-md-3"> Student Contact </label>
+                <label class="col-md-6">: {{student.Contact}} </label>
+            </div>
+            <div class="row ">
+                <label class="col-md-3"> Student's Parent Name  </label>
+                <label class="col-md-6 text-capitalize">: {{student.Parent_Name}} </label>
+            </div>
+            <div class="row">
+                <label class="col-md-3"> Student's Parent Contact </label>
+                <label class="col-md-6">: {{student.Parent_contact}} </label>
+            </div>
+            <button class="btn btn-success"> Evaluate</button>
         </div>
-        <div class="row">
-            <label class="col-md-2"> Student Name </label>
-            <label class="col-md-6">: {{student.Name}} </label>
-        </div>
-        <div class="row">
-            <label class="col-md-2"> Grade </label>
-            <label class="col-md-6">: {{student.Grade}} </label>
-        </div>
-        <div class="row ">
-            <label class="col-md-2"> Student Contact </label>
-            <label class="col-md-6">: {{student.Contact}} </label>
-        </div>
-        <div class="row ">
-            <label class="col-md-2"> Student's Parent Name  </label>
-            <label class="col-md-6 text-capitalize">: {{student.Parent_Name}}} </label>
-        </div>
-        <div class="row">
-            <label class="col-md-2"> Student's Parent_NIC</label>
-            <label class="col-md-6">: {{student.Parent_NIC}} </label>
-        </div>
-        <div class="row">
-            <label class="col-md-2"> Student's Parent Contact </label>
-            <label class="col-md-6">: {{student.Parent_Contact}} </label>
-        </div>
-
-        <button class="btn btn-success"> Evaluate</button>
     </div>
 </div>
 <!--[disabled]=""( addForm.get('cpassword').value != addForm.get('password').value ) || studentregisterForm.form.invalid" type="submit-->

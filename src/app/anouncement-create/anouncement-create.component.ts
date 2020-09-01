@@ -27,11 +27,13 @@ export class AnouncementCreateComponent implements OnInit {
       Heading2 : [null],
       content :[null]
     })
+
   }
 
   onSubmit(){
-    console.log(this.anouncement.value);
     this.anouncementservice.createanouncemnt(this.anouncement.value)
     .subscribe(data =>console.log('success!',data));
+
+    this.route.navigate(["/anouncements/view"]);
   }
 }

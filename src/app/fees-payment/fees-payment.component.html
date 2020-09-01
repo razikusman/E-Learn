@@ -1,137 +1,139 @@
 <div class="container">
-    <h3>A-z English Academy</h3><br>
-    <h5>Date : {{ myDate | date: 'MM - dd(E) - yyyy '}} </h5><br>
-    <h5>Time : {{ myDate | date: ' h:mm a'}} </h5><br>
-    <h5>Students Fees Payment Details</h5>
-    <hr>
-    
-    <!--month selection strt-->
-    <div class="form-group" >
-      <label>Month : </label>
-      <select  name="month" class="dropdown btn-info" (change)='onMonthSelected($event)'>
-          <option selected> {{monthtoday}}</option>
-          <option *ngFor="let month of months"> {{month}}</option>
-      </select>
-    </div><br>
-    <!--month selection end-->
+  <h3>A-z English Academy</h3><br>
+  <h5>Date : {{ myDate | date: 'MM - dd(E) - yyyy '}} </h5><br>
+  <h5>Time : {{ myDate | date: ' h:mm a'}} </h5><br>
+  <h5>Students Fees Payment Details</h5>
+  <hr>
+  
+  <!--month selection strt-->
+  <div class="form-group" >
+    <label>Month : </label>
+    <select  name="month" class="dropdown btn-info" (change)='onMonthSelected($event)'>
+      <option selected> {{monthtoday}}</option>
+      <option *ngFor="let month of months"> {{month}}</option>
+    </select>
+  </div><br>
+  <!--month selection end-->
 
-    <!--container strt-->
-    <div class="container border border-dar">
-        <table class="table">
-            <thead>
-              <tr>
-                <th scope="col">#</th>
-                <th scope="col">Name</th>
-                <th scope="col">ID</th>
-                <th scope="col">Grade</th>
-                <th scope="col">Date</th>
-                <th scope="col">Amount(Rs.)</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr *ngFor = "let feespayment of feespayments ; let i = index" >
-                <th *ngIf="(feespayment.month == monthtoday) && (feespayment.year == yeartoday) " scope="row">{{i+1}}</th>
-                <td *ngIf="(feespayment.month == monthtoday) && (feespayment.year == yeartoday) " class="text-capitalize">{{feespayment.name}}</td>
-                <td *ngIf="(feespayment.month == monthtoday) && (feespayment.year == yeartoday) ">{{feespayment.Student_ID}}</td>
-                <td *ngIf="(feespayment.month == monthtoday) && (feespayment.year == yeartoday) ">{{feespayment.grade}}</td>
-                <td *ngIf="(feespayment.month == monthtoday) && (feespayment.year == yeartoday) ">{{feespayment.date}}</td>
-                <td *ngIf="(feespayment.month == monthtoday) && (feespayment.year == yeartoday) ">Rs.{{feespayment.amount}}</td>
-                <td *ngIf="(feespayment.month == monthtoday) && (feespayment.year == yeartoday) ">
-                  <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-trash" fill="red" xmlns="http://www.w3.org/2000/svg" (click)="delete(payment)">
-                    <path  d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0V6z"/>
-                    <path fill-rule="evenodd" d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1v1zM4.118 4L4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4H4.118zM2.5 3V2h11v1h-11z"/>
-                  </svg>
-                </td>
-              </tr>
-              <tr>
-                <th scope="row">**</th>
-                <td class="text-caplitalise font-weight-bold text-uppercase"><h4>Total</h4></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td class="font-weight-bold"><h4>Rs.{{feestotal}}</h4></td>
-              </tr>
-            </tbody>
-          </table>
-    </div>
-    <!--container end-->
-    
-    <hr>
+  <!--container strt-->
+  <div class="container border border-dar">
+      <table class="table">
+          <thead>
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col">Name</th>
+              <th scope="col">ID</th>
+              <th scope="col">Grade</th>
+              <th scope="col">Date</th>
+              <th scope="col">Amount(Rs.)</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor = "let feespayment of feespayments ; let i = index" >
+              <th *ngIf="(feespayment.month == monthtoday) && (feespayment.year == yeartoday) " scope="row">{{i+1}}</th>
+              <td *ngIf="(feespayment.month == monthtoday) && (feespayment.year == yeartoday) " class="text-capitalize">{{feespayment.name}}</td>
+              <td *ngIf="(feespayment.month == monthtoday) && (feespayment.year == yeartoday) ">{{feespayment.Student_ID}}</td>
+              <td *ngIf="(feespayment.month == monthtoday) && (feespayment.year == yeartoday) ">{{feespayment.grade}}</td>
+              <td *ngIf="(feespayment.month == monthtoday) && (feespayment.year == yeartoday) ">{{feespayment.date}}</td>
+              <td *ngIf="(feespayment.month == monthtoday) && (feespayment.year == yeartoday) ">Rs.{{feespayment.amount}}</td>
+              <td *ngIf="(feespayment.month == monthtoday) && (feespayment.year == yeartoday) ">
+                <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-trash" fill="red" xmlns="http://www.w3.org/2000/svg" (click)="delete(payment)">
+                  <path  d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0V6z"/>
+                  <path fill-rule="evenodd" d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1v1zM4.118 4L4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4H4.118zM2.5 3V2h11v1h-11z"/>
+                </svg>
+              </td>
+            </tr>
+            <tr>
+              <th scope="row">**</th>
+              <td class="text-caplitalise font-weight-bold text-uppercase"><h4>Total</h4></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td class="font-weight-bold"><h4>Rs.{{feestotal}}</h4></td>
+            </tr>
+          </tbody>
+        </table>
+  </div>
+  <!--container end-->
+  
+  <hr>
 
-    <br>
-    <!--year selection-->
-    <div class="form-group" >
-      <label>Year : </label>
-      <select  name="yaer" class="dropdown btn-info" (change)='onYearSelected($event)'>
-          <option selected> {{yeartoday}}</option>
-          <option *ngFor="let year of years"> {{year}}</option>
-      </select>
-    </div><br>
+  <br>
+  <!--year selection-->
+  <div class="form-group" >
+    <label>Year : </label>
+    <select  name="yaer" class="dropdown btn-info" (change)='onYearSelected($event)'>
+        <option selected> {{yeartoday}}</option>
+        <option *ngFor="let year of years"> {{year}}</option>
+    </select>
+  </div><br>
 
-<!-- google chart start -->
-    <div class="row" style="height: 100%;">
-      <google-chart  #chart
-        [title]="title" 
-        [type]="type" 
-        [data]= "[ ['Jan',   feesarray[1]],
-                    ['Feb',  feesarray[2]],
-                    ['Mar',  feesarray[3]],
-                    ['Apr',  feesarray[4]],
-                    ['May',  feesarray[5]],
-                    ['Jun',  feesarray[6]],
-                    ['Jul',  feesarray[7]],
-                    ['Aug',  feesarray[8]],
-                    ['Sep',  feesarray[9]],
-                    ['Oct',  feesarray[10]],
-                    ['Nov',  feesarray[11]],
-                    ['Dec',  feesarray[12]]
-                ]"
-        
-        [columns]="columnNames" 
-        [options]="options">
-      </google-chart>
+  <!-- google chart start -->
+  <div class="row" style="height: 100%;">
+    <google-chart  #chart
+      [title]="title" 
+      [type]="type" 
+      [data]= "[ ['Jan',   feesarray[1]],
+                  ['Feb',  feesarray[2]],
+                  ['Mar',  feesarray[3]],
+                  ['Apr',  feesarray[4]],
+                  ['May',  feesarray[5]],
+                  ['Jun',  feesarray[6]],
+                  ['Jul',  feesarray[7]],
+                  ['Aug',  feesarray[8]],
+                  ['Sep',  feesarray[9]],
+                  ['Oct',  feesarray[10]],
+                  ['Nov',  feesarray[11]],
+                  ['Dec',  feesarray[12]]
+              ]"
       
-    </div><!-- google chart end -->
+      [columns]="columnNames" 
+      [options]="options">
+    </google-chart>
+    
+  </div>
+  <!-- google chart end -->
 </div>
 
 <!--whole report strt-->
 <div class="container">
   <button *ngIf = "!clicked" class=" btn btn-warning" (click)="whole()">Hide Whole Report</button>
   <button *ngIf = "clicked" class=" btn btn-warning" (click)="whole()">View Whole Report</button>
-</div>
 
-<hr>
-<br><br>
-<div class="container border border-dar" *ngIf = "!clicked">
-  <table class="table">
-      <thead>
-        <tr>
-          <th scope="col">#</th>
-          <th scope="col">Name</th>
-          <th scope="col">ID</th>
-          <th scope="col">Grade</th>
-          <th scope="col">Date</th>
-          <th scope="col">Amount(Rs.)</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr *ngFor = "let feespayment of feespayments ; let i = index" >
-          <th scope="row">{{i+1}}</th>
-          <td class="text-capitalize">{{feespayment.name}}</td>
-          <td >{{feespayment.Student_ID}}</td>
-          <td >{{feespayment.grade}}</td>
-          <td >{{feespayment.date}}</td>
-          <td >Rs.{{feespayment.amount}}</td>
-        </tr>
-        <tr>
-          <th scope="row">**</th>
-          <td class="text-caplitalise font-weight-bold text-uppercase"><h4>Total</h4></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td class="font-weight-bold"><h4>Rs.{{total}}</h4></td>
-        </tr>
-      </tbody>
-    </table>
+
+  <hr>
+  <br><br>
+  <div class="container border border-dar" *ngIf = "!clicked">
+    <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Name</th>
+            <th scope="col">ID</th>
+            <th scope="col">Grade</th>
+            <th scope="col">Date</th>
+            <th scope="col">Amount(Rs.)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor = "let feespayment of feespayments ; let i = index" >
+            <th scope="row">{{i+1}}</th>
+            <td class="text-capitalize">{{feespayment.name}}</td>
+            <td >{{feespayment.Student_ID}}</td>
+            <td >{{feespayment.grade}}</td>
+            <td >{{feespayment.date}}</td>
+            <td >Rs.{{feespayment.amount}}</td>
+          </tr>
+          <tr>
+            <th scope="row">**</th>
+            <td class="text-caplitalise font-weight-bold text-uppercase"><h4>Total</h4></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td class="font-weight-bold"><h4>Rs.{{total}}</h4></td>
+          </tr>
+        </tbody>
+      </table>
+  </div>
 </div>
 <!--whole report end-->

@@ -33,6 +33,7 @@ export class TeachercreteComponent implements OnInit {
       user :['Teacher'],
       gender : [null],
       sub : [null],
+      grade :[null],
       qualification : [null],
       userid : [null],
       password :[null],
@@ -54,6 +55,8 @@ export class TeachercreteComponent implements OnInit {
     .subscribe(data =>console.log('success!',data)); //pass data to teacher service
     this.route.navigate(['teacher/home']);
   };
+
+  grades = ['6','7','8','9','10','11'];
 
   //reddirect to previouse page
   change(create){

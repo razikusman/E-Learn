@@ -4,6 +4,7 @@
 <!--container start-->
 <div class="container">
     <div class="row">
+        <!-- user details start -->
         <div class="col-md-5" >
             <div style="text-align: center;">
                 <svg class="bi bi-person-circle" width="50%" height="50%" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
@@ -17,7 +18,7 @@
                 <button class="btn btn-primary" (click)="update(profile)" >update profile</button>
             </div>
         </div>
-        <!-- user details start -->
+        
         <div class="col-md-5 align-self-center">
             <div *ngFor = "let user of users" >
                 <div class="row " *ngIf = "user.password == id">
@@ -58,17 +59,17 @@
                     <h4><u>Quize/s</u></h4>
                     <div class="col-md-2 col-sm-2" *ngFor = "let quizelist of listquizes">
                         <button *ngIf = "(quizelist.subid == subject.Sub_ID ); else no" class="btn btn-info" (click) = "quize(quizelist)">QUIZZ({{quizelist.quizzid}}) </button>
-                        <ng-template #no >No quizes available for this subject</ng-template>
                     </div>
+                   
                 </div>
             </div>   
         </div>
 
-        <div class="container">
-            <!--{{material.material}}<br>-->
+        <!--<div class="container">
+            {{material.material}}<br>
             <button class="btn btn-success" (click)="download()">Download</button>
      
-          </div>
+          </div>-->
 
     </div><!--view report
     

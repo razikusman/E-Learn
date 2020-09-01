@@ -4,6 +4,8 @@ import { TeacherService } from '../teacher.service';
 import { FormGroup, FormBuilder } from '@angular/forms';
 import { PaymentService } from '../payment.service';
 import { Router } from '@angular/router';
+import { SubjectCreate } from '../create-subject';
+import { SubjectsService } from '../subjects.service';
 
 @Component({
   selector: 'app-teachersalary',
@@ -13,9 +15,12 @@ import { Router } from '@angular/router';
 export class TeachersalaryComponent implements OnInit {
 
   teachers : CreateTeacher[];
+  subjects;
+
   constructor(
     private teacherservice : TeacherService,
     private paymenttService :PaymentService,
+    private subjectservice :SubjectsService,
     private router: Router,
     private formBuilder : FormBuilder
   ) { }
@@ -30,8 +35,15 @@ export class TeachersalaryComponent implements OnInit {
     this.teacherservice.viewteacher()
     .subscribe((data:CreateTeacher[])=>{
       this.teachers =data;
-      //console.log(this.teachers);
+      console.log(this.teachers);
     });
+
+    
+    this.subjectservice.viewsubjects()
+    .subscribe((data: SubjectCreate[])=>{
+      this.subjects = data
+      
+    });//subject details
 
     this.addForm = this.formBuilder.group({
       salary : [null],
@@ -52,6 +64,10 @@ export class TeachersalaryComponent implements OnInit {
 
   viewreport(){
     this.router.navigate(['/salary/payment/report']);
+  }
+
+  viewpay(){
+    this.router.navigate(['/subjects/details']);
   }
 
 }

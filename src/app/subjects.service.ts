@@ -11,9 +11,20 @@ export class SubjectsService {
   constructor(
     private http :HttpClient,
   ) { }
+  viewallsubjects(){
+    return this.http.get<SubjectCreate[]>('http://localhost/elearn/allsubjectview.php');
+  }//view subjects
 
   viewsubjects(){
     return this.http.get<SubjectCreate[]>('http://localhost/elearn/subjectview.php');
+  }//view subjects
+
+  viewpaysubjects(){
+    return this.http.get<SubjectCreate[]>('http://localhost/elearn/subjectpayview.php');
+  }//view subjects
+
+  updatepaysubjects(subject : SubjectCreate ){
+    return this.http.post<any>('http://localhost/elearn/subjectpay.php',subject);
   }//view subjects
 
   deleteubjects(Sub_ID: any){
@@ -28,10 +39,13 @@ export class SubjectsService {
     return this.http.post<any>('http://localhost/elearn/subjectadd.php',subject);
   }//add subject
 
+  addsubjectsteaching(subject : SubjectCreate ){
+    return this.http.post<any>('http://localhost/elearn/addteachersub.php',subject);
+  }//add subject
+
   viewsubjectsteaching(){
     return this.http.get<SubjectCreate[]>('http://localhost/elearn/subjectteachingview.php');
   }//view subjectsteaching
-
   
   enrollsubjects(Sub_ID: any,stu_id:any ){
     return this.http.get<any>('http://localhost/elearn/enrollsubjects.php?data='+stu_id+Sub_ID);

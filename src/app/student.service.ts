@@ -20,9 +20,23 @@ export class StudentService {
     return this.http.get<CreateStudent[]>('http://localhost/elearn/studentview.php'); 
   }
 
+  //view students
+  myviewstudent(){
+    return this.http.get<CreateStudent[]>('http://localhost/elearn/mystudentview.php'); 
+  }
+  //view students card
+  viewstudentcard(){
+    return this.http.get<CreateStudent[]>('http://localhost/elearn/studentviewcard.php'); 
+  }
+
+  //on marking
+  markstudentcard(student : CreateStudent) {
+    return this.http.post<any>('http://localhost/elearn/studentmark.php', student);
+  }
+
   //create a student
   createstudent(student : CreateStudent ){
-    return this.http.post<any>('http://localhost/elearn/addstudent.php', student); 
+    return this.http.post<any>('http://localhost/elearn/addstudent.php', student);
   }
 
   //add student to subject

@@ -1,0 +1,79 @@
+<div class="container">
+    <div class="container" >
+        <div class="row">
+            <h1 class="col-md-9">Student Update Form</h1>
+            <!-- <button class="col-md-1">
+                <h3>
+                    <i class="fas fa-user"></i>
+                </h3>login
+            </button><br> -->
+        </div>
+    </div>
+    <form style="padding: 1%; background-color: rgba(0, 174, 255, 0.171);" 
+          class="container border border-success"  #studentregisterForm="ngForm" 
+          [formGroup]="addForm"  (ngSubmit)= "onSubmit()" novalidate
+    >
+        <h4> Student id :{{id}}</h4>
+        <div>
+            <label id="unamelbl" class="text-uppercase font-weight-bold"> Name : </label><br>
+            <input
+                name="name" formControlName="name" required 
+                type="text" placeholder="Enter Full Name" class="form-control"
+            >
+            <small class="text-danger text-uppercase font-weight-bold" *ngIf="addForm.get('name').invalid && addForm.get('name').touched ">*feild required</small>
+        </div><br>
+        
+        <div>
+            <label id="utypelbl"> GENDER </label>>
+            <div class="row">
+                <label class="text-uppercase align-self-center font-weight-bold col-md-2 col-form-label">
+                <input  formControlName="gender" type="radio" class="radio align-self-center" value="Male">
+                :Male</label>
+            </div>
+            <div class="row">
+                <label class="text-uppercase align-self-center font-weight-bold col-md-2 col-form-label">
+                <input formControlName="gender" type="radio" class="radio align-self-center" value="Female">
+                :Female</label>
+            </div>
+        </div><br>
+
+        <div class="form-group" > 
+            <label id="ugrdlbl" class="text-uppercase font-weight-bold"> Grade : </label>
+            <select required formControlName="grad" name="grad" class="dropdown btn-info">
+                <option *ngFor="let grde of grades"> {{ grde }} </option>
+            </select>
+            <small class="text-danger text-uppercase font-weight-bold" *ngIf="(addForm.get('grad').invalid && addForm.get('grad').untouched) || (addForm.get('grad').invalid && addForm.get('grad').touched) || (addForm.get('grad').value == 'grade' && addForm.get('grad').touched)">*select a grade from dropdown</small>
+        </div><br>
+
+        <div>
+            <label class="text-uppercase font-weight-bold"> Contact Number : </label><br>
+            <input
+            required name="pContact" formControlName="pContact"
+                type="tel" class="form-control col-md-4"
+            >
+            <small class="text-danger text-uppercase font-weight-bold" *ngIf="addForm.get('pContact').invalid && addForm.get('pContact').touched">*phone number must be ten digit</small>
+        </div><br>
+
+        <div>
+            <div>
+                <label id="ugurdianlbl" class="text-uppercase font-weight-bold"> Parent/Gurdience Name : </label><br>
+                <input
+                    required  name="gurdname" formControlName="gurdname"
+                    type="text" placeholder="Enter Full Name" class="form-control"
+                >
+                <small class="text-danger text-uppercase font-weight-bold" *ngIf="addForm.get('gurdname').invalid && addForm.get('gurdname').touched" >*feild required</small>
+            </div>
+            <div>
+                <label id="ugurdianlbl" class="text-uppercase font-weight-bold"> Parent/Gurdience NIC : </label><br>
+                <input
+                    required  name="gurdNIC" formControlName="gurdNIC" 
+                    type="text" class="form-control col-md-4"
+                >
+                <small class="text-danger text-uppercase font-weight-bold" *ngIf="addForm.get('gurdNIC').invalid && addForm.get('gurdNIC').touched">*feild required</small>
+            </div>
+        </div>
+
+        <button class="btn btn-info" type="submit"> Submit Form </button>
+
+    </form>
+</div>

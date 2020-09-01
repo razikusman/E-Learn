@@ -3,15 +3,15 @@
     <form class="container"#anouncemntForm="ngForm" [formGroup]="anouncement"  (ngSubmit)= "onSubmit()" novalidate>
         <label>Heading1</label>
         <input name="Heading1" formControlName="Heading1" required 
-        class="form-control" type="text" style="font-size: 70px; color: mediumblue;">
+        class="form-control text-primary" type="text" style="font-size: 2em;">
 
-        <label>Heading2</label>
+        <label>Sub Heading</label>
         <input name="Heading2" formControlName="Heading2" required
-        class="form-control" type="text" style="font-size: 40px; color: rgb(6, 245, 6);">
+        class="form-control text-primary" type="text" style="font-size: 1.17em; ">
 
         <label>content</label>
         <input name="content" formControlName="content" required
-        class="form-control" type="text" style="font-size: 20px; color: rgba(244, 248, 1);">
+        class="form-control" type="text" style="font-size: 1.17em; color:black">
 
         <br>
         <button class="btn btn-primary" type="submit">upload</button>

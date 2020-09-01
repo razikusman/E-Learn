@@ -9,6 +9,10 @@ import { LoginServiceService } from '../login-service.service';
 })
 export class AdminHomeComponent implements OnInit {
 
+  public viewoverallreport = true;
+  public viewfeespayment = true;
+  public viewsalarypayment = true;
+
   constructor( 
     private router: Router,
     private login : LoginServiceService) { }
@@ -50,5 +54,29 @@ export class AdminHomeComponent implements OnInit {
   add(anouncement){
     this.router.navigate(['/anouncements/view'], anouncement)
   }//add anouncemnt
+
+
+  //view and hide repors
+  o_report(){
+    this.viewoverallreport = !this.viewoverallreport;
+    this.viewfeespayment = true;
+    this.viewsalarypayment = true;
+  };
+  s_report(){
+    this.viewoverallreport = true;
+    this.viewfeespayment = true;
+    this.viewsalarypayment = !this.viewsalarypayment;
+  };
+  m_report(){
+    
+    this.viewoverallreport = true;
+    this.viewfeespayment = !this.viewfeespayment;
+    this.viewsalarypayment = true;
+  }
+
+  //mark atemndence
+  atendence(){
+    this.router.navigate(["/atendence/student"])
+  }
 
 }

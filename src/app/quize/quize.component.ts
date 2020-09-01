@@ -19,7 +19,7 @@ export class QuizeComponent implements OnInit {
   //public number :number = 0;
 
   ngOnInit() {
-    this.subid =  localStorage.getItem(this.subid); // get subject id
+    this.subid =  localStorage.getItem("subid"); // get subject id
 
     this.addForm = this.formBuilder.group({
       q1 : [null],q1a1 : [null],q1a2 : [null],q1a3 : [null],q1a4 : [null],q1c : [null],

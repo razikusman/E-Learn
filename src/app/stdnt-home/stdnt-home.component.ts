@@ -24,6 +24,7 @@ export class StdntHomeComponent implements OnInit {
   public sid : ""; //sore subject id
   access ; //sore subject detais of allowed
   listquizes : CreateTeacher[];
+  add: FormGroup;
 
   constructor(
     private router: Router,
@@ -32,16 +33,22 @@ export class StdntHomeComponent implements OnInit {
     private quizeSrvice : QuizService
   ) { }
 
-  add: FormGroup;
+  
   
   ngOnInit() {
-    //console.log(this.loginservice.getog());
+    //console.log(this.loginservice.getog()); 
     this.id = localStorage.getItem("id");
+
     this.loginservice.user_student()
     .subscribe((data : Login[] ) => {
       this.users = data; //user store the data from user table
+      for (let index = 0; index < this.users.length; index++) {
+        if (this.users[index].password == this.id) {
+          sessionStorage.setItem("sgrd",this.users[index].sGrade);
+        }
+        
+      }
       
-      console.log(this.users);
     });
 
     //console.log(this.subjectservice.viewsubjects());
@@ -55,13 +62,12 @@ export class StdntHomeComponent implements OnInit {
     this.quizeSrvice.viewquizelist()
     .subscribe((data:CreateTeacher[])=>{
       this.listquizes =data;
-      console.log(this.listquizes);
-      
     });
 
     this.subjectservice.viewsubjectspermision()
     .subscribe((data:SubjectCreate[])=>{
       this.access =data;
+      console.log(this.access)
     });
 
   }
@@ -74,7 +80,7 @@ export class StdntHomeComponent implements OnInit {
 
   //update profile
   update(profile){
-    this.router.navigate(['/login'], profile)
+    this.router.navigate(['/update/student'], profile)
   }
 
   download(){
@@ -89,7 +95,8 @@ export class StdntHomeComponent implements OnInit {
 
   //quize
   quize(listquizes : CreateTeacher){
-
-
+    this.router.navigate(["/quize/atempt"]);
+    sessionStorage.setItem("quizeid",listquizes.quizzid);
+    sessionStorage.setItem("subid",listquizes.subid);
   }
 }

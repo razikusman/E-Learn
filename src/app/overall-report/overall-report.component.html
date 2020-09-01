@@ -36,8 +36,8 @@
                     <td *ngIf="(payment.month == monthtoday) && (payment.year == yeartoday) ">{{payment.userid}}</td>
                     <td *ngIf="(payment.month == monthtoday) && (payment.year == yeartoday) ">Techer Salry</td>
                     <td *ngIf="(payment.month == monthtoday) && (payment.year == yeartoday) ">{{payment.date}}</td>
-                    <td *ngIf="(payment.month == monthtoday) && (payment.year == yeartoday) ">**</td>
                     <td *ngIf="(payment.month == monthtoday) && (payment.year == yeartoday) ">Rs.({{payment.amount}})</td>
+                    <td *ngIf="(payment.month == monthtoday) && (payment.year == yeartoday) ">**</td>
                 </tr><!--table raw end-->
     <tr></tr>
                 <tr *ngFor = "let feespayment of feespayments ; let i = index">
@@ -46,8 +46,8 @@
                     <td *ngIf="(feespayment.month == monthtoday) && (feespayment.year == yeartoday) ">{{feespayment.Student_ID}}</td>
                     <td *ngIf="(feespayment.month == monthtoday) && (feespayment.year == yeartoday) ">Monthly Fees</td>
                     <td *ngIf="(feespayment.month == monthtoday) && (feespayment.year == yeartoday) ">{{feespayment.date}}</td>
-                    <td *ngIf="(feespayment.month == monthtoday) && (feespayment.year == yeartoday) ">Rs.{{feespayment.amount}}</td>
                     <td *ngIf="(feespayment.month == monthtoday) && (feespayment.year == yeartoday) ">**</td>
+                    <td *ngIf="(feespayment.month == monthtoday) && (feespayment.year == yeartoday) ">Rs.{{feespayment.amount}}</td>
                 </tr>
                 <tr>
                     <th scope="row">**</th>

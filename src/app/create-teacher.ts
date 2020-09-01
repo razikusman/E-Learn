@@ -8,4 +8,7 @@ export class CreateTeacher {
     public cpassword :string;
     public month : string;
     public year :string;
+    public quizzid : any;
+    public subid :any;
+    public grade :any;
 }

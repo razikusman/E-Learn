@@ -1,0 +1,63 @@
+<div class="container">
+    <br>
+    <div class="container">
+        <div class="row">
+            <h1 class="col-md-9">update Taecher Registration Form</h1>
+        </div>
+    </div>
+
+    <div *ngFor = "let teacher of teachers">
+        <form *ngIf = "teacher.Teacher_NIC == id" style="background-color: rgba(0, 174, 255, 0.171);" class="container border border-success" [formGroup]="addForm" #teacherregistrationForm="ngForm" novalidate>
+            <!--{{teacherregistrationForm.form.valid}}-->
+
+            <div>
+                <label id="unamelbl" class="text-uppercase align-self-center font-weight-bold col-md-2 col-form-label">
+                    ID :{{id}}v </label>
+            </div><br>
+
+            <div>
+                <label id="unamelbl" class="text-uppercase align-self-center font-weight-bold col-md-2 col-form-label">
+                    Name : </label><br>
+                <input required formControlName="name" name="name"  type="text"  class="form-control"
+                >
+            </div><br>
+            
+            <div>
+                <label id="utypelbl"> GENDER </label>
+                <div class="row">
+                    <label class="text-uppercase align-self-center font-weight-bold col-md-2 col-form-label">
+                    <input  formControlName="gender" type="radio" class="radio align-self-center" value="Male">
+                    :Male</label>
+                </div>
+                <div class="row">
+                    <label class="text-uppercase align-self-center font-weight-bold col-md-2 col-form-label">
+                    <input formControlName="gender" type="radio" class="radio align-self-center" value="Female">
+                    :Female</label>
+                </div>
+            </div><br>
+
+            <div>
+                <label id="ucontactlbl" class="text-uppercase align-self-center font-weight-bold  col-form-label">
+                    Contact Number : </label><br>
+                <input type="tel" class="form-control col-md-4" formControlName="contact" name="contact"
+                >
+            </div>
+
+            <hr>
+
+            <div>
+                <label id="uidlbl" class="text-uppercase align-self-center font-weight-bold col-md-4 col-form-label"> 
+                    Qualifiaction: </label><br>
+                <input required formControlName="qualification" name="qualification" type="text" 
+                    class="form-control col-md-12">
+                <small class="text-danger text-uppercase align-self-center font-weight-bold col-md-4 col-form-label" *ngIf="addForm.get('qualification').invalid">feild required</small>
+            </div>
+
+            <button class="btn btn-info"
+                [disabled]=" teacherregistrationForm.form.invalid" type="submit" (click) = "update()"
+                > Update 
+            </button>
+
+        </form>
+    </div>
+</div>

@@ -22,6 +22,7 @@ export class DetailsSubjectsComponent implements OnInit {
   public file : File = null; //variable to store files
   public type="";//conirm usertpe
   public sid : ""; //sore subject id
+  public sgrd="";//studentgrade
 
   
   constructor(
@@ -41,13 +42,12 @@ export class DetailsSubjectsComponent implements OnInit {
       file : [this.file]
     });
 
-
-
     this.id = localStorage.getItem("id"); // user id
     this.type = localStorage.getItem("type");
-    console.log(this.type);
+    this.sgrd = sessionStorage.getItem("sgrd")
+    //console.log(this.type);
 
-    this.subjectservice.viewsubjects()
+    this.subjectservice.viewallsubjects()
     .subscribe((data: SubjectCreate[])=>{
       this.subjects = data
     }); //subject details
@@ -61,7 +61,7 @@ export class DetailsSubjectsComponent implements OnInit {
     this.teacherservice.viewteacher()
     .subscribe((data:CreateTeacher[])=>{
       this.teachers =data;
-      console.log(this.teachers);
+      //console.log(this.teachers);
       
     });//teacher details
 

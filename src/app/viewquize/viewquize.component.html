@@ -1,173 +1,33 @@
-<div class="container">
-    <div class="container" >
+<div class="container" *ngFor = "let listquize of listquizes;">
+    <div class="container" *ngIf = "(listquize.subid == subid) && (listquize.quizzid == qid) ">
         <div class="row">
-            <h1 class="col-md-9">Quize </h1>
+            <h5 class="col-md-12" style="background-color: rgba(243, 217, 98, 0.815);">Quize {{qid}} </h5>
+            <h5 class="col-md-12" style="background-color:rgba(245, 245, 220, 0.61);">Grade : {{listquize.grade}} </h5>
+            <h5 class="col-md-12" style="background-color: rgba(243, 217, 98, 0.815);">Dead line date : {{listquize.edate}} </h5>
         </div>
+    
+        <form class="container" #quizeForm="ngForm" [formGroup]="addForm" (ngSubmit)= "onSubmit()" novalidate >
+            <div *ngFor = "let quize of quizes ; let i = 'index + 1'" >
+                <div *ngIf = "quize.quizzid == qid" >
+                    <br>
+                    <div *ngIf = "(i &gt; 10) ; else other">
+                        <h5 >{{i-10}}) {{quize.question}}</h5>
+                        <input name="{{i-10}}" formControlName="{{i-10}}" type="radio" value="{{quize.answer1}}">{{quize.answer1}}<br>
+                        <input name="{{i-10}}" formControlName="{{i-10}}" type="radio" value="{{quize.answer2}}">{{quize.answer2}}<br>
+                        <input name="{{i-10}}" formControlName="{{i-10}}" type="radio" value="{{quize.answer3}}">{{quize.answer3}}<br>
+                        <input name="{{i-10}}" formControlName="{{i-10}}" type="radio" value="{{quize.answer4}}">{{quize.answer4}}<br>
+                    </div>
+                    <ng-template #other>
+                        <h5>{{i}}) {{quize.question}}</h5>
+                        <input name="{{i}}" formControlName="{{i}}" type="radio" value="{{quize.answer1}}">{{quize.answer1}}<br>
+                        <input name="{{i}}" formControlName="{{i}}" type="radio" value="{{quize.answer2}}">{{quize.answer2}}<br>
+                        <input name="{{i}}" formControlName="{{i}}" type="radio" value="{{quize.answer3}}">{{quize.answer3}}<br>
+                        <input name="{{i}}" formControlName="{{i}}" type="radio" value="{{quize.answer4}}">{{quize.answer4}}<br>
+                    </ng-template><br>
+                </div>
+            </div>
+
+            <button class="btn btn-success" onsubmit="save()">save</button>
+        </form>
     </div>
-
-    <form class="container"  #quizeForm="ngForm" [formGroup]="addForm"  (ngSubmit)= "onSubmit()" novalidate>
-        <div >
-            <br>
-            <div>
-                <input name="q1" formControlName="q1" required type="text"
-                    placeholder="question 1" class="form-control"
-                ><br>
-                <input type="radio"><input type="text" placeholder="answer 1" name="q1a1" formControlName="q1a1"><br>
-                <input type="radio"><input type="text" placeholder="answer 2" name="q1a2" formControlName="q1a2"><br>
-                <input type="radio"><input type="text" placeholder="answer 4" name="q1a3" formControlName="q1a3"><br>
-                <input type="radio"><input type="text" placeholder="answer 3" name="q1a4" formControlName="q1a4"><br>
-                <label>Correct Answer :</label><input class="" type="text" placeholder="answer " name="q1c" formControlName="q1c">
-            </div>
-        </div>
- 
-    <br>
-        <div >
-            <!--{{studentregisterForm.form.valid}}-->
-            <div>
-                <input name="q2" formControlName="q2" required type="text" placeholder="question 2" class="form-control"
-                ><br>
-                <input type="radio"><input type="text" placeholder="answer 1" name="q2a1" formControlName="q2a1"><br>
-                <input type="radio"><input type="text" placeholder="answer 2" name="q2a2" formControlName="q2a2"><br>
-                <input type="radio"><input type="text" placeholder="answer 4" name="q2a3" formControlName="q2a3"><br>
-                <input type="radio"><input type="text" placeholder="answer 3" name="q2a4" formControlName="q2a4"><br>
-                <label>Correct Answer :</label><input class="" type="text" placeholder="answer " name="q2c" formControlName="q2c">
-            </div>
-        </div>
-    <br>   
-        <div >
-            <!--{{studentregisterForm.form.valid}}-->
-            <div>
-                <input name="q3" formControlName="q3" required type="text" placeholder="question 3" class="form-control"
-                ><br>
-                <input type="radio"><input type="text" placeholder="answer 1" name="q3a1" formControlName="q3a1"><br>
-                <input type="radio"><input type="text" placeholder="answer 2" name="q3a2" formControlName="q3a2"><br>
-                <input type="radio"><input type="text" placeholder="answer 4" name="q3a3" formControlName="q3a3"><br>
-                <input type="radio"><input type="text" placeholder="answer 3" name="q3a4" formControlName="q3a4"><br>
-                <label>Correct Answer :</label><input class="" type="text" placeholder="answer " name="q3c" formControlName="q3c">
-            </div>
-        </div>
-    <br>   
-        <div >
-            <div>
-                <input name="q4" formControlName="q4" required type="text" placeholder="question 4" class="form-control"
-                ><br>
-                <input type="radio"><input type="text" placeholder="answer 1" name="q4a1" formControlName="q4a1"><br>
-                <input type="radio"><input type="text" placeholder="answer 2" name="q4a2" formControlName="q4a2"><br>
-                <input type="radio"><input type="text" placeholder="answer 4" name="q4a3" formControlName="q4a3"><br>
-                <input type="radio"><input type="text" placeholder="answer 3" name="q4a4" formControlName="q4a4"><br>
-                <label>Correct Answer :</label><input class="" type="text" placeholder="answer " name="q4c" formControlName="q4c">
-            </div>
-        </div>
-    <br>    
-        <div >
-            <div>
-                <input name="q5" formControlName="q5" required type="text" placeholder="question 5" class="form-control"
-                ><br>
-                <input type="radio"><input type="text" placeholder="answer 1" name="q5a1" formControlName="q5a1"><br>
-                <input type="radio"><input type="text" placeholder="answer 2" name="q5a2" formControlName="q5a2"><br>
-                <input type="radio"><input type="text" placeholder="answer 4" name="q5a3" formControlName="q5a3"><br>
-                <input type="radio"><input type="text" placeholder="answer 3" name="q5a4" formControlName="q5a4"><br>
-                <label>Correct Answer :</label><input class="" type="text" placeholder="answer " name="q5c" formControlName="q5c">
-            </div>
-        </div>
-    <br>    
-        <div >
-            <div>
-                <input name="q6" formControlName="q6" required type="text" placeholder="question 6" class="form-control"
-                ><br>
-                <input type="radio"><input type="text" placeholder="answer 1" name="q6a1" formControlName="q6a1"><br>
-                <input type="radio"><input type="text" placeholder="answer 2" name="q6a2" formControlName="q6a2"><br>
-                <input type="radio"><input type="text" placeholder="answer 4" name="q6a3" formControlName="q6a3"><br>
-                <input type="radio"><input type="text" placeholder="answer 3" name="q6a4" formControlName="q6a4"><br>
-                <label>Correct Answer :</label><input class="" type="text" placeholder="answer " name="q6c" formControlName="q6c">
-            </div>
-        </div>
-    <br>    
-        <div >
-            <div>
-                <input name="q7" formControlName="q7" required type="text" placeholder="question 7" class="form-control"
-                ><br>
-                <input type="radio"><input type="text" placeholder="answer 1" name="q7a1" formControlName="q7a1"><br>
-                <input type="radio"><input type="text" placeholder="answer 2" name="q7a2" formControlName="q7a2"><br>
-                <input type="radio"><input type="text" placeholder="answer 4" name="q7a3" formControlName="q7a3"><br>
-                <input type="radio"><input type="text" placeholder="answer 3" name="q7a4" formControlName="q7a4"><br>
-                <label>Correct Answer :</label><input class="" type="text" placeholder="answer " name="q7c" formControlName="q7c">
-            </div>
-        </div>
-    <br>
-        <div >
-            <div>
-                <input name="q8" formControlName="q8" required type="text" placeholder="question 8" class="form-control"
-                ><br>
-                <input type="radio"><input type="text" placeholder="answer 1" name="q8a1" formControlName="q8a1"><br>
-                <input type="radio"><input type="text" placeholder="answer 2" name="q8a2" formControlName="q8a2"><br>
-                <input type="radio"><input type="text" placeholder="answer 4" name="q8a3" formControlName="q8a3"><br>
-                <input type="radio"><input type="text" placeholder="answer 3" name="q8a4" formControlName="q8a4"><br>
-                <label>Correct Answer :</label><input class="" type="text" placeholder="answer " name="q8c" formControlName="q8c">
-            </div>
-        </div>
-    <br>   
-        <div >
-            <div>
-                <input name="q9" formControlName="q9" required type="text" placeholder="question 9" class="form-control"
-                ><br>
-                <input type="radio"><input type="text" placeholder="answer 1" name="q9a1" formControlName="q9a1"><br>
-                <input type="radio"><input type="text" placeholder="answer 2" name="q9a2" formControlName="q9a2"><br>
-                <input type="radio"><input type="text" placeholder="answer 4" name="q9a3" formControlName="q9a3"><br>
-                <input type="radio"><input type="text" placeholder="answer 3" name="q9a4" formControlName="q9a4"><br>
-                <label>Correct Answer :</label><input class="" type="text" placeholder="answer " name="q9c" formControlName="q9c">
-            </div>
-        </div>
-    <br>    
-        <div >
-            <div>
-                <input name="q10" formControlName="q10" required type="text" placeholder="question 10" class="form-control"
-                ><br>
-                <input type="radio"><input type="text" placeholder="answer 1" name="q10a1" formControlName="q10a1"><br>
-                <input type="radio"><input type="text" placeholder="answer 2" name="q10a2" formControlName="q10a2"><br>
-                <input type="radio"><input type="text" placeholder="answer 4" name="q10a3" formControlName="q10a3"><br>
-                <input type="radio"><input type="text" placeholder="answer 3" name="q10a4" formControlName="q10a4"><br>
-                <label>Correct Answer :</label><input class="" type="text" placeholder="answer " name="q10c" formControlName="q10c">
-            </div>
-        </div>
-        <br>
-
-        <div>
-            <label class="text-uppercase font-weight-bold"> Date of Start : </label><br>
-            <input 
-                required name="sdate" formControlName="sdate"
-                type="date" class="form-control col-md-4"
-            >
-        </div><br>
-
-        <div>
-            <label class="text-uppercase font-weight-bold"> Date of closure : </label><br>
-            <input 
-                required name="edate" formControlName="edate"
-                type="date" class="form-control col-md-4"
-            >
-            <small class="text-danger text-uppercase font-weight-bold" *ngIf="( addForm.get('edate').value &lt; addForm.get('sdate').value)">*select a date greater than start date </small>
-        </div><br>
-
-        <div class="form-group" > 
-            <label id="ugrdlbl" class="text-uppercase font-weight-bold"> Grade : </label>
-            <select required formControlName="grade" name="grade" class="dropdown btn-info">
-                <option *ngFor="let grde of grades"> {{ grde }} </option>
-            </select>
-            <small class="text-danger text-uppercase font-weight-bold" *ngIf="(addForm.get('grade').invalid && addForm.get('grade').untouched) || (addForm.get('grade').invalid && addForm.get('grade').touched) || (addForm.get('grade').value == 'grade' && addForm.get('grade').touched)">*select a grade from dropdown</small>
-        </div><br>
-
-        <div>
-            <input name="quizenumber" formControlName="quizenumber" required type="text" placeholder="quize number" class="form-control"
-            ><br>
-        </div>
-
-        <button class="btn btn-info"
-            [disabled]=" ( addForm.get('edate').value &lt; addForm.get('sdate').value) || quizeForm.form.invalid" type="submit"
-            > Save questions
-        </button>
-
-
-
-    </form>
 </div>

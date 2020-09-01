@@ -4,8 +4,15 @@
     height: 10%;
 }
 
+.reference{
+    background-color:white;
+    color: blue;
+    
+}
+
 .reference:hover{
     background-color: rgb(4, 63, 180);
+    color: white;
     
 }
 

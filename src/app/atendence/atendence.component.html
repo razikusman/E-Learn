@@ -1,0 +1,432 @@
+<div class="container">
+    <h3>A-z English Academy</h3><br>
+    <h5>Date : {{ myDate | date: 'MM - dd(E) - yyyy '}} </h5><br>
+    <h5>Time : {{ myDate | date: ' hh:mm a'}} </h5><br>
+    <h5>Students Atendence</h5>
+    <hr>
+
+
+    <!-- select option start -->
+    <div class="form-group col-md-2" >
+        <label>Grade </label>
+        <select  name="grade" class="dropdown btn-info" (change)='onGradeSelected($event)'>
+            <option selected> all</option>
+            <option *ngFor="let garde of grades"> {{garde}}</option>
+        </select>
+    </div>
+    <div class="form-group col-md-2" >
+        <label>Subject </label>
+        <select  name="subject" class="dropdown btn-info" (change)='onSubjectSelected($event)'>
+            <option selected> all </option>
+            <option *ngFor="let subject of subjects"> {{subject.Name}}</option>
+        </select>
+    </div><br>
+    <!-- select option end -->
+
+    <br>
+    <!-- data start-->
+    <div *ngFor="let student of students ; let i = index">
+
+        <!-- unsortd start-->
+        <div *ngIf= " selectGrade == 'all' && selectSubject == 'all' ; else select" 
+                class="shadow sm-3 mb-5 bg-white rounded" 
+                style="padding: 2%;background:url('../../assets/background1.jpg') ;width: 60%; height: fit-content;" >
+            <h5 class="text-uppercase"><u>student details</u></h5> 
+            <div class="row">
+                <label class="font-weight-bold col-md-1"> ID</label>
+                <label  class="font-weight-bold col-md-2">: {{student.Student_ID}} </label>
+
+                <label class="font-weight-bold col-md-1"> Name </label>
+                <label class="font-weight-bold col-md-2 text-capitalize">: {{student.Name}} </label>
+
+            </div>
+            <div class="row">
+                <label class="font-weight-bold col-md-1"> Gender</label>
+                <label class="font-weight-bold col-md-1 text-capitalize">: {{student.Gender}} </label> <br>
+            </div>
+            <div class="row">
+                <label class="font-weight-bold col-md-1"> Grade</label>
+                <label class="font-weight-bold col-md-2">: {{student.Grade}} </label>
+                
+                <label class="font-weight-bold col-md-1"> Subject</label>
+                <label class="font-weight-bold col-md-5 text-capitalize">: {{student.Subject_Name}} </label>
+            </div>
+            <h5 class="text-uppercase"><u>parent/gurdient details</u></h5>
+            <div class="row">
+                <label class="font-weight-bold col-md-1"> Name</label>
+                <label class="font-weight-bold col-md-3 text-capitalize">: {{student.Parent_Name}} </label><br>
+
+                <label class="font-weight-bold col-md-1">Cont </label>
+                <label  class="font-weight-bold col-md-3">: {{student.Contact}} </label>
+            </div>
+            
+            <label class="font-weight-bold">Month : {{ student.month}} </label><br>
+
+            <div>
+                <label>Day1</label>
+                <input type="checkbox" [disabled] = "student.atendance &gt; 0 " [checked]="student.atendance &gt; 0 " 
+                (click)="mark(student)" id="d1">
+                
+                <label>Day2</label>
+                <input type="checkbox" [disabled] = "student.atendance &gt; 1 " [checked]="student.atendance &gt; 1 " 
+                (click)="mark(student)" value="true" id="d2">
+                
+                <label>Day3</label>
+                <input type="checkbox" [disabled] = "student.atendance &gt; 2 " [checked]="student.atendance &gt; 2 " 
+                    (click)="mark(student)" value="d3" id="d3">
+                
+                <label>Day4</label>
+                <input type="checkbox" [disabled] = "student.atendance &gt; 3 " [checked]="student.atendance &gt; 3 " 
+                    (click)="mark(student)" value="d4" id="d4">
+                
+                <label>Day5</label>
+                <input type="checkbox" [disabled] = "student.atendance &gt; 4 " [checked]="student.atendance &gt; 4 " 
+                    (click)="mark(student)" value="d5" id="d5">
+                
+                <label>Day6</label>
+                <input type="checkbox" [disabled] = "student.atendance &gt; 5 " [checked]="student.atendance &gt; 5 " 
+                    (click)="mark(student)" value="d6" id="d6">
+                
+                <label>Day7</label>
+                <input type="checkbox" [disabled] = "student.atendance &gt; 6 " [checked]="student.atendance &gt; 6 " 
+                    (click)="mark(student)" value="d7" id="d7">
+                
+                <label>Day8</label>
+                <input type="checkbox" [disabled] = "student.atendance &gt; 7 " [checked]="student.atendance &gt; 7 " 
+                    (click)="mark(student)" value="d8" id="d8">
+                <br>
+            </div>
+
+
+            <div class="row">
+                <form #studentpayForm="ngForm" [formGroup]="addForm" (ngSubmit)= "onSubmit()" novalidate>
+                    <div *ngIf = "(student.month != curmonth)" >
+                        <small class="text-danger text-uppercase bg-white">Pending payment for month {{student.month}} </small>
+                        <button class="btn btn-danger col-md-12 font-weight-bold" type="submit" 
+                            style="margin-left: 2%;">Pay
+                        </button>
+                    </div>
+
+                    <div *ngIf = "(student.atendance == 8) " >
+                        <small class="text-success text-uppercase bg-white">payment for this month {{student.month}} </small>
+                        <button class="btn btn-success col-md-12 font-weight-bold" type="submit" style="margin-left: 2%;">Pay</button>
+                        <button class="btn btn-primary col-md-12 font-weight-bold" (click) = "extra()" 
+                            style="margin-left: 2%;">Extra_class
+                        </button>
+                    </div>
+
+                    <button *ngIf = "(student.month == curmonth) && (student.atendance &lt; 8)" 
+                        class="btn btn-warning col-md-12 font-weight-bold" type="submit" style="margin-left: 2%;">Pay
+                    </button>
+                </form>
+            </div>
+        </div>
+        <!-- unsortd end-->
+
+        <!-- sorted data start-->
+        <ng-template #select>
+            <div  *ngIf= "student.Grade == selectGrade && student.Subject_Name == selectSubject ; else grd"
+                        class="shadow sm-3 mb-5 bg-white rounded" 
+                        style="padding: 2%;background:url('../../assets/background1.jpg') ;width: 60%; height: fit-content;" >
+                <h5 class="text-uppercase"><u>student details</u></h5> 
+            <div class="row">
+                <label class="font-weight-bold col-md-1"> ID</label>
+                <label  class="font-weight-bold col-md-2">: {{student.Student_ID}} </label>
+
+                <label class="font-weight-bold col-md-1"> Name </label>
+                <label class="font-weight-bold col-md-2 text-capitalize">: {{student.Name}} </label>
+
+            </div>
+            <div class="row">
+                <label class="font-weight-bold col-md-1"> Gender</label>
+                <label class="font-weight-bold col-md-1 text-capitalize">: {{student.Gender}} </label> <br>
+            </div>
+            <div class="row">
+                <label class="font-weight-bold col-md-1"> Grade</label>
+                <label class="font-weight-bold col-md-2">: {{student.Grade}} </label>
+                
+                <label class="font-weight-bold col-md-1"> Subject</label>
+                <label class="font-weight-bold col-md-5 text-capitalize">: {{student.Subject_Name}} </label>
+            </div>
+            <h5 class="text-uppercase"><u>parent/gurdient details</u></h5>
+            <div class="row">
+                <label class="font-weight-bold col-md-1"> Name</label>
+                <label class="font-weight-bold col-md-3 text-capitalize">: {{student.Parent_Name}} </label><br>
+
+                <label class="font-weight-bold col-md-1">Cont </label>
+                <label  class="font-weight-bold col-md-3">: {{student.Contact}} </label>
+            </div>
+            
+            <label class="font-weight-bold">Month : {{ student.month}} </label><br>
+
+            <div>
+                <label>Day1</label>
+                <input type="checkbox" [disabled] = "student.atendance &gt; 0 " [checked]="student.atendance &gt; 0 " 
+                (click)="mark(student)" id="d1">
+                
+                <label>Day2</label>
+                <input type="checkbox" [disabled] = "student.atendance &gt; 1 " [checked]="student.atendance &gt; 1 " 
+                (click)="mark(student)" value="true" id="d2">
+                
+                <label>Day3</label>
+                <input type="checkbox" [disabled] = "student.atendance &gt; 2 " [checked]="student.atendance &gt; 2 " 
+                    (click)="mark(student)" value="d3" id="d3">
+                
+                <label>Day4</label>
+                <input type="checkbox" [disabled] = "student.atendance &gt; 3 " [checked]="student.atendance &gt; 3 " 
+                    (click)="mark(student)" value="d4" id="d4">
+                
+                <label>Day5</label>
+                <input type="checkbox" [disabled] = "student.atendance &gt; 4 " [checked]="student.atendance &gt; 4 " 
+                    (click)="mark(student)" value="d5" id="d5">
+                
+                <label>Day6</label>
+                <input type="checkbox" [disabled] = "student.atendance &gt; 5 " [checked]="student.atendance &gt; 5 " 
+                    (click)="mark(student)" value="d6" id="d6">
+                
+                <label>Day7</label>
+                <input type="checkbox" [disabled] = "student.atendance &gt; 6 " [checked]="student.atendance &gt; 6 " 
+                    (click)="mark(student)" value="d7" id="d7">
+                
+                <label>Day8</label>
+                <input type="checkbox" [disabled] = "student.atendance &gt; 7 " [checked]="student.atendance &gt; 7 " 
+                    (click)="mark(student)" value="d8" id="d8">
+                <br>
+            </div>
+
+            
+            <div class="row">
+                <form #studentpayForm="ngForm" [formGroup]="addForm" (ngSubmit)= "onSubmit()" novalidate>
+                    <div *ngIf = "(student.month != curmonth)" >
+                        <small class="text-danger text-uppercase bg-white">Pending payment for month {{student.month}} </small>
+                        <button class="btn btn-danger col-md-12 font-weight-bold" type="submit" 
+                            style="margin-left: 2%;">Pay
+                        </button>
+                    </div>
+
+                    <div *ngIf = "(student.atendance == 8) " >
+                        <small class="text-success text-uppercase bg-white">payment for this month {{student.month}} </small>
+                        <button class="btn btn-success col-md-12 font-weight-bold" type="submit" style="margin-left: 2%;">Pay</button>
+                        <button class="btn btn-primary col-md-12 font-weight-bold" (click) = "extra()" 
+                            style="margin-left: 2%;">Extra_class
+                        </button>
+                    </div>
+
+                    <button *ngIf = "(student.month == curmonth) && (student.atendance &lt; 8)" 
+                        class="btn btn-warning col-md-12 font-weight-bold" type="submit" style="margin-left: 2%;">Pay
+                    </button>
+                </form>
+            </div>
+                
+            </div>
+            <!-- {{pay.invalid}} -->
+            <br>
+        </ng-template>
+        <!-- sorted data end-->
+
+        <!-- sorted by grade strt -->
+        <ng-template #grd>
+            <div  *ngIf= "student.Grade == selectGrade &&  selectSubject == 'all' ; else sub"
+                        class="shadow sm-3 mb-5 bg-white rounded" 
+                        style="padding: 2%;background:url('../../assets/background1.jpg') ;width: 60%; height: fit-content;" >
+                <h5 class="text-uppercase"><u>student details</u></h5> 
+                <div class="row">
+                    <label class="font-weight-bold col-md-1"> ID</label>
+                    <label  class="font-weight-bold col-md-2">: {{student.Student_ID}} </label>
+    
+                    <label class="font-weight-bold col-md-1"> Name </label>
+                    <label class="font-weight-bold col-md-2 text-capitalize">: {{student.Name}} </label>
+    
+                </div>
+                <div class="row">
+                    <label class="font-weight-bold col-md-1"> Gender</label>
+                    <label class="font-weight-bold col-md-1 text-capitalize">: {{student.Gender}} </label> <br>
+                </div>
+                <div class="row">
+                    <label class="font-weight-bold col-md-1"> Grade</label>
+                    <label class="font-weight-bold col-md-2">: {{student.Grade}} </label>
+                    
+                    <label class="font-weight-bold col-md-1"> Subject</label>
+                    <label class="font-weight-bold col-md-5 text-capitalize">: {{student.Subject_Name}} </label>
+                </div>
+                <h5 class="text-uppercase"><u>parent/gurdient details</u></h5>
+                <div class="row">
+                    <label class="font-weight-bold col-md-1"> Name</label>
+                    <label class="font-weight-bold col-md-3 text-capitalize">: {{student.Parent_Name}} </label><br>
+    
+                    <label class="font-weight-bold col-md-1">Cont </label>
+                    <label  class="font-weight-bold col-md-3">: {{student.Contact}} </label>
+                </div>
+                
+                <label class="font-weight-bold">Month : {{ student.month}} </label><br>
+    
+                <div>
+                    <label>Day1</label>
+                    <input type="checkbox" [disabled] = "student.atendance &gt; 0 " [checked]="student.atendance &gt; 0 " 
+                    (click)="mark(student)" id="d1">
+                    
+                    <label>Day2</label>
+                    <input type="checkbox" [disabled] = "student.atendance &gt; 1 " [checked]="student.atendance &gt; 1 " 
+                    (click)="mark(student)" value="true" id="d2">
+                    
+                    <label>Day3</label>
+                    <input type="checkbox" [disabled] = "student.atendance &gt; 2 " [checked]="student.atendance &gt; 2 " 
+                        (click)="mark(student)" value="d3" id="d3">
+                    
+                    <label>Day4</label>
+                    <input type="checkbox" [disabled] = "student.atendance &gt; 3 " [checked]="student.atendance &gt; 3 " 
+                        (click)="mark(student)" value="d4" id="d4">
+                    
+                    <label>Day5</label>
+                    <input type="checkbox" [disabled] = "student.atendance &gt; 4 " [checked]="student.atendance &gt; 4 " 
+                        (click)="mark(student)" value="d5" id="d5">
+                    
+                    <label>Day6</label>
+                    <input type="checkbox" [disabled] = "student.atendance &gt; 5 " [checked]="student.atendance &gt; 5 " 
+                        (click)="mark(student)" value="d6" id="d6">
+                    
+                    <label>Day7</label>
+                    <input type="checkbox" [disabled] = "student.atendance &gt; 6 " [checked]="student.atendance &gt; 6 " 
+                        (click)="mark(student)" value="d7" id="d7">
+                    
+                    <label>Day8</label>
+                    <input type="checkbox" [disabled] = "student.atendance &gt; 7 " [checked]="student.atendance &gt; 7 " 
+                        (click)="mark(student)" value="d8" id="d8">
+                    <br>
+                </div>
+    
+                
+                <div class="row">
+                    <form #studentpayForm="ngForm" [formGroup]="addForm" (ngSubmit)= "onSubmit()" novalidate>
+                        <div *ngIf = "(student.month != curmonth)" >
+                            <small class="text-danger text-uppercase bg-white">Pending payment for month {{student.month}} </small>
+                            <button class="btn btn-danger col-md-12 font-weight-bold" type="submit" 
+                                style="margin-left: 2%;">Pay
+                            </button>
+                        </div>
+    
+                        <div *ngIf = "(student.atendance == 8) " >
+                            <small class="text-success text-uppercase bg-white">payment for this month {{student.month}} </small>
+                            <button class="btn btn-success col-md-12 font-weight-bold" type="submit" style="margin-left: 2%;">Pay</button>
+                            <button class="btn btn-primary col-md-12 font-weight-bold" (click) = "extra()" 
+                                style="margin-left: 2%;">Extra_class
+                            </button>
+                        </div>
+    
+                        <button *ngIf = "(student.month == curmonth) && (student.atendance &lt; 8)" 
+                            class="btn btn-warning col-md-12 font-weight-bold" type="submit" style="margin-left: 2%;">Pay
+                        </button>
+                    </form>
+                </div>
+                
+            </div>
+            <!-- {{pay.invalid}} -->
+            <br>
+        </ng-template>
+        <!-- sorted by grade end -->
+
+        <!-- sorted by subjects strt -->
+        <ng-template #sub>
+            <div  *ngIf= "selectGrade == 'all' && student.Subject_Name == selectSubject ; "
+                        class="shadow sm-3 mb-5 bg-white rounded" 
+                        style="padding: 2%;background:url('../../assets/background1.jpg') ;width: 60%; height: fit-content;" >
+                <h5 class="text-uppercase"><u>student details</u></h5> 
+                <div class="row">
+                    <label class="font-weight-bold col-md-1"> ID</label>
+                    <label  class="font-weight-bold col-md-2">: {{student.Student_ID}} </label>
+    
+                    <label class="font-weight-bold col-md-1"> Name </label>
+                    <label class="font-weight-bold col-md-2 text-capitalize">: {{student.Name}} </label>
+    
+                </div>
+                <div class="row">
+                    <label class="font-weight-bold col-md-1"> Gender</label>
+                    <label class="font-weight-bold col-md-1 text-capitalize">: {{student.Gender}} </label> <br>
+                </div>
+                <div class="row">
+                    <label class="font-weight-bold col-md-1"> Grade</label>
+                    <label class="font-weight-bold col-md-2">: {{student.Grade}} </label>
+                    
+                    <label class="font-weight-bold col-md-1"> Subject</label>
+                    <label class="font-weight-bold col-md-5 text-capitalize">: {{student.Subject_Name}} </label>
+                </div>
+                <h5 class="text-uppercase"><u>parent/gurdient details</u></h5>
+                <div class="row">
+                    <label class="font-weight-bold col-md-1"> Name</label>
+                    <label class="font-weight-bold col-md-3 text-capitalize">: {{student.Parent_Name}} </label><br>
+    
+                    <label class="font-weight-bold col-md-1">Cont </label>
+                    <label  class="font-weight-bold col-md-3">: {{student.Contact}} </label>
+                </div>
+                
+                <label class="font-weight-bold">Month : {{ student.month}} </label><br>
+    
+                <div>
+                    <label>Day1</label>
+                    <input type="checkbox" [disabled] = "student.atendance &gt; 0 " [checked]="student.atendance &gt; 0 " 
+                    (click)="mark(student)" id="d1">
+                    
+                    <label>Day2</label>
+                    <input type="checkbox" [disabled] = "student.atendance &gt; 1 " [checked]="student.atendance &gt; 1 " 
+                    (click)="mark(student)" value="true" id="d2">
+                    
+                    <label>Day3</label>
+                    <input type="checkbox" [disabled] = "student.atendance &gt; 2 " [checked]="student.atendance &gt; 2 " 
+                        (click)="mark(student)" value="d3" id="d3">
+                    
+                    <label>Day4</label>
+                    <input type="checkbox" [disabled] = "student.atendance &gt; 3 " [checked]="student.atendance &gt; 3 " 
+                        (click)="mark(student)" value="d4" id="d4">
+                    
+                    <label>Day5</label>
+                    <input type="checkbox" [disabled] = "student.atendance &gt; 4 " [checked]="student.atendance &gt; 4 " 
+                        (click)="mark(student)" value="d5" id="d5">
+                    
+                    <label>Day6</label>
+                    <input type="checkbox" [disabled] = "student.atendance &gt; 5 " [checked]="student.atendance &gt; 5 " 
+                        (click)="mark(student)" value="d6" id="d6">
+                    
+                    <label>Day7</label>
+                    <input type="checkbox" [disabled] = "student.atendance &gt; 6 " [checked]="student.atendance &gt; 6 " 
+                        (click)="mark(student)" value="d7" id="d7">
+                    
+                    <label>Day8</label>
+                    <input type="checkbox" [disabled] = "student.atendance &gt; 7 " [checked]="student.atendance &gt; 7 " 
+                        (click)="mark(student)" value="d8" id="d8">
+                    <br>
+                </div>
+    
+                
+                <div class="row">
+                    <form #studentpayForm="ngForm" [formGroup]="addForm" (ngSubmit)= "onSubmit()" novalidate>
+                        <div *ngIf = "(student.month != curmonth)" >
+                            <small class="text-danger text-uppercase bg-white">Pending payment for month {{student.month}} </small>
+                            <button class="btn btn-danger col-md-12 font-weight-bold" type="submit" 
+                                style="margin-left: 2%;">Pay
+                            </button>
+                        </div>
+    
+                        <div *ngIf = "(student.atendance == 8) " >
+                            <small class="text-success text-uppercase bg-white">payment for this month {{student.month}} </small>
+                            <button class="btn btn-success col-md-12 font-weight-bold" type="submit" style="margin-left: 2%;">Pay</button>
+                            <button class="btn btn-primary col-md-12 font-weight-bold" (click) = "extra()" 
+                                style="margin-left: 2%;">Extra_class
+                            </button>
+                        </div>
+    
+                        <button *ngIf = "(student.month == curmonth) && (student.atendance &lt; 8)" 
+                            class="btn btn-warning col-md-12 font-weight-bold" type="submit" style="margin-left: 2%;">Pay
+                        </button>
+                    </form>
+                </div>
+                
+            </div>
+            <!-- {{pay.invalid}} -->
+            <br>
+        </ng-template>
+        <!-- sorted by subjects end-->
+        <br>
+        
+    </div>
+    <!-- data end-->
+</div>

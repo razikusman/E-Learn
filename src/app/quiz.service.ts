@@ -20,4 +20,8 @@ export class QuizService {
   addquize(teacher : CreateTeacher ){
     return this.http.post<any>('http://localhost/elearn/addquize.php', teacher); 
   }//add teacher
+
+  updatequize(teacher : CreateTeacher ){
+    return this.http.post<any>('http://localhost/elearn/updatequize.php', teacher); 
+  }//add teacher
 }

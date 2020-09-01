@@ -1,7 +1,7 @@
-<h2 class="text-uppercase font-weight-bold text-center" style="color: black;">subjects details</h2>
+<h2 class="text-uppercase font-weight-bold text-center" style="color: black;">subjects teaching details</h2>
 
 <ng-container *ngIf = "type == 'Teacher'; else student">
-    fff
+    
     <div *ngFor= "let subjectteaching of subjectsteaching" >
 <!--subject details for teacher login start-->    
         <div *ngIf = "(id == subjectteaching.tID)">
@@ -20,8 +20,8 @@
                         <label class="col-md-6 text-capitalize">: {{subject.Name}} </label>
                     </div>
                     <div class="row">
-                        <label class="col-md-4"> Number of Student/s </label>
-                        <label class="col-md-6">:  </label>
+                        <label class="col-md-4"> Grade </label>
+                        <label class="col-md-6">:{{subjectteaching.Grade}}   </label>
                     </div>
                 <!--subject information end-->
                     <hr>
@@ -57,11 +57,11 @@
 <ng-template #student >
     <div *ngFor= "let subjectteaching of subjectsteaching" >
         <div *ngFor= "let subject of subjects">
-            <div *ngIf = " (subjectteaching.Sub_ID == subject.Sub_ID)">
+            <div *ngIf = " (subjectteaching.Sub_ID == subject.Sub_ID) && (subjectteaching.Grade == sgrd)">
                 <div *ngFor="let teacher of teachers">
                     <div *ngIf = " (teacher.Teacher_NIC== subjectteaching.tID)"
-                    class="zoom border border-info container shadow-lg sm-3 mb-5 bg-white rounded" 
-                    style="padding: 2%; width: 40%;"
+                        class="zoom border border-info container shadow-lg sm-3 mb-5 bg-white rounded" 
+                        style="padding: 2%; width: 40%;"
                     >
                         <div class="row">
                             <label class="col-md-4"> Subject ID </label>
@@ -81,7 +81,6 @@
                         </div>
                         <div class="col-md-3 col-sm-3">
                             <button class="btn btn-info" (click) = "enroll(subject)">ENROLL </button>
-                            <button class="btn btn-info" (click) = "unenroll()">UNENROLL </button>
                         </div>
                     </div>
                 </div>

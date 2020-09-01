@@ -17,7 +17,7 @@ export class LoginComponent implements OnInit {
     private router : Router,
     private loginservice : LoginServiceService) { }
 
-  lgin = new Login(null,null,null); //taking the inputs into a format
+  lgin = new Login(null,null,null,null); //taking the inputs into a format
   //dt : Login[]
   ngOnInit() {
     // take all the details from user tble for validation
@@ -34,15 +34,10 @@ export class LoginComponent implements OnInit {
       
         //validating
         if(this.lgin.name == this.users[x].name && this.lgin.password ==  this.users[x].password){
-          //  console.log("id:" + this.users[x].name);
-          //  console.log("password :" + this.users[x].password);
-          //  console.log("type:"+ this.users[x].type);
   
           //student login
           if(this.users[x].type == "Student"){
             this.router.navigate(['/student/home'], home);
-            // this.id = this.users[x].password;
-            // this.name = this.users[x].name;
             this.loginservice.setlog(this.users[x].name);//pass id to hme page
 
             localStorage.setItem("id", this.users[x].name);

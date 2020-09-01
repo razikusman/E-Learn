@@ -1,8 +1,6 @@
 .bg{
     background:url('../../assets/background.jpg') no-repeat center;
-    background-size: cover ;
-    position: fixed;
-    height: 100%;
+    height: fit-content;
     width: 100%;
     margin: 0%;
     overflow: auto;
@@ -12,14 +10,13 @@ input{
     margin: 1.5%;
     padding: 1.5%;
     width: 100%;
-    background: transparent;
-    color: white;
+    background:  white;
     text-transform: uppercase;
     font-weight: bold;
 }
 
 label{
-    color: rgb(250, 206, 9);
+    color:black;
     text-transform: uppercase;
     font-weight: bold;
     letter-spacing: 3px;

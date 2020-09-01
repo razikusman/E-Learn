@@ -6,20 +6,39 @@
 
     <button class="btn btn-primary" (click)="add(anouncement)" >Add anouncements</button><!--create new anouncement-->
     
+    <!--button payments starts-->
+    <div class="btn btn-group">
+
+        <button style="border-right: double" class="btn btn-primary" (click)="salarypayment(salary)" >salary payment</button>
+        
+        <button style="border-right: double" class="btn btn-primary" (click)="feespayment(student)" >monthly fees payment</button>
+    </div><!--button payments end-->
+    <br>
+    <button style="border: double;" class="btn btn-danger text-uppercase" (click)="atendence()" >mark atendence</button>
+    <!--reports starts-->
+    <h4 class="text-uppercase">reports</h4>
+    <hr>
+
     <!--button reports starts-->
     <div class="btn btn-group">
 
-        <button style="border-right: double" class="btn btn-primary" (click)="salarypayment(salary)" >salary payment report</button>
+        <button style="border-right: double" class="btn btn-success" *ngIf="viewsalarypayment" (click)="s_report()">salary payment report</button>
+        <button style="border-right: double" class="btn btn-warning" *ngIf="!viewsalarypayment" (click)="s_report()">hide salary payment report</button>
         
-        <button style="border-right: double" class="btn btn-primary" (click)="feespayment(student)" >monthly fees payment report</button>
+        <button style="border-right: double" class="btn btn-success" *ngIf="viewfeespayment" (click)="m_report()">monthly fees payment report</button>
+        <button style="border-right: double" class="btn btn-warning" *ngIf="!viewfeespayment" (click)="m_report()">hide monthly fees payment report</button>
         
-        <button class="btn btn-primary" (click)="overallreport(overall)" >ovrall report</button>
+        <button class="btn btn-success" *ngIf="viewoverallreport" (click)="o_report()">ovrall report</button>
+        <button class="btn btn-warning" *ngIf="!viewoverallreport" (click)="o_report()">hide ovrall report</button>
 
-        <hr>
-    </div><!--button reports end-->
         
+    </div><!--button reports end-->
+
     <div class="report-group">
-        <label>reports</label>
-    </div><!--view report-->
+        <app-overall-report *ngIf="!viewoverallreport"></app-overall-report>
+        <app-fees-payment *ngIf="!viewfeespayment"></app-fees-payment>
+        <app-salary-payment *ngIf="!viewsalarypayment"></app-salary-payment>
+    </div>
+    <!--report end-->
 
 </div><!--container ends-->

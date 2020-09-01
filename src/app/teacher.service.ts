@@ -16,4 +16,8 @@ export class TeacherService {
   CreateTeacher(teacher : CreateTeacher ){
     return this.http.post<any>('http://localhost/elearn/addteacher.php', teacher); 
   }//add teacher
+
+  updateteacher(teacher : CreateTeacher){
+    return this.http.post<any>('http://localhost/elearn/updateteacher.php', teacher);
+  }
 }

@@ -13,4 +13,7 @@ export class CreateStudent {
     public cpassword : string;
     public month :string;
     public year :string;
+    public Subject_Name : any;
+    public atendance : any;
+    public Subjectid : any;
 }

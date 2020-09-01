@@ -11,15 +11,20 @@ import { Router } from '@angular/router';
 export class DetailsStudentComponent implements OnInit {
 
   students : CreateStudent[];
+  id;
+  
   constructor(
     private studentsservicce : StudentService,
     private router : Router
   ) { }
 
   ngOnInit() {
-    this.studentsservicce.viewstudent()
+    this.id = localStorage.getItem("id"); // user id
+
+    this.studentsservicce.myviewstudent()
     .subscribe((data:CreateStudent[])=>{
       this.students =data;
+      console.log( this.students)
     });  
   }
 
