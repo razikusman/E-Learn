@@ -31,7 +31,7 @@ export class LoginComponent implements OnInit {
   login(home){
     if(this.lgin.name !='admin' && this.lgin.password != 'admin'){
       for(let x = 0; x < this.users.length; x++){ //x is just an integer
-      
+      console.log(this.lgin.password.value.length);
         //validating
         if(this.lgin.name == this.users[x].name && this.lgin.password ==  this.users[x].password){
   

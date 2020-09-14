@@ -34,7 +34,8 @@ export class StdntcreteComponent implements OnInit {
     console.log(this.subjects);
     //rest api
     this.addForm = this.formBuilder.group({
-      name: [null],
+      sirname: [null],
+      givenname: [null],
       gender:[null],
       grad : [null],
       DOB : [null],

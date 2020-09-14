@@ -28,7 +28,7 @@
                 <label id="password">Password</label><br>
 
                 <div class="d-flex">
-                    <input class="col-md-9"
+                    <input class="col-md-9" 
                         required #password="ngModel" type="password" placeholder="5-8 Characters" 
                         name="password" [(ngModel)]="lgin.password"
                     >
@@ -38,7 +38,7 @@
 
                 <small 
                 style="color: rgb(206, 252, 4); text-transform: uppercase; font-weight: bold; letter-spacing: 5px;" 
-                    *ngIf="password.invalid && password.touched"> fill out the password
+                    *ngIf="password.invalid && password.touched"> Password dshould of min 6 Characters
                 </small>
                 <br>
                 <div class="d-flex">

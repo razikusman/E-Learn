@@ -15,12 +15,21 @@
     >
         <!--{{studentregisterForm.form.valid}}-->
         <div>
-            <label id="unamelbl" class="text-uppercase font-weight-bold"> Name : </label><br>
+            <label id="unamelbl" class="text-uppercase font-weight-bold"> Sir Name : </label><br>
             <input
-                name="name" formControlName="name" required 
+                name="sirname" formControlName="sirname" required 
                 type="text" placeholder="Enter Full Name" class="form-control"
             >
-            <small class="text-danger text-uppercase font-weight-bold" *ngIf="addForm.get('name').invalid && addForm.get('name').touched ">*feild required</small>
+            <small class="text-danger text-uppercase font-weight-bold" *ngIf="addForm.get('sirname').invalid && addForm.get('sirname').touched ">*feild required</small>
+        </div><br>
+
+        <div>
+            <label id="unamelbl" class="text-uppercase font-weight-bold"> Given Name : </label><br>
+            <input
+                name="givenname" formControlName="givenname" required 
+                type="text" placeholder="Enter Full Name" class="form-control"
+            >
+            <small class="text-danger text-uppercase font-weight-bold" *ngIf="addForm.get('givenname').invalid && addForm.get('givenname').touched ">*feild required</small>
         </div><br>
         
         <div>
