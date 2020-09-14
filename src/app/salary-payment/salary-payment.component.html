@@ -28,7 +28,7 @@
           <th scope="col">Amount(Rs.)</th>
         </tr>
       </thead><!--table haedins end-->
-      <tbody><!--table body strat-->
+      <tbody><!--table body start-->
         <tr *ngFor = "let payment of payments ; let i = index"><!--table raw start-->
             <th *ngIf="(payment.month == monthtoday) && (payment.year == yeartoday) " scope="row"></th>
             <td *ngIf="(payment.month == monthtoday) && (payment.year == yeartoday) " class="text-capitalize">{{payment.name}}</td>
